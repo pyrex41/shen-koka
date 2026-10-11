@@ -1,0 +1,34 @@
+{
+  "references/bifrost": {
+    "head": "65236412511ace29934163cc21a418de4223b234",
+    "status": ""
+  },
+  "references/yggdrasil": {
+    "head": "a40d8c5b6ed1eb2b5d7a4511e61d0304ce9a2e3d",
+    "status": ""
+  },
+  "references/shen-go": {
+    "head": "219e2d6b1526b8fc302854f8daf41af2f8812a8f",
+    "status": ""
+  },
+  "references/shen-lua": {
+    "head": "fc9757731580f77aad6b3b4cea53773261b36d44",
+    "status": ""
+  },
+  "pinned/bifrost": {
+    "head": "65236412511ace29934163cc21a418de4223b234",
+    "status": ""
+  },
+  "pinned/yggdrasil": {
+    "head": "a40d8c5b6ed1eb2b5d7a4511e61d0304ce9a2e3d",
+    "status": ""
+  },
+  "pinned/shen-go": {
+    "head": "c22151dc55cafac7e5b904b8c58c6280c38801b2",
+    "status": ""
+  },
+  "pinned/shen-lua": {
+    "head": "614cd0754a741c8070c467b2b07f07943d17f4ff",
+    "status": ""
+  }
+}

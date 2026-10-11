@@ -1,0 +1,1 @@
+The launcher and checker outputs are retained, but the shell did not independently retain both exit codes. Attempt 108 repeats this gate with explicit process status capture. Do not promote 107 from its shell exit code.

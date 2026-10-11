@@ -82,7 +82,7 @@ class Compiler:
             statements,v=self.value(arg,env);lines.extend(statements);args.append(v)
         return lines,f,'['+','.join(args)+']'
     def value(self,x,env):
-        if isinstance(x,list) and x and self.depth>=12:
+        if isinstance(x,list) and x and self.depth>=6:
             lines=[];f=self.save(self.closure([],x,env),lines)
             v=self.save("invoke(w,"+f+",[])",lines);return lines,v
         self.depth+=1
@@ -118,7 +118,7 @@ class Compiler:
             v=self.save('invoke-protected(w,'+body+','+hndl+')',lines);return lines,v
         lines,f,args=self.call_parts(x,env);v=self.save('invoke(w,'+f+','+args+')',lines);return lines,v
     def tail(self,x,env):
-        if isinstance(x,list) and x and self.depth>=12:
+        if isinstance(x,list) and x and self.depth>=6:
             lines=[];f=self.save(self.closure([],x,env),lines)
             return lines+["TailApply("+f+",[])"]
         self.depth+=1
@@ -143,7 +143,8 @@ class Compiler:
             if not special:
                 lines,f,arguments=self.call_parts(x,env);return lines+['TailApply('+f+','+arguments+')']
         lines,v=self.value(x,env);return lines+['Done('+v+')']
-    def write(self,out,groups):
+    def write(self,out,groups,module_size=40):
+        if module_size<1:raise ValueError('module size must be positive')
         out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
         entries=[[self.schedule([],form) for form in forms] for forms in groups]
         bodies=[];i=0
@@ -157,8 +158,8 @@ class Compiler:
             bodycode='match (captured,args) '+block([pattern+' -> '+block(self.tail(body,env)),'_ -> throw("native closure arity mismatch")'])
             bodies.append('fun code%d(w:world,roots:ref<global,list<value>>,captured:list<value>,args:list<value>): <st<global>,exn,div,console> native-result '%i+block([bodycode]));i+=1
         modules=[]
-        for start in range(0,len(bodies),40):
-            name='klpart'+str(start//40);modules.append(name)
-            lines=['module '+name,'import shen/values','import shen/world','import shen/machine',*bodies[start:start+40],'pub fun install(w:world): <st<global>,exn,div> () '+block(['install-native(w,%d,code%d)'%(j,j) for j in range(start,min(start+40,len(bodies)))])]
+        for start in range(0,len(bodies),module_size):
+            name='klpart'+str(start//module_size);modules.append(name)
+            lines=['module '+name,'import shen/values','import shen/world','import shen/machine','// Inline metadata keeps cached interfaces at the same loading phase in Koka 3.2.3.','pub inline fun callback-count(): int { %d }'%min(module_size,len(bodies)-start),*bodies[start:start+module_size],'pub fun install(w:world): <st<global>,exn,div> () '+block(['install-native(w,%d,code%d)'%(j,j) for j in range(start,min(start+module_size,len(bodies)))])]
             (out/(name+'.kk')).write_text('\n'.join(lines)+'\n')
         return {'modules':modules,'entries':entries,'code_count':len(bodies)}

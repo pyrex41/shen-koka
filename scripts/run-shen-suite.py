@@ -80,7 +80,12 @@ def main():
     ap.add_argument('--timeout',type=float,default=1500)
     ap.add_argument('--previous',type=pathlib.Path)
     ap.add_argument('--ppm-compat',action='store_true',help='enable the S42 community pattern adapter for BOTH lanes')
-    args=ap.parse_args(); args.output.mkdir(parents=True,exist_ok=False)
+    args=ap.parse_args()
+    previous=None
+    if args.previous:
+        try: previous=json.loads(args.previous.read_text())
+        except (OSError,ValueError) as e: ap.error('cannot read previous report: '+str(e))
+    args.output.mkdir(parents=True,exist_ok=False)
     shutil.copy2(pathlib.Path(__file__),args.output/'runner.py')
     lockpath=ROOT/'comparison/shen-suite.lock.json'; lock=json.loads(lockpath.read_text())
     errors=[]
@@ -101,6 +106,11 @@ def main():
             if not binary.is_file() or sha(binary)!=native_build.get('binary_sha256'):errors.append('native binary missing or hash mismatch')
             generator=native_root/'native_codegen.py'
             if not generator.is_file() or sha(generator)!=native_build.get('generator_sha256'):errors.append('native generator snapshot drift')
+            for section in ['generated_sources','builder_sources']:
+                if not native_build.get(section):errors.append('missing native '+section+' provenance')
+                for name,digest in native_build.get(section,{}).items():
+                    f=native_root/name
+                    if not f.is_file() or sha(f)!=digest:errors.append('native '+section+' drift: '+name)
             for name,digest in native_build.get('compat_sha256',{}).items():
                 f=native_root/'compat'/name
                 if not f.is_file() or sha(f)!=digest:errors.append('native compatibility snapshot drift: '+name)
@@ -183,7 +193,7 @@ def main():
         report['lanes'][lane]=result
     report['regressions']=[]
     if args.previous:
-        old=json.loads(args.previous.read_text())
+        old=previous
         for lane,current in report['lanes'].items():
             previous={x['id']:x['status'] for x in old['lanes'][lane]['assertions']}
             report['regressions'] += [x['id'] for x in current['assertions'] if previous.get(x['id'])=='PASS' and x['status']!='PASS']

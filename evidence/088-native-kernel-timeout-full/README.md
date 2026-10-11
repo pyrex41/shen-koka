@@ -1,0 +1,1 @@
+Invalid harness invocation: --previous named a directory. The runner raised before writing its final report. No assertions executed; all 134 canonical and eight extension assertions are UNKNOWN. The corrected invocation is retained in 090.

@@ -9,17 +9,17 @@ not full-port release qualification.
 
 | Capability | Evidence | Qualification boundary |
 |---|---|---|
-| KLambda values, lexical closures, currying, redefinition, explicit tail-call machine | 083: 43 focused PASS | Includes million-step self, mutual and indirect calls |
-| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 085: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
-| Primitive inventory, positive observations and wrong arities | 072: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
+| KLambda values, lexical closures, currying, redefinition, explicit tail-call machine | 098: 43 focused PASS | Includes million-step self, mutual and indirect calls |
+| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 099: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
+| Primitive inventory, positive observations and wrong arities | 098: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
 | Vector aliases, cycles, structural equality and tracing collection | Focused checks and full suite | Long-running memory budgets remain unqualified |
 | Generation-tagged streams | 054 failure; 056/058/057 after repair | Closed handles cannot alias a new stream |
 | Numeric conversions | 061/081 failures; 083/085 after repair | Indices/sizes truncate; character codes reject invalid ranges and fractions |
 | Kernel-backed REPL | 032: four probes PASS | EOF, expression, multiline input and recovery |
 | Standard library | 035: installer completed | Individual library operations are not all qualified |
-| Bifrost launcher | 071: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
-| Direct KL-to-Koka callbacks | 086: 43 compiled checks PASS | Full compiled-kernel suite pending |
-| Yggdrasil standalone hello | 034 interpreter-backed; 062 direct native PASS | Both run without installed kernel; broader deployment matrix pending |
+| Bifrost launcher | 108: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
+| Direct KL-to-Koka callbacks | 096: 43 compiled checks PASS | Full compiled-kernel suite pending |
+| Yggdrasil standalone hello | 034 interpreter-backed; 101 registered native target PASS | Both run without installed kernel; broader deployment matrix pending |
 | Nix runtime package | 084/085: build, boundary check and 134 + 8 PASS | x86_64 Linux with pinned Nix dependencies |
 
 The full-suite result uses `SHEN_KOKA_PPM_COMPAT=1` in both lanes. Default boot
@@ -28,23 +28,25 @@ hooks absent from S42. No vendored kernel module was edited. The full runtime
 uses original load-time forms; standalone slices use the synthesized manifest
 initializer. Ordinary `(fail)` remains the `shen.fail!` value, distinct from errors.
 
-Attempt 085 runs the immutable Nix-store launcher, preserves both raw streams
+Attempt 085 runs the immutable Nix-store launcher. Attempt 099 retests the
+cache-helper runtime and preserves both raw streams
 and all cumulative counters before reset, and verifies the exact 63-file inventory
-and assertion identities. Its runner source is retained. Attempt 084 records the
+and assertion identities. Its runner source and raw-log hashes were verified. Attempt 084 records the
 installed binary hash and validates it against the installed build manifest.
 
 ## Published
 
 The complete interpreter checkpoint remains on `implement/klambda-runtime` at
-`5197c2967b6a2d4341a0650e1758109003713975`. The newer runtime/conversion/compiler
-checkpoint is on `implement/native-compiler` at
-`379a32968aaaf651a8f3caa3c3abaa0f9a9650e9`. Evidence added after that checkpoint
-is local until the next publication is recorded.
+`5197c2967b6a2d4341a0650e1758109003713975`. Current compiler development and
+its evidence are published on `implement/native-compiler`. The immutable
+packaged-runtime checkpoint `21c243b9221f63b8a10fed02a428246cead0e333` precedes
+the cache and smaller-module work described below; source/binary hashes in
+each evidence directory identify exactly what was tested.
 
 Integration branches:
 
 - `pyrex41/bifrost:integrate/shen-koka`, commit `5aa7a36c835a2132b45966eb6e80ea5763868cf8`.
-- `pyrex41/yggdrasil:integrate/shen-koka`, commit `0c8023875439bea3c3dafcb001c7b6aed7769f95`.
+- `pyrex41/yggdrasil:integrate/shen-koka`, commit `aa60af61f410b92cec485b50865c3d5b20d8a28b`.
 
 Both integrations passed `go test ./...`. GitHub API publication preserves the
 exact local Git tree; commit SHAs differ because the API creates the commits.
@@ -57,8 +59,9 @@ or cleaning the original checkouts.
 - Full compiled-kernel build and its unchanged 142-assertion suite. Attempt 067
   records the missing-artifact baseline as all UNKNOWN. Focused native checks
   cannot promote this gate.
-- General full-versus-sliced-versus-lowered deployment, initializer/order fixtures,
-  and complete trace comparisons. The default builder remains interpreter-backed;
+- General full-versus-sliced-versus-lowered deployment, complete trace comparisons, and larger standalone programs. Initializer/order
+  fixtures pass both execution modes (092/100); the registered direct-native
+  Yggdrasil target passes its actual hello build and isolated run (101). The default builder remains interpreter-backed;
   direct lowering uses explicit `--native`.
 - Eval-capable slices are explicitly refused. Full interpreter and compiled-kernel
   design retain runtime `eval-kl`; that is a different capability.
@@ -93,4 +96,7 @@ post-build suite is all UNKNOWN (074). Batched library compilation reached a
 real conditional `Nil` type-inference error (078), with all assertions UNKNOWN
 in 079. Explicit value annotations repair that error; introduced boolean
 constants also ignore lexical shadowing. All 43 compiled checks pass (086).
-The next batched kernel build is in progress; it is not yet qualified.
+Attempt 087 passed that conditional, then hit the next module's five-minute
+compiler limit. Attempt 090 remains 134 + 8 UNKNOWN. Earlier callback splitting
+and a measured cache workaround pass 43 native cases (096); the next full
+compiled-kernel build is in progress and is not yet qualified.

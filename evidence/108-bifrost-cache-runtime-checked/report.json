@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/bifrost-koka",
+    "-suite",
+    "comparison/bifrost.suite.json",
+    "-impls",
+    "shen-koka",
+    "-json"
+  ],
+  "bifrost_exit_code": 0,
+  "checker_exit_code": 0,
+  "status": "PASS"
+}

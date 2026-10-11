@@ -1,0 +1,205 @@
+{
+  "available": [
+    "shen-koka"
+  ],
+  "cases": {
+    "and-is-nonstrict": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "arithmetic": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "divide-zero-is-catchable": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        }
+      }
+    },
+    "fail-is-not-error": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        }
+      }
+    },
+    "false-is-a-value": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "freeze-captures-lexical-value": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "9"
+        }
+      }
+    },
+    "freeze-escapes-in-lambda": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "if-is-nonstrict": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "intern-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "operand-evaluation-order": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "ordinary-fail-sentinel": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        }
+      }
+    },
+    "prolog-first-solution": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "bart"
+        }
+      }
+    },
+    "thaw-repeats-effects": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "trap-operand-error": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "vector-empty-slot-sentinel": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        }
+      }
+    },
+    "vector-update-preserves-alias": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "walk-first-success": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "3"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                           shen-koka verdict
+------------------------------------------------
+arithmetic                     PASS      PASS
+ordinary-fail-sentinel         PASS      PASS
+fail-is-not-error              PASS      PASS
+false-is-a-value               PASS      PASS
+if-is-nonstrict                PASS      PASS
+and-is-nonstrict               PASS      PASS
+trap-operand-error             PASS      PASS
+freeze-captures-lexical-value  PASS      PASS
+freeze-escapes-in-lambda       PASS      PASS
+thaw-repeats-effects           PASS      PASS
+vector-update-preserves-alias  PASS      PASS
+vector-empty-slot-sentinel     PASS      PASS
+operand-evaluation-order       PASS      PASS
+intern-true                    PASS      PASS
+divide-zero-is-catchable       PASS      PASS
+walk-first-success             PASS      PASS
+prolog-first-solution          PASS      PASS
+------------------------------------------------
+
+SUMMARY: 17 pass, 0 diverge (known), 0 FAIL  across 1 impls
+==============================================================================

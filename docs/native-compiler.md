@@ -45,8 +45,9 @@ and captured values. Argument lists are destructured once instead of repeatedly
 using effectful indexing. Native builds serialize shared staging/cache access;
 each artifact carries the relevant upstream notices. Attempt 068 records the
 first pattern-unpacking generator's indentation failure; 070 passes all 37 cases
-after correction. The complete native kernel build has 2,834 callbacks across
-71 modules. Its full-suite gate is still pending; attempt 067 records the
+after correction. The earlier full-kernel build had 2,834 callbacks across 71 modules.
+The current depth-six split emits 4,591 callbacks, grouped into 287 modules
+by the default `--module-size 16`. Its full-suite gate is still pending; attempt 067 records the
 pre-build state with all 142 assertions UNKNOWN.
 
 ```sh
@@ -70,3 +71,28 @@ compiler process before linking. They omit debug information by default, retain
 per-step resource counters, and reuse unchanged staging files on retry. The
 30-minute whole-build budget is configurable with `--timeout`; each compiler
 step is bounded to five minutes. Partial compilation is not a usable artifact.
+
+
+### Bounded compilation and cache reuse
+
+Attempt 087 passed the previously failing conditional module, then timed out
+compiling the next module at 300 seconds. Attempt 090 retains all 134 + 8 native
+assertions as UNKNOWN. Space optimization alone also timed out (093). Earlier
+expression splitting passes all 43 native cases (094).
+
+Koka 3.2.3's `src/Compile/Build.hs` assigns interfaces without inline definitions
+`PhaseLinked`, but interfaces with inline definitions `PhaseIfaceLoaded`.
+`validateDependencies` invalidates a module whose dependencies have a lower
+phase. This caused the IO module and its callers to be recompiled on each batch.
+The IO error predicate is now an inline helper; generated modules expose inline
+callback-count metadata. Stream operations themselves remain out of line.
+Attempt 096 passes all 43 native cases; the identical-source rebuild in 097
+reparses only the entry module and completes in 21.32 seconds. This is a measured
+cache workaround, not a change to the pinned Koka compiler.
+
+Full boot iterates the generated entry IDs in original form order, avoiding one
+enormous unrolled boot function. Artifacts retain builder snapshots and hashes
+of every generated module and boot source; the native suite lane checks them.
+The initializer-once, multi-user-file-order fixture passes in interpreter-backed
+(092) and directly compiled (100) standalone artifacts, from empty working
+directories. These checks supplement the complete kernel suite.

@@ -1,0 +1,42 @@
+{
+  "command": [
+    "koka",
+    "--no-debug",
+    "-j1",
+    "-i/tmp/shen-koka-native-anf/src",
+    "-i/tmp/shen-koka-native-anf/generated",
+    "-O2",
+    "--builddir=/tmp/shen-koka-native-anf-cache",
+    "-o",
+    "/tmp/shen-koka-native-anf/run",
+    "/tmp/shen-koka-native-anf/program.kk"
+  ],
+  "exit_code": 0,
+  "resources": {
+    "seconds": 21.316915852999955,
+    "children_peak_rss_high_water_bytes": 389062656,
+    "child_user_seconds": 20.540958,
+    "child_system_seconds": 2.210262,
+    "memory_events_before": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    },
+    "memory_events_after": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    }
+  },
+  "reparsed": [
+    "parse   : /tmp/shen-koka-native-anf/program.kk"
+  ],
+  "status": "PASS",
+  "generator_sha256": "96045f4ce30de5e48cd9bf6862679e11a236714906ec0f6f96d1e63e4b94ab0a"
+}

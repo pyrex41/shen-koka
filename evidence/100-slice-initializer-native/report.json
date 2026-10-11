@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "expected_stdout": "1",
+  "actual_stdout": "1",
+  "binary_sha256": "0f01491c5c9830a97b6919be89a34ebeeeabb94eb8fb588df1f27293a0580eb5",
+  "contract": "manifest initializer runs once before first user file, user files run in order",
+  "isolated_cwd": true,
+  "SHEN_KOKA_ROOT": "/nonexistent"
+}

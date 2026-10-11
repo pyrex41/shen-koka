@@ -1,0 +1,1 @@
+Full native build 003: 24 modules completed, including the previously failing conditional. Module 24 exceeded its 300-second compiler budget. Total 1182.16 seconds; no executable produced. Cumulative child RSS high-water 4,605,120,512 bytes; no new cgroup OOM events. See 090 for the full-suite attempt: 134 + 8 UNKNOWN, compared explicitly against the passing interpreter baseline.

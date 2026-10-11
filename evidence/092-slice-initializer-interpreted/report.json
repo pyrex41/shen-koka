@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "expected_stdout": "1",
+  "actual_stdout": "1",
+  "binary_sha256": "48aa008949fd40f19644d32a554c1c613a3d4eb903169d6cb9e9f3147113b752",
+  "contract": "manifest initializer runs once before first user file, user files run in order",
+  "isolated_cwd": true,
+  "fixture_sha256": {
+    "comparison/slices/init-once/first.kl": "3e8279ba1539649bea3dffea3099f552a5db02d075097c34c39b481e96a70709",
+    "comparison/slices/init-once/kernel.kl": "0a08658abd7cc8c2813a158db14148271f5d5ffc3d4a0f15586e61b45b804659",
+    "comparison/slices/init-once/second.kl": "64e2ad1f662868ba1be6aa1d21500248de0b9362830314fca609725a279046ea",
+    "comparison/slices/init-once/yggdrasil.manifest.txt": "241d4abf98f38c1cb57378ca29c2b671160296f672070768d2c60da6622120af"
+  }
+}

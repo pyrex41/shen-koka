@@ -69,5 +69,7 @@ kernel. A full-suite timeout is UNKNOWN for every unreached assertion, not a pas
 
 `bin/shen-koka build-slice MANIFEST OUTPUT` builds an interpreter-backed native
 Yggdrasil artifact. It executes the manifest's synthesized initializer exactly
-once and refuses eval-capable manifests. Direct KL-to-Koka compilation remains
-planned.
+once and refuses eval-capable manifests. Add `--native` for experimental direct
+KL-to-Koka callbacks. The Yggdrasil integration exposes these as `koka` and
+`koka-native`; both initializer/order fixtures pass. Full compiled-kernel
+qualification is still pending; see [native compiler status](docs/native-compiler.md).

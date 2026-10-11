@@ -1,0 +1,15 @@
+{
+  "generator_sha256": "a9b2b446f125c4a898f091e853638b91d9ca73593bb90011f092eb83fc1c4b14",
+  "runtime_sources": {
+    "shen/values.kk": "d1a8c9f0a098864621877c5dcb7c2bdbf7579b3ad357116d00a3edfe021693e2",
+    "shen/read-kl.kk": "804bf82490cc21c2bc67a35eb43c29dd938ec4502b7656f8dd65f9a5b287807a",
+    "shen/machine.kk": "7ea348e7c7f9dbeef50c765547f3f0760a76a39685176120da37285bf83ca1a3",
+    "shen/world.kk": "3b5166fdea27d782b1ee9158cd39d22f1c89549865f279f829e385b084c42470",
+    "shen/boot.kk": "8afc255902d99d0b6a7c2e09b23a2f2418bea6809c328aadd7177302a758af1d",
+    "shen/compile-kl.kk": "0b8e7e565354869acda080c5864c1fd2fee2e28f5e5f08e9c440c54e308e5b02",
+    "shen/main.kk": "8cf28b97abc7543ccd9a6e74075c4d23029d7ba5352a4ef4faff06c1ebfda511",
+    "shen/io-inline.c": "b44f2d40c9c1a21c55d1b49121380fd4e3cca28c1e78d909b53d5d9529e4b2f5",
+    "shen/io.kk": "0f1a82c7840fd2aa19ce40d62fddae894fafda636c5243c5400a07c3c62965a7"
+  },
+  "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e"
+}

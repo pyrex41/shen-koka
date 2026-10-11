@@ -9,14 +9,15 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 @serial_native_build
 def main():
  sys.setrecursionlimit(10000)
- p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);p.add_argument('--debug',action='store_true',help='retain debug information');p.add_argument('--timeout',type=float,default=1800);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);p.add_argument('--debug',action='store_true',help='retain debug information');p.add_argument('--timeout',type=float,default=1800);p.add_argument('--module-size',type=int,default=16);a=p.parse_args()
  out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);artifact_notices(out)
+ for name in ['build-native-kernel.py','native_build.py']:shutil.copy2(ROOT/'scripts'/name,out/name)
  generator_snapshot=(ROOT/'scripts/native_codegen.py').read_bytes();(out/'native_codegen.py').write_bytes(generator_snapshot)
  # Refuse drift between the ordinary loader and the native form order.
  literal='['+','.join(json.dumps(n) for n in MODULES)+']'
  if literal not in (ROOT/'src/shen/boot.kk').read_text():raise ValueError('kernel module order differs from interpreter')
  files=[ROOT/'kernel/klambda'/(n+'.kl') for n in MODULES]
- plan=Compiler().write(out/'generated',[read_kl(f.read_bytes().decode()) for f in files])
+ plan=Compiler().write(out/'generated',[read_kl(f.read_bytes().decode()) for f in files],module_size=a.module_size)
  shutil.copytree(ROOT/'src/shen',out/'src/shen');shutil.copytree(ROOT/'compat',out/'compat')
  main=(ROOT/'src/shen/main.kk').read_text()
  old='boot(w,get-env-value("SHEN_KOKA_ROOT").default("."))'
@@ -24,8 +25,9 @@ def main():
  main=main.replace(old,'boot-compiled(w)').replace('shen-koka 0.0.1 experimental;', 'shen-koka 0.0.1 experimental native-kernel;')
  lines=['import '+m for m in plan['modules']]+[main,'fun boot-compiled(w:world) {',' initialize-platform(w)',' prepare-native(w,%d)'%plan['code_count']]
  lines+=[' '+m+'/install(w)' for m in plan['modules']]
- for entries in plan['entries']:
-  for code in entries:lines.append(' invoke(w,make-compiled(w,0,%d,[],[]),[]);'%code)
+ # A loop preserves form order without creating one enormous CPS boot body.
+ entries=[code for group in plan['entries'] for code in group]
+ lines.append(' ['+','.join(map(str,entries))+'].foreach(fn(code) { invoke(w,make-compiled(w,0,code,[],[]),[]); () })')
  lines+=[' load-compat(w,get-env-value("SHEN_KOKA_ROOT").default("."))','}']
  (out/'program.kk').write_text('\n'.join(lines)+'\n')
  stage=pathlib.Path('/tmp/shen-koka-native-anf');stage.mkdir(exist_ok=True)
@@ -37,7 +39,9 @@ def main():
  r=run_compilation_steps(commands,a.timeout)
  (out/'compile.log').write_text(r.stdout)
  if r.returncode==0:shutil.copy2(stage/'run',out/'native')
- record={'direct_kl_compiler':True,'kernel_forms':sum(map(len,plan['entries'])),'native_callbacks':plan['code_count'],'kernel_sha256':{f.name:sha(f) for f in files},'generator_sha256':sha(out/'native_codegen.py'),'flake_lock_sha256':sha(ROOT/'flake.lock'),'compat_sha256':{str(f.relative_to(out/'compat')):sha(f) for f in (out/'compat').rglob('*') if f.is_file()},'runtime_sources':{str(f.relative_to(out/'src')):sha(f) for f in (out/'src').rglob('*') if f.is_file()},'commands':commands,'steps':r.steps,'debug_info':a.debug,'timeout_seconds':a.timeout,'exit_code':r.returncode,'seconds':time.monotonic()-start}
+ record={'direct_kl_compiler':True,'kernel_forms':sum(map(len,plan['entries'])),'native_callbacks':plan['code_count'],'module_size':a.module_size,'kernel_sha256':{f.name:sha(f) for f in files},'generator_sha256':sha(out/'native_codegen.py'),'flake_lock_sha256':sha(ROOT/'flake.lock'),'compat_sha256':{str(f.relative_to(out/'compat')):sha(f) for f in (out/'compat').rglob('*') if f.is_file()},'runtime_sources':{str(f.relative_to(out/'src')):sha(f) for f in (out/'src').rglob('*') if f.is_file()},'commands':commands,'steps':r.steps,'debug_info':a.debug,'timeout_seconds':a.timeout,'exit_code':r.returncode,'seconds':time.monotonic()-start}
+ record['generated_sources']={str(f.relative_to(out)):sha(f) for f in [out/'program.kk',*sorted((out/'generated').glob('*.kk'))]}
+ record['builder_sources']={name:sha(out/name) for name in ['build-native-kernel.py','native_build.py']}
  if r.returncode==0:
   (out/'native').chmod(0o755);record['binary_sha256']=sha(out/'native')
   (out/'run').write_text('#!/usr/bin/env bash\nset -euo pipefail\nroot=$(cd "$(dirname "$0")" && pwd)\nexport SHEN_KOKA_ROOT="$root"\nexec "$root/native" "$@"\n');(out/'run').chmod(0o755)

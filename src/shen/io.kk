@@ -10,3 +10,7 @@ pub extern clock-time(run:bool): console float64 { c inline "shen_clock_time(#1,
 pub extern process-exit(code:int32): console () { c inline "shen_process_exit(#1,kk_context())" }
 
 pub extern stdin-eof(): console bool { c inline "shen_stdin_eof(kk_context())" }
+
+// Keep EOF (-1) distinct from a host stream error. An inline definition also
+// avoids Koka 3.2.3 invalidating this cached module by interface-loading phase.
+pub inline fun stream-read-failed(result:int): bool { result < -1 }

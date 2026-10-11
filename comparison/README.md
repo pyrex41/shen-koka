@@ -1,4 +1,4 @@
-# Comparison backpressure setup
+# Comparison backpressure
 
 The seed suite covers 17 observations, including the failure sentinel, non-strict
 control, exceptions, closures, repeated thaw, aliased vectors, evaluation order,
@@ -11,7 +11,7 @@ The primary language backpressure gate is the **full Shen test distribution**:
 assertions. [The pinned inventory](shen-suite.lock.json) records every test-tree
 file and its hash. The seed suite is an additional comparison lane.
 
-P0 must supply a full-suite driver; P2 and subsequent candidate iterations attempt
+`scripts/run-shen-suite.py` is the full-suite driver. Candidate iterations attempt
 the entire suite before and after feature changes. Expected early failures stay
 FAIL, unreachable assertions stay UNKNOWN, and the denominators remain fixed.
 Feature checkpoints can advance with the overall suite red when their declared
@@ -28,7 +28,7 @@ incomplete cases are UNKNOWN. Both FAIL and UNKNOWN exit nonzero.
 
 This checker validates reported observations. It does not establish clean source,
 binary provenance, file/heap trace equivalence, or the correctness of Bifrost's
-normalization. P0 adds those obligations. Its default requires Koka, so a run
+normalization. Those remain separate provenance and state-trace obligations. Its default requires Koka, so a run
 against only existing ports cannot qualify the new port.
 
 ## Reference lane
@@ -58,11 +58,12 @@ behavior, not Shen-Koka compatibility.
 
 ## Candidate lane
 
-After P4 registers `shen-koka` in Bifrost and a launcher has been built:
+Use Bifrost branch `integrate/shen-koka` with the built Shen-Koka launcher.
+Attempts 033 and 071 passed all 17 Koka seed cells and the strict checker:
 
 ```sh
 mkdir -p artifacts/candidate
-export BIFROST_SHEN_KOKA=/absolute/clean/shen-koka/result/bin/shen-koka
+export BIFROST_SHEN_KOKA=/absolute/clean/shen-koka/bin/shen-koka
 /absolute/clean/bifrost/.bin/bifrost \
   --suite comparison/bifrost.suite.json --impls shen-lua,shen-go,shen-koka --json \
   > artifacts/candidate/bifrost.stdout 2> artifacts/candidate/bifrost.stderr
@@ -74,8 +75,12 @@ deliberately bound to this suite; it does not qualify a different corpus report.
 
 ## Deployment lane
 
-After P6 adds the Yggdrasil `koka` builder and Bifrost target mapping, use Bifrost
-`--shake` on a separate script-only suite. Do not feed this mixed eval/script
+Yggdrasil branch `integrate/shen-koka` registers `koka` (interpreter-backed) and
+`koka-native` (direct callbacks). Set `YGGDRASIL_SHEN_KOKA_DIR` to this checkout.
+Attempt 101 executes the registered native target's hello build and runs its
+artifact in isolation. Attempts 092/100 verify initializer-once and user-file
+order for both builders. Eval-capable manifests are still explicitly refused.
+Use Bifrost `--shake` on a separate script-only suite. Do not feed this mixed eval/script
 seed report to a deploy gate and assume the eval rows were standalone artifacts.
 Compare Go/Lua/Koka artifacts and their full runtime legs with matching inputs.
 Run Yggdrasil trace checks with complete end records and canonical/lowered pairs.
@@ -87,9 +92,12 @@ with a hand-edited PASS. Incomplete run setup remains UNKNOWN. Mutant controls
 must include a skipped cell with case verdict PASS, a missing implementation,
 a truncated object, a wrong golden, and an empty case set.
 
-The current checker has been exercised on constructed report controls only;
-see [scaffold validation](../research/scaffold-validation.json). This is evidence
-about the checker and does not execute or qualify any Shen implementation.
+The checker passed the constructed [scaffold controls](../research/scaffold-validation.json)
+and actual 17-case Koka reports (033/071/108). Full interpreter attempts 085/091/099 pass
+134 canonical and eight extension assertions using the explicit PPM compatibility
+profile in both lanes. The three-reference seed result remains FAIL; sentinel
+printing and empty-vector-slot discrepancies are retained. Native full-kernel
+attempts remain UNKNOWN until a complete executable and all assertions are observed.
 
 Future feedback records include the first failing scenario, raw output paths,
 minimized source, exact reproduction argv, and which gate blocked promotion.

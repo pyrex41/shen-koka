@@ -1,0 +1,6 @@
+{
+  "exit_code": 2,
+  "output_created": false,
+  "status": "PASS",
+  "purpose": "reject invalid regression baseline before running or creating an incomplete report"
+}

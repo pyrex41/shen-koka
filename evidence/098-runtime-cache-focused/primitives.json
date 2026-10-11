@@ -1,0 +1,717 @@
+{
+  "inventory_errors": [],
+  "denominator": 68,
+  "cases": {
+    "primitive/01": {
+      "id": "primitive/01",
+      "covers": [
+        "open",
+        "read-byte",
+        "close"
+      ],
+      "source": "(set *home-directory* \"\") (let S (open \"input.bin\" in) (let A (read-byte S) (let B (read-byte S) (let C (read-byte S) (let D (read-byte S) (let X (close S) (list A B C D)))))))",
+      "expected": "\"\"\n[65 0 255 -1]",
+      "status": "PASS",
+      "stdout": "\"\"\n[65 0 255 -1]\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/02": {
+      "id": "primitive/02",
+      "covers": [
+        "write-byte"
+      ],
+      "source": "(set *home-directory* \"\") (let S (open \"output.bin\" out) (let A (write-byte 255 S) (let X (close S) A)))",
+      "expected": "\"\"\n255",
+      "status": "PASS",
+      "stdout": "\"\"\n255\n",
+      "stderr": "",
+      "exit_code": 0,
+      "file_hex": "ff"
+    },
+    "primitive/03": {
+      "id": "primitive/03",
+      "covers": [
+        "get-time"
+      ],
+      "source": "(number? (get-time run)) (number? (get-time unix))",
+      "expected": "true\ntrue",
+      "status": "PASS",
+      "stdout": "true\ntrue\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/04": {
+      "id": "primitive/04",
+      "covers": [
+        "cons",
+        "hd",
+        "tl",
+        "cons?"
+      ],
+      "source": "(hd (cons 1 2)) (tl (cons 1 2)) (cons? (cons 1 2)) (cons? ())",
+      "expected": "1\n2\ntrue\nfalse",
+      "status": "PASS",
+      "stdout": "1\n2\ntrue\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/05": {
+      "id": "primitive/05",
+      "covers": [
+        "number?"
+      ],
+      "source": "(number? 1.5) (number? \"1\")",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/06": {
+      "id": "primitive/06",
+      "covers": [
+        "string?"
+      ],
+      "source": "(string? \"a\") (string? a)",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/07": {
+      "id": "primitive/07",
+      "covers": [
+        "absvector?",
+        "absvector"
+      ],
+      "source": "(absvector? (absvector 0)) (absvector? ())",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/08": {
+      "id": "primitive/08",
+      "covers": [
+        "intern"
+      ],
+      "source": "(= (intern \"same\") same)",
+      "expected": "true",
+      "status": "PASS",
+      "stdout": "true\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/09": {
+      "id": "primitive/09",
+      "covers": [
+        "set",
+        "value"
+      ],
+      "source": "(set probe 7) (value probe)",
+      "expected": "7\n7",
+      "status": "PASS",
+      "stdout": "7\n7\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/10": {
+      "id": "primitive/10",
+      "covers": [
+        "="
+      ],
+      "source": "(= (cons 1 ()) (cons 1 ())) (= (cons 1 ()) (cons 2 ()))",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/11": {
+      "id": "primitive/11",
+      "covers": [
+        "+"
+      ],
+      "source": "(+ 1 2.5)",
+      "expected": "3.5",
+      "status": "PASS",
+      "stdout": "3.5\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/12": {
+      "id": "primitive/12",
+      "covers": [
+        "-"
+      ],
+      "source": "(- 5 2)",
+      "expected": "3",
+      "status": "PASS",
+      "stdout": "3\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/13": {
+      "id": "primitive/13",
+      "covers": [
+        "*"
+      ],
+      "source": "(* 3 4)",
+      "expected": "12",
+      "status": "PASS",
+      "stdout": "12\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/14": {
+      "id": "primitive/14",
+      "covers": [
+        "/"
+      ],
+      "source": "(/ 3 2)",
+      "expected": "1.5",
+      "status": "PASS",
+      "stdout": "1.5\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/15": {
+      "id": "primitive/15",
+      "covers": [
+        "<"
+      ],
+      "source": "(< 1 2) (< 2 2)",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/16": {
+      "id": "primitive/16",
+      "covers": [
+        ">"
+      ],
+      "source": "(> 2 1) (> 2 2)",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/17": {
+      "id": "primitive/17",
+      "covers": [
+        "<="
+      ],
+      "source": "(<= 2 2) (<= 3 2)",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/18": {
+      "id": "primitive/18",
+      "covers": [
+        ">="
+      ],
+      "source": "(>= 2 2) (>= 1 2)",
+      "expected": "true\nfalse",
+      "status": "PASS",
+      "stdout": "true\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/19": {
+      "id": "primitive/19",
+      "covers": [
+        "cn"
+      ],
+      "source": "(cn \"a\" \"b\")",
+      "expected": "\"ab\"",
+      "status": "PASS",
+      "stdout": "\"ab\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/20": {
+      "id": "primitive/20",
+      "covers": [
+        "str"
+      ],
+      "source": "(str symbol) (str 42)",
+      "expected": "\"symbol\"\n\"42\"",
+      "status": "PASS",
+      "stdout": "\"symbol\"\n\"42\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/21": {
+      "id": "primitive/21",
+      "covers": [
+        "pos"
+      ],
+      "source": "(pos \"abc\" 1)",
+      "expected": "\"b\"",
+      "status": "PASS",
+      "stdout": "\"b\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/22": {
+      "id": "primitive/22",
+      "covers": [
+        "tlstr"
+      ],
+      "source": "(tlstr \"abc\")",
+      "expected": "\"bc\"",
+      "status": "PASS",
+      "stdout": "\"bc\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/23": {
+      "id": "primitive/23",
+      "covers": [
+        "n->string"
+      ],
+      "source": "(n->string 65)",
+      "expected": "\"A\"",
+      "status": "PASS",
+      "stdout": "\"A\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/24": {
+      "id": "primitive/24",
+      "covers": [
+        "string->n"
+      ],
+      "source": "(string->n \"A\")",
+      "expected": "65",
+      "status": "PASS",
+      "stdout": "65\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/25": {
+      "id": "primitive/25",
+      "covers": [
+        "<-address",
+        "address->"
+      ],
+      "source": "(let V (absvector 1) (let X (address-> V 0 42) (<-address V 0)))",
+      "expected": "42",
+      "status": "PASS",
+      "stdout": "42\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/26": {
+      "id": "primitive/26",
+      "covers": [
+        "simple-error",
+        "error-to-string"
+      ],
+      "source": "(trap-error (simple-error \"message\") (lambda E (error-to-string E)))",
+      "expected": "\"message\"",
+      "status": "PASS",
+      "stdout": "\"message\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "primitive/27": {
+      "id": "primitive/27",
+      "covers": [
+        "shen.char-stinput?",
+        "shen.char-stoutput?"
+      ],
+      "source": "(shen.char-stinput? ()) (shen.char-stoutput? ())",
+      "expected": "false\nfalse",
+      "status": "PASS",
+      "stdout": "false\nfalse\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/open": {
+      "id": "arity/open",
+      "source": "(trap-error (open 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/read-byte": {
+      "id": "arity/read-byte",
+      "source": "(trap-error (read-byte 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/write-byte": {
+      "id": "arity/write-byte",
+      "source": "(trap-error (write-byte 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/close": {
+      "id": "arity/close",
+      "source": "(trap-error (close 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/get-time": {
+      "id": "arity/get-time",
+      "source": "(trap-error (get-time 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/cons": {
+      "id": "arity/cons",
+      "source": "(trap-error (cons 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/hd": {
+      "id": "arity/hd",
+      "source": "(trap-error (hd 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/tl": {
+      "id": "arity/tl",
+      "source": "(trap-error (tl 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/cons?": {
+      "id": "arity/cons?",
+      "source": "(trap-error (cons? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/number?": {
+      "id": "arity/number?",
+      "source": "(trap-error (number? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/string?": {
+      "id": "arity/string?",
+      "source": "(trap-error (string? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/absvector?": {
+      "id": "arity/absvector?",
+      "source": "(trap-error (absvector? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/intern": {
+      "id": "arity/intern",
+      "source": "(trap-error (intern 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/set": {
+      "id": "arity/set",
+      "source": "(trap-error (set 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/value": {
+      "id": "arity/value",
+      "source": "(trap-error (value 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/=": {
+      "id": "arity/=",
+      "source": "(trap-error (= 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/+": {
+      "id": "arity/+",
+      "source": "(trap-error (+ 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/-": {
+      "id": "arity/-",
+      "source": "(trap-error (- 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/*": {
+      "id": "arity/*",
+      "source": "(trap-error (* 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity//": {
+      "id": "arity//",
+      "source": "(trap-error (/ 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/<": {
+      "id": "arity/<",
+      "source": "(trap-error (< 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/>": {
+      "id": "arity/>",
+      "source": "(trap-error (> 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/<=": {
+      "id": "arity/<=",
+      "source": "(trap-error (<= 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/>=": {
+      "id": "arity/>=",
+      "source": "(trap-error (>= 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/cn": {
+      "id": "arity/cn",
+      "source": "(trap-error (cn 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/str": {
+      "id": "arity/str",
+      "source": "(trap-error (str 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/pos": {
+      "id": "arity/pos",
+      "source": "(trap-error (pos 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/tlstr": {
+      "id": "arity/tlstr",
+      "source": "(trap-error (tlstr 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/n->string": {
+      "id": "arity/n->string",
+      "source": "(trap-error (n->string 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/string->n": {
+      "id": "arity/string->n",
+      "source": "(trap-error (string->n 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/absvector": {
+      "id": "arity/absvector",
+      "source": "(trap-error (absvector 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/<-address": {
+      "id": "arity/<-address",
+      "source": "(trap-error (<-address 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/address->": {
+      "id": "arity/address->",
+      "source": "(trap-error (address-> 0 0 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/simple-error": {
+      "id": "arity/simple-error",
+      "source": "(trap-error (simple-error 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/error-to-string": {
+      "id": "arity/error-to-string",
+      "source": "(trap-error (error-to-string 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/shen.char-stinput?": {
+      "id": "arity/shen.char-stinput?",
+      "source": "(trap-error (shen.char-stinput? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/shen.char-stoutput?": {
+      "id": "arity/shen.char-stoutput?",
+      "source": "(trap-error (shen.char-stoutput? 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/eval-kl": {
+      "id": "arity/eval-kl",
+      "source": "(trap-error (eval-kl 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "arity/thaw": {
+      "id": "arity/thaw",
+      "source": "(trap-error (thaw 0 0) (lambda E caught))",
+      "expected": "caught",
+      "status": "PASS",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "dispatch/eval-kl": {
+      "id": "dispatch/eval-kl",
+      "source": "(eval-kl (cons + (cons 20 (cons 22 ()))))",
+      "expected": "42",
+      "status": "PASS",
+      "stdout": "42\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "dispatch/thaw": {
+      "id": "dispatch/thaw",
+      "source": "(thaw (freeze 42))",
+      "expected": "42",
+      "status": "PASS",
+      "stdout": "42\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  },
+  "binary_sha256": "38952a6732f627f57a2069f20912c55e292564aa03c79e2d528350252aff9d4a",
+  "counts": {
+    "PASS": 68,
+    "FAIL": 0,
+    "UNKNOWN": 0
+  },
+  "status": "PASS"
+}

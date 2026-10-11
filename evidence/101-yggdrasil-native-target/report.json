@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "build_exit_code": 0,
+  "run_exit_code": 0,
+  "expected_stdout": "hello from shaken shen\n",
+  "actual_stdout": "hello from shaken shen\n",
+  "isolated_cwd": true,
+  "SHEN_KOKA_ROOT": "/nonexistent",
+  "target": "koka-native",
+  "yggdrasil_binary_sha256": "816f9ae02b233a0229e093460f4b3fd125f4b90d4a935d41f2dff69a4229d402",
+  "host_binary_sha256": "ee93a4477a36129ff8ed0a5e05e770f2eb76ccd19b2738e1a4cf6da0d0b23729",
+  "binary_sha256": "a8d31dc56dbabd42376a82a79be01f11163b3d60e2cc9ae6789a42397b0b7374",
+  "builder_registry_sha256": "a85e87642bd7d49513665f33c66964384636a89466550805c9af0ad910af8d37"
+}

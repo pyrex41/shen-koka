@@ -67,3 +67,23 @@ and compiled conditional checks. 081 reproduces a huge vector request wrongly
 returning a vector; 083 passes 43 interpreter and 68 primitive checks after its
 range repair. 084/085 validate the rebuilt Nix package and all 142 assertions.
 086 passes all 43 compiled checks with the same primitive repair.
+
+
+087 records full native build 003 reaching its per-module timeout after fixing
+Nil inference. 088/089 are invalid previous-report path invocations and contain
+no assertion results; corrected attempt 090 retains all 142 native assertions
+UNKNOWN. 091 repeats the installed interpreter's 134 + 8 PASS. 092 passes the
+interpreter-backed initializer/order fixture. 093 shows -O1 alone also times out.
+094 passes 43 depth-six native cases. 095 retains the missing next native artifact
+as 134 + 8 UNKNOWN. 096 passes 43 native cases with the cache workaround; 097
+proves identical-source dependency reuse. 098 passes 43 interpreter and 68
+primitive checks. 100 passes the direct-native initializer/order fixture.
+104 checks that an invalid previous-report path is rejected before execution.
+
+099 passes all 134 canonical and eight extension assertions with the rebuilt
+cache-helper runtime, without UNKNOWN or regressions. 101 passes the actual
+Yggdrasil koka-native target build and isolated execution; publication identity
+is retained. 105 confirms preserved reference heads and clean pinned worktrees.
+106 is the missing native-kernel-004 baseline (134 + 8 UNKNOWN). 107 retains
+Bifrost outputs without independently captured exit codes; corrected 108 passes
+all 17 cells with both launcher and strict checker exiting zero.
