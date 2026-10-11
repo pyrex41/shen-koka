@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-c",
+        "import os,time,pathlib; print(\"compiler-output-before-cancel\",flush=True); child=os.fork();\nif child==0: time.sleep(60)\nelse: pathlib.Path('/workspace/scratch/3e502de53f0d/shen-koka/evidence/113-native-cancellation-control/CANCEL').write_text(\"stop\"); time.sleep(60)"
+      ],
+      "exit_code": 130,
+      "cancelled": true,
+      "resources": {
+        "seconds": 1.002565210001194,
+        "children_peak_rss_high_water_bytes": 10747904,
+        "child_user_seconds": 0.023583,
+        "child_system_seconds": 0.016916,
+        "memory_events_before": {
+          "low": 0,
+          "high": 0,
+          "max": 70456,
+          "oom": 2,
+          "oom_kill": 1,
+          "oom_group_kill": 0
+        },
+        "memory_events_after": {
+          "low": 0,
+          "high": 0,
+          "max": 70456,
+          "oom": 2,
+          "oom_kill": 1,
+          "oom_group_kill": 0
+        }
+      }
+    }
+  ],
+  "exit_code": 130,
+  "total_steps": 1
+}

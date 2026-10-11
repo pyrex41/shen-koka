@@ -1,0 +1,59 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/bifrost-koka",
+    "-impls",
+    "shen-lua,shen-go,shen-koka",
+    "-only",
+    "load-toplevel-echo",
+    "-json"
+  ],
+  "case_denominator": 1,
+  "profiles": {
+    "cold": {
+      "exit_code": 0,
+      "case": {
+        "verdict": "PASS",
+        "detail": "",
+        "impls": {
+          "shen-go": {
+            "status": "PASS",
+            "norm": "\"PROBE\"\n42\n\nloaded"
+          },
+          "shen-koka": {
+            "status": "PASS",
+            "norm": "\"PROBE\"\n42\n\nloaded"
+          },
+          "shen-lua": {
+            "status": "PASS",
+            "norm": "\"PROBE\"\n42\n\nloaded"
+          }
+        }
+      },
+      "cache_files": 22
+    },
+    "warm": {
+      "exit_code": 0,
+      "case": {
+        "verdict": "DIVERGE",
+        "detail": "KNOWN DIVERGENCE [s42-load-echo-format]: \"\\\"PROBE\\\"\\n42\\n\\nloaded\" <- shen-go,shen-koka; \"\\\"PROBE\\\"\\n42\\nloaded\" <- shen-lua",
+        "impls": {
+          "shen-go": {
+            "status": "DIVERGE",
+            "norm": "\"PROBE\"\n42\n\nloaded"
+          },
+          "shen-koka": {
+            "status": "DIVERGE",
+            "norm": "\"PROBE\"\n42\n\nloaded"
+          },
+          "shen-lua": {
+            "status": "DIVERGE",
+            "norm": "\"PROBE\"\n42\nloaded"
+          }
+        }
+      },
+      "cache_files": 22
+    }
+  },
+  "cache_profile": "same isolated SHEN_FASL_DIR, initially absent; original checkouts untouched",
+  "status": "FAIL"
+}

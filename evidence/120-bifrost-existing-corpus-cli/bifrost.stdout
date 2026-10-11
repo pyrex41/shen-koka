@@ -1,0 +1,1280 @@
+{
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "cases": {
+    "append": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "[1 2 3 4]"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "[1 2 3 4]"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "[1 2 3 4]"
+        }
+      }
+    },
+    "boolean-intern-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "boolean-number": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "boolean-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "bounded-tail-sum-file": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "32004000"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "32004000"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "32004000"
+        }
+      }
+    },
+    "closure-curried": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "closure-simple": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "comparison": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "element-no": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "element-yes": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "empty-cons": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "empty-nil": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "eq-false-intern-false": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "eq-int-float": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "eq-nil": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "eq-true-intern-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "error-message-head": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "head expects a non-empty list"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "head expects a non-empty list"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "head expects a non-empty list"
+        }
+      }
+    },
+    "eval-prints-value": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "fix-point": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "128"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "128"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "128"
+        }
+      }
+    },
+    "float-add-clean": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "4.75"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "4.75"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "4.75"
+        }
+      }
+    },
+    "float-add-imprecise": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "0.30000000000000004"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "0.30000000000000004"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "0.30000000000000004"
+        }
+      }
+    },
+    "freeze-in-lambda": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "freeze-thaw": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "9"
+        }
+      }
+    },
+    "hash-agrees-with-equality": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "hdstr": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "a"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "a"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "a"
+        }
+      }
+    },
+    "hush-file-write": {
+      "verdict": "FAIL",
+      "detail": "disagreement under -q/*hush* file write: empty \u003c- shen-koka; written \u003c- shen-go,shen-lua",
+      "impls": {
+        "shen-go": {
+          "status": "FAIL",
+          "norm": "written"
+        },
+        "shen-koka": {
+          "status": "FAIL",
+          "norm": "empty"
+        },
+        "shen-lua": {
+          "status": "FAIL",
+          "norm": "written"
+        }
+      }
+    },
+    "int-div-exact": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "int-div-to-float": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "2.5"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2.5"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "2.5"
+        }
+      }
+    },
+    "int-div-zero": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        }
+      }
+    },
+    "int-mul": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "integer-float-frac": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "integer-float-integral": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "integer-int": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "length": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "5"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "5"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "5"
+        }
+      }
+    },
+    "load-toplevel-echo": {
+      "verdict": "DIVERGE",
+      "detail": "KNOWN DIVERGENCE [s42-load-echo-format]: \"\\\"PROBE\\\"\\n42\\n\\nloaded\" \u003c- shen-go,shen-koka; \"\\\"PROBE\\\"\\n42\\nloaded\" \u003c- shen-lua",
+      "impls": {
+        "shen-go": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-koka": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-lua": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\nloaded"
+        }
+      }
+    },
+    "map-square": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "[1 4 9 16]"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "[1 4 9 16]"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "[1 4 9 16]"
+        }
+      }
+    },
+    "n-to-string": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "A"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "A"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "A"
+        }
+      }
+    },
+    "not-false": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "prolog-grandparent": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "bart"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "bart"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "bart"
+        }
+      }
+    },
+    "put-get-property-vector": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "recursion-fib-file": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "6765"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "6765"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "6765"
+        }
+      }
+    },
+    "reverse": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "[5 4 3 2 1]"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "[5 4 3 2 1]"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "[5 4 3 2 1]"
+        }
+      }
+    },
+    "stdin-eof-clean-exit": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "Shen, www.shenlanguage.org, copyright (C) 2010-2024, Mark Tarver\nversion: S42, language: Go, platform: AOT+interpreter go1.27.0\nport 1.0.0-rc1, ported by Arthur Mao\n\n(0-)"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "Shen, www.shenlanguage.org, copyright (C) 2010-2024, Mark Tarver\nversion: S42, language: Koka, platform: Koka 3.2.3 0.0.1\nport shen-koka, ported by Shen-Koka contributors\n\n(0-)"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "(1-)"
+        }
+      }
+    },
+    "string-concat": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "foobar"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "foobar"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "foobar"
+        }
+      }
+    },
+    "string-to-n": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "65"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "65"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "65"
+        }
+      }
+    },
+    "subtraction": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "symbol-ident": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "symbol-intern-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "symbol-not-boolean": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "tail-call-countdown": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "done"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "done"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "done"
+        }
+      }
+    },
+    "tlstr": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "ello"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "ello"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "ello"
+        }
+      }
+    },
+    "trap-cps-script": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "trap-error-catches": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "CAUGHT"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "CAUGHT"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "CAUGHT"
+        }
+      }
+    },
+    "trap-error-message": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "boom"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "boom"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "boom"
+        }
+      }
+    },
+    "trap-error-operand-raises": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "trap-error-value-uses-exn": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "caught"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "caught"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "caught"
+        }
+      }
+    },
+    "tuple-fst": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "1"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "1"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "1"
+        }
+      }
+    },
+    "tuple-not-vector": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "tuple-snd": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "tuple?": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "variable-lower": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "variable-upper": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "vector-limit": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "3"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "3"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "3"
+        }
+      }
+    },
+    "vector-roundtrip": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "9"
+        }
+      }
+    },
+    "version-banner-contains": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42 (port (\"Go\" \"1.0.0-rc1\") implementation (\"AOT+interpreter\" \"go1.27.0\"))"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen-koka 0.0.1 experimental; pinned Shen 42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "version-expr-42": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                       shen-go   shen-lua  shen-koka verdict
+----------------------------------------------------------------
+int-mul                    PASS      PASS      PASS      PASS
+int-div-exact              PASS      PASS      PASS      PASS
+int-div-to-float           PASS      PASS      PASS      PASS
+float-add-clean            PASS      PASS      PASS      PASS
+float-add-imprecise        PASS      PASS      PASS      PASS
+subtraction                PASS      PASS      PASS      PASS
+comparison                 PASS      PASS      PASS      PASS
+eval-prints-value          PASS      PASS      PASS      PASS
+version-expr-42            PASS      PASS      PASS      PASS
+version-banner-contains    PASS      PASS      PASS      PASS
+stdin-eof-clean-exit       PASS      PASS      PASS      PASS
+closure-simple             PASS      PASS      PASS      PASS
+closure-curried            PASS      PASS      PASS      PASS
+fix-point                  PASS      PASS      PASS      PASS
+recursion-fib-file         PASS      PASS      PASS      PASS
+tail-call-countdown        PASS      PASS      PASS      PASS
+bounded-tail-sum-file      PASS      PASS      PASS      PASS
+trap-error-operand-raises  PASS      PASS      PASS      PASS
+trap-error-value-uses-exn  PASS      PASS      PASS      PASS
+freeze-thaw                PASS      PASS      PASS      PASS
+freeze-in-lambda           PASS      PASS      PASS      PASS
+trap-cps-script            PASS      PASS      PASS      PASS
+hush-file-write            FAIL      FAIL      FAIL      FAIL
+load-toplevel-echo         DVRG      DVRG      DVRG      DIVERGE
+eq-int-float               PASS      PASS      PASS      PASS
+eq-nil                     PASS      PASS      PASS      PASS
+eq-true-intern-true        PASS      PASS      PASS      PASS
+eq-false-intern-false      PASS      PASS      PASS      PASS
+boolean-intern-true        PASS      PASS      PASS      PASS
+symbol-intern-true         PASS      PASS      PASS      PASS
+hash-agrees-with-equality  PASS      PASS      PASS      PASS
+trap-error-catches         PASS      PASS      PASS      PASS
+trap-error-message         PASS      PASS      PASS      PASS
+error-message-head         PASS      PASS      PASS      PASS
+int-div-zero               PASS      PASS      PASS      PASS
+append                     PASS      PASS      PASS      PASS
+reverse                    PASS      PASS      PASS      PASS
+map-square                 PASS      PASS      PASS      PASS
+length                     PASS      PASS      PASS      PASS
+string-concat              PASS      PASS      PASS      PASS
+tlstr                      PASS      PASS      PASS      PASS
+string-to-n                PASS      PASS      PASS      PASS
+n-to-string                PASS      PASS      PASS      PASS
+integer-int                PASS      PASS      PASS      PASS
+integer-float-integral     PASS      PASS      PASS      PASS
+integer-float-frac         PASS      PASS      PASS      PASS
+boolean-true               PASS      PASS      PASS      PASS
+boolean-number             PASS      PASS      PASS      PASS
+symbol-not-boolean         PASS      PASS      PASS      PASS
+symbol-ident               PASS      PASS      PASS      PASS
+empty-nil                  PASS      PASS      PASS      PASS
+empty-cons                 PASS      PASS      PASS      PASS
+not-false                  PASS      PASS      PASS      PASS
+variable-upper             PASS      PASS      PASS      PASS
+variable-lower             PASS      PASS      PASS      PASS
+element-yes                PASS      PASS      PASS      PASS
+element-no                 PASS      PASS      PASS      PASS
+prolog-grandparent         PASS      PASS      PASS      PASS
+put-get-property-vector    PASS      PASS      PASS      PASS
+tuple-fst                  PASS      PASS      PASS      PASS
+tuple-snd                  PASS      PASS      PASS      PASS
+tuple?                     PASS      PASS      PASS      PASS
+tuple-not-vector           PASS      PASS      PASS      PASS
+vector-limit               PASS      PASS      PASS      PASS
+vector-roundtrip           PASS      PASS      PASS      PASS
+hdstr                      PASS      PASS      PASS      PASS
+----------------------------------------------------------------
+
+KNOWN DIVERGENCES (documented differences; do NOT fail the run):
+  * load-toplevel-echo: KNOWN DIVERGENCE [s42-load-echo-format]: "\"PROBE\"\n42\n\nloaded" <- shen-go,shen-koka; "\"PROBE\"\n42\nloaded" <- shen-lua
+
+FAILURES:
+  ! hush-file-write: disagreement under -q/*hush* file write: empty <- shen-koka; written <- shen-go,shen-lua
+
+SUMMARY: 64 pass, 1 diverge (known), 1 FAIL  across 3 impls
+==============================================================================

@@ -87,3 +87,17 @@ is retained. 105 confirms preserved reference heads and clean pinned worktrees.
 106 is the missing native-kernel-004 baseline (134 + 8 UNKNOWN). 107 retains
 Bifrost outputs without independently captured exit codes; corrected 108 passes
 all 17 cells with both launcher and strict checker exiting zero.
+
+
+102/103 retain interrupted native build 004 and its 134 + 8 UNKNOWN suite.
+109 records exact-tree publication of the all-pass cache checkpoint. 110 runs
+all 66 built-in light Bifrost cases across three pinned ports: 57 PASS / 9 FAIL;
+the heavy case remains UNKNOWN. 111 retains a cache-probe naming failure; 112
+proves reuse after fixing that probe. 113 checks durable cancellation and child
+cleanup. 114 catches a sentinel-rendering regression in the first launcher
+candidate; its exact source is retained. Its full suite passes in 115, but that
+alone does not qualify the failed CLI observation. The corrected CLI passes ten
+checks (116), all 134 + 8 assertions (117), and all 17 seed cells (119). 118 is the
+missing native-kernel-005 baseline, all 142 UNKNOWN. 120 improves the light corpus
+to 64 PASS / 1 FAIL / 1 DIVERGE. 121 isolates hush/file behavior; 122 reproduces
+Lua's cold/warm load-echo change while Koka/Go observations stay stable.

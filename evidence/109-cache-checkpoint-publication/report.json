@@ -1,0 +1,11 @@
+{
+  "repository": "pyrex41/shen-koka",
+  "branch": "implement/native-compiler",
+  "local_commit": "cdda9f9165811367e1265c778e16826d248f466e",
+  "published_commit": "d3e034f8ce214b17bff5370c579b5295f49af434",
+  "tree_sha": "9a20113920298b36b212f9cdf08acd101826a727",
+  "trees_identical": true,
+  "primary_evidence": "099-runtime-cache-full",
+  "runtime_source_mismatches": [],
+  "status": "PASS"
+}

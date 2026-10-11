@@ -1,0 +1,2 @@
+COMMAND ["/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3", "-c", "import os,time,pathlib; print(\"compiler-output-before-cancel\",flush=True); child=os.fork();\nif child==0: time.sleep(60)\nelse: pathlib.Path('/workspace/scratch/3e502de53f0d/shen-koka/evidence/113-native-cancellation-control/CANCEL').write_text(\"stop\"); time.sleep(60)"]
+compiler-output-before-cancel

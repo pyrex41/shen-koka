@@ -1,0 +1,67 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/bifrost-koka",
+    "-impls",
+    "shen-lua,shen-go,shen-koka",
+    "-json"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 156.44226664300368,
+  "case_denominator": 66,
+  "required_implementations": [
+    "shen-lua",
+    "shen-go",
+    "shen-koka"
+  ],
+  "cell_denominator": 198,
+  "cwd_profile": "temporary directory with pristine Bifrost programs copy",
+  "bifrost_source_commit": "cbf0bd444ad6fba325ffdf7b64c4367e5f7dd882",
+  "corpus_sha256": {
+    "cases/errors.json": "f5f3040497fe7916a8caa44295f90b8f353aa5afbf5fe4243e248348bfcba3a8",
+    "cases/divergences.json": "cbd5f2f39a75b2436a37134d63af09ce2f8ccb3951359b446ec601c6600850ec",
+    "cases/equality-intern.json": "b8a4a94f507258abe1ada5bfc9b5dd68761505b3093632ef0b75b279c4764f42",
+    "cases/arithmetic.json": "a89cd01d45bc98e673fae1ec2c3e8a15d47673933300dcdb6148cf1413f22eb7",
+    "cases/closures-recursion.json": "8a66df4c759ac8764693ed1c050fc946358553bb716bc153da4d56004165cb04",
+    "cases/properties.json": "402b0c2b319cb30b978823f0232161fa7393817fa61e7ac28ab9380ff7631f2c",
+    "cases/lists-strings.json": "323cf33acb59c084ca936fd481a9889ca4e4b5c6bb60cda212826c56b649a84d",
+    "cases/control-more.json": "1b4c4291b7b2fa8faf7a48d010a590c8f0cbd2a36338b63a5f2396d7d134e2a1",
+    "cases/prolog.json": "48bf2b1908d13fa8af74f7f2209769a4e53477233112f3efccd27971e6c22a14",
+    "cases/yggdrasil.json": "f37e4f7fce6c1a7e041d8f6c5067dc523298ca719779dcc8bb1d566c9a9ad47d",
+    "cases/cli.json": "1a29f797cff30114d8bbabbea7e251a7ad308550ee87881819edf393c4310740",
+    "cases/tuples-vectors.json": "7791ed7ff71ec34a483d093602f51d5480fc59aeba39a8f00b467f5ba4175f75",
+    "cases/predicates.json": "6b739715f3577601b32ab81e9a67e282495ff279f2636da42c41522b84be72ae",
+    "programs/trap-cps.shen": "45774f24b4d4733d6dc1274de6f5d44133eb5e9b8177f6588d05025269e89ef2",
+    "programs/fib.shen": "f8c8d1cbe0c413b71a6e09c41c5d26955a3300969d2390ba4996fa5ffca2be02",
+    "programs/load-echo-probe.shen": "1b090262eac83dee7b65d17601e22ef764cca455c9b3cdc2609b531ab2af7bdf",
+    "programs/properties.shen": "0eacf0a46cfbf105281d10e986eeef7859c6685915ce8a8dfcabfe30ecf9a8d1",
+    "programs/joy-sum.shen": "3f12682ae6776b241add52d713f692442759f6c7a647e3f5bce3768dd0f484d5",
+    "programs/countdown.shen": "8581aadce577bbdea124722abcd36bb0d712089dad84c8653cf5678f8789602e",
+    "programs/hash-eq.shen": "9b08881a2fe9fbf1f4081af3bc366f29f126ff063cde87f68cbb5f8885653bab",
+    "programs/prolog.shen": "ec493f0b9696f93db9622527523e98dff2e0e4a1363963b3f0b11a5f472a21a5"
+  },
+  "case_counts": {
+    "PASS": 57,
+    "FAIL": 9,
+    "DIVERGE": 0,
+    "UNKNOWN": 0
+  },
+  "missing_cases": [],
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "status": "FAIL",
+  "cell_counts": {
+    "PASS": 185,
+    "FAIL": 13,
+    "DIVERGE": 0,
+    "SKIP": 0,
+    "UNKNOWN": 0
+  },
+  "heavy_case_denominator": 1,
+  "heavy_status": "UNKNOWN",
+  "scope": "66 light cases; heavy stage-1 lane is not executed and remains UNKNOWN",
+  "all_corpus_case_denominator": 67
+}

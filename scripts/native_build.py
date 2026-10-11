@@ -21,27 +21,42 @@ def memory_events():
     try:return {k:int(v) for k,v in (line.split() for line in pathlib.Path('/sys/fs/cgroup/memory.events').read_text().splitlines())}
     except OSError:return None
 
-def run_compiler(command,timeout):
+def run_compiler(command,timeout,cancel_path=None):
     start=time.monotonic();before=memory_events();usage_before=resource.getrusage(resource.RUSAGE_CHILDREN)
     p=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True)
-    timed_out=False
-    try:output,_=p.communicate(timeout=timeout)
-    except subprocess.TimeoutExpired:
-        timed_out=True;os.killpg(p.pid,signal.SIGKILL);output,_=p.communicate()
+    timed_out=False;cancelled=False
+    while True:
+        remaining=timeout-(time.monotonic()-start)
+        cancelled=cancel_path is not None and pathlib.Path(cancel_path).exists()
+        if remaining<=0 or cancelled:
+            timed_out=not cancelled
+            try:os.killpg(p.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+            output,_=p.communicate();break
+        try:output,_=p.communicate(timeout=min(1,remaining));break
+        except subprocess.TimeoutExpired:pass
+        except KeyboardInterrupt:
+            cancelled=True
+            try:os.killpg(p.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+            output,_=p.communicate();break
     usage=resource.getrusage(resource.RUSAGE_CHILDREN)
     metrics={'seconds':time.monotonic()-start,'children_peak_rss_high_water_bytes':usage.ru_maxrss*(1 if sys.platform=='darwin' else 1024),'child_user_seconds':usage.ru_utime-usage_before.ru_utime,'child_system_seconds':usage.ru_stime-usage_before.ru_stime,'memory_events_before':before,'memory_events_after':memory_events()}
-    return types.SimpleNamespace(returncode=124 if timed_out else p.returncode,
-                                 stdout=output.decode(errors='replace'),timed_out=timed_out,resources=metrics)
+    return types.SimpleNamespace(returncode=130 if cancelled else 124 if timed_out else p.returncode,
+                                 stdout=output.decode(errors='replace'),timed_out=timed_out,cancelled=cancelled,resources=metrics)
 
-def run_compilation_steps(commands,timeout,per_step=300):
+def run_compilation_steps(commands,timeout,per_step=300,output=None):
     deadline=time.monotonic()+timeout;logs=[];steps=[];code=0
     for i,command in enumerate(commands):
         remaining=deadline-time.monotonic()
         if remaining<=0:code=124;break
         print('Native build step %d/%d: %s'%(i+1,len(commands),command[-1]),flush=True)
-        r=run_compiler(command,min(remaining,per_step));code=r.returncode
-        steps.append({'argv':command,'exit_code':code,'resources':r.resources})
+        r=run_compiler(command,min(remaining,per_step),None if output is None else pathlib.Path(output)/'CANCEL');code=r.returncode
+        steps.append({'argv':command,'exit_code':code,'cancelled':r.cancelled,'resources':r.resources})
         logs.append('COMMAND '+json.dumps(command)+'\n'+r.stdout)
+        if output is not None:
+            pathlib.Path(output,'compile.log').write_text('\n'.join(logs))
+            pathlib.Path(output,'progress.json').write_text(json.dumps({'steps':steps,'exit_code':code,'total_steps':len(commands)},indent=2)+'\n')
         if code:break
     return types.SimpleNamespace(returncode=code,stdout='\n'.join(logs),steps=steps,timed_out=code==124)
 

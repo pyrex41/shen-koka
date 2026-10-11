@@ -1,0 +1,76 @@
+{
+  "source": "(let S (open \"output.bin\" out) (do (pr \"hello\" S) (close S)))\n",
+  "expectation": "existing Bifrost hush-file-write contract, retained without changing the pinned kernel",
+  "kernel_writer_sha256": "3894e6c7d3961d2715fcc2aa9ea7d28805790b0bbdd072966b126fc95ecaf51d",
+  "observations": {
+    "shen-koka-normal": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+        "script",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-l5ibvbz4/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "68656c6c6f",
+      "expected_file_hex": "68656c6c6f",
+      "status": "PASS"
+    },
+    "shen-koka-quiet": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+        "eval",
+        "-q",
+        "-l",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-mj3srt3l/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "",
+      "expected_file_hex": "68656c6c6f",
+      "status": "FAIL"
+    },
+    "shen-go-normal": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/reference-shen-go",
+        "script",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-suom7285/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "68656c6c6f",
+      "expected_file_hex": "68656c6c6f",
+      "status": "PASS"
+    },
+    "shen-go-quiet": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/reference-shen-go",
+        "eval",
+        "-q",
+        "-l",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-fhcql2l6/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "68656c6c6f",
+      "expected_file_hex": "68656c6c6f",
+      "status": "PASS"
+    },
+    "shen-lua-normal": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/pinned/shen-lua/bin/shen",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-ll7u373f/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "68656c6c6f",
+      "expected_file_hex": "68656c6c6f",
+      "status": "PASS"
+    },
+    "shen-lua-quiet": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/pinned/shen-lua/bin/shen",
+        "-q",
+        "/tmp/nix-shell.F8z3FW/shen-hush-file-nju7bwjz/program.shen"
+      ],
+      "exit_code": 0,
+      "file_hex": "68656c6c6f",
+      "expected_file_hex": "68656c6c6f",
+      "status": "PASS"
+    }
+  }
+}

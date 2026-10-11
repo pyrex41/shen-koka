@@ -1,0 +1,39 @@
+{
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "cases": {
+    "load-toplevel-echo": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                shen-go   shen-lua  shen-koka verdict
+---------------------------------------------------------
+load-toplevel-echo  PASS      PASS      PASS      PASS
+---------------------------------------------------------
+
+SUMMARY: 1 pass, 0 diverge (known), 0 FAIL  across 3 impls
+==============================================================================

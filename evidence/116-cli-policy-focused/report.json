@@ -1,0 +1,154 @@
+{
+  "binary_sha256": "c4ab47efca1064700d5b87b103a557364af29078b447a4975aba55f0c09a18e2",
+  "cases": {
+    "string-output": {
+      "args": [
+        "eval",
+        "-e",
+        "(cn \"foo\" \"bar\")"
+      ],
+      "source": null,
+      "expected_stdout": "foobar\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "foobar\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fail-sentinel": {
+      "args": [
+        "eval",
+        "-e",
+        "(trap-error (fail) (/. E unexpected))"
+      ],
+      "source": null,
+      "expected_stdout": "shen.fail!\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "shen.fail!\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "ordered-actions": {
+      "args": [
+        "eval",
+        "-e",
+        "(set *cli-order* 1)",
+        "-e",
+        "(value *cli-order*)"
+      ],
+      "source": null,
+      "expected_stdout": "1\n1\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "1\n1\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "multiple-forms": {
+      "args": [
+        "eval",
+        "-e",
+        "(set *cli-multi* 1) (+ (value *cli-multi*) 1)"
+      ],
+      "source": null,
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "2\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "set-action": {
+      "args": [
+        "eval",
+        "--set",
+        "*cli-value*",
+        "9",
+        "--eval",
+        "(value *cli-value*)"
+      ],
+      "source": null,
+      "expected_stdout": "9\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "9\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "quiet-still-evaluates": {
+      "args": [
+        "eval",
+        "-q",
+        "-e",
+        "(do (write-byte 81 (stoutput)) 42)"
+      ],
+      "source": null,
+      "expected_stdout": "Q",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "Q",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "script-no-echo": {
+      "args": [
+        "script",
+        "{script}"
+      ],
+      "source": "(output \"only-once~%\")",
+      "expected_stdout": "only-once\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "only-once\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "script-argv": {
+      "args": [
+        "script",
+        "{script}",
+        "alpha",
+        "beta"
+      ],
+      "source": "(if (= (tl (value *argv*)) [\"alpha\" \"beta\"]) (output \"argv-ok~%\") (simple-error \"bad argv\"))",
+      "expected_stdout": "argv-ok\n",
+      "expected_exit_code": 0,
+      "status": "PASS",
+      "stdout": "argv-ok\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "script-error": {
+      "args": [
+        "script",
+        "{script}"
+      ],
+      "source": "(simple-error \"boom\")",
+      "expected_stdout": "shen-koka: boom\n",
+      "expected_exit_code": 1,
+      "status": "PASS",
+      "stdout": "shen-koka: boom\n",
+      "stderr": "",
+      "exit_code": 1
+    },
+    "invalid-option": {
+      "args": [
+        "eval",
+        "--bogus"
+      ],
+      "source": null,
+      "expected_stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "expected_exit_code": 1,
+      "status": "PASS",
+      "stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "stderr": "",
+      "exit_code": 1
+    }
+  },
+  "counts": {
+    "PASS": 10,
+    "FAIL": 0,
+    "UNKNOWN": 0
+  }
+}

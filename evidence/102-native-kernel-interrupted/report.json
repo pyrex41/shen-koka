@@ -1,0 +1,12 @@
+{
+  "status": "UNKNOWN",
+  "exit_code": 130,
+  "last_observed_started_step": 78,
+  "total_steps": 288,
+  "native_callbacks": 4591,
+  "native_artifact": "artifacts/native-kernel-004",
+  "binary_produced": false,
+  "final_build_record_produced": false,
+  "reason": "explicit session interruption to restart using reusable importing batches",
+  "limitation": "The old builder buffered compiler logs and final metadata until completion; interruption lost those buffers. No Shen assertion reports were produced. Completed cache products remain available to the compiler."
+}

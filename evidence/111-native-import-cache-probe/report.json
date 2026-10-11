@@ -1,0 +1,41 @@
+{
+  "command": [
+    "koka",
+    "-j1",
+    "-i/tmp/shen-koka-native-anf/src",
+    "-i/tmp/shen-koka-native-anf/generated",
+    "-O2",
+    "--no-debug",
+    "--builddir=/tmp/shen-koka-resume-probe-cache",
+    "--library",
+    "/tmp/shen-koka-cache-probe.kk"
+  ],
+  "exit_code": 1,
+  "resources": {
+    "seconds": 1.273546461998194,
+    "children_peak_rss_high_water_bytes": 194686976,
+    "child_user_seconds": 1.1485319999999999,
+    "child_system_seconds": 0.44317399999999996,
+    "memory_events_before": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    },
+    "memory_events_after": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    }
+  },
+  "reparsed": [
+    "parse   : /tmp/shen-koka-cache-probe.kk"
+  ],
+  "status": "FAIL",
+  "cache_profile": "copy of stable dependencies and completed klpart0; independent cache, shared source paths unchanged"
+}

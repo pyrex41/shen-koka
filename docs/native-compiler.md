@@ -96,3 +96,18 @@ of every generated module and boot source; the native suite lane checks them.
 The initializer-once, multi-user-file-order fixture passes in interpreter-backed
 (092) and directly compiled (100) standalone artifacts, from empty working
 directories. These checks supplement the complete kernel suite.
+
+
+Explicit Koka library roots are reparsed even with a complete cache. Importing
+batches through tiny roots reuses completed modules (112: 2.09 seconds). The first
+probe had a name collision and is retained as FAIL in 111. Build 004 was
+interrupted at batch 78; its old in-memory log buffers and final build record
+were lost (102), and the full suite remains 134 + 8 UNKNOWN (103). No executable
+or Shen assertion reports were produced by that attempt.
+
+The builder now writes `compile.log` and `progress.json` after each batch and
+checks `OUTPUT/CANCEL` once per second. Creating that file stops the compiler
+process group and returns through normal metadata capture. Control 113 verifies
+that output, progress, and descendant-pipe cleanup survive cancellation. Use
+this file-based control instead of killing the builder process. The next build
+uses importing batches and preserves all generated-source hashes.

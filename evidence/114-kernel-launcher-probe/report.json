@@ -1,0 +1,18 @@
+{
+  "fail": {
+    "source": "(fail)",
+    "expected_stdout": "shen.fail!\n",
+    "stdout": "...\n",
+    "stderr": "",
+    "exit_code": 0,
+    "status": "FAIL"
+  },
+  "string": {
+    "source": "(cn \"foo\" \"bar\")",
+    "expected_stdout": "foobar\n",
+    "stdout": "foobar\n",
+    "stderr": "",
+    "exit_code": 0,
+    "status": "PASS"
+  }
+}

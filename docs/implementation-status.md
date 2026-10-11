@@ -10,14 +10,15 @@ not full-port release qualification.
 | Capability | Evidence | Qualification boundary |
 |---|---|---|
 | KLambda values, lexical closures, currying, redefinition, explicit tail-call machine | 098: 43 focused PASS | Includes million-step self, mutual and indirect calls |
-| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 099: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
+| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 117: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
 | Primitive inventory, positive observations and wrong arities | 098: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
 | Vector aliases, cycles, structural equality and tracing collection | Focused checks and full suite | Long-running memory budgets remain unqualified |
 | Generation-tagged streams | 054 failure; 056/058/057 after repair | Closed handles cannot alias a new stream |
 | Numeric conversions | 061/081 failures; 083/085 after repair | Indices/sizes truncate; character codes reject invalid ranges and fractions |
+| CLI strings, sentinel, ordered eval flags, script arguments and quiet loading | 116: 10 PASS | Original kernel reader/compiler and script launcher retained |
 | Kernel-backed REPL | 032: four probes PASS | EOF, expression, multiline input and recovery |
 | Standard library | 035: installer completed | Individual library operations are not all qualified |
-| Bifrost launcher | 108: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
+| Bifrost launcher | 119: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
 | Direct KL-to-Koka callbacks | 096: 43 compiled checks PASS | Full compiled-kernel suite pending |
 | Yggdrasil standalone hello | 034 interpreter-backed; 101 registered native target PASS | Both run without installed kernel; broader deployment matrix pending |
 | Nix runtime package | 084/085: build, boundary check and 134 + 8 PASS | x86_64 Linux with pinned Nix dependencies |
@@ -28,8 +29,8 @@ hooks absent from S42. No vendored kernel module was edited. The full runtime
 uses original load-time forms; standalone slices use the synthesized manifest
 initializer. Ordinary `(fail)` remains the `shen.fail!` value, distinct from errors.
 
-Attempt 085 runs the immutable Nix-store launcher. Attempt 099 retests the
-cache-helper runtime and preserves both raw streams
+Attempt 085 runs the immutable Nix-store launcher. Attempt 117 retests the
+current CLI and runtime and preserves both raw streams
 and all cumulative counters before reset, and verifies the exact 63-file inventory
 and assertion identities. Its runner source and raw-log hashes were verified. Attempt 084 records the
 installed binary hash and validates it against the installed build manifest.
@@ -100,3 +101,12 @@ Attempt 087 passed that conditional, then hit the next module's five-minute
 compiler limit. Attempt 090 remains 134 + 8 UNKNOWN. Earlier callback splitting
 and a measured cache workaround pass 43 native cases (096); the next full
 compiled-kernel build is in progress and is not yet qualified.
+
+
+The broader built-in Bifrost light corpus is separately qualified: 110 records
+57 PASS / 9 FAIL out of 66; 120 records 64 PASS / 1 FAIL / 1 DIVERGE. The remaining
+file-write mismatch is the unchanged S42 `pr` suppression under `*hush*` (121).
+The load-echo row changed only for Lua; isolated cold/warm runs reproduce that
+reference cache difference (122). Neither difference is normalized away. The
+single heavy stage-1 case is UNKNOWN. These outcomes block full cross-port
+qualification despite the complete primary Shen suite passing.

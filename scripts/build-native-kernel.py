@@ -18,6 +18,12 @@ def main():
  if literal not in (ROOT/'src/shen/boot.kk').read_text():raise ValueError('kernel module order differs from interpreter')
  files=[ROOT/'kernel/klambda'/(n+'.kl') for n in MODULES]
  plan=Compiler().write(out/'generated',[read_kl(f.read_bytes().decode()) for f in files],module_size=a.module_size)
+ # Explicit source roots are always reparsed by Koka. Import each batch through
+ # a tiny root so completed modules can be reused on a bounded retry.
+ batches=[]
+ for i,module in enumerate(plan['modules']):
+  batch='klbatch'+str(i);batches.append(batch)
+  (out/'generated'/(batch+'.kk')).write_text('module '+batch+'\nimport '+module+'\npub inline fun batch-size(): int { '+module+'/callback-count() }\n')
  shutil.copytree(ROOT/'src/shen',out/'src/shen');shutil.copytree(ROOT/'compat',out/'compat')
  main=(ROOT/'src/shen/main.kk').read_text()
  old='boot(w,get-env-value("SHEN_KOKA_ROOT").default("."))'
@@ -33,10 +39,10 @@ def main():
  stage=pathlib.Path('/tmp/shen-koka-native-anf');stage.mkdir(exist_ok=True)
  sync_sources(out/'src',stage/'src');sync_sources(out/'generated',stage/'generated');shutil.copy2(out/'program.kk',stage/'program.kk')
  common=['koka','-j1','-i'+str(stage/'src'),'-i'+str(stage/'generated'),'-O2']+([] if a.debug else ['--no-debug'])+['--builddir='+str(a.cache.resolve() if a.cache else pathlib.Path('/tmp/shen-koka-native-anf-cache'))]
- commands=[common+['--library',str(stage/'generated'/(m+'.kk'))] for m in plan['modules']]
+ commands=[common+['--library',str(stage/'generated'/(m+'.kk'))] for m in batches]
  commands.append(common+['-o',str(stage/'run'),str(stage/'program.kk')])
  start=time.monotonic();print('Compiling '+str(plan['code_count'])+' native kernel callbacks',flush=True)
- r=run_compilation_steps(commands,a.timeout)
+ r=run_compilation_steps(commands,a.timeout,output=out)
  (out/'compile.log').write_text(r.stdout)
  if r.returncode==0:shutil.copy2(stage/'run',out/'native')
  record={'direct_kl_compiler':True,'kernel_forms':sum(map(len,plan['entries'])),'native_callbacks':plan['code_count'],'module_size':a.module_size,'kernel_sha256':{f.name:sha(f) for f in files},'generator_sha256':sha(out/'native_codegen.py'),'flake_lock_sha256':sha(ROOT/'flake.lock'),'compat_sha256':{str(f.relative_to(out/'compat')):sha(f) for f in (out/'compat').rglob('*') if f.is_file()},'runtime_sources':{str(f.relative_to(out/'src')):sha(f) for f in (out/'src').rglob('*') if f.is_file()},'commands':commands,'steps':r.steps,'debug_info':a.debug,'timeout_seconds':a.timeout,'exit_code':r.returncode,'seconds':time.monotonic()-start}

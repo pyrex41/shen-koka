@@ -1,0 +1,42 @@
+{
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "cases": {
+    "load-toplevel-echo": {
+      "verdict": "DIVERGE",
+      "detail": "KNOWN DIVERGENCE [s42-load-echo-format]: \"\\\"PROBE\\\"\\n42\\n\\nloaded\" \u003c- shen-go,shen-koka; \"\\\"PROBE\\\"\\n42\\nloaded\" \u003c- shen-lua",
+      "impls": {
+        "shen-go": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-koka": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\n\nloaded"
+        },
+        "shen-lua": {
+          "status": "DIVERGE",
+          "norm": "\"PROBE\"\n42\nloaded"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                shen-go   shen-lua  shen-koka verdict
+---------------------------------------------------------
+load-toplevel-echo  DVRG      DVRG      DVRG      DIVERGE
+---------------------------------------------------------
+
+KNOWN DIVERGENCES (documented differences; do NOT fail the run):
+  * load-toplevel-echo: KNOWN DIVERGENCE [s42-load-echo-format]: "\"PROBE\"\n42\n\nloaded" <- shen-go,shen-koka; "\"PROBE\"\n42\nloaded" <- shen-lua
+
+SUMMARY: 0 pass, 1 diverge (known), 0 FAIL  across 3 impls
+==============================================================================

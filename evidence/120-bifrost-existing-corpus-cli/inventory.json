@@ -1,0 +1,496 @@
+[
+  {
+    "name": "int-mul",
+    "mode": "eval",
+    "expr": "(* 6 7)",
+    "expect": "output",
+    "golden": "42",
+    "doc": "integer multiplication"
+  },
+  {
+    "name": "int-div-exact",
+    "mode": "eval",
+    "expr": "(/ 10 5)",
+    "expect": "output",
+    "golden": "2",
+    "doc": "exact integer division collapses to integer"
+  },
+  {
+    "name": "int-div-to-float",
+    "mode": "eval",
+    "expr": "(/ 10 4)",
+    "expect": "agreement",
+    "doc": "10/4 = 2.5: all five impls print 2.5 (shortest round-trip) -> hard agreement since pyrex41/shen-go#11"
+  },
+  {
+    "name": "float-add-clean",
+    "mode": "eval",
+    "expr": "(+ 3.5 1.25)",
+    "expect": "agreement",
+    "doc": "4.75 exactly representable; all five impls now print 4.75 -> hard agreement since pyrex41/shen-go#11"
+  },
+  {
+    "name": "float-add-imprecise",
+    "mode": "eval",
+    "expr": "(+ 0.1 0.2)",
+    "expect": "agreement",
+    "doc": "classic 0.1+0.2 = 0.30000000000000004 (shortest round-trip) on all five impls -> hard agreement since shen-go#11 + shen-lua#24"
+  },
+  {
+    "name": "subtraction",
+    "mode": "eval",
+    "expr": "(- 100 58)",
+    "expect": "output",
+    "golden": "42"
+  },
+  {
+    "name": "comparison",
+    "mode": "eval",
+    "expr": "(> 5 3)",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "eval-prints-value",
+    "mode": "eval",
+    "expr": "(+ 40 2)",
+    "expect": "output",
+    "golden": "42",
+    "doc": "CLI parity: 'eval -e EXPR' prints the value of EXPR to stdout"
+  },
+  {
+    "name": "version-expr-42",
+    "mode": "eval",
+    "expr": "(version)",
+    "expect": "output",
+    "golden": "42",
+    "doc": "CLI parity: (version) returns runtime kernel version 42 uniformly (works on every impl, incl. shen-lua which has no --version flag)"
+  },
+  {
+    "name": "version-banner-contains",
+    "mode": "version",
+    "expect": "version",
+    "contains": "42",
+    "doc": "CLI parity: the --version banner contains runtime kernel version 42. shen-lua has no --version flag, so Bifrost falls back to eval of (version). The experimental shen-c banner is port-local; this case uses kernels/adapters that emit 42."
+  },
+  {
+    "name": "stdin-eof-clean-exit",
+    "mode": "repl-eof",
+    "expect": "clean-exit",
+    "doc": "DELIBERATE IMPROVEMENT OVER CANONICAL (not a spec conformance): starting the REPL and closing stdin (EOF) exits cleanly on every maintained impl. Canonical Shen LOOPS FOREVER here \u2014 the kernel shen.loop catches the reader's EOF error, prints it, and recurses (e.g. official shen-cl emits ~26MB of 'NIL is not of type CHARACTER' in 8s). All ports here detect EOF at the input layer and exit 0; this case guards that they keep doing so. (Earlier this passed spuriously for shen-cl because its repl adapter used a bare -q, which shen-cl rejects as an invalid arg and exits before the REPL even starts \u2014 now fixed to bare {bin}.)"
+  },
+  {
+    "name": "closure-simple",
+    "mode": "eval",
+    "expr": "(let F (/. X (* X 2)) (F 21))",
+    "expect": "output",
+    "golden": "42",
+    "doc": "single-arg closure applied"
+  },
+  {
+    "name": "closure-curried",
+    "mode": "eval",
+    "expr": "(let Add (/. X (/. Y (+ X Y))) ((Add 3) 4))",
+    "expect": "output",
+    "golden": "7",
+    "doc": "curried closure: captured environment across two applications"
+  },
+  {
+    "name": "fix-point",
+    "mode": "eval",
+    "expr": "(fix (lambda X (if (> X 100) X (* X 2))) 1)",
+    "expect": "output",
+    "golden": "128",
+    "doc": "fixpoint iteration"
+  },
+  {
+    "name": "recursion-fib-file",
+    "mode": "script",
+    "program": "fib.shen",
+    "expect": "output",
+    "golden": "6765",
+    "doc": "deep-ish recursion (fib 20) defined in a file, run via script mode"
+  },
+  {
+    "name": "tail-call-countdown",
+    "mode": "script",
+    "program": "countdown.shen",
+    "expect": "output",
+    "golden": "done",
+    "doc": "tail-recursive countdown of 100000 must not blow the stack on any impl"
+  },
+  {
+    "name": "bounded-tail-sum-file",
+    "mode": "script",
+    "program": "joy-sum.shen",
+    "expect": "output",
+    "golden": "32004000",
+    "doc": "common first-order subset used by shen-go/shen-joy conformance and benchmarking"
+  },
+  {
+    "name": "trap-error-operand-raises",
+    "mode": "eval",
+    "expr": "(trap-error (<-vector (simple-error \"boom\") 1) (/. E 42))",
+    "expect": "output",
+    "golden": "42",
+    "doc": "errors while evaluating trap-error operands are caught; a compiler must not leak ? out of the trap"
+  },
+  {
+    "name": "trap-error-value-uses-exn",
+    "mode": "eval",
+    "expr": "(trap-error (value bifrost-unbound-global-xyzzy) (/. E caught))",
+    "expect": "output",
+    "golden": "caught",
+    "doc": "handler may ignore E; the miss must still be catchable"
+  },
+  {
+    "name": "freeze-thaw",
+    "mode": "eval",
+    "expr": "(thaw (freeze 9))",
+    "expect": "output",
+    "golden": "9"
+  },
+  {
+    "name": "freeze-in-lambda",
+    "mode": "eval",
+    "expr": "(let G (freeze 7) ((/. Y (thaw G)) 0))",
+    "expect": "output",
+    "golden": "7",
+    "doc": "freeze captured by a lambda must remain a real closure, not an unbound inlined local"
+  },
+  {
+    "name": "trap-cps-script",
+    "mode": "script",
+    "program": "trap-cps.shen",
+    "expect": "output",
+    "golden": "true",
+    "doc": "error-to-string plus freeze-in-lambda in one script"
+  },
+  {
+    "name": "hush-file-write",
+    "mode": "special-hush",
+    "expect": "agreement",
+    "doc": "RESOLVED (was a known divergence): under -q (*hush* = true), `pr` to a FILE stream now WRITES on every impl. *hush* only gates stdout, never stderr or an explicit file stream. Driven as `{bin} eval -q -l PROG`. S42 shen-c/shen-forth need host `pr` overrides (stock writer.kl returns without writing whenever *hush* for every stream) and eval -q/-l. Previously shen-lua/shen-rust SILENCED the write (zero-byte file) under -q while shen-cl/shen-go/ShenScript wrote. Hard agreement: every available impl must land in the same bucket (all 'written'); any impl that silences the write is a real FAIL."
+  },
+  {
+    "name": "load-toplevel-echo",
+    "mode": "eval",
+    "expr": "(load \"programs/load-echo-probe.shen\")",
+    "cwd": ".",
+    "expect": "agreement",
+    "known_divergence": "s42-load-echo-format",
+    "doc": "RESOLVED (was a known divergence): `(load FILE)` now echoes each toplevel form's evaluated value on every impl, cache state notwithstanding. The canonical kernel load (klambda/load.kl -> shen.eval-and-print) PRINTS each toplevel result before returning `loaded` (the echo from `shen eval -l FILE` / `(load FILE)` at the REPL; NOT `script` mode, which is quiet everywhere -- so this case uses eval mode). shen-rust and shen-go always emitted it; shen-lua emitted it on a COLD fasl cache but DROPPED it on a WARM fasl-cache HIT (boot.lua returned `loaded` straight out of fasl_replay without re-running the kernel load), making `(load file)` stdout cache-state dependent -- a cross-port divergence AND an intra-port nondeterminism. Fixed in shen-lua by recording the per-form echo bytes as fasl \"e\" records on the miss and re-pr'ing them on the hit (pyrex41/shen-lua#40, PR #41). The cosmetic `run time:` banner stays dropped on a warm hit by design; the normaliser here strips the whole banner (text line + the blank line its leading newline produces) so that omission is not itself a divergence. Now asserted as a HARD agreement: every available impl must echo `\"PROBE\"` / `42` / `(fn p)` (the last stripped by the normaliser) then `loaded`; any impl that drops the value echo is a real FAIL."
+  },
+  {
+    "name": "eq-int-float",
+    "mode": "eval",
+    "expr": "(= 1 1.0)",
+    "expect": "output",
+    "golden": "true",
+    "doc": "numeric = cross-equates fixnum and integral float"
+  },
+  {
+    "name": "eq-nil",
+    "mode": "eval",
+    "expr": "(= [] [])",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "eq-true-intern-true",
+    "mode": "eval",
+    "expr": "(= true (intern \"true\"))",
+    "expect": "output",
+    "golden": "true",
+    "doc": "intern of the textual name true is Shen-equal to boolean true"
+  },
+  {
+    "name": "eq-false-intern-false",
+    "mode": "eval",
+    "expr": "(= false (intern \"false\"))",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "boolean-intern-true",
+    "mode": "eval",
+    "expr": "(boolean? (intern \"true\"))",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "symbol-intern-true",
+    "mode": "eval",
+    "expr": "(symbol? (intern \"true\"))",
+    "expect": "output",
+    "golden": "false",
+    "doc": "whether intern returns a host bool or the true symbol, symbol? rejects it"
+  },
+  {
+    "name": "hash-agrees-with-equality",
+    "mode": "script",
+    "program": "hash-eq.shen",
+    "expect": "output",
+    "golden": "true",
+    "doc": "equal values (true/intern true, 1/1.0) must hash equal for the same bound \u2014 otherwise put/get miss"
+  },
+  {
+    "name": "trap-error-catches",
+    "mode": "eval",
+    "expr": "(trap-error (head []) (lambda E CAUGHT))",
+    "expect": "output",
+    "golden": "CAUGHT",
+    "doc": "a failing primitive (head of empty list) must produce a CATCHABLE error on every impl; the handler returns CAUGHT"
+  },
+  {
+    "name": "trap-error-message",
+    "mode": "eval",
+    "expr": "(trap-error (simple-error \"boom\") (lambda E (error-to-string E)))",
+    "expect": "output",
+    "golden": "boom",
+    "doc": "user (simple-error ...) is catchable and error-to-string recovers the message identically everywhere. Eval print is unquoted, so S42 C/Forth agree with the Go golden (boom not \"boom\")."
+  },
+  {
+    "name": "error-message-head",
+    "mode": "eval",
+    "expr": "(trap-error (head []) (lambda E (error-to-string E)))",
+    "expect": "agreement",
+    "doc": "the kernel error MESSAGE for (head []) should agree across impls on the same kernel. S41.2 is 'head expects a non-empty list'; S42 sys.kl includes a trailing newline in the kernel string. Mixing 41.2 and 42 ports may FAIL because of that kernel split. shen-go now uses kernel 42."
+  },
+  {
+    "name": "int-div-zero",
+    "mode": "eval",
+    "expr": "(trap-error (/ 1 0) (lambda E divide-by-zero))",
+    "expect": "agreement",
+    "doc": "RESOLVED (was a known divergence): (/ 1 0) now raises a CATCHABLE kernel error on every impl, so the handler yields 'divide-by-zero' everywhere. Previously shen-go did NOT raise -- (/ 1 0) returned maxint (9223372036854775807); the shen-go fix (fix-go-divzero-and-floatfmt) converged this. Now asserted as a HARD agreement: any impl that fails to raise (e.g. returns maxint) is a real FAIL."
+  },
+  {
+    "name": "append",
+    "mode": "eval",
+    "expr": "(append [1 2] [3 4])",
+    "expect": "output",
+    "golden": "[1 2 3 4]"
+  },
+  {
+    "name": "reverse",
+    "mode": "eval",
+    "expr": "(reverse [1 2 3 4 5])",
+    "expect": "output",
+    "golden": "[5 4 3 2 1]"
+  },
+  {
+    "name": "map-square",
+    "mode": "eval",
+    "expr": "(map (lambda X (* X X)) [1 2 3 4])",
+    "expect": "output",
+    "golden": "[1 4 9 16]",
+    "doc": "higher-order map with lambda"
+  },
+  {
+    "name": "length",
+    "mode": "eval",
+    "expr": "(length [a b c d e])",
+    "expect": "output",
+    "golden": "5"
+  },
+  {
+    "name": "string-concat",
+    "mode": "eval",
+    "expr": "(@s \"foo\" \"bar\")",
+    "expect": "output",
+    "golden": "foobar",
+    "doc": "eval print is unquoted (Go shen.a / S42 C display / Forth kl-print). KLambda str still quotes. shen-c and shen-forth must agree with each other on this surface."
+  },
+  {
+    "name": "tlstr",
+    "mode": "eval",
+    "expr": "(tlstr \"hello\")",
+    "expect": "output",
+    "golden": "ello",
+    "doc": "string tail; CLI eval print unquoted so C and Forth agree with the Go golden"
+  },
+  {
+    "name": "string-to-n",
+    "mode": "eval",
+    "expr": "(string->n \"A\")",
+    "expect": "output",
+    "golden": "65"
+  },
+  {
+    "name": "n-to-string",
+    "mode": "eval",
+    "expr": "(n->string 65)",
+    "expect": "output",
+    "golden": "A",
+    "doc": "n->string result is a string; eval print unquoted (A not \"A\")"
+  },
+  {
+    "name": "integer-int",
+    "mode": "eval",
+    "expr": "(integer? 42)",
+    "expect": "output",
+    "golden": "true",
+    "doc": "kernel integer? on a fixnum"
+  },
+  {
+    "name": "integer-float-integral",
+    "mode": "eval",
+    "expr": "(integer? 4.0)",
+    "expect": "output",
+    "golden": "true",
+    "doc": "Shen integrality, not host storage type: 4.0 is an integer"
+  },
+  {
+    "name": "integer-float-frac",
+    "mode": "eval",
+    "expr": "(integer? 4.5)",
+    "expect": "output",
+    "golden": "false"
+  },
+  {
+    "name": "boolean-true",
+    "mode": "eval",
+    "expr": "(boolean? true)",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "boolean-number",
+    "mode": "eval",
+    "expr": "(boolean? 1)",
+    "expect": "output",
+    "golden": "false"
+  },
+  {
+    "name": "symbol-not-boolean",
+    "mode": "eval",
+    "expr": "(symbol? true)",
+    "expect": "output",
+    "golden": "false",
+    "doc": "kernel symbol? rejects booleans even when they intern as symbols"
+  },
+  {
+    "name": "symbol-ident",
+    "mode": "eval",
+    "expr": "(symbol? foo)",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "empty-nil",
+    "mode": "eval",
+    "expr": "(empty? [])",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "empty-cons",
+    "mode": "eval",
+    "expr": "(empty? [1])",
+    "expect": "output",
+    "golden": "false"
+  },
+  {
+    "name": "not-false",
+    "mode": "eval",
+    "expr": "(not false)",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "variable-upper",
+    "mode": "eval",
+    "expr": "(variable? X)",
+    "expect": "output",
+    "golden": "true",
+    "doc": "free uppercase symbol is a Shen variable"
+  },
+  {
+    "name": "variable-lower",
+    "mode": "eval",
+    "expr": "(variable? x)",
+    "expect": "output",
+    "golden": "false"
+  },
+  {
+    "name": "element-yes",
+    "mode": "eval",
+    "expr": "(element? 2 [1 2 3])",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "element-no",
+    "mode": "eval",
+    "expr": "(element? 9 [1 2 3])",
+    "expect": "output",
+    "golden": "false"
+  },
+  {
+    "name": "prolog-grandparent",
+    "mode": "script",
+    "program": "prolog.shen",
+    "expect": "output",
+    "golden": "bart",
+    "doc": "Shen Prolog: defprolog parent/grandparent, then (prolog? (grandparent abe Who) (return Who)) returns the first solution 'bart' on every impl"
+  },
+  {
+    "name": "put-get-property-vector",
+    "mode": "script",
+    "program": "properties.shen",
+    "expect": "output",
+    "golden": "42",
+    "doc": "put then get on *property-vector*; native hash/get/put overrides must agree with the portable store"
+  },
+  {
+    "name": "tuple-fst",
+    "mode": "eval",
+    "expr": "(fst (@p 1 2))",
+    "expect": "output",
+    "golden": "1"
+  },
+  {
+    "name": "tuple-snd",
+    "mode": "eval",
+    "expr": "(snd (@p 1 2))",
+    "expect": "output",
+    "golden": "2"
+  },
+  {
+    "name": "tuple?",
+    "mode": "eval",
+    "expr": "(tuple? (@p a b))",
+    "expect": "output",
+    "golden": "true"
+  },
+  {
+    "name": "tuple-not-vector",
+    "mode": "eval",
+    "expr": "(vector? (@p 1 2))",
+    "expect": "output",
+    "golden": "false",
+    "doc": "kernel vector? requires a numeric limit in slot 0; tuples are tagged absvectors"
+  },
+  {
+    "name": "vector-limit",
+    "mode": "eval",
+    "expr": "(limit (vector 3))",
+    "expect": "output",
+    "golden": "3"
+  },
+  {
+    "name": "vector-roundtrip",
+    "mode": "eval",
+    "expr": "(<-vector (vector-> (vector 1) 1 9) 1)",
+    "expect": "output",
+    "golden": "9"
+  },
+  {
+    "name": "hdstr",
+    "mode": "eval",
+    "expr": "(hdstr \"abc\")",
+    "expect": "output",
+    "golden": "a",
+    "doc": "eval print unquoted"
+  }
+]

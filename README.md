@@ -59,6 +59,7 @@ bin/shen-koka script program.shen
 bin/shen-koka repl
 nix develop --command python3 scripts/test-runtime.py
 nix develop --command python3 scripts/test-primitives.py
+nix develop --command python3 scripts/test-cli.py
 nix develop --command python3 scripts/run-shen-suite.py \
   --output artifacts/suite-001 --timeout 1800 --ppm-compat
 ```
@@ -73,3 +74,6 @@ once and refuses eval-capable manifests. Add `--native` for experimental direct
 KL-to-Koka callbacks. The Yggdrasil integration exposes these as `koka` and
 `koka-native`; both initializer/order fixtures pass. Full compiled-kernel
 qualification is still pending; see [native compiler status](docs/native-compiler.md).
+
+See [CLI behavior](docs/cli.md) for ordered eval actions, script arguments,
+quiet loading, and the separate KLambda diagnostic format.
