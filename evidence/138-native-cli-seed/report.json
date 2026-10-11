@@ -1,0 +1,101 @@
+{
+  "native_binary_sha256": "4046e3c1844d27e4e3b379eb0f46d66a83de11a8713eaeefb10bef531ca0dfe1",
+  "cli_case_source_sha256": "31bdfb0554c7961e4818b089dfa1abe3496b711ba151549976718b8b0cc9bb81",
+  "cli": {
+    "string-output": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "foobar\n",
+      "stderr": "",
+      "expected_stdout": "foobar\n",
+      "expected_exit_code": 0
+    },
+    "fail-sentinel": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "shen.fail!\n",
+      "stderr": "",
+      "expected_stdout": "shen.fail!\n",
+      "expected_exit_code": 0
+    },
+    "ordered-actions": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "1\n1\n",
+      "stderr": "",
+      "expected_stdout": "1\n1\n",
+      "expected_exit_code": 0
+    },
+    "multiple-forms": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": "",
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0
+    },
+    "set-action": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "9\n",
+      "stderr": "",
+      "expected_stdout": "9\n",
+      "expected_exit_code": 0
+    },
+    "quiet-still-evaluates": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Q",
+      "stderr": "",
+      "expected_stdout": "Q",
+      "expected_exit_code": 0
+    },
+    "script-no-echo": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "only-once\n",
+      "stderr": "",
+      "expected_stdout": "only-once\n",
+      "expected_exit_code": 0
+    },
+    "script-argv": {
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "argv-ok\n",
+      "stderr": "",
+      "expected_stdout": "argv-ok\n",
+      "expected_exit_code": 0
+    },
+    "script-error": {
+      "status": "PASS",
+      "exit_code": 1,
+      "stdout": "shen-koka: boom\n",
+      "stderr": "",
+      "expected_stdout": "shen-koka: boom\n",
+      "expected_exit_code": 1
+    },
+    "invalid-option": {
+      "status": "PASS",
+      "exit_code": 1,
+      "stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "stderr": "",
+      "expected_stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "expected_exit_code": 1
+    }
+  },
+  "seed": {
+    "case_denominator": 17,
+    "argv": [
+      "/workspace/scratch/3e502de53f0d/bifrost-koka-stage1",
+      "-suite",
+      "comparison/bifrost.suite.json",
+      "-impls",
+      "shen-koka",
+      "-json"
+    ],
+    "bifrost_exit_code": 0,
+    "checker_exit_code": 0,
+    "bifrost_binary_sha256": "9338b82932d073b308aa097241befbf117ac3506b3e5dbef4f6855e8b5cdb233"
+  },
+  "status": "PASS"
+}

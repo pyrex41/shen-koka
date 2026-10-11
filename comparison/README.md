@@ -104,3 +104,12 @@ minimized source, exact reproduction argv, and which gate blocked promotion.
 Use a dedicated scenario runner for state/IO traces and resource measurements,
 then let Shen-Backpressure's configurable command gates consume its exit status
 if that integration is selected. No Koka guard emitter is assumed.
+
+
+The heavy stage-1 lane passes across pinned Go/Lua and Koka (136), using
+Bifrost's `-heavy-timeout 15m` and Yggdrasil's new script host mode for Koka.
+The default five-minute budget remains unchanged. Direct comparison 132 verifies
+that kernel and both manifests match byte for byte; 129 retains the earlier
+empty-file failure under the quiet host invocation. Koka's updated Bifrost
+integration still passes the strict 17-case seed gate (137). The separate light
+corpus remains 64 PASS / 1 FAIL / 1 DIVERGE out of 66 (120).

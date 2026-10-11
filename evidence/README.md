@@ -112,3 +112,21 @@ isolated, interpreter-backed eval-capable metaevaluation slice and confirms that
 the directly compiled variant still refuses it. 131 passes all 134 + 8 primary
 assertions after the builder change, with source/log audits and no regressions.
 133 passes ten native checkpoint validation controls, including mandatory relink.
+
+132 passes three-host stage-1 artifact equality using the script host mode; Go
+tests and exact-tree Yggdrasil publication are retained. 134 builds all 4,591
+native callbacks and links the full kernel after validating the 268-library
+checkpoint. 136 passes the actual Bifrost heavy case with all three required
+hosts and an explicit 15-minute per-host limit. 137 passes all 17 interpreter
+seed cases using the updated Bifrost binary. 138 passes ten native CLI cases and
+all 17 native seed cases. 139 retains a failed cross-port fixture assumption
+about hush/loader chatter; 140 explicitly redirects load output and passes the
+actual dynamic Yggdrasil builder, matching Go's six observable results and
+preserving loader output in separate file traces. 141 confirms reference heads
+and working-tree states remain unchanged.
+
+135 closes the full native-kernel compatibility gate: 134 canonical PASS and
+eight extension PASS, zero failures/unknowns/regressions, all 35 cumulative
+reports captured. Its independent audit verifies raw logs, runner, current and
+artifact runtime sources, generated sources, builders, compatibility files and
+the native binary hash. Earlier all-UNKNOWN native attempts remain unchanged.

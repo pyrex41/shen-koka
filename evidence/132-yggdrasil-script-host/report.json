@@ -1,0 +1,120 @@
+{
+  "case_denominator": 1,
+  "required_hosts": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "hosts": {
+    "shen-go": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+        "shake",
+        "/workspace/scratch/3e502de53f0d/pinned/yggdrasil/tests/fib.shen",
+        "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/script-host-shen-go",
+        "--host",
+        "/workspace/scratch/3e502de53f0d/reference-shen-go",
+        "--eval-style",
+        "sub"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 2.7118166069994913,
+      "artifacts": {
+        "fib.kl": {
+          "bytes": 172,
+          "sha256": "8da97e0e82495ef1f0a1a3d0849ac93723963796c2a22541f21bcdb241dae222"
+        },
+        "kernel.kl": {
+          "bytes": 13683,
+          "sha256": "9392c9011fa117e617ff09eb18c5aa068f21171981db773a070db1d658c838fb"
+        },
+        "yggdrasil.manifest.txt": {
+          "bytes": 1117,
+          "sha256": "c11f42dca81a987948adb38da2d4e7d1193532ba21d4806a61a99fab942ff379"
+        },
+        "yggdrasil.manifest": {
+          "bytes": 690,
+          "sha256": "031987de9121375cdff95cbf5267bcb23e6fe0afbd608f755b568423ce609896"
+        }
+      },
+      "status": "PASS"
+    },
+    "shen-lua": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+        "shake",
+        "/workspace/scratch/3e502de53f0d/pinned/yggdrasil/tests/fib.shen",
+        "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/script-host-shen-lua",
+        "--host",
+        "/workspace/scratch/3e502de53f0d/pinned/shen-lua/bin/shen",
+        "--eval-style",
+        "positional"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 4.542921052001475,
+      "artifacts": {
+        "fib.kl": {
+          "bytes": 172,
+          "sha256": "391327501b724f5c08d1b844e7073182c735966b568371653453e4c8fe6ba34b"
+        },
+        "kernel.kl": {
+          "bytes": 13683,
+          "sha256": "9392c9011fa117e617ff09eb18c5aa068f21171981db773a070db1d658c838fb"
+        },
+        "yggdrasil.manifest.txt": {
+          "bytes": 1117,
+          "sha256": "c11f42dca81a987948adb38da2d4e7d1193532ba21d4806a61a99fab942ff379"
+        },
+        "yggdrasil.manifest": {
+          "bytes": 690,
+          "sha256": "031987de9121375cdff95cbf5267bcb23e6fe0afbd608f755b568423ce609896"
+        }
+      },
+      "status": "PASS"
+    },
+    "shen-koka": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+        "shake",
+        "/workspace/scratch/3e502de53f0d/pinned/yggdrasil/tests/fib.shen",
+        "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/script-host-shen-koka",
+        "--host",
+        "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+        "--eval-style",
+        "script"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 602.0884327110034,
+      "artifacts": {
+        "fib.kl": {
+          "bytes": 172,
+          "sha256": "e27fc77a2ca3c1ebf586fe410afa4de5cc0671e83935b4b8e2f461cfd28211e2"
+        },
+        "kernel.kl": {
+          "bytes": 13683,
+          "sha256": "9392c9011fa117e617ff09eb18c5aa068f21171981db773a070db1d658c838fb"
+        },
+        "yggdrasil.manifest.txt": {
+          "bytes": 1117,
+          "sha256": "c11f42dca81a987948adb38da2d4e7d1193532ba21d4806a61a99fab942ff379"
+        },
+        "yggdrasil.manifest": {
+          "bytes": 690,
+          "sha256": "031987de9121375cdff95cbf5267bcb23e6fe0afbd608f755b568423ce609896"
+        }
+      },
+      "status": "PASS"
+    }
+  },
+  "yggdrasil_binary_sha256": "68a45c5beed4edea542f16afc5621eb17e695d13ae55187f151dbb0ff646d89d",
+  "matching_artifacts": {
+    "kernel.kl": true,
+    "yggdrasil.manifest": true,
+    "yggdrasil.manifest.txt": true
+  },
+  "status": "PASS",
+  "koka_binary_sha256": "c4ab47efca1064700d5b87b103a557364af29078b447a4975aba55f0c09a18e2"
+}

@@ -1,0 +1,1576 @@
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch268.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart268.kk
+check   : klpart268
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch268.kk
+check   : klbatch268
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart268.kk(9, 5): type warning: pattern variable x33213 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(47, 5): type warning: pattern variable x33276 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(90, 5): type warning: pattern variable x33341 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(213, 5): type warning: pattern variable x33487 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(243, 5): type warning: pattern variable x33550 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(286, 5): type warning: pattern variable x33618 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(306, 5): type warning: pattern variable x33674 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart268.kk(314, 5): type warning: pattern variable x33699 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch269.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart269.kk
+check   : klpart269
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch269.kk
+check   : klbatch269
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart269.kk(39, 5): type warning: pattern variable x33765 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(58, 5): type warning: pattern variable x33803 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(84, 5): type warning: pattern variable x33862 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(94, 5): type warning: pattern variable x33890 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(103, 5): type warning: pattern variable x33919 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(120, 5): type warning: pattern variable x33979 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(148, 5): type warning: pattern variable x34043 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(156, 5): type warning: pattern variable x34070 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(165, 5): type warning: pattern variable x34098 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart269.kk(175, 5): type warning: pattern variable x34125 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch270.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart270.kk
+check   : klpart270
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch270.kk
+check   : klbatch270
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart270.kk(28, 5): type warning: pattern variable x34187 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(36, 5): type warning: pattern variable x34189 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(44, 5): type warning: pattern variable x34191 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(55, 5): type warning: pattern variable x34196 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(65, 5): type warning: pattern variable x34200 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(136, 5): type warning: pattern variable x34231 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(165, 5): type warning: pattern variable x34248 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(173, 5): type warning: pattern variable x34252 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(218, 5): type warning: pattern variable x34279 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart270.kk(226, 5): type warning: pattern variable x34286 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch271.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart271.kk
+check   : klpart271
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch271.kk
+check   : klbatch271
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart271.kk(40, 5): type warning: pattern variable x34310 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(48, 5): type warning: pattern variable x34320 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(95, 5): type warning: pattern variable x34394 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(114, 5): type warning: pattern variable x34450 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(123, 5): type warning: pattern variable x34480 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(140, 5): type warning: pattern variable x34540 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(158, 5): type warning: pattern variable x34573 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart271.kk(178, 5): type warning: pattern variable x34636 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch272.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart272.kk
+check   : klpart272
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch272.kk
+check   : klbatch272
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart272.kk(46, 5): type warning: pattern variable x34774 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(54, 5): type warning: pattern variable x34803 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(62, 5): type warning: pattern variable x34832 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(100, 5): type warning: pattern variable x34950 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(168, 5): type warning: pattern variable x35069 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(199, 5): type warning: pattern variable x35137 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(247, 5): type warning: pattern variable x35214 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart272.kk(255, 5): type warning: pattern variable x35241 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch273.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart273.kk
+check   : klpart273
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch273.kk
+check   : klbatch273
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart273.kk(30, 5): type warning: pattern variable x35306 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(68, 5): type warning: pattern variable x35375 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(106, 5): type warning: pattern variable x35444 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(123, 5): type warning: pattern variable x35499 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(131, 5): type warning: pattern variable x35531 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(153, 5): type warning: pattern variable x35587 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(161, 5): type warning: pattern variable x35616 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart273.kk(194, 5): type warning: pattern variable x35711 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch274.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart274.kk
+check   : klpart274
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch274.kk
+check   : klbatch274
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart274.kk(31, 5): type warning: pattern variable x35825 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(44, 5): type warning: pattern variable x35854 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(52, 5): type warning: pattern variable x35884 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(60, 5): type warning: pattern variable x35913 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(68, 5): type warning: pattern variable x35928 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(81, 5): type warning: pattern variable x35950 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(90, 5): type warning: pattern variable x35953 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(130, 5): type warning: pattern variable x35974 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(141, 5): type warning: pattern variable x35981 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart274.kk(179, 5): type warning: pattern variable x36002 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch275.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart275.kk
+check   : klpart275
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch275.kk
+check   : klbatch275
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart275.kk(9, 5): type warning: pattern variable x36030 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(26, 5): type warning: pattern variable x36090 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(54, 5): type warning: pattern variable x36154 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(99, 5): type warning: pattern variable x36232 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(107, 5): type warning: pattern variable x36262 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(116, 5): type warning: pattern variable x36291 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(126, 5): type warning: pattern variable x36320 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(134, 5): type warning: pattern variable x36350 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(151, 5): type warning: pattern variable x36414 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(179, 5): type warning: pattern variable x36482 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart275.kk(187, 5): type warning: pattern variable x36510 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch276.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart276.kk
+check   : klpart276
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch276.kk
+check   : klbatch276
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart276.kk(29, 5): type warning: pattern variable x36579 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(38, 5): type warning: pattern variable x36612 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(55, 5): type warning: pattern variable x36678 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(73, 5): type warning: pattern variable x36714 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(93, 5): type warning: pattern variable x36783 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(137, 5): type warning: pattern variable x36920 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(154, 5): type warning: pattern variable x36984 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart276.kk(172, 5): type warning: pattern variable x37019 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch277.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart277.kk
+check   : klpart277
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch277.kk
+check   : klbatch277
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart277.kk(20, 5): type warning: pattern variable x37119 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart277.kk(40, 5): type warning: pattern variable x37185 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart277.kk(101, 5): type warning: pattern variable x37351 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart277.kk(144, 5): type warning: pattern variable x37459 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart277.kk(152, 5): type warning: pattern variable x37461 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch278.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart278.kk
+check   : klpart278
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch278.kk
+check   : klbatch278
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart278.kk(9, 5): type warning: pattern variable x37476 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(17, 5): type warning: pattern variable x37506 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(25, 5): type warning: pattern variable x37535 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(33, 5): type warning: pattern variable x37567 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(50, 5): type warning: pattern variable x37635 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(78, 5): type warning: pattern variable x37707 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(86, 5): type warning: pattern variable x37739 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(94, 5): type warning: pattern variable x37770 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(149, 5): type warning: pattern variable x37890 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart278.kk(157, 5): type warning: pattern variable x37923 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch279.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart279.kk
+check   : klpart279
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch279.kk
+check   : klbatch279
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart279.kk(46, 5): type warning: pattern variable x38080 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(54, 5): type warning: pattern variable x38112 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(62, 5): type warning: pattern variable x38142 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(83, 5): type warning: pattern variable x38212 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(91, 5): type warning: pattern variable x38237 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(100, 5): type warning: pattern variable x38266 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(134, 5): type warning: pattern variable x38346 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(182, 5): type warning: pattern variable x38401 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart279.kk(190, 5): type warning: pattern variable x38435 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch280.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart280.kk
+check   : klpart280
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch280.kk
+check   : klbatch280
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart280.kk(9, 5): type warning: pattern variable x38505 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(17, 5): type warning: pattern variable x38540 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(34, 5): type warning: pattern variable x38614 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(75, 5): type warning: pattern variable x38730 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(83, 5): type warning: pattern variable x38761 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(91, 5): type warning: pattern variable x38795 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(108, 5): type warning: pattern variable x38867 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(136, 5): type warning: pattern variable x38943 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(144, 5): type warning: pattern variable x38975 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart280.kk(153, 5): type warning: pattern variable x39007 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch281.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart281.kk
+check   : klpart281
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch281.kk
+check   : klbatch281
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/generated/klpart281.kk(24, 5): type warning: pattern variable x39044 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart281.kk(37, 5): type warning: pattern variable x39081 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart281.kk(45, 5): type warning: pattern variable x39118 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart281.kk(53, 5): type warning: pattern variable x39154 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart281.kk(66, 5): type warning: pattern variable x39192 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart281.kk(74, 5): type warning: pattern variable x39228 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch282.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart282.kk
+check   : klpart282
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch282.kk
+check   : klbatch282
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch283.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart283.kk
+check   : klpart283
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch283.kk
+check   : klbatch283
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch284.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart284.kk
+check   : klpart284
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch284.kk
+check   : klbatch284
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch285.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart285.kk
+check   : klpart285
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch285.kk
+check   : klbatch285
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klbatch286.kk"]
+load    : std/core
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../klpart286.kk
+check   : klpart286
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klbatch286.kk
+check   : klbatch286
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "-o", "/tmp/shen-koka-native-anf/run", "/tmp/shen-koka-native-anf/program.kk"]
+load    : std/core
+load    : klpart0
+load    : klpart1
+load    : klpart2
+load    : klpart3
+load    : klpart4
+load    : klpart5
+load    : klpart6
+load    : klpart7
+load    : klpart8
+load    : klpart9
+load    : klpart10
+load    : klpart11
+load    : klpart12
+load    : klpart13
+load    : klpart14
+load    : klpart15
+load    : klpart16
+load    : klpart17
+load    : klpart18
+load    : klpart19
+load    : klpart20
+load    : klpart21
+load    : klpart22
+load    : klpart23
+load    : klpart24
+load    : klpart25
+load    : klpart26
+load    : klpart27
+load    : klpart28
+load    : klpart29
+load    : klpart30
+load    : klpart31
+load    : klpart32
+load    : klpart33
+load    : klpart34
+load    : klpart35
+load    : klpart36
+load    : klpart37
+load    : klpart38
+load    : klpart39
+load    : klpart40
+load    : klpart41
+load    : klpart42
+load    : klpart43
+load    : klpart44
+load    : klpart45
+load    : klpart46
+load    : klpart47
+load    : klpart48
+load    : klpart49
+load    : klpart50
+load    : klpart51
+load    : klpart52
+load    : klpart53
+load    : klpart54
+load    : klpart55
+load    : klpart56
+load    : klpart57
+load    : klpart58
+load    : klpart59
+load    : klpart60
+load    : klpart61
+load    : klpart62
+load    : klpart63
+load    : klpart64
+load    : klpart65
+load    : klpart66
+load    : klpart67
+load    : klpart68
+load    : klpart69
+load    : klpart70
+load    : klpart71
+load    : klpart72
+load    : klpart73
+load    : klpart74
+load    : klpart75
+load    : klpart76
+load    : klpart77
+load    : klpart78
+load    : klpart79
+load    : klpart80
+load    : klpart81
+load    : klpart82
+load    : klpart83
+load    : klpart84
+load    : klpart85
+load    : klpart86
+load    : klpart87
+load    : klpart88
+load    : klpart89
+load    : klpart90
+load    : klpart91
+load    : klpart92
+load    : klpart93
+load    : klpart94
+load    : klpart95
+load    : klpart96
+load    : klpart97
+load    : klpart98
+load    : klpart99
+load    : klpart100
+load    : klpart101
+load    : klpart102
+load    : klpart103
+load    : klpart104
+load    : klpart105
+load    : klpart106
+load    : klpart107
+load    : klpart108
+load    : klpart109
+load    : klpart110
+load    : klpart111
+load    : klpart112
+load    : klpart113
+load    : klpart114
+load    : klpart115
+load    : klpart116
+load    : klpart117
+load    : klpart118
+load    : klpart119
+load    : klpart120
+load    : klpart121
+load    : klpart122
+load    : klpart123
+load    : klpart124
+load    : klpart125
+load    : klpart126
+load    : klpart127
+load    : klpart128
+load    : klpart129
+load    : klpart130
+load    : klpart131
+load    : klpart132
+load    : klpart133
+load    : klpart134
+load    : klpart135
+load    : klpart136
+load    : klpart137
+load    : klpart138
+load    : klpart139
+load    : klpart140
+load    : klpart141
+load    : klpart142
+load    : klpart143
+load    : klpart144
+load    : klpart145
+load    : klpart146
+load    : klpart147
+load    : klpart148
+load    : klpart149
+load    : klpart150
+load    : klpart151
+load    : klpart152
+load    : klpart153
+load    : klpart154
+load    : klpart155
+load    : klpart156
+load    : klpart157
+load    : klpart158
+load    : klpart159
+load    : klpart160
+load    : klpart161
+load    : klpart162
+load    : klpart163
+load    : klpart164
+load    : klpart165
+load    : klpart166
+load    : klpart167
+load    : klpart168
+load    : klpart169
+load    : klpart170
+load    : klpart171
+load    : klpart172
+load    : klpart173
+load    : klpart174
+load    : klpart175
+load    : klpart176
+load    : klpart177
+load    : klpart178
+load    : klpart179
+load    : klpart180
+load    : klpart181
+load    : klpart182
+load    : klpart183
+load    : klpart184
+load    : klpart185
+load    : klpart186
+load    : klpart187
+load    : klpart188
+load    : klpart189
+load    : klpart190
+load    : klpart191
+load    : klpart192
+load    : klpart193
+load    : klpart194
+load    : klpart195
+load    : klpart196
+load    : klpart197
+load    : klpart198
+load    : klpart199
+load    : klpart200
+load    : klpart201
+load    : klpart202
+load    : klpart203
+load    : klpart204
+load    : klpart205
+load    : klpart206
+load    : klpart207
+load    : klpart208
+load    : klpart209
+load    : klpart210
+load    : klpart211
+load    : klpart212
+load    : klpart213
+load    : klpart214
+load    : klpart215
+load    : klpart216
+load    : klpart217
+load    : klpart218
+load    : klpart219
+load    : klpart220
+load    : klpart221
+load    : klpart222
+load    : klpart223
+load    : klpart224
+load    : klpart225
+load    : klpart226
+load    : klpart227
+load    : klpart228
+load    : klpart229
+load    : klpart230
+load    : klpart231
+load    : klpart232
+load    : klpart233
+load    : klpart234
+load    : klpart235
+load    : klpart236
+load    : klpart237
+load    : klpart238
+load    : klpart239
+load    : klpart240
+load    : klpart241
+load    : klpart242
+load    : klpart243
+load    : klpart244
+load    : klpart245
+load    : klpart246
+load    : klpart247
+load    : klpart248
+load    : klpart249
+load    : klpart250
+load    : klpart251
+load    : klpart252
+load    : klpart253
+load    : klpart254
+load    : klpart255
+load    : klpart256
+load    : klpart257
+load    : klpart258
+load    : klpart259
+load    : klpart260
+load    : klpart261
+load    : klpart262
+load    : klpart263
+load    : klpart264
+load    : klpart265
+load    : klpart266
+load    : klpart267
+load    : klpart268
+load    : klpart269
+load    : klpart270
+load    : klpart271
+load    : klpart272
+load    : klpart273
+load    : klpart274
+load    : klpart275
+load    : klpart276
+load    : klpart277
+load    : klpart278
+load    : klpart279
+load    : klpart280
+load    : klpart281
+load    : klpart282
+load    : klpart283
+load    : klpart284
+load    : klpart285
+load    : klpart286
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : shen/io
+load    : std/num/int32
+load    : std/os/env
+load    : std/os/path
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/read-kl.kk
+check   : shen/read-kl
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/os/dir.kk
+check   : std/os/dir
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+In file included from /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:22,
+                 from /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:46,
+                 from /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.h:5,
+                 from /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:2:
+In function ‘kk_block_refcount’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:703:28,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir__lift_copy_directory_10178’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1205:9:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_load_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:35:45: note: in expansion of macro ‘kk_atomic’
+   35 | #define kk_atomic_load_relaxed(p)           kk_atomic(load_explicit)(p,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:294:10: note: in expansion of macro ‘kk_atomic_load_relaxed’
+  294 |   return kk_atomic_load_relaxed(&b->header.refcount);
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir__lift_copy_directory_10178’:
+cc1: note: destination object is likely at address zero
+In function ‘kk_block_refcount_set’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:708:5,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir__lift_copy_directory_10178’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1205:9:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_store_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:37:45: note: in expansion of macro ‘kk_atomic’
+   37 | #define kk_atomic_store_relaxed(p,x)        kk_atomic(store_explicit)(p,x,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:298:10: note: in expansion of macro ‘kk_atomic_store_relaxed’
+  298 |   return kk_atomic_store_relaxed(&b->header.refcount, rc);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir__lift_copy_directory_10178’:
+cc1: note: destination object is likely at address zero
+In function ‘kk_block_refcount’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:703:28,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir__lift_copy_directory_10180’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1616:9:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_load_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:35:45: note: in expansion of macro ‘kk_atomic’
+   35 | #define kk_atomic_load_relaxed(p)           kk_atomic(load_explicit)(p,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:294:10: note: in expansion of macro ‘kk_atomic_load_relaxed’
+  294 |   return kk_atomic_load_relaxed(&b->header.refcount);
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir__lift_copy_directory_10180’:
+cc1: note: destination object is likely at address zero
+In function ‘kk_block_refcount_set’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:708:5,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir__lift_copy_directory_10180’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1616:9:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_store_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:37:45: note: in expansion of macro ‘kk_atomic’
+   37 | #define kk_atomic_store_relaxed(p,x)        kk_atomic(store_explicit)(p,x,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:298:10: note: in expansion of macro ‘kk_atomic_store_relaxed’
+  298 |   return kk_atomic_store_relaxed(&b->header.refcount, rc);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir__lift_copy_directory_10180’:
+cc1: note: destination object is likely at address zero
+In function ‘kk_block_refcount’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:703:28,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir_copy_file_to_dir’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1875:7:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_load_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:35:45: note: in expansion of macro ‘kk_atomic’
+   35 | #define kk_atomic_load_relaxed(p)           kk_atomic(load_explicit)(p,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:294:10: note: in expansion of macro ‘kk_atomic_load_relaxed’
+  294 |   return kk_atomic_load_relaxed(&b->header.refcount);
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir_copy_file_to_dir’:
+cc1: note: destination object is likely at address zero
+In function ‘kk_block_refcount_set’,
+    inlined from ‘kk_block_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:708:5,
+    inlined from ‘kk_datatype_ptr_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1115:3,
+    inlined from ‘kk_datatype_drop’ at /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1120:5,
+    inlined from ‘kk_std_core_types__list_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_core_types.h:646:3,
+    inlined from ‘kk_std_os_path__path_drop’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_path.h:53:3,
+    inlined from ‘kk_std_os_dir_copy_file_to_dir’ at /tmp/shen-koka-native-anf-cache/v3.2.3/cc-release-a1a7e0/std_os_dir.c:1875:7:
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:23:33: warning: ‘__atomic_store_4’ writing 4 bytes into a region of size 0 overflows the destination [-Wstringop-overflow=]
+   23 | #define  kk_atomic(name)        atomic_##name
+      |                                 ^~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib/atomic.h:37:45: note: in expansion of macro ‘kk_atomic’
+   37 | #define kk_atomic_store_relaxed(p,x)        kk_atomic(store_explicit)(p,x,kk_memory_order(relaxed))
+      |                                             ^~~~~~~~~
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:298:10: note: in expansion of macro ‘kk_atomic_store_relaxed’
+  298 |   return kk_atomic_store_relaxed(&b->header.refcount, rc);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+In function ‘kk_std_os_dir_copy_file_to_dir’:
+cc1: note: destination object is likely at address zero
+parse   : .../std/os/file.kk
+check   : std/os/file
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/boot.kk
+check   : shen/boot
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : /tmp/shen-koka-native-anf/program.kk
+check   : program
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+linking : tmp/shen-koka-native-anf/program/@main
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+created : /tmp/shen-koka-native-anf/run

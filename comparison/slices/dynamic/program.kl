@@ -1,0 +1,32 @@
+(pr (cn "eval-list: " (shen.app (eval (cons + (cons 20 (cons 22 ())))) "
+" shen.a)) (stoutput))
+
+(eval (cons define (cons dynamic-scale (cons X (cons -> (cons (cons * (cons 3 (cons X ()))) ()))))))
+
+(pr (cn "define: " (shen.app (eval (cons dynamic-scale (cons 14 ()))) "
+" shen.a)) (stoutput))
+
+(eval (cons define (cons dynamic-scale (cons X (cons -> (cons (cons * (cons 2 (cons X ()))) ()))))))
+
+(pr (cn "redefine: " (shen.app (eval (cons dynamic-scale (cons 21 ()))) "
+" shen.a)) (stoutput))
+
+(pr (cn "read-eval: " (shen.app (eval (hd (read-from-string "(+ 40 2)"))) "
+" shen.a)) (stoutput))
+
+(tc +)
+
+(eval (hd (read-from-string "(define dynamic-typed {number --> number} X -> (+ X 1))")))
+
+(pr (cn "typed: " (shen.app (eval (cons dynamic-typed (cons 41 ()))) "
+" shen.a)) (stoutput))
+
+(tc -)
+
+(let S (open "runtime-loaded.shen" out) (do (pr "(define dynamic-loaded X -> (* 3 X))" S) (close S)))
+
+(let Saved (stoutput) (let Log (open "load-output.txt" out) (do (set *stoutput* Log) (do (load "runtime-loaded.shen") (do (set *stoutput* Saved) (close Log))))))
+
+(pr (cn "load: " (shen.app (eval (cons dynamic-loaded (cons 14 ()))) "
+" shen.a)) (stoutput))
+

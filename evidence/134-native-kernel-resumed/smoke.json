@@ -1,0 +1,12 @@
+{
+  "version": {
+    "exit_code": 0,
+    "stdout": "shen-koka 0.0.1 experimental native-kernel; pinned Shen 42\n",
+    "stderr": ""
+  },
+  "addition": {
+    "exit_code": 0,
+    "stdout": "3\n",
+    "stderr": ""
+  }
+}

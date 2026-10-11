@@ -481,5 +481,12 @@ Read and preserve Koka, Shen kernel, StLib, and copied reference code licenses
 before redistribution. Benchmarking and semantic comparison require no code
 copying from the ports. Any adapted code gets explicit provenance and notices.
 
-Implementation starts with P0: clean reference worktrees, locked toolchains,
-reference comparison reports, and the small compiler-checked effect probes.
+The implemented checkpoint now covers the Koka runtime, full kernel boot,
+direct KL lowering, Bifrost launcher/host integration, and Yggdrasil static and
+interpreter-backed dynamic artifacts. Interpreter attempt 131 and native attempt
+135 each pass all 134 + 8 primary assertions. The optional effect spike remains
+deferred. This does not close every phase exit gate: known reference differences,
+broader deployment/trace coverage, source-location diagnostics, standard-library
+breadth, platform lanes and long-running resource/performance qualification remain
+open. See docs/implementation-status.md for implemented, tested and published
+boundaries; the acceptance criteria above are unchanged.

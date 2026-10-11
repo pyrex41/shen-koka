@@ -1,0 +1,39 @@
+{
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "cases": {
+    "yggdrasil-shake-parity": {
+      "verdict": "PASS",
+      "detail": "kernel.kl + yggdrasil.manifest BYTE-IDENTICAL across 3 hosts (kernel md5 9f6de2b8, manifest md5 406a6a17)",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "9f6de2b8/406a6a17"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "9f6de2b8/406a6a17"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "9f6de2b8/406a6a17"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                    shen-go   shen-lua  shen-koka verdict
+-------------------------------------------------------------
+yggdrasil-shake-parity  PASS      PASS      PASS      PASS
+-------------------------------------------------------------
+
+SUMMARY: 1 pass, 0 diverge (known), 0 FAIL  across 3 impls
+==============================================================================

@@ -1,0 +1,23 @@
+{
+  "binary_sha256": "9338b82932d073b308aa097241befbf117ac3506b3e5dbef4f6855e8b5cdb233",
+  "checks": {
+    "0s": {
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "bifrost: heavy-timeout must be positive\n",
+      "status": "PASS"
+    },
+    "-1s": {
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "bifrost: heavy-timeout must be positive\n",
+      "status": "PASS"
+    },
+    "invalid": {
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "invalid value \"invalid\" for flag -heavy-timeout: parse error\nUsage of bifrost:\n  -heavy\n    \tinclude heavy (yggdrasil) cases\n  -heavy-timeout duration\n    \tper-host timeout for heavy cases (e.g. 15m) (default 5m0s)\n  -impls string\n    \tcomma-separated subset of impls to drive\n  -json\n    \temit machine-readable JSON\n  -list\n    \tlist impls + cases and exit\n  -only string\n    \trun only these cases (comma-separated)\n  -shake\n    \tdiff standalone artifacts per target (deploy-path parity)\n  -suite string\n    \trun a project's bifrost.suite.json instead of the corpus\n",
+      "status": "PASS"
+    }
+  }
+}

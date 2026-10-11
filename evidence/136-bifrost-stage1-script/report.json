@@ -1,0 +1,67 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/bifrost-koka-stage1",
+    "-heavy",
+    "-heavy-timeout",
+    "15m",
+    "-only",
+    "yggdrasil-shake-parity",
+    "-impls",
+    "shen-lua,shen-go,shen-koka",
+    "-json"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 468.27744107499893,
+  "case_denominator": 1,
+  "required_implementations": [
+    "shen-lua",
+    "shen-go",
+    "shen-koka"
+  ],
+  "environment": {
+    "BIFROST_ADAPTERS": "/workspace/scratch/3e502de53f0d/integration/bifrost/adapters.json",
+    "BIFROST_SHEN_KOKA": "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+    "BIFROST_SHEN_GO": "/workspace/scratch/3e502de53f0d/reference-shen-go",
+    "BIFROST_SHEN_LUA": "/workspace/scratch/3e502de53f0d/pinned/shen-lua/bin/shen",
+    "BIFROST_YGGDRASIL_DIR": "/workspace/scratch/3e502de53f0d/pinned/yggdrasil",
+    "BIFROST_YGGDRASIL_BIN": "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+    "SHEN_FASL": "off",
+    "XDG_CACHE_HOME": "/tmp/nix-shell.uBHpfv/shen-stage1-4mx5w99n/cache"
+  },
+  "binary_sha256": {
+    "/workspace/scratch/3e502de53f0d/bifrost-koka-stage1": "9338b82932d073b308aa097241befbf117ac3506b3e5dbef4f6855e8b5cdb233",
+    "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host": "68a45c5beed4edea542f16afc5621eb17e695d13ae55187f151dbb0ff646d89d",
+    "/workspace/scratch/3e502de53f0d/reference-shen-go": "ee93a4477a36129ff8ed0a5e05e770f2eb76ccd19b2738e1a4cf6da0d0b23729",
+    "/workspace/scratch/3e502de53f0d/shen-koka/.build/shen-koka": "c4ab47efca1064700d5b87b103a557364af29078b447a4975aba55f0c09a18e2"
+  },
+  "bifrost": {
+    "available": [
+      "shen-go",
+      "shen-lua",
+      "shen-koka"
+    ],
+    "cases": {
+      "yggdrasil-shake-parity": {
+        "verdict": "PASS",
+        "detail": "kernel.kl + yggdrasil.manifest BYTE-IDENTICAL across 3 hosts (kernel md5 9f6de2b8, manifest md5 406a6a17)",
+        "impls": {
+          "shen-go": {
+            "status": "PASS",
+            "norm": "9f6de2b8/406a6a17"
+          },
+          "shen-koka": {
+            "status": "PASS",
+            "norm": "9f6de2b8/406a6a17"
+          },
+          "shen-lua": {
+            "status": "PASS",
+            "norm": "9f6de2b8/406a6a17"
+          }
+        }
+      }
+    },
+    "skipped": {}
+  },
+  "status": "PASS"
+}

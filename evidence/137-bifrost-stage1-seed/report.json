@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/bifrost-koka-stage1",
+    "-suite",
+    "comparison/bifrost.suite.json",
+    "-impls",
+    "shen-koka",
+    "-json"
+  ],
+  "bifrost_exit_code": 0,
+  "checker_exit_code": 0,
+  "seconds": 33.621157654000854,
+  "case_denominator": 17,
+  "bifrost_binary_sha256": "9338b82932d073b308aa097241befbf117ac3506b3e5dbef4f6855e8b5cdb233",
+  "runtime_binary_sha256": "c4ab47efca1064700d5b87b103a557364af29078b447a4975aba55f0c09a18e2",
+  "status": "PASS"
+}

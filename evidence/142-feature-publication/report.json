@@ -1,0 +1,8 @@
+{
+  "repository": "pyrex41/shen-koka",
+  "branch": "implement/native-compiler",
+  "local_commit": "ef45e969dd62a2fb8413d17a86e47f8b065bd4f7",
+  "published_commit": "26d989db107feab37fb3796faa383397f0558230",
+  "verified_tree": "7d33101f14ad3793394843e02c896e3b0707f46e",
+  "qualification": "131 full interpreter suite and 130 isolated dynamic artifact; native 135 qualification is recorded in the subsequent validation checkpoint"
+}

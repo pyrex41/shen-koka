@@ -1,6 +1,7 @@
 # Implementation status
 
-The Koka-owned interpreter boots the unchanged pinned S42 kernel and passes
+The Koka-owned interpreter and directly compiled kernel both boot the unchanged
+pinned S42 kernel and pass
 **134/134 canonical assertions plus 8/8 bundled extension assertions** in the
 documented adapter-enabled configuration. This is a kernel compatibility result,
 not full-port release qualification.
@@ -10,7 +11,7 @@ not full-port release qualification.
 | Capability | Evidence | Qualification boundary |
 |---|---|---|
 | KLambda values, lexical closures, currying, redefinition, explicit tail-call machine | 098: 43 focused PASS | Includes million-step self, mutual and indirect calls |
-| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 131: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
+| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 131 interpreter; 135 native: each 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
 | Primitive inventory, positive observations and wrong arities | 098: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
 | Vector aliases, cycles, structural equality and tracing collection | Focused checks and full suite | Long-running memory budgets remain unqualified |
 | Generation-tagged streams | 054 failure; 056/058/057 after repair | Closed handles cannot alias a new stream |
@@ -18,9 +19,11 @@ not full-port release qualification.
 | CLI strings, sentinel, ordered eval flags, script arguments and quiet loading | 116: 10 PASS | Original kernel reader/compiler and script launcher retained |
 | Kernel-backed REPL | 032: four probes PASS | EOF, expression, multiline input and recovery |
 | Standard library | 035: installer completed | Individual library operations are not all qualified |
-| Bifrost launcher | 119: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
-| Direct KL-to-Koka callbacks | 096: 43 compiled checks PASS | Full compiled-kernel suite pending |
+| Bifrost launcher | 137 interpreter; 138 native: each 17 required cells PASS | Strict checker PASS; three-reference discrepancies remain |
+| Direct KL-to-Koka callbacks | 096: 43 focused checks; 134/135: full kernel built and 134 + 8 PASS | x86_64 Linux; broader deployment and release gates remain open |
 | Yggdrasil standalone hello | 034 interpreter-backed; 101 registered native target PASS | Both run without installed kernel; broader deployment matrix pending |
+| Dynamic standalone evaluation, redefinition, typechecking and file loading | 130/140: isolated artifacts PASS | Interpreter-backed manifest-only artifacts; native eval-capable slices refused |
+| Koka-hosted Yggdrasil stage 1 | 132/136: three-host artifact equality PASS | Script mode; explicit 15-minute Bifrost host budget |
 | Nix runtime package | 126/127: current CLI package, ten CLI checks and 134 + 8 PASS | x86_64 Linux with pinned Nix dependencies |
 
 The full-suite result uses `SHEN_KOKA_PPM_COMPAT=1` in both lanes. Default boot
@@ -46,8 +49,8 @@ each evidence directory identify exactly what was tested.
 
 Integration branches:
 
-- `pyrex41/bifrost:integrate/shen-koka`, commit `5aa7a36c835a2132b45966eb6e80ea5763868cf8`.
-- `pyrex41/yggdrasil:integrate/shen-koka`, commit `aa60af61f410b92cec485b50865c3d5b20d8a28b`.
+- `pyrex41/bifrost:integrate/shen-koka`, commit `01a2fd07ccccc0827372af2111bc08d5386b9f34`.
+- `pyrex41/yggdrasil:integrate/shen-koka`, commit `11fc41e966104de9975f0755c190eaeda6d72861`.
 
 Both integrations passed `go test ./...`. GitHub API publication preserves the
 exact local Git tree; commit SHAs differ because the API creates the commits.
@@ -57,15 +60,13 @@ or cleaning the original checkouts.
 
 ## Open gates
 
-- Full compiled-kernel build and its unchanged 142-assertion suite. Attempt 067
-  records the missing-artifact baseline as all UNKNOWN. Focused native checks
-  cannot promote this gate.
 - General full-versus-sliced-versus-lowered deployment, complete trace comparisons, and larger standalone programs. Initializer/order
   fixtures pass both execution modes (092/100); the registered direct-native
   Yggdrasil target passes its actual hello build and isolated run (101). The default builder remains interpreter-backed;
   direct lowering uses explicit `--native`.
-- Interpreter-backed eval-capable slices pass the isolated metaevaluation fixture (130),
-  including runtime definition and string evaluation. Broader dynamic deployment
+- Interpreter-backed eval-capable slices pass isolated metaevaluation (130) and the
+  actual Yggdrasil dynamic builder fixture (140), covering redefinition, typechecked
+  definitions, file loading and output-stream restoration. Broader dynamic deployment
   comparisons remain open; directly compiled eval-capable slices are still refused.
 - Additional platform lanes, full primitive edge
   profiles, long-running memory and performance distributions, and release gates.
@@ -85,7 +86,7 @@ nix develop --command python3 scripts/test-runtime.py
 nix develop --command python3 scripts/test-primitives.py
 nix develop --command python3 scripts/run-shen-suite.py \
   --ppm-compat --timeout 1800 --output artifacts/suite-check \
-  --previous evidence/085-nix-vector-bound-full/report.json
+  --previous evidence/131-eval-slice-full/report.json
 nix develop --command python3 scripts/test-native.py --output artifacts/native-check
 nix develop --command bin/shen-koka build-slice --native MANIFEST OUTPUT
 ```
@@ -100,8 +101,11 @@ in 079. Explicit value annotations repair that error; introduced boolean
 constants also ignore lexical shadowing. All 43 compiled checks pass (086).
 Attempt 087 passed that conditional, then hit the next module's five-minute
 compiler limit. Attempt 090 remains 134 + 8 UNKNOWN. Earlier callback splitting
-and a measured cache workaround pass 43 native cases (096); the next full
-compiled-kernel build is in progress and is not yet qualified.
+and a measured cache workaround pass 43 native cases (096). The one-hour attempt
+124 stops after 268 successful libraries; 125 remains all UNKNOWN. Validated
+resumption completes the full build in 134. Attempt 135 passes all 134 canonical
+and eight extension assertions, capturing all 35 reports with no regressions;
+its binary, source, generator, builder and raw-log hashes were verified.
 
 
 The broader built-in Bifrost light corpus is separately qualified: 110 records
@@ -109,5 +113,6 @@ The broader built-in Bifrost light corpus is separately qualified: 110 records
 file-write mismatch is the unchanged S42 `pr` suppression under `*hush*` (121).
 The load-echo row changed only for Lua; isolated cold/warm runs reproduce that
 reference cache difference (122). Neither difference is normalized away. The
-single heavy stage-1 case is UNKNOWN. These outcomes block full cross-port
+heavy stage-1 case now passes across all three hosts with an explicit 15-minute
+per-host budget (136); the direct three-host artifact comparison also passes (132). These outcomes block full cross-port
 qualification despite the complete primary Shen suite passing.

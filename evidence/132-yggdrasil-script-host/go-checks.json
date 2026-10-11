@@ -1,0 +1,42 @@
+{
+  "yggdrasil-tests": {
+    "exit_code": 0,
+    "seconds": 1.970460267002636,
+    "argv": [
+      "go",
+      "test",
+      "./..."
+    ]
+  },
+  "yggdrasil-build": {
+    "exit_code": 0,
+    "seconds": 1.5720316739971167,
+    "argv": [
+      "go",
+      "build",
+      "-o",
+      "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+      "."
+    ]
+  },
+  "bifrost-tests": {
+    "exit_code": 0,
+    "seconds": 1.3358874839977943,
+    "argv": [
+      "go",
+      "test",
+      "./..."
+    ]
+  },
+  "bifrost-build": {
+    "exit_code": 0,
+    "seconds": 0.6045373399974778,
+    "argv": [
+      "go",
+      "build",
+      "-o",
+      "/workspace/scratch/3e502de53f0d/bifrost-koka-script-host",
+      "."
+    ]
+  }
+}

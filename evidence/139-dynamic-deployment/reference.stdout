@@ -1,0 +1,9 @@
+eval-list: 42
+define: 42
+redefine: 42
+read-eval: 42
+typed: 42
+(fn dynamic-loaded)
+
+run time: 0.0003830870000000042 secs
+load: 42

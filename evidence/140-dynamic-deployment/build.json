@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "needs_eval": true,
+  "builder_sha256": "2a657fc4435976694f8906a1674fa2921f7d7d61b42749db76d8264c9b7834ce",
+  "execution": "Koka KLambda interpreter with embedded manifest-only sources",
+  "direct_kl_compiler": false,
+  "generator_sha256": null,
+  "manifest_sha256": "4342c23c579c7c4063d9e251e904392f63a22d62081ba15171791d1df34958ca",
+  "inputs": {
+    "kernel.kl": "29c2b77e77fc1a174aaf36f736cfc0bd514aa73d161cc30db533dfd03299c798",
+    "program.kl": "858ec7a74e62d13298dae626db4835834c12c7a1e047ae083e78b9b1eaa0b639"
+  },
+  "initializer": "shen.initialise",
+  "argv": [
+    "koka",
+    "-j1",
+    "-i/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment-redirected/koka-artifact/src",
+    "-i/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment-redirected/koka-artifact/generated",
+    "-O2",
+    "--builddir=/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment-redirected/koka-artifact/cache",
+    "-o",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment-redirected/koka-artifact/run",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment-redirected/koka-artifact/program.kk"
+  ],
+  "exit_code": 0,
+  "resources": {
+    "seconds": 112.9375771069972,
+    "children_peak_rss_high_water_bytes": 416055296,
+    "child_user_seconds": 110.261191,
+    "child_system_seconds": 8.998426,
+    "memory_events_before": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    },
+    "memory_events_after": {
+      "low": 0,
+      "high": 0,
+      "max": 70456,
+      "oom": 2,
+      "oom_kill": 1,
+      "oom_group_kill": 0
+    }
+  },
+  "runtime_sources": {
+    "shen/values.kk": "d1a8c9f0a098864621877c5dcb7c2bdbf7579b3ad357116d00a3edfe021693e2",
+    "shen/read-kl.kk": "804bf82490cc21c2bc67a35eb43c29dd938ec4502b7656f8dd65f9a5b287807a",
+    "shen/machine.kk": "e0f22171370466aeeef395504ca117c45926b020a6216cc35e0e07d03e3ef8c0",
+    "shen/world.kk": "3b5166fdea27d782b1ee9158cd39d22f1c89549865f279f829e385b084c42470",
+    "shen/boot.kk": "8afc255902d99d0b6a7c2e09b23a2f2418bea6809c328aadd7177302a758af1d",
+    "shen/compile-kl.kk": "0b8e7e565354869acda080c5864c1fd2fee2e28f5e5f08e9c440c54e308e5b02",
+    "shen/main.kk": "51c47dfb9c500709fff0b9f7477fd21483953988363434c0972d1fd930dc61b2",
+    "shen/io-inline.c": "b44f2d40c9c1a21c55d1b49121380fd4e3cca28c1e78d909b53d5d9529e4b2f5",
+    "shen/io.kk": "583e13af43571f63e65035a65fa9d4c21e872606a314a83b82378fd3a5698818"
+  },
+  "executable_sha256": "227c421cd387ebd7eea95528167e946f723187129ef86ed2f8ace99768f26cd6"
+}

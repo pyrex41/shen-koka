@@ -1,0 +1,33 @@
+{
+  "expected": "eval-list: 42\ndefine: 42\nredefine: 42\nread-eval: 42\ntyped: 42\nload: 42\n",
+  "source_sha256": "9e3db1fb845eb4cb1480a66d601d4613c636e00e5b8b8bf7e4dd31218409ad5a",
+  "baseline_full_suite": "../131-eval-slice-full/report.json",
+  "native_full_suite": "../135-native-kernel-resumed-full/report.json",
+  "reference": {
+    "exit_code": 0,
+    "matches_golden": false,
+    "stderr_empty": true
+  },
+  "build": {
+    "argv": [
+      "/workspace/scratch/3e502de53f0d/yggdrasil-koka-script-host",
+      "build",
+      "/workspace/scratch/3e502de53f0d/shen-koka/comparison/slices/dynamic/program.shen",
+      "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/dynamic-deployment",
+      "--target",
+      "koka",
+      "--host",
+      "/workspace/scratch/3e502de53f0d/reference-shen-go"
+    ],
+    "exit_code": 0,
+    "seconds": 121.19307385599677
+  },
+  "runtime_file": "(define dynamic-loaded X -> (* 3 X))",
+  "run": {
+    "exit_code": 0,
+    "matches_golden": true,
+    "stderr_empty": true,
+    "cwd_profile": "empty directory, nonexistent installed kernel"
+  },
+  "status": "FAIL"
+}

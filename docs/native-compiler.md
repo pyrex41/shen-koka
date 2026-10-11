@@ -2,7 +2,8 @@
 
 The published all-pass interpreter checkpoint is `5197c2967b6a2d4341a0650e1758109003713975`
 on `implement/klambda-runtime`. Native compiler work is isolated on
-`implement/native-compiler` and is not yet standalone-qualified.
+`implement/native-compiler`. The full compiled kernel passes all 134 + 8
+assertions (135); broader standalone and release qualification remain open.
 
 The generator emits Koka callbacks with explicit captured values. It preserves
 left-to-right evaluation and dynamic function lookup. Tail calls return requests
@@ -11,8 +12,9 @@ on error. Partial application and overapplication use the same dispatch boundary
 There is no host closure hidden from the Shen vector collector: registered native
 roots include locals and all suspended interpreter frames across nested calls.
 
-The runtime with this interface passes all 142 pinned assertions (085). Directly
-compiled focused programs now pass 43 cases (086), including million-step tail calls,
+The interpreter (131) and full compiled kernel (135) each pass all 142 pinned
+assertions with the documented PPM adapter enabled in both lanes. Directly
+compiled focused programs also pass 43 cases (096), including million-step tail calls,
 GC, vector aliasing, repeatable thaw, dynamic redefinition and exception recovery.
 These focused programs do not replace a full native-kernel suite run.
 
@@ -31,13 +33,13 @@ focused cases and the full interpreter suite pass with this workaround.
 ```sh
 nix develop --command python3 scripts/test-native.py --output artifacts/native-check
 nix develop --command bin/shen-koka build-slice --native MANIFEST OUTPUT
-nix develop --command python3 scripts/build-native-kernel.py --output artifacts/native-kernel
+nix develop --command python3 scripts/build-native-kernel.py --output artifacts/native-kernel --timeout 7200
 ```
 
 Native kernel generation preserves every pinned module's load-time form order.
 Slice generation instead invokes the manifest's synthesized initializer once.
 Interpreter-backed eval-capable slices pass the isolated metaevaluation fixture (130).
-Directly compiled eval-capable slices remain explicitly refused. Native kernel full-suite results,
+Directly compiled eval-capable slices remain explicitly refused. General
 standalone parity, build-time budgets, platform lanes and long-running memory
 qualification remain open gates.
 
@@ -48,11 +50,11 @@ each artifact carries the relevant upstream notices. Attempt 068 records the
 first pattern-unpacking generator's indentation failure; 070 passes all 37 cases
 after correction. The earlier full-kernel build had 2,834 callbacks across 71 modules.
 The current depth-six split emits 4,591 callbacks, grouped into 287 modules
-by the default `--module-size 16`. Its full-suite gate is still pending; attempt 067 records the
-pre-build state with all 142 assertions UNKNOWN.
+by the default `--module-size 16`. Attempt 135 passes the full-suite gate;
+attempt 067 preserves the earlier pre-build state with all 142 assertions UNKNOWN.
 
 ```sh
-python3 scripts/run-shen-suite.py --native-artifact artifacts/native-kernel-001 \
+python3 scripts/run-shen-suite.py --native-artifact artifacts/native-kernel \
   --ppm-compat --timeout 1800 --output artifacts/native-kernel-suite
 ```
 
@@ -131,3 +133,22 @@ entries. Ten controls (133) reject changed inputs and require that final step.
 `progress.json` describes the new steps; final `build.json` also records the
 reused prefix and the previous build-record hash. A resumed build is not qualified
 until it produces an executable and passes the full suite.
+
+
+### Completed kernel compatibility gate
+
+Attempt 134 reuses the validated 268-library prefix and completes the remaining
+19 libraries plus final link in 637.7 seconds. This is a resumed measurement,
+not a cold-build performance claim. The executable is 74,918,752 bytes.
+Attempt 135 runs all 134 canonical and eight extension assertions successfully,
+capturing all 35 canonical reports before reset, with zero UNKNOWN and no
+regressions. The complete artifact provenance and raw-log hashes were audited.
+Attempt 138 also passes ten CLI contracts and all 17 Bifrost seed cases on that
+executable. Native full boot replays all 923 original top-level forms in order;
+it does not use the slice initializer.
+
+The interpreter remains the default package and slice execution mode. Its
+eval-capable deployment fixture (140) passes through Yggdrasil's registered
+builder, including redefinition, typechecked definitions and runtime file loads
+from an empty directory without an installed kernel. These results do not
+qualify additional platforms, every deployment shape, or performance budgets.

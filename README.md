@@ -3,10 +3,11 @@
 Experimental Shen port using Koka, with
 Bifrost comparison gates and Yggdrasil standalone artifacts.
 
-Status on 2026-10-11: experimental Koka KLambda interpreter and pinned S42
-kernel boot implemented. Full-port qualification is pending. The adapter-enabled interpreter passes all
-134 canonical and eight extension assertions; the direct compiler passes 43
-focused cases and one actual Yggdrasil standalone hello case.
+Status on 2026-10-11: the Koka-owned KLambda interpreter and direct KL-to-Koka
+compiler both boot the pinned S42 kernel and pass **134 canonical plus eight
+extension assertions** in the documented adapter-enabled profile. Both pass the
+17-case seed suite. Bifrost and Yggdrasil integrations are published; full-port
+release qualification remains pending.
 See [implementation progress](docs/implementation-status.md) and `evidence/`
 for executed results, limitations, and reproduction commands.
 
@@ -71,10 +72,10 @@ kernel. A full-suite timeout is UNKNOWN for every unreached assertion, not a pas
 `bin/shen-koka build-slice MANIFEST OUTPUT` builds an interpreter-backed native
 Yggdrasil artifact. It executes the manifest's synthesized initializer exactly
 once. Its interpreter-backed path supports eval-capable manifests (the isolated
-metaevaluation fixture passes); add `--native` for experimental direct
+metaevaluation, redefinition, typechecking and file-loading fixtures pass); add `--native` for experimental direct
 KL-to-Koka callbacks, which still refuse eval-capable manifests. The Yggdrasil integration exposes these as `koka` and
-`koka-native`; both initializer/order fixtures pass. Full compiled-kernel
-qualification is still pending; see [native compiler status](docs/native-compiler.md).
+`koka-native`; both initializer/order fixtures pass. The full compiled kernel
+passes the complete suite; broader deployment and release gates remain open. See [native compiler status](docs/native-compiler.md).
 
 See [CLI behavior](docs/cli.md) for ordered eval actions, script arguments,
 quiet loading, and the separate KLambda diagnostic format.
