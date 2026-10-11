@@ -1,0 +1,19 @@
+{
+  "store_path": "/nix/store/5j8flhfyyfg0681c7mvlxasglypb5w23-shen-koka-0.0.1-experimental",
+  "cases": {
+    "version": {
+      "exit_code": 0,
+      "stdout": "shen-koka 0.0.1 experimental; pinned Shen 42\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    "arithmetic": {
+      "exit_code": 0,
+      "stdout": "42\n",
+      "stderr": "",
+      "status": "PASS"
+    }
+  },
+  "installed_binary_sha256": "17605800567c832d7c4f7932b5e8c7be7b97112e5862d6311349f4a4f81aca31",
+  "provenance_matches": true
+}

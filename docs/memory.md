@@ -31,3 +31,12 @@ pending frames and the callback's local roots. Nested interpreter calls therefor
 see both kinds of roots. Normal and exceptional returns restore the preceding
 root stack. Generated code addresses are installed once per world; this private
 interface is not a hot-module-loading API.
+
+## Raw vector allocation bound
+
+Finite lengths are truncated before conversion to a host integer. The runtime
+rejects results outside 0 through 2^28 slots, matching the explicit maximum in
+the pinned Go primitive. This check occurs before host allocation or narrowing.
+Attempt 081 showed an enormous finite request returning a vector instead of a
+catchable error; attempt 083 verifies the repaired range behavior. Non-finite
+lengths are also rejected. This limit is not a long-running memory qualification.

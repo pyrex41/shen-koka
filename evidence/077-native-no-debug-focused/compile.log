@@ -1,0 +1,186 @@
+parse   : .../std/core/types.kk
+check   : std/core/types
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/undiv.kk
+check   : std/core/undiv
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/unsafe.kk
+check   : std/core/unsafe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/hnd.kk
+check   : std/core/hnd
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/exn.kk
+check   : std/core/exn
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/bool.kk
+check   : std/core/bool
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/int.kk
+check   : std/core/int
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/order.kk
+check   : std/core/order
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/char.kk
+check   : std/core/char
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/vector.kk
+check   : std/core/vector
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/string.kk
+check   : std/core/string
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/sslice.kk
+check   : std/core/sslice
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/list.kk
+check   : std/core/list
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe.kk
+check   : std/core/maybe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe2.kk
+check   : std/core/maybe2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/either.kk
+check   : std/core/either
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/tuple.kk
+check   : std/core/tuple
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/lazy.kk
+check   : std/core/lazy
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/show.kk
+check   : std/core/show
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/console.kk
+check   : std/core/console
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/debug.kk
+check   : std/core/debug
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/delayed.kk
+check   : std/core/delayed
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core.kk
+check   : std/core
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/text/parse.kk
+check   : std/text/parse
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/int32.kk
+check   : std/num/int32
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/int64.kk
+check   : std/num/int64
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/float64.kk
+check   : std/num/float64
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/values.kk
+check   : shen/values
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/world.kk
+check   : shen/world
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/compile-kl.kk
+check   : shen/compile-kl
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart0.kk
+check   : klpart0
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart1.kk
+check   : klpart1
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart2.kk
+check   : klpart2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart3.kk
+check   : klpart3
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/os/path.kk
+check   : std/os/path
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/os/env.kk
+check   : std/os/env
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : /tmp/shen-koka-native-anf/program.kk
+check   : program
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+linking : tmp/shen-koka-native-anf/program/@main
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+compile : kklib from: /nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+created : /tmp/shen-koka-native-anf/run
+/tmp/shen-koka-native-anf/generated/klpart3.kk(7, 5): type warning: pattern variable x419 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(15, 5): type warning: pattern variable x420 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(23, 5): type warning: pattern variable x421 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(31, 5): type warning: pattern variable x422 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(39, 5): type warning: pattern variable x423 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(47, 5): type warning: pattern variable x427 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(55, 5): type warning: pattern variable x431 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(63, 5): type warning: pattern variable x433 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(71, 5): type warning: pattern variable x434 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(79, 5): type warning: pattern variable x436 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(95, 5): type warning: pattern variable x440 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(103, 5): type warning: pattern variable x441 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(203, 5): type warning: pattern variable x496 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(86, 5): type warning: pattern variable x286 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(110, 5): type warning: pattern variable x292 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(143, 5): type warning: pattern variable x303 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(456, 5): type warning: pattern variable x418 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart1.kk(411, 5): type warning: pattern variable x254 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart1.kk(428, 5): type warning: pattern variable x261 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+/tmp/shen-koka-native-anf/src/shen/world.kk(111,47): type warning: v shadows an earlier local definition or parameter
+
+/tmp/shen-koka-native-anf/src/shen/world.kk(127,74): type warning: t shadows an earlier local definition or parameter
+

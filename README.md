@@ -5,7 +5,7 @@ Bifrost comparison gates and Yggdrasil standalone artifacts.
 
 Status on 2026-10-11: experimental Koka KLambda interpreter and pinned S42
 kernel boot implemented. Full-port qualification is pending. The adapter-enabled interpreter passes all
-134 canonical and eight extension assertions; the direct compiler passes 37
+134 canonical and eight extension assertions; the direct compiler passes 43
 focused cases and one actual Yggdrasil standalone hello case.
 See [implementation progress](docs/implementation-status.md) and `evidence/`
 for executed results, limitations, and reproduction commands.
@@ -58,6 +58,7 @@ bin/shen-koka eval -e '(+ 1 2)'
 bin/shen-koka script program.shen
 bin/shen-koka repl
 nix develop --command python3 scripts/test-runtime.py
+nix develop --command python3 scripts/test-primitives.py
 nix develop --command python3 scripts/run-shen-suite.py \
   --output artifacts/suite-001 --timeout 1800 --ppm-compat
 ```

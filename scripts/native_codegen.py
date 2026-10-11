@@ -5,6 +5,7 @@ non-tail calls root the surrounding native locals and suspended VM frames.
 import json, math, pathlib, re
 
 class Symbol(str): pass
+class LiteralSymbol(Symbol): pass
 NUMBER = re.compile(r'^[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?$')
 
 def read_kl(source):
@@ -51,7 +52,7 @@ class Compiler:
         if not isinstance(x,list) or not x or not isinstance(x[0],Symbol):return x
         tag=x[0];args=x[1:]
         if tag in ('and','or') and len(args)==2:
-            a,b=args;t=Symbol('true');f=Symbol('false');branch=[Symbol('if'),b,t,f]
+            a,b=args;t=LiteralSymbol('true');f=LiteralSymbol('false');branch=[Symbol('if'),b,t,f]
             return [Symbol('if'),a,branch if tag=='and' else t,f if tag=='and' else branch]
         if tag=='cond':
             nested=[Symbol('simple-error'),'cond: no true branch']
@@ -62,6 +63,7 @@ class Compiler:
         if tag=='type' and len(args)==2:return self.normalize(args[0])
         return x
     def constant(self,x,env):
+        if isinstance(x,LiteralSymbol):return 'Sym('+quote(x)+')'
         if isinstance(x,Symbol):return env.get(x,'Sym('+quote(x)+')')
         if isinstance(x,str):return 'Text('+quote(x)+')'
         if isinstance(x,float):
@@ -110,7 +112,7 @@ class Compiler:
             lines,test=self.value(args[0],env)
             yes,y=self.value(args[1],env);no,n=self.value(args[2],env)
             expression='if boolean('+test+') then '+block(yes+[y])+' else '+block(no+[n])
-            v=self.fresh();lines.append('val '+v+'='+expression);return lines,v
+            v=self.fresh();lines.append('val '+v+':value='+expression);return lines,v
         if tag=='trap-error' and len(args)==2:
             lines=[];body=self.save(self.closure([],args[0],env),lines);hndl=self.save(self.closure([],args[1],env),lines)
             v=self.save('invoke-protected(w,'+body+','+hndl+')',lines);return lines,v

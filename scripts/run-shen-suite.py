@@ -88,7 +88,7 @@ def main():
         p=args.distribution/'tests'/name
         if not p.is_file() or sha(p)!=digest: errors.append(name)
     identities={x['id']:x for x in json.loads((ROOT/'comparison/assertions.json').read_text())}
-    launcher=pathlib.Path(args.launcher).absolute()
+    launcher=pathlib.Path(args.launcher).resolve()
     native_build=None;native_root=args.native_artifact.resolve() if args.native_artifact else None
     if native_root:
         launcher=native_root/'run'
@@ -98,7 +98,7 @@ def main():
             native_build=json.loads(record.read_text())
             if native_build.get('exit_code')!=0 or not native_build.get('direct_kl_compiler') or not native_build.get('kernel_forms'):errors.append('not a completed full native kernel build')
             binary=native_root/'native'
-            if not binary.is_file() or sha(binary)!=native_build.get('binary_sha256'):errors.append('native binary changed after build')
+            if not binary.is_file() or sha(binary)!=native_build.get('binary_sha256'):errors.append('native binary missing or hash mismatch')
             generator=native_root/'native_codegen.py'
             if not generator.is_file() or sha(generator)!=native_build.get('generator_sha256'):errors.append('native generator snapshot drift')
             for name,digest in native_build.get('compat_sha256',{}).items():

@@ -1,0 +1,8 @@
+Observed after the compiler exited by SIGKILL. These cumulative cgroup counters were not captured before the run, so attribution is suggestive, not proven.
+8589934592
+low 0
+high 0
+max 70456
+oom 2
+oom_kill 1
+oom_group_kill 0

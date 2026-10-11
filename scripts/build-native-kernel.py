@@ -2,14 +2,14 @@
 """Compile every pinned kernel form, preserving its original load-time order."""
 import argparse,hashlib,json,pathlib,shutil,subprocess,sys,time
 from native_codegen import Compiler,read_kl
-from native_build import run_compiler,serial_native_build,artifact_notices
+from native_build import run_compilation_steps,serial_native_build,artifact_notices,sync_sources
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 MODULES=['yacc','core','load','prolog','reader','sequent','sys','toplevel','track','writer','backend','macros','declarations','t-star','types','extension-features','extension-expand-dynamic','extension-launcher']
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 @serial_native_build
 def main():
  sys.setrecursionlimit(10000)
- p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);p.add_argument('--debug',action='store_true',help='retain debug information');p.add_argument('--timeout',type=float,default=1800);a=p.parse_args()
  out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);artifact_notices(out)
  generator_snapshot=(ROOT/'scripts/native_codegen.py').read_bytes();(out/'native_codegen.py').write_bytes(generator_snapshot)
  # Refuse drift between the ordinary loader and the native form order.
@@ -29,13 +29,15 @@ def main():
  lines+=[' load-compat(w,get-env-value("SHEN_KOKA_ROOT").default("."))','}']
  (out/'program.kk').write_text('\n'.join(lines)+'\n')
  stage=pathlib.Path('/tmp/shen-koka-native-anf');stage.mkdir(exist_ok=True)
- shutil.copytree(out/'src',stage/'src',dirs_exist_ok=True);shutil.copytree(out/'generated',stage/'generated',dirs_exist_ok=True);shutil.copy2(out/'program.kk',stage/'program.kk')
- command=['koka','-j1','-i'+str(stage/'src'),'-i'+str(stage/'generated'),'-O2','--builddir='+str(a.cache.resolve() if a.cache else pathlib.Path('/tmp/shen-koka-native-anf-cache')),'-o',str(stage/'run'),str(stage/'program.kk')]
+ sync_sources(out/'src',stage/'src');sync_sources(out/'generated',stage/'generated');shutil.copy2(out/'program.kk',stage/'program.kk')
+ common=['koka','-j1','-i'+str(stage/'src'),'-i'+str(stage/'generated'),'-O2']+([] if a.debug else ['--no-debug'])+['--builddir='+str(a.cache.resolve() if a.cache else pathlib.Path('/tmp/shen-koka-native-anf-cache'))]
+ commands=[common+['--library',str(stage/'generated'/(m+'.kk'))] for m in plan['modules']]
+ commands.append(common+['-o',str(stage/'run'),str(stage/'program.kk')])
  start=time.monotonic();print('Compiling '+str(plan['code_count'])+' native kernel callbacks',flush=True)
- r=run_compiler(command,1800)
+ r=run_compilation_steps(commands,a.timeout)
  (out/'compile.log').write_text(r.stdout)
  if r.returncode==0:shutil.copy2(stage/'run',out/'native')
- record={'direct_kl_compiler':True,'kernel_forms':sum(map(len,plan['entries'])),'native_callbacks':plan['code_count'],'kernel_sha256':{f.name:sha(f) for f in files},'generator_sha256':sha(out/'native_codegen.py'),'flake_lock_sha256':sha(ROOT/'flake.lock'),'compat_sha256':{str(f.relative_to(out/'compat')):sha(f) for f in (out/'compat').rglob('*') if f.is_file()},'runtime_sources':{str(f.relative_to(out/'src')):sha(f) for f in (out/'src').rglob('*') if f.is_file()},'command':command,'exit_code':r.returncode,'seconds':time.monotonic()-start}
+ record={'direct_kl_compiler':True,'kernel_forms':sum(map(len,plan['entries'])),'native_callbacks':plan['code_count'],'kernel_sha256':{f.name:sha(f) for f in files},'generator_sha256':sha(out/'native_codegen.py'),'flake_lock_sha256':sha(ROOT/'flake.lock'),'compat_sha256':{str(f.relative_to(out/'compat')):sha(f) for f in (out/'compat').rglob('*') if f.is_file()},'runtime_sources':{str(f.relative_to(out/'src')):sha(f) for f in (out/'src').rglob('*') if f.is_file()},'commands':commands,'steps':r.steps,'debug_info':a.debug,'timeout_seconds':a.timeout,'exit_code':r.returncode,'seconds':time.monotonic()-start}
  if r.returncode==0:
   (out/'native').chmod(0o755);record['binary_sha256']=sha(out/'native')
   (out/'run').write_text('#!/usr/bin/env bash\nset -euo pipefail\nroot=$(cd "$(dirname "$0")" && pwd)\nexport SHEN_KOKA_ROOT="$root"\nexec "$root/native" "$@"\n');(out/'run').chmod(0o755)

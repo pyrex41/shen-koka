@@ -3,7 +3,7 @@
 This is an interpreter-backed builder, not the planned direct KL-to-Koka compiler.
 """
 import argparse,collections,hashlib,json,pathlib,subprocess,sys
-from native_build import run_compiler,serial_native_build,artifact_notices
+from native_build import run_compiler,serial_native_build,artifact_notices,sync_sources
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 @serial_native_build
@@ -57,15 +57,15 @@ def main():
     stage=out
     if plan:
         stage=pathlib.Path('/tmp/shen-koka-native-anf');stage.mkdir(exist_ok=True)
-        shutil.copytree(runtime,stage/'src',dirs_exist_ok=True)
-        shutil.copytree(out/'generated',stage/'generated',dirs_exist_ok=True)
+        sync_sources(runtime,stage/'src')
+        sync_sources(out/'generated',stage/'generated')
         shutil.copy2(out/'program.kk',stage/'program.kk')
     command=['koka','-j1','-i'+str(stage/'src'),'-i'+str(stage/'generated'),'-O2','--builddir='+str(pathlib.Path('/tmp/shen-koka-native-anf-cache') if plan else out/'cache'),'-o',str(stage/'run'),str(stage/'program.kk')]
     result=run_compiler(command,900)
     (out/'compile.log').write_text(result.stdout)
     if plan and result.returncode==0:
         (stage/'run').chmod(0o755);shutil.copy2(stage/'run',out/'run')
-    record={'schema_version':1,'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(out/'native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
+    record={'schema_version':1,'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(out/'native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'resources':result.resources,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
     if result.returncode==0:
         (out/'run').chmod(0o755);record['executable_sha256']=digest(out/'run')
     (out/'build.json').write_text(json.dumps(record,indent=2)+'\n')

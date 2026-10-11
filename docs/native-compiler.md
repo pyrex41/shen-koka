@@ -11,8 +11,8 @@ on error. Partial application and overapplication use the same dispatch boundary
 There is no host closure hidden from the Shen vector collector: registered native
 roots include locals and all suspended interpreter frames across nested calls.
 
-The runtime with this interface passes all 142 pinned assertions (064). Directly
-compiled focused programs now pass 37 cases (070), including million-step tail calls,
+The runtime with this interface passes all 142 pinned assertions (085). Directly
+compiled focused programs now pass 43 cases (086), including million-step tail calls,
 GC, vector aliasing, repeatable thaw, dynamic redefinition and exception recovery.
 These focused programs do not replace a full native-kernel suite run.
 
@@ -58,3 +58,15 @@ The native-artifact lane verifies build metadata, generator/source/compatibility
 hashes, and the compiled binary, then freezes the executable and compatibility
 files across both lanes. It does not fall back to the ordinary launcher when
 an artifact is missing. Suite runners now retain their own source snapshots.
+
+Monolithic full-kernel compilation ended with SIGKILL after 795 seconds (073).
+The batched build reached module 23 and exposed an ambiguous unannotated `Nil`
+in a value-producing conditional (078). The generator now annotates these
+values explicitly. It also treats boolean constants introduced by `and`/`or`
+as literals, independently of lexical names. Attempt 086 passes 43 native cases.
+
+Full-kernel builds compile each generated module as a library in a separate
+compiler process before linking. They omit debug information by default, retain
+per-step resource counters, and reuse unchanged staging files on retry. The
+30-minute whole-build budget is configurable with `--timeout`; each compiler
+step is bounded to five minutes. Partial compilation is not a usable artifact.

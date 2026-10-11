@@ -1,0 +1,4 @@
+warning: Git tree '/workspace/scratch/3e502de53f0d/shen-koka' is dirty
+this derivation will be built:
+  /nix/store/hfah0gbvxrzwbzq0wdzmkxw00633iq2g-shen-koka-0.0.1-experimental.drv
+building '/nix/store/hfah0gbvxrzwbzq0wdzmkxw00633iq2g-shen-koka-0.0.1-experimental.drv'...

@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "required_primitives": {
+    "open": 2,
+    "read-byte": 1,
+    "write-byte": 2,
+    "close": 1,
+    "get-time": 1,
+    "cons": 2,
+    "hd": 1,
+    "tl": 1,
+    "cons?": 1,
+    "number?": 1,
+    "string?": 1,
+    "absvector?": 1,
+    "intern": 1,
+    "set": 2,
+    "value": 1,
+    "=": 2,
+    "+": 2,
+    "-": 2,
+    "*": 2,
+    "/": 2,
+    "<": 2,
+    ">": 2,
+    "<=": 2,
+    ">=": 2,
+    "cn": 2,
+    "str": 1,
+    "pos": 2,
+    "tlstr": 1,
+    "n->string": 1,
+    "string->n": 1,
+    "absvector": 1,
+    "<-address": 2,
+    "address->": 3,
+    "simple-error": 1,
+    "error-to-string": 1,
+    "shen.char-stinput?": 1,
+    "shen.char-stoutput?": 1
+  },
+  "host_extensions": {
+    "list": null,
+    "shen-koka.heap-live": 0
+  },
+  "machine_dispatch": {
+    "eval-kl": 1,
+    "thaw": 1
+  },
+  "cases": [
+    {
+      "id": "primitive/01",
+      "covers": [
+        "open",
+        "read-byte",
+        "close"
+      ],
+      "source": "(set *home-directory* \"\") (let S (open \"input.bin\" in) (let A (read-byte S) (let B (read-byte S) (let C (read-byte S) (let D (read-byte S) (let X (close S) (list A B C D)))))))",
+      "expected": "\"\"\n[65 0 255 -1]"
+    },
+    {
+      "id": "primitive/02",
+      "covers": [
+        "write-byte"
+      ],
+      "source": "(set *home-directory* \"\") (let S (open \"output.bin\" out) (let A (write-byte 255 S) (let X (close S) A)))",
+      "expected": "\"\"\n255"
+    },
+    {
+      "id": "primitive/03",
+      "covers": [
+        "get-time"
+      ],
+      "source": "(number? (get-time run)) (number? (get-time unix))",
+      "expected": "true\ntrue"
+    },
+    {
+      "id": "primitive/04",
+      "covers": [
+        "cons",
+        "hd",
+        "tl",
+        "cons?"
+      ],
+      "source": "(hd (cons 1 2)) (tl (cons 1 2)) (cons? (cons 1 2)) (cons? ())",
+      "expected": "1\n2\ntrue\nfalse"
+    },
+    {
+      "id": "primitive/05",
+      "covers": [
+        "number?"
+      ],
+      "source": "(number? 1.5) (number? \"1\")",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/06",
+      "covers": [
+        "string?"
+      ],
+      "source": "(string? \"a\") (string? a)",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/07",
+      "covers": [
+        "absvector?",
+        "absvector"
+      ],
+      "source": "(absvector? (absvector 0)) (absvector? ())",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/08",
+      "covers": [
+        "intern"
+      ],
+      "source": "(= (intern \"same\") same)",
+      "expected": "true"
+    },
+    {
+      "id": "primitive/09",
+      "covers": [
+        "set",
+        "value"
+      ],
+      "source": "(set probe 7) (value probe)",
+      "expected": "7\n7"
+    },
+    {
+      "id": "primitive/10",
+      "covers": [
+        "="
+      ],
+      "source": "(= (cons 1 ()) (cons 1 ())) (= (cons 1 ()) (cons 2 ()))",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/11",
+      "covers": [
+        "+"
+      ],
+      "source": "(+ 1 2.5)",
+      "expected": "3.5"
+    },
+    {
+      "id": "primitive/12",
+      "covers": [
+        "-"
+      ],
+      "source": "(- 5 2)",
+      "expected": "3"
+    },
+    {
+      "id": "primitive/13",
+      "covers": [
+        "*"
+      ],
+      "source": "(* 3 4)",
+      "expected": "12"
+    },
+    {
+      "id": "primitive/14",
+      "covers": [
+        "/"
+      ],
+      "source": "(/ 3 2)",
+      "expected": "1.5"
+    },
+    {
+      "id": "primitive/15",
+      "covers": [
+        "<"
+      ],
+      "source": "(< 1 2) (< 2 2)",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/16",
+      "covers": [
+        ">"
+      ],
+      "source": "(> 2 1) (> 2 2)",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/17",
+      "covers": [
+        "<="
+      ],
+      "source": "(<= 2 2) (<= 3 2)",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/18",
+      "covers": [
+        ">="
+      ],
+      "source": "(>= 2 2) (>= 1 2)",
+      "expected": "true\nfalse"
+    },
+    {
+      "id": "primitive/19",
+      "covers": [
+        "cn"
+      ],
+      "source": "(cn \"a\" \"b\")",
+      "expected": "\"ab\""
+    },
+    {
+      "id": "primitive/20",
+      "covers": [
+        "str"
+      ],
+      "source": "(str symbol) (str 42)",
+      "expected": "\"symbol\"\n\"42\""
+    },
+    {
+      "id": "primitive/21",
+      "covers": [
+        "pos"
+      ],
+      "source": "(pos \"abc\" 1)",
+      "expected": "\"b\""
+    },
+    {
+      "id": "primitive/22",
+      "covers": [
+        "tlstr"
+      ],
+      "source": "(tlstr \"abc\")",
+      "expected": "\"bc\""
+    },
+    {
+      "id": "primitive/23",
+      "covers": [
+        "n->string"
+      ],
+      "source": "(n->string 65)",
+      "expected": "\"A\""
+    },
+    {
+      "id": "primitive/24",
+      "covers": [
+        "string->n"
+      ],
+      "source": "(string->n \"A\")",
+      "expected": "65"
+    },
+    {
+      "id": "primitive/25",
+      "covers": [
+        "<-address",
+        "address->"
+      ],
+      "source": "(let V (absvector 1) (let X (address-> V 0 42) (<-address V 0)))",
+      "expected": "42"
+    },
+    {
+      "id": "primitive/26",
+      "covers": [
+        "simple-error",
+        "error-to-string"
+      ],
+      "source": "(trap-error (simple-error \"message\") (lambda E (error-to-string E)))",
+      "expected": "\"message\""
+    },
+    {
+      "id": "primitive/27",
+      "covers": [
+        "shen.char-stinput?",
+        "shen.char-stoutput?"
+      ],
+      "source": "(shen.char-stinput? ()) (shen.char-stoutput? ())",
+      "expected": "false\nfalse"
+    }
+  ]
+}

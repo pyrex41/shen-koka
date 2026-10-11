@@ -4,15 +4,15 @@ The complete Shen distribution remains the primary gate.
 """
 import argparse,ast,hashlib,json,pathlib,shutil,subprocess,sys,time,tempfile
 from native_codegen import Compiler,read_kl,quote
-from native_build import run_compiler,serial_native_build
+from native_build import run_compiler,serial_native_build,sync_sources
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 @serial_native_build
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);shutil.copy2(ROOT/'scripts/native_codegen.py',out/'generator.py')
+ p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);p.add_argument('--no-debug',action='store_true');a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);shutil.copy2(ROOT/'scripts/native_codegen.py',out/'generator.py')
  module=ast.parse((ROOT/'scripts/test-runtime.py').read_text())
  cases=next(ast.literal_eval(n.value) for n in module.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='cases' for t in n.targets))
  work=pathlib.Path('/tmp/shen-koka-native-anf');work.mkdir(exist_ok=True)
- shutil.copytree(ROOT/'src/shen',work/'src/shen',dirs_exist_ok=True)
+ sync_sources(ROOT/'src/shen',work/'src/shen')
  gen=Compiler();plan=gen.write(work/'generated',[read_kl(source) for source,expected in cases.values()])
  lines=['import shen/values','import shen/world','import shen/machine','import shen/io','import std/os/env','import std/num/int32']
  lines += ['import '+m for m in plan['modules']]
@@ -27,11 +27,12 @@ def main():
  (work/'program.kk').write_text('\n'.join(lines)+'\n')
  stage=work/'generated'
  command=['koka','-j1','-i'+str(work/'src'),'-i'+str(stage),'-O2','--builddir='+str(a.cache.resolve() if a.cache else pathlib.Path('/tmp/shen-koka-native-anf-cache')),'-o',str(work/'run'),str(work/'program.kk')]
+ if a.no_debug:command.insert(1,'--no-debug')
  start=time.monotonic()
  print('Compiling '+str(plan['code_count'])+' native callbacks',flush=True)
  r=run_compiler(command,900)
  (out/'compile.log').write_text(r.stdout)
- record={'command':command,'compile_exit_code':r.returncode,'build_seconds':time.monotonic()-start,'cases':{name:{'source':source,'expected':expected,'status':'UNKNOWN','blocker':'native compiler did not complete successfully'} for name,(source,expected) in cases.items()}}
+ record={'command':command,'compile_exit_code':r.returncode,'resources':r.resources,'build_seconds':time.monotonic()-start,'cases':{name:{'source':source,'expected':expected,'status':'UNKNOWN','blocker':'native compiler did not complete successfully'} for name,(source,expected) in cases.items()}}
  if r.returncode==0:
   (work/'run').chmod(0o755);record['binary_sha256']=hashlib.sha256((work/'run').read_bytes()).hexdigest()
   for name,(source,expected) in cases.items():

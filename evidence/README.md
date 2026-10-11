@@ -57,3 +57,13 @@ checks. 067 is the missing native-kernel pre-build gate: all 142 UNKNOWN. 068
 retains an indentation/compiler failure, followed by 37 compiled PASS in 070.
 069 reproduces the metaprogramming scenario in isolation. 071 passes all 17
 required Koka Bifrost cells and the strict checker.
+
+072 passes 68 primitive inventory/observation/arity checks. 073 retains the
+SIGKILLed monolithic native kernel build; 074 records all 142 native assertions
+UNKNOWN. 075/076 qualify the first installed Nix runtime against all 142 tests.
+077 passes 37 native cases without debug info. 078/079 retain the batched native
+kernel's Nil inference failure and all-UNKNOWN suite. 080/082 pass 40 interpreter
+and compiled conditional checks. 081 reproduces a huge vector request wrongly
+returning a vector; 083 passes 43 interpreter and 68 primitive checks after its
+range repair. 084/085 validate the rebuilt Nix package and all 142 assertions.
+086 passes all 43 compiled checks with the same primitive repair.

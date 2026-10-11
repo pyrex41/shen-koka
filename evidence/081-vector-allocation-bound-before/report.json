@@ -1,0 +1,10 @@
+{
+  "source": "(trap-error (absvector 1e100) (lambda E caught))",
+  "binary_sha256": "380685d2fc068b6ca5edfdbd7a1e25771b40e10a2ab28de2fd05cd82d1acd0ba",
+  "address_space_limit_bytes": 268435456,
+  "exit_code": 0,
+  "stdout": "#<vector 0>\n",
+  "stderr": "",
+  "expected": "caught\n",
+  "status": "FAIL"
+}

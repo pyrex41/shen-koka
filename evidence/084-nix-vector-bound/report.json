@@ -1,0 +1,9 @@
+{
+  "store_path": "/nix/store/ja98nr5np7p7wi5d3zminyk826v14vl6-shen-koka-0.0.1-experimental",
+  "binary_sha256": "4c5d305ef32b9fb6b46a040a2a3c351725b213f78090943aa7ac118a8e5d6845",
+  "provenance_matches": true,
+  "exit_code": 0,
+  "stdout": "caught\n",
+  "stderr": "",
+  "status": "PASS"
+}

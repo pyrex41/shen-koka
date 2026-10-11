@@ -1,0 +1,118 @@
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : shen/io
+load    : std/os/env
+load    : std/num/int32
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : std/os/path
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart0.kk
+check   : klpart0
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart1.kk
+check   : klpart1
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart2.kk
+check   : klpart2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart3.kk
+check   : klpart3
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : /tmp/shen-koka-native-anf/program.kk
+check   : program
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+linking : tmp/shen-koka-native-anf/program/@main
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+created : /tmp/shen-koka-native-anf/run
+/tmp/shen-koka-native-anf/generated/klpart3.kk(85, 5): type warning: pattern variable x425 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(93, 5): type warning: pattern variable x426 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(101, 5): type warning: pattern variable x427 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(109, 5): type warning: pattern variable x428 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(117, 5): type warning: pattern variable x429 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(125, 5): type warning: pattern variable x430 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(133, 5): type warning: pattern variable x434 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(141, 5): type warning: pattern variable x438 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(149, 5): type warning: pattern variable x440 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(157, 5): type warning: pattern variable x441 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(165, 5): type warning: pattern variable x443 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(181, 5): type warning: pattern variable x447 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(189, 5): type warning: pattern variable x448 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart3.kk(289, 5): type warning: pattern variable x503 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(16, 5): type warning: pattern variable x268 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(112, 5): type warning: pattern variable x293 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(136, 5): type warning: pattern variable x299 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart2.kk(169, 5): type warning: pattern variable x310 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/generated/klpart1.kk(442, 5): type warning: pattern variable x261 is unused (or a wrongly spelled constructor?)
+   hint: prepend an underscore to make it a wildcard pattern
+
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+

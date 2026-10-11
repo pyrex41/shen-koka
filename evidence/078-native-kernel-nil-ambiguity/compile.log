@@ -1,0 +1,1086 @@
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart0.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart0.kk
+check   : klpart0
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart1.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart1.kk
+check   : klpart1
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart2.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart2.kk
+check   : klpart2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart3.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart3.kk
+check   : klpart3
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart4.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart4.kk
+check   : klpart4
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart5.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart5.kk
+check   : klpart5
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart6.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart6.kk
+check   : klpart6
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart7.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart7.kk
+check   : klpart7
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart8.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart8.kk
+check   : klpart8
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart9.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart9.kk
+check   : klpart9
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart10.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart10.kk
+check   : klpart10
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart11.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart11.kk
+check   : klpart11
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart12.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart12.kk
+check   : klpart12
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart13.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart13.kk
+check   : klpart13
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart14.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart14.kk
+check   : klpart14
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart15.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart15.kk
+check   : klpart15
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart16.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart16.kk
+check   : klpart16
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart17.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart17.kk
+check   : klpart17
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart18.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart18.kk
+check   : klpart18
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart19.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart19.kk
+check   : klpart19
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart20.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart20.kk
+check   : klpart20
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart21.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart21.kk
+check   : klpart21
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart22.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart22.kk
+check   : klpart22
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+
+COMMAND ["koka", "-j1", "-i/tmp/shen-koka-native-anf/src", "-i/tmp/shen-koka-native-anf/generated", "-O2", "--no-debug", "--builddir=/tmp/shen-koka-native-anf-cache", "--library", "/tmp/shen-koka-native-anf/generated/klpart23.kk"]
+load    : std/core
+load    : shen/values
+load    : shen/world
+load    : shen/machine
+load    : std/core/types
+load    : std/core/undiv
+load    : std/core/unsafe
+load    : std/core/hnd
+load    : std/core/exn
+load    : std/core/bool
+load    : std/core/order
+load    : std/core/char
+load    : std/core/int
+load    : std/core/vector
+load    : std/core/string
+load    : std/core/sslice
+load    : std/core/list
+load    : std/core/maybe
+load    : std/core/maybe2
+load    : std/core/either
+load    : std/core/tuple
+load    : std/core/lazy
+load    : std/core/show
+load    : std/core/debug
+load    : std/core/delayed
+load    : std/core/console
+load    : std/num/float64
+load    : shen/compile-kl
+load    : shen/io
+load    : std/num/int32
+load    : std/text/parse
+load    : std/num/int64
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart23.kk
+check   : klpart23
+/tmp/shen-koka-native-anf/generated/klpart23.kk(349,13): type error: identifier Nil cannot be resolved.
+  context      :             Nil
+  inferred type: _
+  candidates   : shen/values/Nil: shen/values/value
+                 Nil            : forall<a> list<a>
+  hint         : give a type annotation or qualify the name?
+
+/tmp/shen-koka-native-anf/src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+Failed to compile /tmp/shen-koka-native-anf/generated/klpart23.kk
