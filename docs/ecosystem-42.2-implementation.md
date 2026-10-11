@@ -79,3 +79,17 @@ The Koka default launcher currently needs an actual build; the runtime still boo
 S42. Passing an external launcher requires --launcher and its actual argv syntax
 through --script-command. This runner does not establish that launcher's runtime
 kernel identity, installed-package identity, ABI or platform qualification.
+
+## Baseline build boundary
+
+Shen-Go default HEAD fetched over HTTPS is 1f587de (merged #62). The preserved
+original checkout remains untouched; shen-go-42-cohort is a fresh worktree on
+codex/shen42-cohort-baseline. Host Go 1.25.10 is rejected by go.mod's >=1.27
+requirement. The repository's Nix environment selects Go 1.27.0. No host-compiler
+substitution or cached suite result is accepted as baseline execution.
+
+Additional controls verified actual fresh extraction from the downloaded archive,
+idempotent source verification, modified-source rejection, wrong-archive
+rejection with no published directory, and mixed-profile comparison rejection
+before execution. The commit hook rejected upstream Windows example paths; the
+fetch workflow preserves those upstream bytes without changing the guard.
