@@ -24,3 +24,10 @@ The current host API is private to the CLI and slice builder. A future embedding
 API must register values retained outside the machine as roots; callers cannot
 assume a bare numeric handle remains live after subsequent evaluations. Streams
 currently use explicit close and a separate bounded host table, not vector GC.
+
+Experimental compiled callbacks carry code IDs and captured Shen values rather
+than opaque host closures. Before calling native code, the machine registers its
+pending frames and the callback's local roots. Nested interpreter calls therefore
+see both kinds of roots. Normal and exceptional returns restore the preceding
+root stack. Generated code addresses are installed once per world; this private
+interface is not a hot-module-loading API.

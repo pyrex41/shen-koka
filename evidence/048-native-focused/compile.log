@@ -1,0 +1,71 @@
+parse   : .../std/core/types.kk
+check   : std/core/types
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/undiv.kk
+check   : std/core/undiv
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/unsafe.kk
+check   : std/core/unsafe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/hnd.kk
+check   : std/core/hnd
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/exn.kk
+check   : std/core/exn
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/bool.kk
+check   : std/core/bool
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/int.kk
+check   : std/core/int
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/order.kk
+check   : std/core/order
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/char.kk
+check   : std/core/char
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/vector.kk
+check   : std/core/vector
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/string.kk
+check   : std/core/string
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/sslice.kk
+check   : std/core/sslice
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/list.kk
+check   : std/core/list
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe.kk
+check   : std/core/maybe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe2.kk
+check   : std/core/maybe2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/either.kk
+check   : std/core/either
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/tuple.kk
+check   : std/core/tuple
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/lazy.kk
+check   : std/core/lazy
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/show.kk
+check   : std/core/show
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/console.kk
+check   : std/core/console
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/debug.kk
+check   : std/core/debug
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/delayed.kk
+check   : std/core/delayed
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core.kk
+check   : std/core
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/text/parse.kk
+check   : std/text/parse

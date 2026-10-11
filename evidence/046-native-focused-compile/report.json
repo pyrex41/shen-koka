@@ -1,0 +1,16 @@
+{
+  "command": [
+    "koka",
+    "-j1",
+    "-i/workspace/scratch/3e502de53f0d/shen-koka/src",
+    "-i/workspace/scratch/3e502de53f0d/shen-koka/artifacts/native-002/generated",
+    "-O2",
+    "--builddir=/workspace/scratch/3e502de53f0d/shen-koka/artifacts/native-001/cache",
+    "-o",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/native-002/run",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/native-002/program.kk"
+  ],
+  "compile_exit_code": 1,
+  "build_seconds": 104.19219365299796,
+  "cases": {}
+}

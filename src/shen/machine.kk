@@ -13,6 +13,7 @@ type frame {
   Operator(args:list<term>,env:environment)
   Argument(fnval:value,done:list<value>,todo:list<term>,env:environment)
   Catch(hndl:term,env:environment)
+  CatchNative(hndl:value)
   Recover(message:string)
   ApplyRest(args:list<value>)
 }
@@ -101,6 +102,20 @@ fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,div,console> (mach
           (Eval(body,bind-args(ps,args.take(n),env)),Cons(ApplyRest(args.drop(n)),ks))
         else (Eval(body,bind-args(ps,args,env)),ks)
       },fn(e) (Raise(e.message),ks))
+      Compiled(_,arity,code,captured,bound) -> {
+        val all=bound ++ args
+        if all.length < arity then (Return(make-compiled(w,arity,code,captured,all)),ks) else {
+          val rest=if all.length > arity then Cons(ApplyRest(all.drop(arity)),ks) else ks
+          val (vs,ts)=machine-roots(c,rest)
+          try(fn() {
+            match call-native(w,code,captured,all.take(arity),vs,ts) {
+              Done(v) -> (Return(v),rest)
+              TailApply(f,xs) -> (Apply(f,xs),rest)
+              Protected(body,hndl) -> (Apply(body,[]),Cons(CatchNative(hndl),rest))
+            }
+          },fn(e) (Raise(e.message),rest))
+        }
+      }
       Sym("eval-kl") -> try(fn() { match args { [x] -> (Eval(compile-term(x),[]),ks); _ -> (Raise("eval-kl: wrong arity"),ks) } },fn(e) (Raise(e.message),ks))
       Sym("thaw") -> match args { [x] -> (Apply(x,[]),ks); _ -> (Raise("thaw: wrong arity"),ks) }
       Sym(name) -> match find((!w.functions),name) {
@@ -117,12 +132,14 @@ fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,div,console> (mach
         Operator(args,env) -> match args { [] -> (Apply(v,[]),rest); Cons(x,xs) -> (Eval(x,env),Cons(Argument(v,[],xs,env),rest)) }
         Argument(f,done,todo,env) -> match todo { [] -> (Apply(f,Cons(v,done).reverse),rest); Cons(x,xs) -> (Eval(x,env),Cons(Argument(f,Cons(v,done),xs,env),rest)) }
         Catch(_,_) -> (Return(v),rest)
+        CatchNative(_) -> (Return(v),rest)
         Recover(msg) -> (Apply(v,[Fault(msg)]),rest)
         ApplyRest(args) -> (Apply(v,args),rest)
       }
     }
     Raise(msg) -> match ks {
       [] -> (Raise(msg),[])
+      Cons(CatchNative(hndl),rest) -> (Apply(hndl,[]),Cons(Recover(msg),rest))
       Cons(Catch(hndl,env),rest) -> (Eval(hndl,env),Cons(Recover(msg),rest))
       Cons(_,rest) -> (Raise(msg),rest)
     }
@@ -130,7 +147,7 @@ fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,div,console> (mach
 }
 // Collection occurs only between machine steps, after primitive temporaries
 // have disappeared. Every suspended operand, handler and lexical binding is a root.
-fun collect-machine(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div> () {
+fun machine-roots(c:machine-state,ks:list<frame>) {
   var vs : list<value> := []
   var ts : list<term> := []
   fun env(e:environment) { vs := e.map(fn((_,v)) v) ++ vs }
@@ -147,9 +164,14 @@ fun collect-machine(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div
       Operator(args,e) -> { ts := args ++ ts; env(e) }
       Argument(f,done,todo,e) -> { vs := Cons(f,done) ++ vs; ts := todo ++ ts; env(e) }
       Catch(hndl,e) -> { ts := Cons(hndl,ts); env(e) }
-      Recover(_) -> ()
+      CatchNative(hndl) -> { vs := Cons(hndl,vs) }
+      Recover(msg) -> { vs := Cons(Fault(msg),vs) }
       ApplyRest(args) -> { vs := args ++ vs }
   } }
+  (vs,ts)
+}
+fun collect-machine(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div> () {
+  val (vs,ts)=machine-roots(c,ks)
   collect-vectors(w,vs,ts)
 }
 fun run(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div,console> value {
@@ -165,3 +187,5 @@ fun run(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div,console> va
 }
 pub fun invoke(w:world,f:value,args:list<value>): <st<global>,exn,div,console> value { run(w,Apply(f,args),[]) }
 pub fun evaluate(w:world,expr:value): <st<global>,exn,div,console> value { run(w,Eval(compile-term(expr),[]),[]) }
+
+pub fun invoke-protected(w:world,body:value,hndl:value): <st<global>,exn,div,console> value { run(w,Apply(body,[]),[CatchNative(hndl)]) }

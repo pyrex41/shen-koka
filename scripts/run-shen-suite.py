@@ -9,6 +9,7 @@ def execute(argv, cwd, out, seconds, overrides=None):
     start = time.monotonic()
     result = dict(argv=argv, cwd=str(cwd), exit_code=None, blocker=None, environment=overrides or {})
     result['truncated']=False
+    captured={'stdout':bytearray(),'stderr':bytearray()}
     with (out/'stdout').open('wb') as stdout, (out/'stderr').open('wb') as stderr:
         try:
             p = subprocess.Popen(argv, cwd=cwd, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -28,12 +29,18 @@ def execute(argv, cwd, out, seconds, overrides=None):
                     data=os.read(key.fd,65536)
                     if not data: sel.unregister(key.fileobj);continue
                     sink,name=key.data
-                    remaining=max(0,1048576-sizes[name]);sink.write(data[:remaining]);sink.flush();sizes[name]+=len(data)
+                    remaining=max(0,1048576-sizes[name]);captured[name].extend(data[:remaining]);sink.write(data[:remaining]);sink.flush();sizes[name]+=len(data)
                     if len(data)>remaining and not stopped:
                         result['truncated']=True;result['blocker']='raw log limit exceeded'
                         os.killpg(p.pid,signal.SIGKILL);stopped=True
             sel.close();result['exit_code']=p.wait()
+            result['received_bytes']=sizes
+            result['live_fd_bytes']={'stdout':os.fstat(stdout.fileno()).st_size,'stderr':os.fstat(stderr.fileno()).st_size}
+            if result['exit_code'] and not result['blocker']:
+                result['blocker']=('terminated by signal '+str(-result['exit_code'])) if result['exit_code']<0 else 'process exited '+str(result['exit_code'])
         except OSError as e: result['blocker'] = str(e)
+    # Final logs come from the captured pipe bytes, not mutable live paths.
+    for name,data in captured.items(): (out/name).write_bytes(data)
     result['seconds'] = time.monotonic()-start
     result['logs'] = {n: {'sha256':sha(out/n), 'bytes':(out/n).stat().st_size} for n in ['stdout','stderr']}
     return result

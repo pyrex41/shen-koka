@@ -1,0 +1,26 @@
+kk_block_refcount
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:294
+kk_shen_machine__lift_machine_roots_10245
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/shen_machine.c:4844
+kk_shen_machine__lift_machine_roots_10244
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/shen_machine.c:4915
+kk_block_refcount
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:294
+kk_datatype_dup
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:1107 (discriminator 1)
+kk_shen_machine_run_fun2720
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/shen_machine.c:7800
+kk_ptr_decode
+/nix/store/52k31rnvfhassc4wa9lhq4va8n09v6mr-koka-3.2.3/share/koka/v3.2.3/kklib/include/kklib.h:981
+kk_artifacts_native_dash_003_program_run_case
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/artifacts_native_dash_003_program.c:7687 (discriminator 2)
+kk_artifacts_native_dash_003_program__main__main_fun68
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/artifacts_native_dash_003_program__main.c:269
+kk_std_core_hnd__hhandle
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/std_core_hnd.c:974
+kk_artifacts_native_dash_003_program__main__main
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/artifacts_native_dash_003_program__main.c:284
+main
+/workspace/scratch/3e502de53f0d/shen-koka/.build/native-test-cache/v3.2.3/cc-drelease-4ed15f/artifacts_native_dash_003_program__main.c:406
+_start
+??:?

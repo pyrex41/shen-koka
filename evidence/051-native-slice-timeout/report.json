@@ -1,0 +1,28 @@
+{
+  "status": "UNKNOWN",
+  "blocker": "Koka compilation exceeded 900 seconds",
+  "direct_compiler": true,
+  "generated_sources": {
+    "klpart0.kk": {
+      "bytes": 10168,
+      "sha256": "077fccc70960add57398e41afa0b8b9251223af1dfc62f37e1948c5f53027920"
+    },
+    "klpart1.kk": {
+      "bytes": 43415,
+      "sha256": "96399b1da5300f919c56fd4bd2a7b751ce63a7bd029fe809d66f8ccfa7bfc683"
+    },
+    "klpart2.kk": {
+      "bytes": 329484,
+      "sha256": "cd3d7a0bcd3f268a583d7840f4683e1fe024f5b1c4bdc6ae20e98fd1cd662ee4"
+    },
+    "klpart3.kk": {
+      "bytes": 13304,
+      "sha256": "8a74b1a7234c83a1134419e5805920eaace5ced642b4ad1d720e4bb890662219"
+    },
+    "klpart4.kk": {
+      "bytes": 5182,
+      "sha256": "b1c1ca00f3e85a63b04f4254ef12170066215ae28c53717676b0ced64fc5758c"
+    }
+  },
+  "note": "No standalone executable was published by this builder attempt."
+}

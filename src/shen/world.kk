@@ -15,15 +15,21 @@ fun vector-put(t:vector-tree,id:int,r:ref<global,vector<value>>): div vector-tre
   elif id % 2 == 0 then VectorNode(slot,vector-put(z,id / 2,r),o)
   else VectorNode(slot,z,vector-put(o,id / 2,r))
 }
-pub struct world {
-  globals:ref<global,table<value>>
-  functions:ref<global,table<value>>
-  heap:ref<global,vector-tree>
-  next-id:ref<global,int>
-  allocations:ref<global,int>
-  gc-at:ref<global,int>
+pub struct native-roots { root-values:ref<global,list<value>>; root-terms:list<term> }
+pub alias native-function = (world,ref<global,list<value>>,list<value>,list<value>) -> <st<global>,exn,div,console> native-result
+pub div type world {
+ World(
+    globals:ref<global,table<value>>,
+    functions:ref<global,table<value>>,
+    heap:ref<global,vector-tree>,
+    next-id:ref<global,int>,
+    allocations:ref<global,int>,
+    gc-at:ref<global,int>,
+    native-codes:ref<global,vector<native-function>>,
+    host-roots:ref<global,list<native-roots>>
+ )
 }
-pub fun new-world(): <st<global>> world { World(ref(Empty),ref(Empty),ref(NoVectors),ref(0),ref(0),ref(1024)) }
+pub fun new-world(): <st<global>> world { World(ref(Empty),ref(Empty),ref(NoVectors),ref(0),ref(0),ref(1024),ref(vector(0,missing-native)),ref([])) }
 pub fun global-get(w:world,k:string): <st<global>,exn,div> value {
   match find((!w.globals),k) { Just(v) -> v; Nothing -> throw("unbound global: " ++ k) }
 }
@@ -104,6 +110,8 @@ fun trace(w:world,todo:list<trace-work>,seen:marks): <st<global>,exn,div> marks 
           val slots = !(vector-ref((!w.heap),id))
           trace(w,slots.list.foldl(rest,fn(xs,v) Cons(ValueRoot(v),xs)),mark(seen,id))
         }
+        Compiled(id,_,_,captured,bound) -> if marked(seen,id) then trace(w,rest,seen) else
+          trace(w,(captured ++ bound).foldl(rest,fn(xs,x) Cons(ValueRoot(x),xs)),mark(seen,id))
         Closure(id,_,body,env) -> if marked(seen,id) then trace(w,rest,seen) else
           trace(w,Cons(TermRoot(body),env-roots(env,rest)),mark(seen,id))
         _ -> trace(w,rest,seen)
@@ -136,7 +144,10 @@ fun sweep(t:vector-tree,seen:marks,id:int,bit:int): div vector-tree {
   }
 }
 pub fun collect-vectors(w:world,values:list<value>,terms:list<term>): <st<global>,exn,div> () {
-  val roots=values.foldl(terms.map(TermRoot),fn(xs,v) Cons(ValueRoot(v),xs))
+  val initial=values.foldl(terms.map(TermRoot),fn(xs,v) Cons(ValueRoot(v),xs))
+  val roots=(!w.host-roots).foldl(initial,fn(xs,r) {
+    (!r.root-values).foldl(r.root-terms.foldl(xs,fn(ys,t) Cons(TermRoot(t),ys)),fn(ys,v) Cons(ValueRoot(v),ys))
+  })
   val seen=trace(w,table-roots((!w.globals),table-roots((!w.functions),roots)),Unmarked)
   w.heap.set(sweep((!w.heap),seen,0,1))
   w.gc-at.set((!w.allocations) + 1024)
@@ -144,4 +155,34 @@ pub fun collect-vectors(w:world,values:list<value>,terms:list<term>): <st<global
 
 pub fun live-vectors(t:vector-tree): int {
   match t { NoVectors -> 0; VectorNode(slot,z,o) -> (if slot.is-just then 1 else 0) + live-vectors(z) + live-vectors(o) }
+}
+
+
+fun missing-native(w:world,roots:ref<global,list<value>>,captured:list<value>,args:list<value>): <st<global>,exn,div,console> native-result {
+  throw("native code is not installed")
+}
+pub fun prepare-native(w:world,n:int): st<global> () { w.native-codes.set(vector(n,missing-native)) }
+pub fun install-native(w:world,index:int,code:native-function): <st<global>,exn,div> () {
+  w.native-codes.modify(fn(loc) { loc[index] := code })
+}
+pub fun make-compiled(w:world,arity:int,code:int,captured:list<value>,bound:list<value>): st<global> value {
+  val id=(!w.next-id); w.next-id.set(id + 1)
+  Compiled(id,arity,code,captured,bound)
+}
+pub fun keep-native(roots:ref<global,list<value>>,v:value): st<global> value {
+  roots.set(Cons(v,(!roots))); v
+}
+pub fun call-native(w:world,code:int,captured:list<value>,args:list<value>,values:list<value>,terms:list<term>): <st<global>,exn,div,console> native-result {
+  val previous=(!w.host-roots)
+  val roots=ref(captured ++ args ++ values)
+  w.host-roots.set(Cons(Native-roots(roots,terms),previous))
+  try(fn() {
+    val result=(!w.native-codes)[code](w,roots,captured,args)
+    w.host-roots.set(previous)
+    result
+  },fn(e) { w.host-roots.set(previous); throw(e.message) })
+}
+
+pub fun native-arg(xs:list<value>,index:int): exn value {
+  match xs { [] -> throw("native argument index out of range"); Cons(x,rest) -> if index==0 then x else native-arg(rest,index - 1) }
 }

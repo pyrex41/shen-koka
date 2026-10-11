@@ -1,0 +1,124 @@
+parse   : .../std/core/types.kk
+check   : std/core/types
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/undiv.kk
+check   : std/core/undiv
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/unsafe.kk
+check   : std/core/unsafe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/hnd.kk
+check   : std/core/hnd
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/exn.kk
+check   : std/core/exn
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/bool.kk
+check   : std/core/bool
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/int.kk
+check   : std/core/int
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/order.kk
+check   : std/core/order
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/char.kk
+check   : std/core/char
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/vector.kk
+check   : std/core/vector
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/string.kk
+check   : std/core/string
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/sslice.kk
+check   : std/core/sslice
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/list.kk
+check   : std/core/list
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe.kk
+check   : std/core/maybe
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/maybe2.kk
+check   : std/core/maybe2
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/either.kk
+check   : std/core/either
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/tuple.kk
+check   : std/core/tuple
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/lazy.kk
+check   : std/core/lazy
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/show.kk
+check   : std/core/show
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/console.kk
+check   : std/core/console
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/debug.kk
+check   : std/core/debug
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core/delayed.kk
+check   : std/core/delayed
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/core.kk
+check   : std/core
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/text/parse.kk
+check   : std/text/parse
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/int32.kk
+check   : std/num/int32
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/int64.kk
+check   : std/num/int64
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/num/float64.kk
+check   : std/num/float64
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/values.kk
+check   : shen/values
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/world.kk
+check   : shen/world
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/compile-kl.kk
+check   : shen/compile-kl
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/io.kk
+check   : shen/io
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../shen/machine.kk
+check   : shen/machine
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/os/path.kk
+check   : std/os/path
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../std/os/env.kk
+check   : std/os/env
+warning: Skipping impure flag -mtune=native because NIX_ENFORCE_NO_NATIVE is set
+parse   : .../klpart0.kk
+parse   : .../klpart1.kk
+parse   : .../klpart2.kk
+parse   : .../artifacts/native-001/program.kk
+artifacts/native-001/generated/klpart2.kk(14, 1): parse error: invalid syntax
+  Last statement in a block must be an expression
+
+artifacts/native-001/generated/klpart1.kk(6, 3): parse error: invalid syntax
+  unexpected "{"
+  expecting ";", "inline", "noinline", "tail", "fip", "fbip", "fun", "val", "var", "with", (basic) expression, "return" or "}"
+
+artifacts/native-001/generated/klpart0.kk(6, 3): parse error: invalid syntax
+  unexpected "{"
+  expecting ";", "inline", "noinline", "tail", "fip", "fbip", "fun", "val", "var", "with", (basic) expression, "return" or "}"
+
+src/shen/machine.kk(113,25): type warning: f shadows an earlier local definition or parameter
+
+src/shen/world.kk(111,47): type warning: v shadows an earlier local definition or parameter
+
+src/shen/world.kk(127,74): type warning: t shadows an earlier local definition or parameter
+
+Failed to compile /workspace/scratch/3e502de53f0d/shen-koka/artifacts/native-001/program.kk

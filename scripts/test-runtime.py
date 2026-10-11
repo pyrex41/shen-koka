@@ -3,6 +3,9 @@
 import json,pathlib,subprocess,hashlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 cases={
+ 'untaken-malformed-form':('(if true 42 (lambda X Y Z))','42'),
+ 'operator-before-arguments':('(set c 0) (((lambda X (lambda Y Y)) (set c 1)) (value c))','0\n1'),
+
  'negative-pos':('(trap-error (pos "a" -1) (lambda E caught))','caught'),
  'fractional-address':('(trap-error (<-address (absvector 1) 0.5) (lambda E caught))','caught'),
 

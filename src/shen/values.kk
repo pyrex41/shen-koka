@@ -8,10 +8,12 @@ pub type value {
   Num(number:float64)
   Pair(first:value, rest:value)
   Closure(identity:int,params:list<string>, body:term, env:list<(string,value)>)
+  Compiled(identity:int,arity:int,code:int,captured:list<value>,bound:list<value>)
   Vec(id:int)
   Stream(id:int)
   Fault(message:string)
 }
+pub type native-result { Done(result:value); TailApply(fnval:value,arguments:list<value>); Protected(body:value,recover:value) }
 // Predecoded executable forms: compile once at defun/eval-kl, never on a call.
 pub type term {
   Literal(value:value)
@@ -47,6 +49,7 @@ pub fun equal(a:value,b:value): div bool {
     (Vec(x),Vec(y)) -> x==y
     (Stream(x),Stream(y)) -> x==y
     (Closure(x,_,_,_),Closure(y,_,_,_)) -> x==y
+    (Compiled(x,_,_,_,_),Compiled(y,_,_,_,_)) -> x==y
     _ -> False
   }
 }
@@ -58,6 +61,7 @@ pub fun render(v:value): div string {
     Num(n) -> n.show
     Pair(a,b) -> "[" ++ render(a) ++ render-tail(b) ++ "]"
     Closure(_,_,_,_) -> "#<function>"
+    Compiled(_,_,_,_,_) -> "#<function>"
     Vec(n) -> "#<vector " ++ n.show ++ ">"
     Stream(n) -> "#<stream " ++ n.show ++ ">"
     Fault(s) -> s
