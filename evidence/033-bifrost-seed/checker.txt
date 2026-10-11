@@ -1,0 +1,8 @@
+{
+  "scope": "seed-suite-observations",
+  "status": "PASS",
+  "required": [
+    "shen-koka"
+  ],
+  "reasons": []
+}

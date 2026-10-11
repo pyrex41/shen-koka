@@ -1,0 +1,450 @@
+(fn concat*)
+concat*
+
+run time: 0.74816700000000047 secs
+loaded
+true
+(fn newv) : (--> symbol)
+
+run time: 0.25719599999999954 secs
+
+typechecked in 2835 inferences
+loaded
+false
+true
+maths.maths-macro
+(fn maths.process-options)
+(fn maths.step-option)
+(fn maths.constructor-option)
+(fn maths.end-option)
+(fn maths.process)
+
+run time: 12.168259999999998 secs
+loaded
+false
+true
+maths.maths#type : symbol
+95795 : number
+0.0001 : number
+(fn set-tolerance) : (number --> number)
+(fn tolerance) : (--> number)
+(fn sq) : (number --> number)
+(fn cube) : (number --> number)
+(fn for) : (number --> ((number --> boolean) --> ((number --> A) --> ((number --> number) --> ((A --> (A --> A)) --> A)))))
+(fn maths.for-h) : (number --> ((number --> boolean) --> ((number --> A) --> ((number --> number) --> ((A --> (A --> A)) --> (A --> A))))))
+(fn maths.lazyfor-and) : (number --> ((number --> boolean) --> ((number --> boolean) --> ((number --> number) --> boolean))))
+(fn maths.lazyfor-or) : (number --> ((number --> boolean) --> ((number --> boolean) --> ((number --> number) --> boolean))))
+(fn max) : (number --> (number --> number))
+(fn min) : (number --> (number --> number))
+(fn expt) : (number --> (number --> (number --> number)))
+(fn maths.n->r) : (number --> (number --> (number * number)))
+(fn maths.expt-h) : (number --> ((number * number) --> (number --> number)))
+(fn gcd) : (number --> (number --> number))
+(fn maths.gcd-help) : (number --> (number --> number))
+(fn maths.gcd-loop) : (number --> (number --> (number --> number)))
+(fn lcd) : (number --> (number --> number))
+(fn maths.lcd-loop) : (number --> (number --> (number --> (number --> number))))
+(fn isqrt) : (number --> number)
+(fn maths.isqrt-loop) : (number --> (number --> number))
+(fn div) : (number --> (number --> number))
+(fn modf) : (number --> (number * number))
+(fn floor) : (number --> number)
+(fn maths.rounding-loop) : (symbol --> (number --> (number --> (number --> number))))
+(fn maths.float->pair) : (number --> (number * number))
+(fn ceiling) : (number --> number)
+(fn round) : (number --> number)
+(fn mod) : (number --> (number --> number))
+(fn lcm) : ((list number) --> number)
+(fn maths.greatest) : ((list number) --> number)
+(fn maths.lcm-h) : (number --> (number --> ((list number) --> number)))
+(fn maths.lcm?) : (number --> ((list number) --> boolean))
+(fn random) : (number --> (number --> number))
+(fn min) : (number --> (number --> number))
+(fn reseed) : (--> number)
+(fn maths.bbs) : (number --> number)
+(fn ~) : (number --> number)
+(fn positive?) : (number --> boolean)
+(fn negative?) : (number --> boolean)
+(fn natural?) : (number --> boolean)
+(fn converge) : (A --> ((A --> A) --> ((A --> (A --> boolean)) --> A)))
+(fn maths.converge-help) : ((A --> A) --> (A --> (A --> ((A --> (A --> boolean)) --> A))))
+(fn nthrt) : (number --> (number --> (number --> number)))
+(fn sqrt) : (number --> (number --> number))
+(fn maths.compute-nthrt) : (number --> (number --> (number --> (number --> number))))
+(fn approx) : (number --> (number --> (number --> boolean)))
+(fn abs) : (number --> number)
+(fn series) : (number --> ((number --> number) --> (number --> ((number --> (number --> number)) --> number))))
+(fn maths.series-h) : (number --> (number --> ((number --> number) --> (number --> ((number --> (number --> number)) --> number)))))
+(fn product) : (number --> ((number --> number) --> (number --> number)))
+(fn summation) : (number --> ((number --> number) --> (number --> number)))
+(fn odd?) : (number --> boolean)
+(fn even?) : (number --> boolean)
+(fn maths.compute-sine) : (number --> (number --> number))
+(fn maths.compute-cos) : (number --> (number --> number))
+(fn cos) : (number --> (number --> number))
+(fn sin) : (number --> (number --> number))
+(fn tan) : (number --> (number --> number))
+(fn radians) : (number --> number)
+(fn g) : (--> number)
+(fn pi) : (--> number)
+(fn e) : (--> number)
+(fn tan30) : (--> number)
+(fn cos30) : (--> number)
+(fn cos45) : (--> number)
+(fn sin45) : (--> number)
+(fn sqrt2) : (--> number)
+(fn tan60) : (--> number)
+(fn maths.sin60) : (--> number)
+(fn sin120) : (--> number)
+(fn tan120) : (--> number)
+(fn sin135) : (--> number)
+(fn cos135) : (--> number)
+(fn cos150) : (--> number)
+(fn tan150) : (--> number)
+(fn cos210) : (--> number)
+(fn tan210) : (--> number)
+(fn sin225) : (--> number)
+(fn cos225) : (--> number)
+(fn sin240) : (--> number)
+(fn tan240) : (--> number)
+(fn sin300) : (--> number)
+(fn tan300) : (--> number)
+(fn sin315) : (--> number)
+(fn cos315) : (--> number)
+(fn cos330) : (--> number)
+(fn tan330) : (--> number)
+(fn coth) : (number --> (number --> number))
+(fn sinh) : (number --> (number --> number))
+(fn cosh) : (number --> (number --> number))
+(fn tanh) : (number --> (number --> number))
+(fn sech) : (number --> (number --> number))
+(fn csch) : (number --> (number --> number))
+(fn power) : (number --> (number --> number))
+(fn factorial) : (number --> number)
+(fn prime?) : (number --> boolean)
+(fn maths.prime-h) : (number --> (number --> (number --> boolean)))
+(fn maths.sign) : (number --> number)
+(fn log) : (number --> (number --> (number --> number)))
+(fn loge) : (number --> (number --> number))
+(fn log2) : (number --> (number --> number))
+(fn log10) : (number --> (number --> number))
+(fn maths.log10+) : (number --> (number --> number))
+(fn maths.upto) : (A --> ((A --> boolean) --> ((A --> A) --> ((B --> (C --> C)) --> (C --> ((A --> B) --> C))))))
+
+run time: 45.838172000000007 secs
+
+typechecked in 20641 inferences
+loaded
+false
+(fn r#)
+(fn rational.print-rational)
+(fn rational?)
+(fn numerator)
+(fn denominator)
+r#
+rational?
+numerator
+denominator
+
+run time: 2.1163109999999961 secs
+loaded
+true
+(fn r-op1) : ((number --> number) --> (rational --> rational))
+(fn r-op2) : ((number --> (number --> number)) --> (rational --> (rational --> rational)))
+(fn r->n) : (rational --> number)
+(fn r->pair) : (rational --> (number * number))
+(fn n->r) : (number --> rational)
+(fn r-reduce) : (rational --> rational)
+(fn rational.r-reduce-help) : (number --> (number --> rational))
+(fn r=) : (rational --> (rational --> boolean))
+(fn r<) : (rational --> (rational --> boolean))
+(fn r>) : (rational --> (rational --> boolean))
+(fn r>=) : (rational --> (rational --> boolean))
+(fn r<=) : (rational --> (rational --> boolean))
+(fn r+) : (rational --> (rational --> rational))
+(fn r-) : (rational --> (rational --> rational))
+(fn r*) : (rational --> (rational --> rational))
+(fn +-inverse) : (rational --> rational)
+(fn *-inverse) : (rational --> rational)
+(fn r/) : (rational --> (rational --> rational))
+(fn r-expt) : (rational --> (number --> rational))
+(fn r-approx) : (rational --> (number --> rational))
+(fn rational.approx-r-h) : (number --> (number --> (number --> rational)))
+
+run time: 12.824646999999999 secs
+
+typechecked in 25072 inferences
+loaded
+false
+(fn c#)
+(fn complex.print-complex)
+(fn complex?)
+(fn real)
+(fn imaginary)
+c#
+complex?
+real
+imaginary
+
+run time: 1.2990800000000036 secs
+loaded
+true
+(fn c+) : (complex --> (complex --> complex))
+(fn c-) : (complex --> (complex --> complex))
+(fn c*) : (complex --> (complex --> complex))
+(fn c/) : (complex --> (complex --> complex))
+
+run time: 2.1664949999999976 secs
+
+typechecked in 27056 inferences
+loaded
+false
+(fn n#)
+(fn radix)
+(fn numerals.numerals)
+(fn n#->n)
+radix
+n#->ns
+n#->n
+n#
+numeral?
+(fn n#->ns)
+(fn numerals.print-numeral)
+(fn numerals.numeric->string)
+(fn numeral?)
+
+run time: 2.7981619999999907 secs
+loaded
+true
+numerals.numeral-macro : symbol
+(fn n-op2) : ((number --> (number --> number)) --> (numeral --> (numeral --> (number --> numeral))))
+(fn n-op1) : ((number --> number) --> (numeral --> (number --> numeral)))
+(fn n+) : (numeral --> (numeral --> (number --> numeral)))
+(fn n*) : (numeral --> (numeral --> (number --> numeral)))
+(fn n-) : (numeral --> (numeral --> (number --> numeral)))
+(fn n/) : (numeral --> (numeral --> (number --> numeral)))
+(fn binary) : (number --> numeral)
+(fn hex) : (number --> numeral)
+(fn octal) : (number --> numeral)
+(fn duodecimal) : (number --> numeral)
+(fn numerals.n->numeral) : (number --> (number --> (list number)))
+(fn numerals.largest-expt) : (number --> (number --> (number --> number)))
+(fn numerals.n-zeros) : (number --> (list number))
+(fn numerals.add) : ((list number) --> ((list number) --> (number --> (list number))))
+(fn numerals.add-h) : ((list number) --> ((list number) --> (number --> (number --> (list number)))))
+
+run time: 8.3493480000000062 secs
+
+typechecked in 30751 inferences
+loaded
+(fn assoc-if) : ((A --> boolean) --> ((list (list A)) --> (list A)))
+(fn assoc-if-not) : ((A --> boolean) --> ((list (list A)) --> (list A)))
+(fn drop) : (number --> ((list A) --> (list A)))
+(fn drop-last) : (number --> ((list A) --> (list A)))
+(fn index) : (A --> ((list A) --> number))
+(fn list.index-h) : (A --> ((list A) --> (number --> number)))
+(fn index-last) : (A --> ((list A) --> number))
+(fn insert) : (number --> (A --> ((list A) --> (list A))))
+(fn remove-duplicates) : ((list A) --> (list A))
+(fn trim-left-if) : ((A --> boolean) --> ((list A) --> (list A)))
+(fn trim-right-if) : ((A --> boolean) --> ((list A) --> (list A)))
+(fn trim-if) : ((A --> boolean) --> ((list A) --> (list A)))
+(fn trim-left) : ((list A) --> ((list A) --> (list A)))
+(fn trim-right) : ((list A) --> ((list A) --> (list A)))
+(fn trim) : ((list A) --> ((list A) --> (list A)))
+(fn prefix?) : ((list A) --> ((list A) --> boolean))
+(fn infix?) : ((list A) --> ((list A) --> boolean))
+(fn suffix?) : ((list A) --> ((list A) --> boolean))
+(fn subset?) : ((list A) --> ((list A) --> boolean))
+(fn set=?) : ((list A) --> ((list A) --> boolean))
+(fn set?) : ((list A) --> boolean)
+(fn n-times) : (A --> (number --> (list A)))
+(fn list.n-times-h) : (number --> (A --> ((list A) --> (list A))))
+(fn subbag?) : ((list A) --> ((list A) --> boolean))
+(fn bag=?) : ((list A) --> ((list A) --> boolean))
+(fn mapc) : ((A --> B) --> ((list A) --> (list C)))
+(fn permute) : ((list A) --> (list (list A)))
+(fn count-if) : ((A --> boolean) --> ((list A) --> number))
+(fn count) : (A --> ((list A) --> number))
+(fn some?) : ((A --> boolean) --> ((list A) --> boolean))
+(fn every?) : ((A --> boolean) --> ((list A) --> boolean))
+(fn sort) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))
+(fn find) : ((A --> boolean) --> ((list A) --> A))
+(fn foldr) : ((A --> (B --> B)) --> (B --> ((list A) --> B)))
+(fn foldl) : ((A --> (B --> A)) --> (A --> ((list B) --> A)))
+(fn mapf) : ((A --> B) --> ((list A) --> ((B --> ((list C) --> (list C))) --> (list C))))
+(fn filter) : ((A --> boolean) --> ((list A) --> (list A)))
+(fn remove-if) : ((A --> boolean) --> ((list A) --> (list A)))
+(fn list.reduce) : ((A --> (B --> A)) --> (A --> ((list B) --> A)))
+(fn take) : (number --> ((list A) --> (list A)))
+(fn take-last) : (number --> ((list A) --> (list A)))
+(fn cartprod) : ((list A) --> ((list A) --> (list (list A))))
+(fn powerset) : ((list A) --> (list (list A)))
+(fn partition) : ((A --> (A --> boolean)) --> ((list A) --> (list (list A))))
+(fn transitive-closure) : ((list (A * A)) --> (list (A * A)))
+(fn list.transitive-pass) : ((list (A * A)) --> ((list (A * A)) --> (list (A * A))))
+(fn list.find-trans) : (A --> (A --> ((list (A * A)) --> (list (A * A)))))
+(fn x->ascii) : (A --> (list number))
+(fn splice) : (number --> ((list A) --> ((list A) --> (list A))))
+
+run time: 18.113771999999997 secs
+
+typechecked in 41195 inferences
+loaded
+string-macros : symbol
+
+run time: 0.16219799999998941 secs
+
+typechecked in 41207 inferences
+loaded
+(fn string->list) : (string --> (list string))
+(fn string.s->l-h) : (string --> (number --> (string --> ((list string) --> (list string)))))
+(fn list->string) : ((list string) --> string)
+(fn s-op1) : (((list string) --> A) --> (string --> ((A --> B) --> B)))
+(fn s-op2) : (((list string) --> ((list string) --> A)) --> (string --> (string --> ((A --> B) --> B))))
+(fn string.count) : (string --> (string --> number))
+(fn string.reverse) : (string --> string)
+(fn string.element?) : (string --> (string --> boolean))
+(fn string.prefix?) : (string --> (string --> boolean))
+(fn string.infix?) : (string --> (string --> boolean))
+(fn string.suffix?) : (string --> (string --> boolean))
+(fn string.subset?) : (string --> (string --> boolean))
+(fn string.set=?) : (string --> (string --> boolean))
+(fn string.set?) : (string --> boolean)
+(fn file-extension) : (string --> (string --> string))
+(fn strip-extension) : (string --> string)
+(fn string.length) : (string --> number)
+(fn string.trim) : ((list string) --> (string --> string))
+(fn string.trim-if) : ((string --> boolean) --> (string --> string))
+(fn string.trim-right-if) : ((string --> boolean) --> (string --> string))
+(fn string.trim-left-if) : ((string --> boolean) --> (string --> string))
+(fn string.trim-right) : ((list string) --> (string --> string))
+(fn string.trim-left) : ((list string) --> (string --> string))
+(fn string.some?) : ((string --> boolean) --> (string --> boolean))
+(fn string.every?) : ((string --> boolean) --> (string --> boolean))
+(fn string.difference) : (string --> (string --> string))
+(fn string.intersection) : (string --> (string --> string))
+(fn string.nth) : (number --> (string --> string))
+(fn whitespace?) : (string --> boolean)
+(fn uppercase?) : (string --> boolean)
+(fn lowercase?) : (string --> boolean)
+(fn digit?) : (string --> boolean)
+(fn alpha?) : (string --> boolean)
+(fn alphanum?) : (string --> boolean)
+(fn tokenise) : ((string --> boolean) --> (string --> (list string)))
+(fn string.tokenise-h) : ((string --> boolean) --> (string --> (string --> (list string))))
+(fn uppercase) : (string --> string)
+(fn lowercase) : (string --> string)
+(fn string.map) : ((string --> string) --> (string --> string))
+(fn spell-number) : (number --> string)
+(fn string.digit) : (string --> string)
+(fn string.triples) : ((list A) --> (list (list A)))
+(fn string.triples-h) : ((list A) --> ((list (list A)) --> (list (list A))))
+(fn string.digits) : ((list string) --> string)
+(fn string.tens) : (string --> (string --> string))
+(fn string.scale) : ((list string) --> string)
+(fn string.units) : (number --> string)
+(fn string>?) : (string --> (string --> boolean))
+(fn string<?) : (string --> (string --> boolean))
+(fn string>=?) : (string --> (string --> boolean))
+(fn string<=?) : (string --> (string --> boolean))
+
+run time: 22.66977 secs
+
+typechecked in 52892 inferences
+loaded
+false
+render
+render-file
+(fn render-file)
+(fn string.bytes->strings)
+(fn render)
+(fn string.rendered?)
+(fn string.<render>)
+(fn string.<renderchar>)
+(fn string.recapply)
+(fn string.<args>)
+(fn string.<arg>)
+(fn string.<argchar>)
+(fn string.<ws>)
+(fn string.<fn>)
+(fn string.<fnchar>)
+
+run time: 6.5095479999999952 secs
+loaded
+true
+vector.vector-macros
+
+run time: 2.99073199999998 secs
+loaded
+false
+true
+print#type : symbol
+print.pprint-macro : symbol
+1 : number
+60 : number
+(fn linelength) : (--> number)
+(fn indentation) : (--> number)
+(fn set-linelength) : (number --> number)
+(fn set-indentation) : (number --> number)
+(fn pps) : (symbol --> ((stream out) --> symbol))
+(fn pprint) : (A --> ((stream out) --> A))
+(fn pretty-string) : (string --> string)
+(fn print.pretty-string-h) : (string --> (number --> (number --> string)))
+(fn print.indent) : (number --> string)
+(fn print.indent-h) : (number --> string)
+(fn print.n-space) : (number --> string)
+[maths.maths#type] : (list symbol)
+
+run time: 9.0735300000000052 secs
+
+typechecked in 55524 inferences
+loaded
+false
+(fn delete-file)
+delete-file
+
+run time: 0.2867920000000197 secs
+loaded
+true
+file.file-macro : symbol
+(fn append-files) : ((list string) --> (string --> string))
+(fn append-files-with-open-stream) : ((list string) --> (string --> (stream out)))
+(fn file.read&write) : ((stream in) --> ((stream out) --> number))
+(fn file.read&write-h) : (number --> ((stream in) --> ((stream out) --> number)))
+(fn reopen) : (string --> (stream out))
+(fn copy-file) : (string --> (string --> string))
+(fn copy-file-with-open-stream) : (string --> (string --> (stream out)))
+(fn file-exists?) : (string --> boolean)
+(fn file-size) : (string --> number)
+(fn file.file-size-loop) : ((stream in) --> (number --> (number --> number)))
+(fn ascii) : (number --> (number --> (string --> string)))
+(fn file.scan-bytes) : (number --> (number --> ((list number) --> (string --> string))))
+
+run time: 8.3962970000000041 secs
+
+typechecked in 58095 inferences
+loaded
+(fn pairoff) : ((list A) --> ((list B) --> (list (A * B))))
+(fn assocp) : (A --> ((list (A * B)) --> (A * B)))
+(fn cartprodp) : ((list A) --> ((list B) --> (list (A * B))))
+(fn assocp-if) : ((A --> boolean) --> ((list (A * B)) --> (A * B)))
+(fn assocp-if-not) : ((A --> boolean) --> ((list (A * B)) --> (A * B)))
+
+run time: 2.9546880000000044 secs
+
+typechecked in 59448 inferences
+loaded
+false
+stlib.void
+
+run time: 0.094279000000000224 secs
+loaded
+ok
+[]
+[]
+""
+false
+
+run time: 162.45090099999999 secs
+loaded

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+    "script",
+    "/workspace/scratch/3e502de53f0d/shen-koka/evidence/040-tail-groups/tail.shen"
+  ],
+  "cwd": "/workspace/scratch/3e502de53f0d/shen-koka/kernel/tests",
+  "exit_code": 1,
+  "blocker": null,
+  "environment": {
+    "SHEN_KOKA_PPM_COMPAT": "1"
+  },
+  "truncated": false,
+  "seconds": 7.939010416001111,
+  "logs": {
+    "stdout": {
+      "sha256": "ba4107b53fee8aaa479653b570514abd549af5c153b382c465b20efe0ee4dd50",
+      "bytes": 274
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "scope": "supplementary isolated tail groups; does not replace full sequential suite"
+}

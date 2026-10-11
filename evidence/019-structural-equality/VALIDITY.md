@@ -1,0 +1,1 @@
+The canonical lane timed out with 10 PASS and 124 UNKNOWN. It began before immutable snapshots and the extension lane ran a later binary. This is mixed-build diagnostic evidence, not combined qualification. Later lookup/equality changes and frozen reports supersede it.

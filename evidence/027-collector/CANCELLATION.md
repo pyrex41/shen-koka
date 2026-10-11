@@ -1,0 +1,1 @@
+Cancelled to stop overlapping CPU-heavy development runs and prioritize the latest coherent-profile candidate. Unreached assertions, including any extension outcomes cancelled by this request, remain UNKNOWN. This is not evidence of semantic failure or of compatibility.

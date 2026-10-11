@@ -1,0 +1,114 @@
+{
+  "go": {
+    "negative-pos": {
+      "source": "(trap-error (pos \"a\" -1) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-pos": {
+      "source": "(trap-error (pos \"ab\" 0.5) (/. E caught))",
+      "stdout": "a\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-vector": {
+      "source": "(trap-error (absvector 1.5) (/. E caught))",
+      "stdout": "<<#<raw >>>\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-address": {
+      "source": "(trap-error (<-address (absvector 1) 0.5) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "bad-byte": {
+      "source": "(trap-error (write-byte 256 (stoutput)) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "zero-division": {
+      "source": "(trap-error (/ 1 0) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "unicode-char": {
+      "source": "(string->n \"\u03bb\")",
+      "stdout": "955\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "unicode-pos": {
+      "source": "(pos \"\u03bbx\" 1)",
+      "stdout": "x\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "trailing-char": {
+      "source": "(string->n \"ab\")",
+      "stdout": "97\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  },
+  "koka": {
+    "negative-pos": {
+      "source": "(trap-error (pos \"a\" -1) (/. E caught))",
+      "stdout": "\"a\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-pos": {
+      "source": "(trap-error (pos \"ab\" 0.5) (/. E caught))",
+      "stdout": "\"a\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-vector": {
+      "source": "(trap-error (absvector 1.5) (/. E caught))",
+      "stdout": "#<vector 8989>\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "fraction-address": {
+      "source": "(trap-error (<-address (absvector 1) 0.5) (/. E caught))",
+      "stdout": "shen.fail!\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "bad-byte": {
+      "source": "(trap-error (write-byte 256 (stoutput)) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "zero-division": {
+      "source": "(trap-error (/ 1 0) (/. E caught))",
+      "stdout": "caught\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "unicode-char": {
+      "source": "(string->n \"\u03bb\")",
+      "stdout": "955\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "unicode-pos": {
+      "source": "(pos \"\u03bbx\" 1)",
+      "stdout": "\"x\"\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    "trailing-char": {
+      "source": "(string->n \"ab\")",
+      "stdout": "97\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  }
+}

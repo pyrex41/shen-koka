@@ -60,7 +60,7 @@ nix develop --command python3 scripts/run-shen-suite.py \
 ```
 
 The optional `--ppm-compat` test lane enables the documented community pattern
-matching adapter for the extension tests. Default boot uses the unchanged pinned
+matching adapter for both the canonical and extension lanes. Default boot uses the unchanged pinned
 kernel. A full-suite timeout is UNKNOWN for every unreached assertion, not a pass.
 
 `bin/shen-koka build-slice MANIFEST OUTPUT` builds an interpreter-backed native

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+    "eval",
+    "-e",
+    "(cd \"/workspace/scratch/3e502de53f0d/shen-koka/kernel/lib/StLib/\") (load \"install.shen\")"
+  ],
+  "cwd": "/workspace/scratch/3e502de53f0d/shen-koka",
+  "exit_code": 0,
+  "blocker": null,
+  "environment": {},
+  "truncated": false,
+  "seconds": 175.24922160200003,
+  "logs": {
+    "stdout": {
+      "sha256": "1c4f1be27c18f3bc91ddf21f0cd4c4268db65828a3950606576866df19c59696",
+      "bytes": 16886
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

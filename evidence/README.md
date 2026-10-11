@@ -34,3 +34,9 @@ before this protection; treat any combined result as mixed-build evidence.
 Focused runtime checks 028/030 include collection; 032 contains REPL transcripts.
 The Bifrost and Yggdrasil integration branches are recorded in the implementation
 status. No partial report or supplementary probe establishes full qualification.
+
+037 is the first coherent-profile complete result: 134 canonical and eight
+extension assertions PASS, all counters captured, zero UNKNOWN, no regressions.
+Both lanes use the adapter and an immutable payload. 031 also passes both lanes
+but records distinct adapter settings; it is retained without conflating those
+configurations.

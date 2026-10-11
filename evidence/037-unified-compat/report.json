@@ -1,0 +1,1535 @@
+{
+  "schema_version": 1,
+  "candidate_sha": "3edd86726735b0c484cd962c4bcc6d0df9bed0f0",
+  "dirty": true,
+  "suite_lock_sha256": "0c133523557396890d85599de851309a6113b089cb58bf5e7a565ed1df99209d",
+  "runner_sha256": "d99d1ec93afe794b7a5ce22df2ccf47c735ac8cc241b37b7f02157efe891227c",
+  "launcher_sha256": "73eed6bd1730e6d1fdae12caa32339c517f026f66f9fe085148f1d5c45f86f3d",
+  "runtime_binary_sha256": "13d0a4dd3b9553f418f0c1077a14280211ac9079133c60e32c3da90e490b2d6b",
+  "source_sha256": {
+    "src/shen/boot.kk": "f36e9d343611e240ffe8a03ed71646a424e195b01a3ff6ce568e893b7bd487b2",
+    "src/shen/compile-kl.kk": "0b8e7e565354869acda080c5864c1fd2fee2e28f5e5f08e9c440c54e308e5b02",
+    "src/shen/io-inline.c": "d297207d734d97d4956062447e6365ed978848f48a6a2a1d1868cdc1cda4c8fa",
+    "src/shen/io.kk": "599dd907a3d3d2df82c2feca7092ed4bbb192c304a89f7ebaf8c0e43c0439061",
+    "src/shen/machine.kk": "fd321f8f6a4335c83fdd2a7944fd4a951ac888d43247f49fc6e877c6e02cbce5",
+    "src/shen/main.kk": "8cf28b97abc7543ccd9a6e74075c4d23029d7ba5352a4ef4faff06c1ebfda511",
+    "src/shen/read-kl.kk": "804bf82490cc21c2bc67a35eb43c29dd938ec4502b7656f8dd65f9a5b287807a",
+    "src/shen/values.kk": "9d01ec600822938fb7d312c02f0d200b341faf553bf82fb6c37d8724b3d13dbf",
+    "src/shen/world.kk": "5817a9bf528949c3406e1fd3d613dc68469508d1b9297ddcb0aa08185a70adc8"
+  },
+  "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e",
+  "inventory_errors": [],
+  "lanes": {
+    "canonical": {
+      "argv": [
+        "/tmp/shen-suite-f_pakep1/shen-koka",
+        "script",
+        "runme.shen"
+      ],
+      "cwd": "/workspace/scratch/3e502de53f0d/shen-koka/kernel/tests",
+      "exit_code": 0,
+      "blocker": null,
+      "environment": {
+        "SHEN_KOKA_ROOT": "/tmp/shen-suite-f_pakep1",
+        "SHEN_KOKA_PPM_COMPAT": "1"
+      },
+      "truncated": false,
+      "seconds": 683.1718182010009,
+      "logs": {
+        "stdout": {
+          "sha256": "747ad347d4f165bbc10bd3126dc409141c53f78d86715278ad98f19757e71536",
+          "bytes": 35664
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "group_reports": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          23,
+          0
+        ],
+        [
+          25,
+          0
+        ],
+        [
+          29,
+          0
+        ],
+        [
+          31,
+          0
+        ],
+        [
+          33,
+          0
+        ],
+        [
+          35,
+          0
+        ],
+        [
+          38,
+          0
+        ],
+        [
+          44,
+          0
+        ],
+        [
+          46,
+          0
+        ],
+        [
+          50,
+          0
+        ],
+        [
+          52,
+          0
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          62,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          73,
+          0
+        ],
+        [
+          75,
+          0
+        ],
+        [
+          88,
+          0
+        ],
+        [
+          93,
+          0
+        ],
+        [
+          96,
+          0
+        ],
+        [
+          99,
+          0
+        ],
+        [
+          101,
+          0
+        ],
+        [
+          106,
+          0
+        ],
+        [
+          109,
+          0
+        ],
+        [
+          113,
+          0
+        ],
+        [
+          118,
+          0
+        ],
+        [
+          123,
+          0
+        ],
+        [
+          127,
+          0
+        ],
+        [
+          129,
+          0
+        ],
+        [
+          131,
+          0
+        ],
+        [
+          134,
+          0
+        ]
+      ],
+      "complete_reports": true,
+      "compat_sha256": {
+        "compat/README.md": "fec349464f02ceed912f5befd22e974bc509d6f1659dfe88b927751ff62a05ec",
+        "compat/programmable-pattern-matching.kl": "b585eedc47e0242f333468e44fb747c8b2fddf0de0d3888cb0dda94991df0d10"
+      },
+      "assertions": [
+        {
+          "id": "canonical/01/001",
+          "status": "PASS",
+          "observation": "(load \"cartprod.shen\") = loaded\n(fn cartesian-product)\n(fn all-pairs-using-X)\n\nrun time: 0.20092999999999961 secs\n\nrun time: 0.20137400000000127 secs\npassed\n",
+          "expression": "(load \"cartprod.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "29ecba60d38897a4d4b72dca001f35726ae29c9efeb01936a1f8172c59b7a0aa",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/01/002",
+          "status": "PASS",
+          "observation": "(cartesian-product (cons 1 (cons 2 (cons 3 ()))) (cons 1 (cons 2 (cons 3 ())))) = [[1 1] [1 2] [1 3] [2 1] [2 2] [2 3] [3 1] [3 2] [3 3]]\n\nrun time: 0.0041220000000024015 secs\npassed\npassed ... 2\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(cartesian-product [1 2 3] [1 2 3])",
+          "expectation": "[[1 1] [1 2] [1 3] [2 1] [2 2] [2 3] [3 1] [3 2] [3 3]]",
+          "expression_sha256": "def75cfc1a10bcb95111e1183dd9f7ddbe2fba528c7d974f1ca1cf3d5fccc9ae",
+          "expectation_sha256": "65fc45d4af630a55da33a35d709b982453007eb32bd67d2cab35154cbe931076"
+        },
+        {
+          "id": "canonical/02/001",
+          "status": "PASS",
+          "observation": "(load \"powerset.shen\") = loaded\n(fn powerset*)\n(fn cons-X-to-each-set)\n\nrun time: 0.18935300000000055 secs\n\nrun time: 0.18980399999999875 secs\npassed\n",
+          "expression": "(load \"powerset.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "8854b4e88375ac4a9ddd44bcb197fbf7518dd242a5fe651d2339c98212fb5448",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/02/002",
+          "status": "PASS",
+          "observation": "(powerset* (cons 1 (cons 2 (cons 3 ())))) = [[1 2 3] [1 2] [1 3] [1] [2 3] [2] [3] []]\n\nrun time: 0.0044190000000021712 secs\npassed\npassed ... 4\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(powerset* [1 2 3])",
+          "expectation": "[[1 2 3] [1 2] [1 3] [1] [2 3] [2] [3] []]",
+          "expression_sha256": "967708b42c69de69149adfd4b1914b09cdc590c5378fbc11cc14f82a77f4916a",
+          "expectation_sha256": "66673d5c4e72442d484a0131e8c395e4a3ba7e9ed74ae075357f70ce1c854bf6"
+        },
+        {
+          "id": "canonical/03/001",
+          "status": "PASS",
+          "observation": "(load \"bubble version 1.shen\") = loaded\n(fn bubble-sort)\n(fn bubble)\n(fn bubble-again-perhaps)\n\nrun time: 0.2964720000000014 secs\n\nrun time: 0.29689199999999971 secs\npassed\n",
+          "expression": "(load \"bubble version 1.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "3d9d973c0afeba6fa470b580548fc878f4f78cb15cee91679a624f19f42281b0",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/03/002",
+          "status": "PASS",
+          "observation": "(bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]\n\nrun time: 0.0041229999999998768 secs\npassed\n",
+          "expression": "(bubble-sort [1 2 3])",
+          "expectation": "[3 2 1]",
+          "expression_sha256": "f0b2e11d4678d1591a8de265d87a05c93b07333ea5bd9dc501cf8bddf16fccc4",
+          "expectation_sha256": "d8f61bbfa3a04e84ec11f59938c9c477d0bea13a757875feb5d65735034f7a76"
+        },
+        {
+          "id": "canonical/03/003",
+          "status": "PASS",
+          "observation": "(load \"bubble version 2.shen\") = loaded\n(fn bubble-sort)\n(fn bubble)\n\nrun time: 0.19479800000000225 secs\n\nrun time: 0.19557400000000058 secs\npassed\n",
+          "expression": "(load \"bubble version 2.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "13262b2deb1f2acd2d8a321f2c0c0a12be826c310359d57bf40c9b079c6a9c39",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/03/004",
+          "status": "PASS",
+          "observation": "(bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]\n\nrun time: 0.0042730000000013035 secs\npassed\npassed ... 8\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(bubble-sort [1 2 3])",
+          "expectation": "[3 2 1]",
+          "expression_sha256": "f0b2e11d4678d1591a8de265d87a05c93b07333ea5bd9dc501cf8bddf16fccc4",
+          "expectation_sha256": "d8f61bbfa3a04e84ec11f59938c9c477d0bea13a757875feb5d65735034f7a76"
+        },
+        {
+          "id": "canonical/04/001",
+          "status": "PASS",
+          "observation": "(load \"spreadsheet.shen\") = loaded\n(fn assess-spreadsheet)\n(fn assign-fixed-values)\n(fn assign-cell-value)\n(fn fixed-value?)\n(fn get')\n(fn get-row)\n(fn get-cell)\n\nrun time: 0.8395949999999992 secs\n\nrun time: 0.84029699999999963 secs\npassed\n",
+          "expression": "(load \"spreadsheet.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "9385cf84ff2acdd03eb6a618f2e96f88da15c4960003f077d4eadd1b2a461e39",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/04/002",
+          "status": "PASS",
+          "observation": "(assess-spreadsheet (cons (cons jim (cons (cons wages (cons (lambda Spreadsheet (get' frank wages Spreadsheet)) ())) (cons (cons tax (cons (lambda Spreadsheet (* (get' frank tax Spreadsheet) 0.80000000000000004)) ())) ()))) (cons (cons frank (cons (cons wages (cons 20000 ())) (cons (cons tax (cons (lambda Spreadsheet (* 0.25 (get' frank wages Spreadsheet))) ())) ()))) ()))) = [[jim [wages 20000] [tax 4000]] [frank [wages 20000] [tax 5000]]]\n\nrun time: 0.020749999999999602 secs\npassed\npassed ... 10\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(assess-spreadsheet [[jim [wages (/. Spreadsheet (get' frank wages Spreadsheet))]\n                             [tax (/. Spreadsheet (* (get' frank tax Spreadsheet) .8))]]\n                        [frank [wages 20000]\n                               [tax (/. Spreadsheet (* .25 (get' frank wages Spreadsheet)))]]])",
+          "expectation": "[[jim [wages 20000] [tax 4000.0]] [frank [wages 20000] [tax 5000.0]]]",
+          "expression_sha256": "b46b6eebfb22ee7b5e1f7df5040ffd3beaa83f2675b2f3e08442fc356095fd12",
+          "expectation_sha256": "5cead21b67addb5932374046cb71de5a301d230fe5b7c9e85d4a20f6f59bf9bf"
+        },
+        {
+          "id": "canonical/05/001",
+          "status": "PASS",
+          "observation": "(load \"prime.shen\") = loaded\n(fn prime*?)\n(fn prime*)\n\nrun time: 0.20986100000000008 secs\n\nrun time: 0.21033499999999705 secs\npassed\n",
+          "expression": "(load \"prime.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "4e68f9ebe508ea76a875ccf7b8b43ef7bc4882283474947d33b53d47bc927435",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/05/002",
+          "status": "PASS",
+          "observation": "(prime*? 1000003) = true\n\nrun time: 44.66033800000001 secs\npassed\n",
+          "expression": "(prime*? 1000003)",
+          "expectation": "true",
+          "expression_sha256": "80aa2847676b34b0d0250b789d1e68fd6102ed1b3db9b0ca069cf737259a9c09",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/05/003",
+          "status": "PASS",
+          "observation": "(load \"mutual.shen\") = loaded\n(fn even*?)\n(fn odd*?)\n\nrun time: 0.52480900000000474 secs\n\nrun time: 0.52525699999999631 secs\npassed\n",
+          "expression": "(load \"mutual.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "15acdcc166530bbf4cff368a264d9cf6d5085684351dde46c7f6420157611bd4",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/05/004",
+          "status": "PASS",
+          "observation": "(even*? 56) = true\n\nrun time: 0.016557999999989192 secs\npassed\n",
+          "expression": "(even*? 56)",
+          "expectation": "true",
+          "expression_sha256": "689de08ee970536c5f71058dad36b92f48d4710ef2ce5e29d04c3ce77bcf4ee3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/05/005",
+          "status": "PASS",
+          "observation": "(odd*? 77) = true\n\nrun time: 0.02554600000000562 secs\npassed\n",
+          "expression": "(odd*? 77)",
+          "expectation": "true",
+          "expression_sha256": "4a1113ca5a7b43edd9c652a69fdea9aa8662d51714c8356bae745fd3727c01a2",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/05/006",
+          "status": "PASS",
+          "observation": "(load \"change.shen\") = loaded\n(fn count-change)\n(fn count-change*)\n(fn next-denom)\n\nrun time: 0.5578739999999982 secs\n\nrun time: 0.55831299999999828 secs\npassed\n",
+          "expression": "(load \"change.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "182f9a38e06aaae63a947755ee5d1a5fd7af8cd18f52e89369d76478859fad0c",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/05/007",
+          "status": "PASS",
+          "observation": "(count-change 100) = 4563\n\nrun time: 2.6025070000000028 secs\npassed\npassed ... 17\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(count-change 100)",
+          "expectation": "4563",
+          "expression_sha256": "506464875f0b7a84c9085746b740b318ff38f0de860d8d2862779d736f220cea",
+          "expectation_sha256": "5524fe000ffd5c1743a619d7e17581511ed083d674b9998c6c7b42024315e88a"
+        },
+        {
+          "id": "canonical/06/001",
+          "status": "PASS",
+          "observation": "(load \"semantic net.shen\") = loaded\n(fn query)\n(fn belongs?)\n(fn spread-activation)\n(fn accessible-from)\n(fn is_links)\n(fn type_links)\n(fn assert)\n(fn get-prop)\n(fn clear)\n\nrun time: 0.61031900000000405 secs\n\nrun time: 0.61139500000000169 secs\npassed\n",
+          "expression": "(load \"semantic net.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "2917281913319b252d785672c7ae7edb3025600168807ecfc47dac7b17d77d5b",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/06/002",
+          "status": "PASS",
+          "observation": "(clear Mark_Tarver) = []\n\nrun time: 0.0071300000000036334 secs\npassed\n",
+          "expression": "(clear Mark_Tarver)",
+          "expectation": "[]",
+          "expression_sha256": "5173fa1f819def64e24f5afd5ec01d93ab70c62e29e9c93de99447f9c608b6c2",
+          "expectation_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "id": "canonical/06/003",
+          "status": "PASS",
+          "observation": "(clear man) = []\n\nrun time: 0.0055440000000004375 secs\npassed\n",
+          "expression": "(clear man)",
+          "expectation": "[]",
+          "expression_sha256": "c56648d7a1298feb31d3c0ec334e1d1265877b8018341dbfb8fb9b9cd23e101c",
+          "expectation_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "id": "canonical/06/004",
+          "status": "PASS",
+          "observation": "(assert (cons Mark_Tarver (cons is_a (cons man ())))) = [man]\n\nrun time: 0.0073300000000102727 secs\npassed\n",
+          "expression": "(assert [Mark_Tarver is_a man])",
+          "expectation": "[man]",
+          "expression_sha256": "47c1d0d4861be3cf47c9f8945fcb2c5e6c06ad62cce553ae8f0d8d20e13fde4a",
+          "expectation_sha256": "b60cb9135cc13a2fa57eb7b30232502e86e919fb2c522be317d6b4545f67bd97"
+        },
+        {
+          "id": "canonical/06/005",
+          "status": "PASS",
+          "observation": "(assert (cons man (cons type_of (cons human ())))) = [human]\n\nrun time: 0.006054000000005999 secs\npassed\n",
+          "expression": "(assert [man type_of human])",
+          "expectation": "[human]",
+          "expression_sha256": "b3e65198919286538661cc42cf28beb242c53d59eac8634b836447cb1bc1ee90",
+          "expectation_sha256": "68df620ff3796ec85d525162e9cd71adf78eecf5a0df859720214693434d866e"
+        },
+        {
+          "id": "canonical/06/006",
+          "status": "PASS",
+          "observation": "(query (cons is (cons Mark_Tarver (cons human ())))) = yes\n\nrun time: 0.0151170000000036 secs\npassed\npassed ... 23\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(query [is Mark_Tarver human])",
+          "expectation": "yes",
+          "expression_sha256": "b9b85e4663f0143d45dad9d979a9f49a495a7eff1bf0a643f8721024220061ad",
+          "expectation_sha256": "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
+        },
+        {
+          "id": "canonical/07/001",
+          "status": "PASS",
+          "observation": "(load \"einsteins-riddle.shen\") = loaded\n(fn riddle)\n(fn member)\n(fn house)\n(fn next)\n(fn left)\n(fn who-owns-the-fish?)\n\nrun time: 5.4116380000000106 secs\n\nrun time: 5.4121329999999972 secs\npassed\n",
+          "expression": "(load \"einsteins-riddle.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "0b96eb3244ae48b19ed140b68a4499cd6929740f0fc501ecd3103eddcbe37c30",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/07/002",
+          "status": "PASS",
+          "observation": "((lambda V1109 (lambda L1110 (lambda K1111 (lambda C1112 (do (shen.incinfs) (riddle V1109 L1110 K1111 C1112)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = german\n\nrun time: 8.0292249999999967 secs\npassed\npassed ... 25\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (riddle))",
+          "expectation": "german",
+          "expression_sha256": "1b7aa4cdbd90dd9d3109b09560765564e02b79b7da0dbe4c531f813d02a7ccae",
+          "expectation_sha256": "28561c6b68fca875e23c3e7832ec04e9de88fc97ca07420b7855fc4abd9438c9"
+        },
+        {
+          "id": "canonical/08/001",
+          "status": "PASS",
+          "observation": "(load \"call.shen\") = loaded\n(fn mapit)\n(fn consit)\n(fn different)\n(fn not!)\n\nrun time: 1.0254750000000001 secs\n\nrun time: 1.0260210000000001 secs\npassed\n",
+          "expression": "(load \"call.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "e36ed058377b6af528046d8e22646abcb4d79bf9b2bf5120d8ac09fb06caef1a",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/08/002",
+          "status": "PASS",
+          "observation": "((lambda V1113 (lambda L1114 (lambda K1115 (lambda C1116 (let X (shen.newpv V1113) (shen.gc V1113 (do (shen.incinfs) (mapit (fn consit) (cons 1 (cons 2 (cons 3 ()))) X V1113 L1114 K1115 (freeze (return X V1113 L1114 K1115 C1116)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [[1 1] [1 2] [1 3]]\n\nrun time: 0.01075899999999308 secs\npassed\n",
+          "expression": "(prolog? (mapit (fn consit) [1 2 3] X) (return X))",
+          "expectation": "[[1 1] [1 2] [1 3]]",
+          "expression_sha256": "2427088188bd347ac14cbb77f5d2451305b896eee309c3a92c163e384579b385",
+          "expectation_sha256": "887c6aa9036a3cbf5c6cb9b4375d13441deb32bb36ada2155a8627b334e40136"
+        },
+        {
+          "id": "canonical/08/003",
+          "status": "PASS",
+          "observation": "((lambda V1117 (lambda L1118 (lambda K1119 (lambda C1120 (do (shen.incinfs) (different 1 2 V1117 L1118 K1119 C1120)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true\n\nrun time: 0.0058870000000013079 secs\npassed\n",
+          "expression": "(prolog? (different 1 2))",
+          "expectation": "true",
+          "expression_sha256": "7060d01d437def634a48ba987a8b578fdee106793cfba2d6951ea120516968bd",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/08/004",
+          "status": "PASS",
+          "observation": "((lambda V1121 (lambda L1122 (lambda K1123 (lambda C1124 (do (shen.incinfs) (different 1 1 V1121 L1122 K1123 C1124)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false\n\nrun time: 0.0047849999999982629 secs\npassed\npassed ... 29\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (different 1 1))",
+          "expectation": "false",
+          "expression_sha256": "17af3fec4cb75db04721acfbe85c392b1d022f073b146c3aea8ef34144563949",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/09/001",
+          "status": "PASS",
+          "observation": "(load \"cut.shen\") = loaded\n(fn a)\n(fn b)\n(fn c)\n(fn d)\n(fn e*)\n(fn f)\n(fn g*)\n(fn h)\n\nrun time: 0.93095700000000647 secs\n\nrun time: 0.93161200000000122 secs\npassed\n",
+          "expression": "(load \"cut.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "ddab8f33fed7bdbac6e95ca8e9ce65e5c53a9b5fd8bdfbe58fd7949cae3ef241",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/09/002",
+          "status": "PASS",
+          "observation": "((lambda V1125 (lambda L1126 (lambda K1127 (lambda C1128 (let X (shen.newpv V1125) (shen.gc V1125 (do (shen.incinfs) (a X V1125 L1126 K1127 (freeze (return X V1125 L1126 K1127 C1128)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 4\n\nrun time: 0.0039480000000082782 secs\npassed\npassed ... 31\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (a X) (return X))",
+          "expectation": "4",
+          "expression_sha256": "4c2cf1b394bf0818b7b3e8d4e26487982ba96b03ccff343c413cc4c6be5cb262",
+          "expectation_sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+        },
+        {
+          "id": "canonical/10/001",
+          "status": "PASS",
+          "observation": "(load \"nreverseprolog.shen\") = loaded\n(fn nreverse)\n(fn nappend)\n\nrun time: 0.72411899999998752 secs\n\nrun time: 0.7247380000000021 secs\npassed\n",
+          "expression": "(load  \"nreverseprolog.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "739a9b45e611a2e293e2d1e35f081eafdfbe53a23e5f03893f17a5f3a023a5a6",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/10/002",
+          "status": "PASS",
+          "observation": "((lambda V1129 (lambda L1130 (lambda K1131 (lambda C1132 (let X (shen.newpv V1129) (shen.gc V1129 (do (shen.incinfs) (nreverse (cons 1 (cons 2 (cons 3 (cons 4 ())))) X V1129 L1130 K1131 (freeze (return X V1129 L1130 K1131 C1132)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [4 3 2 1]\n\nrun time: 0.0065230000000013888 secs\npassed\npassed ... 33\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (nreverse [1 2 3 4] X) (return X))",
+          "expectation": "[4 3 2 1]",
+          "expression_sha256": "7767eda46153a4c25df3574a541525d4cb2ff741de2b7bef01aeaae151f1b3ca",
+          "expectation_sha256": "36b8009f798b78660ae5a3aefe991a1d19185f3bd442a15461d13cf51380df66"
+        },
+        {
+          "id": "canonical/11/001",
+          "status": "PASS",
+          "observation": "(load \"findall.shen\") = loaded\n(fn enjoys)\n(fn fads)\n\nrun time: 0.41290000000000759 secs\n\nrun time: 0.41345799999999144 secs\npassed\n",
+          "expression": "(load \"findall.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "811c63c8a47ae59e0671154a2c4027b3213089b7f8f64d8a1c54d4c9eaa61aa8",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/11/002",
+          "status": "PASS",
+          "observation": "((lambda V1133 (lambda L1134 (lambda K1135 (lambda C1136 (do (shen.incinfs) (fads mark V1133 L1134 K1135 C1136)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [tea chocolate]\n\nrun time: 0.0047709999999909769 secs\npassed\npassed ... 35\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (fads mark))",
+          "expectation": "[tea chocolate]",
+          "expression_sha256": "64b26373e1d75a7fb3d6c81bf21e1892b4b7bc90c389681a6b8f7f9b0b5744e1",
+          "expectation_sha256": "6cd5a664c79833beb07c251855345deaed606706baee1fae09678cfe39da047c"
+        },
+        {
+          "id": "canonical/12/001",
+          "status": "PASS",
+          "observation": "(load \"tableauprolog.shen\") = loaded\n(fn prop)\n(fn proph)\n(fn inconsistent)\n(fn consistent)\n(fn complement)\n(fn member)\n\nrun time: 5.0459910000000008 secs\n\nrun time: 5.0468469999999996 secs\npassed\n",
+          "expression": "(load  \"tableauprolog.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "8fd96e0ee1779bf7b1c25fa54ceb6c0d90e413c11504d5a95f50e9225703628e",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/12/002",
+          "status": "PASS",
+          "observation": "((lambda V1137 (lambda L1138 (lambda K1139 (lambda C1140 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons p ()))) ()))) V1137 L1138 K1139 C1140)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true\n\nrun time: 0.14496499999999912 secs\npassed\n",
+          "expression": "(prolog? (prop [] [[p <=> q] <=> [q <=> p]]))",
+          "expectation": "true",
+          "expression_sha256": "cbee88bd7d53e0b4414f166094174c8cbdb1ad55e7053c1e89dd7cf66e928b65",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/12/003",
+          "status": "PASS",
+          "observation": "((lambda V1141 (lambda L1142 (lambda K1143 (lambda C1144 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons r ()))) ()))) V1141 L1142 K1143 C1144)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false\n\nrun time: 0.041167999999998983 secs\npassed\npassed ... 38\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (prop [] [[p <=> q] <=> [q <=> r]]))",
+          "expectation": "false",
+          "expression_sha256": "18a65566b2c17952141c0f78aecf39b4f44afd4329f66b69ad20d2ef9ca94495",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/13/001",
+          "status": "PASS",
+          "observation": "(load \"proplog version 1.shen\") = loaded\n(fn backchain)\n(fn backchain*)\n\nrun time: 0.37865999999999644 secs\n\nrun time: 0.37948800000000915 secs\npassed\n",
+          "expression": "(load \"proplog version 1.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "c60757d93c2115f106fed4a4fd0b30213121e2fa69d53edb24cd9b0f749b52ac",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/13/002",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons (cons r (cons <= ())) ())))) = proved\n\nrun time: 0.0085369999999898027 secs\npassed\n",
+          "expression": "(backchain q [[q <= p] [q <= r] [r <=]])",
+          "expectation": "proved",
+          "expression_sha256": "dbe0e4202ac10fce33fa36d9bf2ec78cf5e98300dab411632b06ad77f70b9daa",
+          "expectation_sha256": "ad4f0f2a08ae928fede577c6b0adfa2840e764412818eac5f17a836ad50dcbb6"
+        },
+        {
+          "id": "canonical/13/003",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = ...\n\nrun time: 0.0056579999999968322 secs\npassed\n",
+          "expression": "(backchain q [[q <= p] [q <= r]])",
+          "expectation": "(fail)",
+          "expression_sha256": "611843f1b96982c776200c720441c5f75b9310147e16980295b5d0cbd2a5cc74",
+          "expectation_sha256": "d38a784376bd5c3ff85c29e6d6d45d5376f04f450513c5733c719fbbeefb7682"
+        },
+        {
+          "id": "canonical/13/004",
+          "status": "PASS",
+          "observation": "(load \"proplog version 2.shen\") = loaded\n(fn backchain)\n(fn backchain*)\n\nrun time: 0.33197499999999991 secs\n\nrun time: 0.33273199999999292 secs\npassed\n",
+          "expression": "(load \"proplog version 2.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "c1473b92fc80c67fdc27337720f3c1aff3a3507408748bb4288d8d43ed717f67",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/13/005",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons r ())))) = true\n\nrun time: 0.0046789999999958809 secs\npassed\n",
+          "expression": "(backchain q [[q <= p] [q <= r] r])",
+          "expectation": "true",
+          "expression_sha256": "6ad3ebeaf287bbd30e9b7706e20215e7aae396877a52f75ab846ee6fc23ac2c3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/13/006",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = false\n\nrun time: 0.0050999999999987722 secs\npassed\npassed ... 44\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(backchain q [[q <= p] [q <= r]])",
+          "expectation": "false",
+          "expression_sha256": "611843f1b96982c776200c720441c5f75b9310147e16980295b5d0cbd2a5cc74",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/14/001",
+          "status": "PASS",
+          "observation": "(load \"metaprog.shen\") = loaded\n(fn parse)\n(fn parsed?)\n(fn output_parse)\n(fn generate_parser)\n(fn parenthesise_rules)\n(fn parenthesise_rules1)\n(fn group_rules)\n(fn group_rules1)\n(fn place_in_group)\n(fn belongs-in?)\n(fn compile_rules)\n(fn lex?)\n(fn generate_code_for_nonlex)\n(fn mapapp)\n(fn get_characteristic_non_terminal)\n(fn gcfn_help)\n(fn apply_expansion)\n(fn ae_help)\n(fn generate_code_for_lex)\n(fn gcfl_help)\n\nrun time: 1.7994770000000102 secs\n\nrun time: 1.800108999999992 secs\npassed\n",
+          "expression": "(load \"metaprog.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "2895945c21425ba95c31e23d5d042fd9fbbb035cf315cd895c38bd9473adb5e0",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/14/002",
+          "status": "PASS",
+          "observation": "(do (generate_parser (cons sent (cons --> (cons np (cons vp (cons np (cons --> (cons name (cons np (cons --> (cons det (cons n (cons name (cons --> (cons \"John\" (cons name (cons --> (cons \"Bill\" (cons name (cons --> (cons \"Tom\" (cons det (cons --> (cons \"the\" (cons det (cons --> (cons \"a\" (cons det (cons --> (cons \"that\" (cons det (cons --> (cons \"this\" (cons n (cons --> (cons \"girl\" (cons n (cons --> (cons \"ball\" (cons vp (cons --> (cons vtrans (cons np (cons vp (cons --> (cons vintrans (cons vtrans (cons --> (cons \"kicks\" (cons vtrans (cons --> (cons \"likes\" (cons vintrans (cons --> (cons \"jumps\" (cons vintrans (cons --> (cons \"flies\" ())))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ok) = ok\n\nrun time: 0.55114900000000944 secs\npassed\npassed ... 46\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(do (generate_parser [sent --> np vp  np --> name  np  --> det n \n              name --> \"John\"  name --> \"Bill\"  \n              name --> \"Tom\" det  --> \"the\"  det  --> \"a\"\n              det  --> \"that\" det  --> \"this\"  \n              n --> \"girl\"  n --> \"ball\" \n              vp --> vtrans np  vp --> vintrans  \n              vtrans --> \"kicks\" vtrans --> \"likes\"\n              vintrans --> \"jumps\" vintrans --> \"flies\"]) ok)",
+          "expectation": "ok",
+          "expression_sha256": "564a77388bacc67da2df68219dcdf86dc2cf6af970bc193508a4d4d27896499d",
+          "expectation_sha256": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"
+        },
+        {
+          "id": "canonical/15/001",
+          "status": "PASS",
+          "observation": "(load \"binary.shen\") = loaded\nchanging the arity of complement may cause errors\nbinary#type\n(fn complement)\n\nrun time: 2.0817399999999964 secs\n\nrun time: 2.0822459999999978 secs\npassed\n",
+          "expression": "(load \"binary.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "f025113db8ab81154084b60011d3c47762f3c64ee86657c0a1e4e5a1848abbad",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/15/002",
+          "status": "PASS",
+          "observation": "(complement (cons 1 (cons 0 ()))) = [0 1]\n\nrun time: 0.0046329999999983329 secs\npassed\n",
+          "expression": "(complement [1 0])",
+          "expectation": "[0 1]",
+          "expression_sha256": "324c6794594ecbdfff79e94ded297a07c853be72eea069f6e5a14f9b5adf6e56",
+          "expectation_sha256": "568198db80fe73aa7c63b0142381bba65447c55bb870287fe542ab09c79defd5"
+        },
+        {
+          "id": "canonical/15/003",
+          "status": "PASS",
+          "observation": "(load \"streams.shen\") = loaded\nprogression#type\n(fn delay)\n(fn force)\n(fn end?)\n\nrun time: 1.5813330000000008 secs\n\nrun time: 1.5819130000000001 secs\npassed\n",
+          "expression": "(load \"streams.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "3641bb0591f7dc82c163942adc66e1c9694c7497729b5d8bd569faa02a8f9722",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/15/004",
+          "status": "PASS",
+          "observation": "(fst (delay (@p 0 (@p (+ 1) (lambda X false))))) = 1\n\nrun time: 0.0098210000000023001 secs\npassed\npassed ... 50\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(fst (delay (@p 0 (+ 1) (/. X false))))",
+          "expectation": "1",
+          "expression_sha256": "7713715c179d71e0552a02e9f15bfe45145bc08eb6dd8156a28e76501d7fae0b",
+          "expectation_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "id": "canonical/16/001",
+          "status": "PASS",
+          "observation": "(load \"calculator.shen\") = loaded\narith-expr#type\n(fn do-calculation)\n\nrun time: 3.4199780000000004 secs\n\nrun time: 3.4206319999999977 secs\npassed\n",
+          "expression": "(load \"calculator.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "0889f32597fe1584e661f3ca21bb1c3d6494b696d29431f3a5358e3775705d56",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/16/002",
+          "status": "PASS",
+          "observation": "(do-calculation (cons (cons num (cons 12 ())) (cons + (cons (cons (cons num (cons 7 ())) (cons * (cons (cons num (cons 4 ())) ()))) ())))) = 40\n\nrun time: 0.0050729999999958864 secs\npassed\npassed ... 52\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(do-calculation [[num 12] + [[num 7] * [num 4]]])",
+          "expectation": "40",
+          "expression_sha256": "2a93dba2f24b27215924c6c4d0b9de576047615d7fd5e0d1dd3750826eaf5704",
+          "expectation_sha256": "d59eced1ded07f84c145592f65bdf854358e009c5cd705f5215bf18697fed103"
+        },
+        {
+          "id": "canonical/17/001",
+          "status": "PASS",
+          "observation": "(load \"structures-untyped.shen\") = loaded\n(fn defstruct)\n(fn selectors)\n(fn selector)\n(fn constructor)\n(fn params)\n(fn make-association-list)\n(fn recognisor)\n\nrun time: 0.8235610000000122 secs\n\nrun time: 0.82409699999999475 secs\npassed\n",
+          "expression": "(load \"structures-untyped.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "b3af26ebc4a8fe97d8856e542fd4e7d2df51b58a1f1e6d3d1bb17e98770d1b98",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/17/002",
+          "status": "PASS",
+          "observation": "(defstruct ship (cons length (cons name ()))) = ship\n\nrun time: 0.17565000000000452 secs\npassed\n",
+          "expression": "(defstruct ship [length name])",
+          "expectation": "ship",
+          "expression_sha256": "09ee45889e259e4fab75cf97b77d6cffcbd3b9d8492465b2b22d58842d81288e",
+          "expectation_sha256": "e5d5b971139eefeb36d6edb9938fa246740c90da2003626487eb2d5d9646aec6"
+        },
+        {
+          "id": "canonical/17/003",
+          "status": "PASS",
+          "observation": "(make-ship 200 \"Mary Rose\") = [[structure | ship] [length | 200] [name | \"Mary Rose\"]]\n\nrun time: 0.0062630000000041264 secs\npassed\n",
+          "expression": "(make-ship 200 \"Mary Rose\")",
+          "expectation": "[[structure | ship] [length | 200] [name | \"Mary Rose\"]]",
+          "expression_sha256": "0058ee1538280311eb801ab3db8dabe973cbdcf4d05e05b87f12d55fce237fa7",
+          "expectation_sha256": "5afae717f604e74443640ace613bbcfe554d9c9cc8f274adcae0efd058aca8cb"
+        },
+        {
+          "id": "canonical/17/004",
+          "status": "PASS",
+          "observation": "(ship-length (make-ship 200 \"Mary Rose\")) = 200\n\nrun time: 0.012482000000005655 secs\npassed\n",
+          "expression": "(ship-length (make-ship 200 \"Mary Rose\"))",
+          "expectation": "200",
+          "expression_sha256": "a5f510b1390593aabdb155a42936a400afc9e70a7924ab09995e80ab20b5c38e",
+          "expectation_sha256": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        {
+          "id": "canonical/17/005",
+          "status": "PASS",
+          "observation": "(ship-name (make-ship 200 \"Mary Rose\")) = \"Mary Rose\"\n\nrun time: 0.011112000000011335 secs\npassed\npassed ... 57\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(ship-name (make-ship 200 \"Mary Rose\"))",
+          "expectation": "\"Mary Rose\"",
+          "expression_sha256": "54f61d69e1f2dd764425ca406d9e59d8dda4afaef7920cd7c62a88c5da2123ff",
+          "expectation_sha256": "dbc7a73bcd94e985820437375cc50de793d7713bc556219cf7868d2f98d38436"
+        },
+        {
+          "id": "canonical/18/001",
+          "status": "PASS",
+          "observation": "(load \"structures-typed.shen\") = loaded\n(fn defstruct)\n(fn selector-types)\n(fn recognisor-type)\n(fn constructor-type)\n(fn assemble-type)\ndefstruct\n(fn selectors)\n(fn selector)\n(fn constructor)\n(fn params)\n(fn make-association-list)\n(fn recognisor)\n\nrun time: 1.270347000000001 secs\n\nrun time: 1.2711050000000057 secs\npassed\n",
+          "expression": "(load \"structures-typed.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "11bbedf4006d985510642b59bdeeccc7602a7ed03832522ea3538f22720e9ded",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/18/002",
+          "status": "PASS",
+          "observation": "(defstruct ship (cons (@p length number) (cons (@p name string) ()))) = ship\n\nrun time: 0.20077600000000473 secs\npassed\n",
+          "expression": "(defstruct ship [(@p length number) (@p name string)])",
+          "expectation": "ship",
+          "expression_sha256": "ecfb2d08beacf46c279b804d59d9ddce08bc6561b4e891748157a6247aa9c834",
+          "expectation_sha256": "e5d5b971139eefeb36d6edb9938fa246740c90da2003626487eb2d5d9646aec6"
+        },
+        {
+          "id": "canonical/18/003",
+          "status": "PASS",
+          "observation": "(make-ship 200 \"Mary Rose\") = [[structure | ship] [length | 200] [name | \"Mary Rose\"]]\n\nrun time: 0.0054310000000015179 secs\npassed\n",
+          "expression": "(make-ship 200 \"Mary Rose\")",
+          "expectation": "[[structure | ship] [length | 200] [name | \"Mary Rose\"]]",
+          "expression_sha256": "0058ee1538280311eb801ab3db8dabe973cbdcf4d05e05b87f12d55fce237fa7",
+          "expectation_sha256": "5afae717f604e74443640ace613bbcfe554d9c9cc8f274adcae0efd058aca8cb"
+        },
+        {
+          "id": "canonical/18/004",
+          "status": "PASS",
+          "observation": "(ship-length (make-ship 200 \"Mary Rose\")) = 200\n\nrun time: 0.012502999999995268 secs\npassed\n",
+          "expression": "(ship-length (make-ship 200 \"Mary Rose\"))",
+          "expectation": "200",
+          "expression_sha256": "a5f510b1390593aabdb155a42936a400afc9e70a7924ab09995e80ab20b5c38e",
+          "expectation_sha256": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf"
+        },
+        {
+          "id": "canonical/18/005",
+          "status": "PASS",
+          "observation": "(ship-name (make-ship 200 \"Mary Rose\")) = \"Mary Rose\"\n\nrun time: 0.016517999999990707 secs\npassed\npassed ... 62\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(ship-name (make-ship 200 \"Mary Rose\"))",
+          "expectation": "\"Mary Rose\"",
+          "expression_sha256": "54f61d69e1f2dd764425ca406d9e59d8dda4afaef7920cd7c62a88c5da2123ff",
+          "expectation_sha256": "dbc7a73bcd94e985820437375cc50de793d7713bc556219cf7868d2f98d38436"
+        },
+        {
+          "id": "canonical/19/001",
+          "status": "PASS",
+          "observation": "(load \"classes-untyped.shen\") = loaded\n(fn defclass)\n(fn make-instance)\n(fn get-value)\n(fn get-value-test)\n(fn has-value?)\n(fn has-value-test)\n(fn has-attribute?)\n(fn change-value)\n(fn instance-of)\n\nrun time: 0.87168700000000854 secs\n\nrun time: 0.87229999999999563 secs\npassed\n",
+          "expression": "(load \"classes-untyped.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "5c035789b019c1df352420fafea013245bb1a2f6f4cec1623ab98349242e2558",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/19/002",
+          "status": "PASS",
+          "observation": "(defclass ship (cons length (cons name ()))) = ship\n\nrun time: 0.0056590000000085183 secs\npassed\n",
+          "expression": "(defclass ship [length name])",
+          "expectation": "ship",
+          "expression_sha256": "44c45ed12c7f598e0be3259fddc2062f14d6aa9c8843a4e7b920485926161b5e",
+          "expectation_sha256": "e5d5b971139eefeb36d6edb9938fa246740c90da2003626487eb2d5d9646aec6"
+        },
+        {
+          "id": "canonical/19/003",
+          "status": "PASS",
+          "observation": "(set s (make-instance ship)) = [[class | ship] [length | fail] [name | fail]]\n\nrun time: 0.0058569999999917854 secs\npassed\n",
+          "expression": "(set s (make-instance ship))",
+          "expectation": "[[class | ship] [length | fail] [name | fail]]",
+          "expression_sha256": "162755e35beb979182fd8ca40e09933514cf7e341426e7a15785ffc8131f7514",
+          "expectation_sha256": "ae94a39132d05ada805d05c6d00ebe896327e2c2152e0acae0adfacc37a15676"
+        },
+        {
+          "id": "canonical/19/004",
+          "status": "PASS",
+          "observation": "(has-value? length (value s)) = false\n\nrun time: 0.0056309999999939464 secs\npassed\n",
+          "expression": "(has-value? length (value s))",
+          "expectation": "false",
+          "expression_sha256": "1cc64cc8996f70873251e1c68ea35a6afe58d380548543a47c503f92b6efb3eb",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/19/005",
+          "status": "PASS",
+          "observation": "(set s (change-value (value s) length 100)) = [[class | ship] [length | 100] [name | fail]]\n\nrun time: 0.0061859999999995807 secs\npassed\n",
+          "expression": "(set s (change-value (value s) length 100))",
+          "expectation": "[[class | ship] [length | 100] [name | fail]]",
+          "expression_sha256": "888e822fc87a6be07985cd38868746c577231da8e776eec5979c149b2c5536ea",
+          "expectation_sha256": "f5166492941c687fb89286e466b2b1643eed94c4e3e8897a24d7fa276f6f7b71"
+        },
+        {
+          "id": "canonical/19/006",
+          "status": "PASS",
+          "observation": "(get-value length (value s)) = 100\n\nrun time: 0.0068610000000006721 secs\npassed\npassed ... 68\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(get-value length (value s))",
+          "expectation": "100",
+          "expression_sha256": "45363bd90749013679674e5ef40bcdb1c8a667c336ce82b9f03f9e7ee27a5055",
+          "expectation_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+        },
+        {
+          "id": "canonical/20/001",
+          "status": "PASS",
+          "observation": "(load \"classes-typed.shen\") = loaded\ndefclass\n(fn defclass)\n(fn axiom)\n(fn record-attribute-types)\nmake-instance\n(fn make-instance)\nget-value\n(fn get-value)\n(fn get-value-test)\nhas-value?\n(fn has-value?)\n(fn has-value-test)\nhas-attribute?\n(fn has-attribute?)\nchange-value\n(fn change-value)\ninstance-of\n(fn instance-of)\n\nrun time: 1.5580970000000036 secs\n\nrun time: 1.5588419999999985 secs\npassed\n",
+          "expression": "(load \"classes-typed.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "a4ca5b8ef734042f3075e610049935297564c7eb0601d3ae31cf1cde01e547a0",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/20/002",
+          "status": "PASS",
+          "observation": "(defclass ship (cons (@p length number) (cons (@p name string) ()))) = ship\n\nrun time: 1.5121040000000079 secs\npassed\n",
+          "expression": "(defclass ship [(@p length number) (@p name string)])",
+          "expectation": "ship",
+          "expression_sha256": "3ab7ddbcb57257cb8ec4b9ef3e72b3c39c0ee4c96580628e7cf748ee7e7f985a",
+          "expectation_sha256": "e5d5b971139eefeb36d6edb9938fa246740c90da2003626487eb2d5d9646aec6"
+        },
+        {
+          "id": "canonical/20/003",
+          "status": "PASS",
+          "observation": "(has-value? length (make-instance ship)) = false\n\nrun time: 0.012372999999996637 secs\npassed\n",
+          "expression": "(has-value? length (make-instance ship))",
+          "expectation": "false",
+          "expression_sha256": "5ab5925ea9c2c2f5d0eca6971d57381f6690fa4513a3b4034096170e45c32b2c",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/20/004",
+          "status": "PASS",
+          "observation": "(change-value (make-instance ship) length 100) = [[class | ship] [length | 100] [name | fail]]\n\nrun time: 0.012353000000004499 secs\npassed\n",
+          "expression": "(change-value (make-instance ship) length 100)",
+          "expectation": "[[class | ship] [length | 100] [name | fail]]",
+          "expression_sha256": "e22ed5702e3a0b64e2f8caaa7d0cdc3557a06fb24136d9ced83d28d5b728c0d7",
+          "expectation_sha256": "f5166492941c687fb89286e466b2b1643eed94c4e3e8897a24d7fa276f6f7b71"
+        },
+        {
+          "id": "canonical/20/005",
+          "status": "PASS",
+          "observation": "(get-value length (change-value (make-instance ship) length 100)) = 100\n\nrun time: 0.017645999999999162 secs\npassed\npassed ... 73\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(get-value length (change-value (make-instance ship) length 100))",
+          "expectation": "100",
+          "expression_sha256": "d516c642403850916a93d555bb66ad60b44d19ab840c2f9ead596d050142c1c0",
+          "expectation_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+        },
+        {
+          "id": "canonical/21/001",
+          "status": "PASS",
+          "observation": "(load \"stack.shen\") = loaded\nempty-stack\npush\ntop\npop\n(fn empty-stack)\n(fn push)\n(fn top)\n(fn pop)\n\nrun time: 0.50091900000001033 secs\n\nrun time: 0.50149199999999894 secs\npassed\n",
+          "expression": "(load \"stack.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "b5112b1c860de60f0e2020fedd42f977c49fdd9907fc591a3223e977003ce77e",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/21/002",
+          "status": "PASS",
+          "observation": "(top (push 0 (empty-stack _))) = 0\n\nrun time: 0.01832400000000689 secs\npassed\npassed ... 75\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(top (push 0 (empty-stack _)))",
+          "expectation": "0",
+          "expression_sha256": "2acbc49b13204d1dcb762a3b794c4526867e4c25494f8f6335a4e3a53b2b5a87",
+          "expectation_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        {
+          "id": "canonical/22/001",
+          "status": "PASS",
+          "observation": "(load \"yacc.shen\") = loaded\n(fn <sent>)\n(fn <det>)\n(fn <np>)\n(fn <n>)\n(fn <name1>)\n(fn <vp>)\n(fn <vtrans>)\n(fn <des>)\n(fn <ds>)\n(fn <es>)\n(fn <sent'>)\n(fn question)\n(fn <as->bs>)\n(fn <find-digit>)\n(fn <morestuff>)\n(fn <digit>)\n(fn <find-digit'>)\n(fn <asbscs>)\n(fn <as>)\n(fn <bs>)\n(fn <cs>)\n(fn <asbs'cs>)\n(fn <bs'>)\n(fn <find-digit''>)\n(fn <digit''>)\n(fn <anbncn>)\n(fn <as>)\n(fn <bs>)\n(fn <cs>)\n(fn equal-length?)\n(fn appendall)\n(fn <a*s>)\n(fn <b*>)\n(fn <c*>)\n(fn <d*>)\n\nrun time: 5.5101379999999978 secs\n\nrun time: 5.5113380000000092 secs\npassed\n",
+          "expression": "(load \"yacc.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "60e267cd49919004296c17388e905c2eafc12e06c56071b3f43b30715a8f7133",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/22/002",
+          "status": "PASS",
+          "observation": "(compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [the cat likes the dog]\n\nrun time: 0.0061459999999868842 secs\npassed\n",
+          "expression": "(compile (fn <sent>) [the cat likes the dog])",
+          "expectation": "[the cat likes the dog]",
+          "expression_sha256": "36a4c65ae4a0a8a1ba52797e0353d580eab4aaa52dc7e38abc936e690b089a35",
+          "expectation_sha256": "f3ca4e9ea0c4649e91b1db05b34f092c6749872e7f069010cb2c73b67f79accb"
+        },
+        {
+          "id": "canonical/22/003",
+          "status": "PASS",
+          "observation": "(trap-error (compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons canary ())))))) (lambda E (fail))) = ...\n\nrun time: 0.0064279999999996562 secs\npassed\n",
+          "expression": "(trap-error (compile (fn <sent>) [the cat likes the canary]) (/. E (fail)))",
+          "expectation": "(fail)",
+          "expression_sha256": "ffee9d4e18b1e25053b86cfa59a8087dd5021731111d5ffbc1845db6747ecf6f",
+          "expectation_sha256": "d38a784376bd5c3ff85c29e6d6d45d5376f04f450513c5733c719fbbeefb7682"
+        },
+        {
+          "id": "canonical/22/004",
+          "status": "PASS",
+          "observation": "(compile (fn <asbscs>) (cons a (cons a (cons a (cons b (cons b (cons c ()))))))) = [a a a b b c]\n\nrun time: 0.0072159999999996671 secs\npassed\n",
+          "expression": "(compile (fn <asbscs>) [a a a b b c])",
+          "expectation": "[a a a b b c]",
+          "expression_sha256": "f1507d84a4ebf6c18f4852695a62074b47c5da67ff4e6a66d69381674efae344",
+          "expectation_sha256": "6229989df7b4e4c52b69b300d212ceaf12522e203cc336b29496e1f2785c3372"
+        },
+        {
+          "id": "canonical/22/005",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6]\n\nrun time: 0.0070809999999994488 secs\npassed\n",
+          "expression": "(compile (fn <find-digit>) [a v f g 6 y u])",
+          "expectation": "[6]",
+          "expression_sha256": "ba8f3103607719197526a7dcf8c8db98accfce78e48f5774b20d04e3c7ddd2fd",
+          "expectation_sha256": "fe94b827f0455bee6f4a6a265286f827f18748ede569565ee827058085bad146"
+        },
+        {
+          "id": "canonical/22/006",
+          "status": "PASS",
+          "observation": "(compile (fn <vp>) (cons chases (cons the (cons cat ())))) = [chases the cat]\n\nrun time: 0.0054790000000082273 secs\npassed\n",
+          "expression": "(compile (fn <vp>) [chases the cat])",
+          "expectation": "[chases the cat]",
+          "expression_sha256": "f0443cfa7ff7efdd55d5c9f3da8f855952dc7c0ca846c9bd112b87c61207970d",
+          "expectation_sha256": "a15460b8dcaa310f03f159ba794e5d4f5209596baff8a67ce808962995e770ae"
+        },
+        {
+          "id": "canonical/22/007",
+          "status": "PASS",
+          "observation": "(compile (fn <des>) (cons (cons d ()) (cons (cons e (cons e ())) ()))) = [d e e]\n\nrun time: 0.0056389999999879592 secs\npassed\n",
+          "expression": "(compile (fn <des>) [[d] [e e]])",
+          "expectation": "[d e e]",
+          "expression_sha256": "202a78728448c3309670d79cbcf15cb84f3d3f758e1a48586ce1cfd2a4d377ed",
+          "expectation_sha256": "ba8cb1d4151ad2fb6095a193b945b3fc97c8c47159d1b8c82114b8c1b8674627"
+        },
+        {
+          "id": "canonical/22/008",
+          "status": "PASS",
+          "observation": "(compile (fn <sent'>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [is it true that your father likes the dog ?]\n\nrun time: 0.0058060000000068612 secs\npassed\n",
+          "expression": "(compile (fn <sent'>) [the cat likes the dog])",
+          "expectation": "[is it true that your father likes the dog ?]",
+          "expression_sha256": "f1fc9c8c69dd1c195e09dd55c46e4336cd025f7dc8a9438c88cad94d946e10c0",
+          "expectation_sha256": "c17e921531db20c5d145dd632a723d6a8aebec35b54f5b0ae2f45bbeffaef988"
+        },
+        {
+          "id": "canonical/22/009",
+          "status": "PASS",
+          "observation": "(compile (fn <as>) (cons a (cons a (cons a ())))) = [a a a]\n\nrun time: 0.0062949999999943884 secs\npassed\n",
+          "expression": "(compile (fn <as>) [a a a])",
+          "expectation": "[a a a]",
+          "expression_sha256": "972b978968a4874f6b964a7889bbe3cbbb82ee512aa7db145a8443a6a0b12c1d",
+          "expectation_sha256": "5295e92473dc549addd062876164efa761343eea1c0253ff1577bfe52c35d87a"
+        },
+        {
+          "id": "canonical/22/010",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit'>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6 y u]\n\nrun time: 0.0068090000000040618 secs\npassed\n",
+          "expression": "(compile (fn <find-digit'>) [a v f g 6 y u])",
+          "expectation": "[6 y u]",
+          "expression_sha256": "59c184cfb9da1850d43171f2e41f400f9408d5cb46dfe5d06c8348656d18e99d",
+          "expectation_sha256": "83d6dd6d5fef93fe5f59764ddf0156fdb814e1f6a3ddee33d448ef2eaa61c35b"
+        },
+        {
+          "id": "canonical/22/011",
+          "status": "PASS",
+          "observation": "(trap-error (compile (fn <asbs'cs>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) (lambda E (fail))) = ...\n\nrun time: 0.0064479999999917936 secs\npassed\n",
+          "expression": "(trap-error (compile (fn <asbs'cs>) [a v f g 6 y u]) (/. E (fail)))",
+          "expectation": "(fail)",
+          "expression_sha256": "5bf37bd8726b8c2a2b97026a2f48125f68d2d01d9f23dba26f836ee437bca84c",
+          "expectation_sha256": "d38a784376bd5c3ff85c29e6d6d45d5376f04f450513c5733c719fbbeefb7682"
+        },
+        {
+          "id": "canonical/22/012",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit''>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = 6\n\nrun time: 0.007408999999995558 secs\npassed\n",
+          "expression": "(compile (fn <find-digit''>) [a v f g 6 y u])",
+          "expectation": "6",
+          "expression_sha256": "4b9530c6d57205eedcb42fd464b2aef827ad2e1d7a3088a15fde231ab77f35b8",
+          "expectation_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+        },
+        {
+          "id": "canonical/22/013",
+          "status": "PASS",
+          "observation": "(compile (fn <anbncn>) (cons a (cons a (cons a (cons b (cons b (cons b (cons c (cons c (cons c ())))))))))) = [a a a b b b c c c]\n\nrun time: 0.0067249999999887677 secs\npassed\npassed ... 88\nfailed ... 0\npass rate ... 100%\n\nok\n[]\ntrue\n\n",
+          "expression": "(compile (fn <anbncn>) [a a a b b b c c c])",
+          "expectation": "[a a a b b b c c c]",
+          "expression_sha256": "ba42b5a38890834adaea0928caffcc936af7fd5224ba73f9b2a5fa75e8b8e546",
+          "expectation_sha256": "e34d7a79ef393cb9ee0459c7a4fb443a87a99c2b5d94621819038d6deb02a7f8"
+        },
+        {
+          "id": "canonical/23/001",
+          "status": "PASS",
+          "observation": "(preclude-all-but ()) = []\n\nrun time: 0.0022030000000086147 secs\npassed\n",
+          "expression": "(preclude-all-but [])",
+          "expectation": "[]",
+          "expression_sha256": "81cba9ccccdc647b98860ce753c98f15048b2d07ecd627d76e848a7970cae40b",
+          "expectation_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "id": "canonical/23/002",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 3.399999999942338e-05 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/23/003",
+          "status": "PASS",
+          "observation": "(load \"n queens.shen\") = loaded\n(fn n-queens) : (number --> (list (list number)))\n(fn n-queens.initialise) : (number --> (list number))\n(fn n-queens.n-queens-loop) : (number --> ((list number) --> (list (list number))))\n(fn n-queens.all_Ns?) : (number --> ((list number) --> boolean))\n(fn n-queens.next_n) : (number --> ((list number) --> (list number)))\n(fn n-queens.ok_row?) : ((list number) --> boolean)\n(fn n-queens.ok_diag?) : ((list number) --> boolean)\n(fn n-queens.ok_diag_N?) : (number --> (number --> ((list number) --> boolean)))\n\nrun time: 3.0861929999999944 secs\n\ntypechecked in 40856 inferences\n\nrun time: 3.0870390000000043 secs\npassed\n",
+          "expression": "(load \"n queens.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "640a2f25c9ccf3c11c2a487560c957499ed4cf87ccd26b9adc9f3d471afee5d7",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/23/004",
+          "status": "PASS",
+          "observation": "(n-queens 5) = [[4 2 5 3 1] [3 5 2 4 1] [5 3 1 4 2] [4 1 3 5 2] [5 2 4 1 3] [1 4 2 5 3] [2 5 3 1 4] [1 3 5 2 4] [3 1 4 2 5] [2 4 1 3 5]]\n\nrun time: 0.2500789999999995 secs\npassed\n",
+          "expression": "(n-queens 5)",
+          "expectation": "[[4 2 5 3 1] [3 5 2 4 1] [5 3 1 4 2] [4 1 3 5 2] [5 2 4 1 3] [1 4 2 5 3] \n                    [2 5 3 1 4] [1 3 5 2 4] [3 1 4 2 5] [2 4 1 3 5]]",
+          "expression_sha256": "6c58ba7e56dec5bd9009c81f8b0c0840e5f2207b378d6ee00dc4fca2bb5c1e89",
+          "expectation_sha256": "176a628304cedeb1931988362ea029201f550e38280a3c860aa836fcb25f9cd7"
+        },
+        {
+          "id": "canonical/23/005",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.1999999998124622e-05 secs\npassed\npassed ... 93\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/24/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.0000000003174137e-05 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/24/002",
+          "status": "PASS",
+          "observation": "(load \"search.shen\") = loaded\n(fn breadth-first) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))\n(fn b*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))\n(fn some) : ((A --> boolean) --> ((list A) --> boolean))\n(fn depth) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))\n(fn d*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))\n(fn hill) : ((state --> number) --> (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean))))\n(fn h*) : ((state --> number) --> ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean))))\n(fn order_states) : ((state --> number) --> ((list state) --> (list state)))\n(fn bsort) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))\n(fn bsort*) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))\n\nrun time: 2.5183229999999952 secs\n\ntypechecked in 44211 inferences\n\nrun time: 2.5193050000000028 secs\npassed\n",
+          "expression": "(load \"search.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "32a0ee0e9256127512753a2a11e64d966f7202a01428962affb4a98756e100d1",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/24/003",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 9.9999999747524271e-06 secs\npassed\npassed ... 96\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/25/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.0000000003174137e-05 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/25/002",
+          "status": "PASS",
+          "observation": "(load \"montague.shen\") = loaded\nt#type : symbol\nf#type : symbol\n(fn <sent>) : ((list t) ==> f)\n(fn <np>) : ((list t) ==> ((t --> f) --> f))\n(fn name?) : (t --> boolean)\n(fn <cn>) : ((list t) ==> (t --> f))\n(fn common-noun?) : (t --> boolean)\n(fn <rcn>) : ((list t) ==> (t --> f))\n(fn <vp>) : ((list t) ==> (t --> f))\n(fn <intrans>) : ((list t) ==> (t --> f))\n(fn intrans?) : (t --> boolean)\n(fn <trans>) : ((list t) ==> (t --> (t --> f)))\n(fn trans?) : (t --> boolean)\n(fn <det>) : ((list t) ==> ((t --> f) --> ((t --> f) --> f)))\n\nrun time: 17.473624999999998 secs\n\ntypechecked in 57003 inferences\n\nrun time: 17.474714000000006 secs\npassed\n",
+          "expression": "(load \"montague.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "c5211205db79c8183f9aa30cb4ce1cb9d38af1b230ee7dcaeecc406a23819737",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/25/003",
+          "status": "PASS",
+          "observation": "(compile (fn <sent>) (cons Mary (cons likes (cons John ())))) = [likes Mary John]\n\nrun time: 0.0067430000000001655 secs\npassed\npassed ... 99\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(compile (fn <sent>) [Mary likes John])",
+          "expectation": "[likes Mary John]",
+          "expression_sha256": "daf934d86b3db04fbf8b05041bd7126a353b050b06d3757949d67091b33f0ba7",
+          "expectation_sha256": "91446512a3daa7671610883d81a44ceb4e3db02e0529c18a728ac20395f5b66c"
+        },
+        {
+          "id": "canonical/26/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.5000000018972059e-05 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/26/002",
+          "status": "PASS",
+          "observation": "(load \"c-minus.shen\") = loaded\nsynonyms : symbol\nprogram#type : symbol\npreamble#type : symbol\nmain#type : symbol\nstatement#type : symbol\nassignment#type : symbol\nexpr#type : symbol\nop#type : symbol\nconditional#type : symbol\nconstant#type : symbol\ninteger#type : symbol\nprint#type : symbol\nwhile#type : symbol\nparameters#type : symbol\ndeclaration#type : symbol\ntype#type : symbol\nprocedure#type : symbol\nparameters#type : symbol\n(fn read-file-as-unit-strings) : (string --> (list string))\n(fn <program>) : ((list string) ==> program)\n(fn <preamble>) : ((list string) ==> (list statement))\n(fn <main>) : ((list string) ==> main)\n(fn <statement>) : ((list string) ==> statement)\n(fn <compound-statement>) : ((list string) ==> statement)\n(fn <statements>) : ((list string) ==> (list statement))\n(fn <atomic-statement>) : ((list string) ==> statement)\n(fn <assignment>) : ((list string) ==> statement)\n(fn <return>) : ((list string) ==> statement)\n(fn <conditional>) : ((list string) ==> statement)\n(fn <statement1>) : ((list string) ==> statement)\n(fn <statement2>) : ((list string) ==> statement)\n(fn <exprs>) : ((list string) ==> (list expr))\n(fn <expr>) : ((list string) ==> expr)\n(fn <vector-ref>) : ((list string) ==> expr)\n(fn <index>) : ((list string) ==> expr)\n(fn <complex>) : ((list string) ==> expr)\n(fn <expr1>) : ((list string) ==> expr)\n(fn <expr2>) : ((list string) ==> expr)\n(fn <prefix>) : ((list string) ==> symbol)\n(fn <infix>) : ((list string) ==> infix)\n(fn <constant>) : ((list string) ==> constant)\n(fn <float>) : ((list string) ==> number)\n(fn <pre>) : ((list string) ==> (list integer))\n(fn <post>) : ((list string) ==> (list integer))\n(fn compute-float) : ((list integer) --> ((list integer) --> number))\n(fn compute-int) : ((list integer) --> integer)\n(fn compute-fractional) : ((list integer) --> number)\n(fn compute-fractional-h) : ((list integer) --> (integer --> number))\n(fn exptint) : (integer --> (integer --> integer))\n(fn <char>) : ((list string) ==> string)\n(fn <int>) : ((list string) ==> integer)\n(fn <int-h>) : ((list string) ==> (list integer))\n(fn <numeric>) : ((list string) ==> string)\n(fn digit) : (string --> integer)\n(fn intlength) : ((list A) --> integer)\n(fn <print>) : ((list string) ==> statement)\n(fn <string>) : ((list string) ==> string)\n(fn <stringstuff>) : ((list string) ==> string)\n(fn <ndq>) : ((list string) ==> string)\n(fn <while>) : ((list string) ==> statement)\n(fn <declaration>) : ((list string) ==> statement)\n(fn <dim>) : ((list string) ==> integer)\n(fn <type>) : ((list string) ==> type)\n(fn <variables>) : ((list string) ==> (list symbol))\n(fn <variable>) : ((list string) ==> symbol)\n(fn <alphanumeric>) : ((list string) ==> string)\n(fn <alphanumeric-h>) : ((list string) ==> string)\n(fn <alpha>) : ((list string) ==> string)\n(fn alpha*?) : (string --> boolean)\n(fn <numeric>) : ((list string) ==> string)\n(fn <procedure>) : ((list string) ==> procedure)\n(fn <params>) : ((list string) ==> parameters)\n(fn <procname>) : ((list string) ==> symbol)\n(fn <ws>) : ((list string) ==> symbol)\n(fn <space>) : ((list string) ==> symbol)\n(fn <tab>) : ((list string) ==> symbol)\n(fn <newline>) : ((list string) ==> symbol)\n(fn <comment>) : ((list string) ==> symbol)\n(fn <comment-body>) : ((list string) ==> symbol)\n\nrun time: 125.576436 secs\n\ntypechecked in 289653 inferences\n\nrun time: 125.57908500000002 secs\npassed\npassed ... 101\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(load \"c-minus.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "c974645603a42dfe2bea918fa89e57a9eaca767175b6f5e716d7c305b2f9e322",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/27/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 3.9000000015221303e-05 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/27/002",
+          "status": "PASS",
+          "observation": "(load \"interpreter.shen\") = loaded\nnum#type : symbol\nprimitive-object#type : symbol\npattern#type : symbol\nl-formula#type : symbol\n(fn normal-form) : (l-formula --> l-formula)\n(fn ==>>) : (l-formula --> l-formula)\n(fn eval-error?) : (l-formula --> boolean)\n(fn successor) : (A --> l-formula)\n(fn predecessor) : (A --> l-formula)\n(fn sub) : ((list (pattern * l-formula)) --> (l-formula --> l-formula))\n(fn match) : (pattern --> (l-formula --> (list (pattern * l-formula))))\n(fn no-match?) : ((list (pattern * l-formula)) --> boolean)\n(fn replace) : (pattern --> (l-formula --> (l-formula --> l-formula)))\n(fn free?) : (pattern --> (pattern --> boolean))\n\nrun time: 283.14915400000007 secs\n\ntypechecked in 1177672 inferences\n\nrun time: 283.15043900000001 secs\npassed\n",
+          "expression": "(load \"interpreter.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "fc874555aa90cec658cf2fb0c456f935d4100bcaca7e56523cfef5747aa6d793",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/27/003",
+          "status": "PASS",
+          "observation": "(normal-form (cons (cons (cons y-combinator (cons (cons /. (cons ADD (cons (cons /. (cons X (cons (cons /. (cons Y (cons (cons if (cons (cons = (cons X (cons 0 ()))) (cons Y (cons (cons (cons ADD (cons (cons -- (cons X ())) ())) (cons (cons ++ (cons Y ())) ())) ())))) ()))) ()))) ()))) ())) (cons 3 ())) (cons 4 ()))) = 7\n\nrun time: 0.02156600000000708 secs\npassed\n",
+          "expression": "(normal-form [[[y-combinator [/. ADD [/. X [/. Y [if [= X 0] Y [[ADD [-- X]] [++ Y]]]]]]] 3] 4])",
+          "expectation": "7",
+          "expression_sha256": "b29a1fb693fa878b7f43e9fc81f7f29eff71f13e23ec077e75393f2a87657372",
+          "expectation_sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+        },
+        {
+          "id": "canonical/27/004",
+          "status": "PASS",
+          "observation": "(normal-form (cons (cons (cons y-combinator (cons (cons /. (cons APPEND (cons (cons /. (cons X (cons (cons /. (cons Y (cons (cons if (cons (cons = (cons X (cons () ()))) (cons Y (cons (cons cons (cons (cons (cons /. (cons (cons cons (cons A (cons B ()))) (cons A ()))) (cons X ())) (cons (cons (cons APPEND (cons (cons (cons /. (cons (cons cons (cons A (cons B ()))) (cons B ()))) (cons X ())) ())) (cons Y ())) ()))) ())))) ()))) ()))) ()))) ())) (cons (cons cons (cons 1 (cons () ()))) ())) (cons (cons cons (cons 2 (cons () ()))) ()))) = [cons 1 [cons 2 []]]\n\nrun time: 0.015451999999982036 secs\npassed\n",
+          "expression": "(normal-form [[[y-combinator [/. APPEND [/. X [/. Y\n                  [if [= X [ ]] Y  [cons [[/. [cons A B] A] X] \n                     \t[[APPEND [[/. [cons A B] B] X]] Y]]]]]]] [cons 1 [ ]]] [cons 2 [ ]]])",
+          "expectation": "[cons 1 [cons 2 []]]",
+          "expression_sha256": "3dc028a0d249ef9a45b6b07b1688faf741ae0f71e4a849fbc8effa1dddf634f9",
+          "expectation_sha256": "7b2a3186f9fe74d130016fb3370450ffcd4d1ac78af6a59dce56a72595c08659"
+        },
+        {
+          "id": "canonical/27/005",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.099999997222767e-05 secs\npassed\npassed ... 106\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/28/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 8.9999999772771844e-06 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/28/002",
+          "status": "PASS",
+          "observation": "(load \"proof assistant.shen\") = loaded\nsynonyms : symbol\nglobals#type : symbol\n(fn proof-assistant) : (A --> symbol)\n(fn input-assumptions) : (number --> (list wff))\n(fn input-conclusion) : (A --> wff)\n(fn proof-loop) : ((list ((list wff) * wff)) --> ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff)))))))\n(fn show-proof) : (string --> symbol)\n(fn show-proof-help) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (number --> symbol))\n(fn show-sequent) : ((list ((list wff) * wff)) --> (number --> symbol))\n(fn enumerate) : ((list A) --> (number --> symbol))\n(fn user-directive) : (A --> ((list ((list wff) * wff)) --> (list ((list wff) * wff))))\n(fn back) : ((list ((list wff) * wff)) --> (list ((list wff) * wff)))\n(fn go-back) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list wff) * wff)))\n\nrun time: 22.009521999999947 secs\n\ntypechecked in 1253757 inferences\n\nrun time: 22.010491000000002 secs\npassed\n",
+          "expression": "(load \"proof assistant.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "ba3a6197e84f941a38221fc13e6373bc273b6fe60899377e6a8c273a2b289912",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/28/003",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.1999999969702912e-05 secs\npassed\npassed ... 109\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/29/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 8.9999999772771844e-06 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/29/002",
+          "status": "PASS",
+          "observation": "(load \"qmachine.shen\") = loaded\nwarning: changing the type of push may create errors\nprogression#type : symbol\n(fn force) : ((progression A) --> A)\n(fn delay) : ((progression A) --> (progression A))\n(fn end?) : ((progression A) --> boolean)\n(fn push) : (A --> ((progression A) --> (progression A)))\n(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))\n(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))\n(fn super) : ((progression A) --> ((A --> B) --> ((B --> (C --> C)) --> (C --> C))))\n(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))\n(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))\n(fn for*) : ((progression A) --> ((A --> B) --> number))\n(fn progn) : (A --> (B --> B))\n(fn filter*) : ((progression A) --> ((A --> boolean) --> (list A)))\n(fn next-prime) : (number --> number)\n(fn prime*?) : (number --> boolean)\n(fn prime-help) : (number --> (number --> (number --> boolean)))\n\nrun time: 23.35149100000001 secs\n\ntypechecked in 1346429 inferences\n\nrun time: 23.352371999999946 secs\npassed\n",
+          "expression": "(load \"qmachine.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "b3d4c39554166102148bdfeac53d088843c748daf26b5206902c9e4a343b7ddd",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/29/003",
+          "status": "PASS",
+          "observation": "(exists (cons 1 (cons (+ 1) (cons (= 100) ()))) (> 50)) = true\n\nrun time: 0.011842000000001462 secs\npassed\n",
+          "expression": "(exists [1 (+ 1) (= 100)] (> 50))",
+          "expectation": "true",
+          "expression_sha256": "e9c77e1e1dc74baace767ea16896f1193406b4959b144477d3a597ef6902c887",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/29/004",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.1999999969702912e-05 secs\npassed\npassed ... 113\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/30/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 9.9999999747524271e-06 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/30/002",
+          "status": "PASS",
+          "observation": "(load \"depth.shen\") = loaded\nchanging the arity of depth may cause errors\nwarning: changing the type of depth may create errors\n(fn depth) : (A --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> (list A)))))\n(fn depth-help) : ((list A) --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> ((list A) --> (list A))))))\n\nrun time: 2.2616329999999607 secs\n\ntypechecked in 1354659 inferences\n\nrun time: 2.2628250000000207 secs\npassed\n",
+          "expression": "(load \"depth.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "de4c33632e52158610e4003b3b77e1f2925abcbf6362c976a8d2b56c3ca7564b",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/30/003",
+          "status": "PASS",
+          "observation": "(depth 4 (lambda X (cons (+ X 3) (cons (+ X 4) (cons (+ X 5) ())))) (lambda X (= X 27)) (lambda X (> X 27))) = [4 7 10 13 16 19 22 27]\n\nrun time: 0.0060850000000982618 secs\npassed\n",
+          "expression": "(depth 4 (/. X [(+ X 3) (+ X 4) (+ X 5)]) (/. X (= X 27)) (/. X (> X 27)))",
+          "expectation": "[4 7 10 13 16 19 22 27]",
+          "expression_sha256": "373ad09995cd9d89e3b42b8c39ef9a3b05ce9719ee1be253c75006a80d9de806",
+          "expectation_sha256": "ff594461f8b92b79ac6379716fa156278594bbc3e5436e2f950f21ffab465974"
+        },
+        {
+          "id": "canonical/30/004",
+          "status": "PASS",
+          "observation": "(depth 4 (lambda X (cons (+ X 3) ())) (lambda X (= X 27)) (lambda X (> X 27))) = []\n\nrun time: 0.0075750000000880391 secs\npassed\n",
+          "expression": "(depth 4 (/. X [(+ X 3)]) (/. X (= X 27)) (/. X (> X 27)))",
+          "expectation": "[]",
+          "expression_sha256": "fb6475cc3fa32ee931636d938c2a4ecd9d39dedcfb3480dcfe933b48583c27bb",
+          "expectation_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "id": "canonical/30/005",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.5999999959603883e-05 secs\npassed\npassed ... 118\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/31/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 8.9999999772771844e-06 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/31/002",
+          "status": "PASS",
+          "observation": "(load \"secd1.shen\") = loaded\nsynonyms : symbol\nob#type : symbol\n(fn evaluate) : (ob --> ob)\n(fn secd) : ((list ob) --> ((list (symbol * ob)) --> ((list ob) --> ((list ((list ob) * ((list (symbol * ob)) * (list ob)))) --> ob))))\n(fn bnd?) : (ob --> ((list (symbol * ob)) --> boolean))\n(fn lookup) : (ob --> ((list (symbol * ob)) --> ob))\n\nrun time: 15.229843000000074 secs\n\ntypechecked in 1391960 inferences\n\nrun time: 15.230751000000055 secs\npassed\n",
+          "expression": "(load \"secd1.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "fe8b170048869b2f51f6fae4d8a6bd0f1e7bf2bfe85765b135b6bb761fa68b57",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/31/003",
+          "status": "PASS",
+          "observation": "(evaluate (cons (cons lambda (cons x (cons x ()))) (cons b ()))) = b\n\nrun time: 0.0085859999999229331 secs\npassed\n",
+          "expression": "(evaluate [[lambda x x] b])",
+          "expectation": "b",
+          "expression_sha256": "864de9f72c89969f5d7d0c7099d9082c2a70e217c6204b98f215eb84f4ab0f8a",
+          "expectation_sha256": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+        },
+        {
+          "id": "canonical/31/004",
+          "status": "PASS",
+          "observation": "(evaluate (cons lambda (cons x (cons x ())))) = [closure [] x x]\n\nrun time: 0.0090279999999438587 secs\npassed\n",
+          "expression": "(evaluate [lambda x x])",
+          "expectation": "[closure [] x x]",
+          "expression_sha256": "e889f1145f54abfd1494be1676b3851a0d08e7499867762d5a7e1c82a3644091",
+          "expectation_sha256": "dbe438864dc90bc1ca0afffe587e16380bcb6127b0ec80c08c22a2de63c7dcc7"
+        },
+        {
+          "id": "canonical/31/005",
+          "status": "PASS",
+          "observation": "(let If (cons lambda (cons z (cons (cons lambda (cons x (cons (cons lambda (cons y (cons (cons (cons z (cons x ())) (cons y ())) ()))) ()))) ()))) (let True (cons lambda (cons x (cons (cons lambda (cons y (cons x ()))) ()))) (evaluate (cons (cons (cons If (cons True ())) (cons a ())) (cons b ()))))) = a\n\nrun time: 0.009979000000043925 secs\npassed\npassed ... 123\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(let If [lambda z [lambda x [lambda y [[z x] y]]]]\n        True [lambda x [lambda y x]]\n        (evaluate [[[If True] a] b]))",
+          "expectation": "a",
+          "expression_sha256": "11a142242d80fdeeda8b75b0499f2291a8981c41df8c6358fbcf0c9fcb9572c3",
+          "expectation_sha256": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+        },
+        {
+          "id": "canonical/32/001",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.2999999967178155e-05 secs\npassed\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        },
+        {
+          "id": "canonical/32/002",
+          "status": "PASS",
+          "observation": "(load \"unification.shen\") = loaded\n(fn unify)\n(fn unify-loop)\n(fn occurs-check?)\n(fn deref)\n\nrun time: 0.60788300000001527 secs\n\nrun time: 0.6083929999999782 secs\npassed\n",
+          "expression": "(load \"unification.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "21f6e23b791f179bcc96075d3727be1012fb04414c89d219ae48e13a54049f6b",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/32/003",
+          "status": "PASS",
+          "observation": "(unify (cons f (cons a ())) X) = [[X f a]]\n\nrun time: 0.009016999999971631 secs\npassed\n",
+          "expression": "(unify [f a] X)",
+          "expectation": "[[X f a]]",
+          "expression_sha256": "df0989293919dd6f13f88d9a7b8c8ff0243bf962b0114a30431049c191365f93",
+          "expectation_sha256": "6b7023e84cac3e06c5ede46a2aba9e51138e2de7e7bf27d2bbc58f7b7162ac89"
+        },
+        {
+          "id": "canonical/32/004",
+          "status": "PASS",
+          "observation": "(unify (cons f (cons Y ())) (cons f (cons b ()))) = [[Y | b]]\n\nrun time: 0.0095119999999724314 secs\npassed\npassed ... 127\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(unify [f Y] [f b])",
+          "expectation": "[[Y | b]]",
+          "expression_sha256": "f2af054cbb6b035f4a05c6214297fc0dff10888325fe5d842f0c8581dd666d57",
+          "expectation_sha256": "0aeb79981ca05b95cd65f59bd4fb49d00ba2797c90ebb84afb018ab9f71f9244"
+        },
+        {
+          "id": "canonical/33/001",
+          "status": "PASS",
+          "observation": "(load \"totalprolog.shen\") = loaded\n(fn lived)\n(fn begat)\n7625\n(fn total)\n\nrun time: 2.4532690000000912 secs\n\nrun time: 2.4536980000000312 secs\npassed\n",
+          "expression": "(load \"totalprolog.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "3f0f527ff562f627833bde9514f7bb5215cc242defe8fd3190ebe4c773c4ef82",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/33/002",
+          "status": "PASS",
+          "observation": "((lambda V1145 (lambda L1146 (lambda K1147 (lambda C1148 (let Person (shen.newpv V1145) (shen.gc V1145 (let Age (shen.newpv V1145) (shen.gc V1145 (let Ages (shen.newpv V1145) (shen.gc V1145 (let Total (shen.newpv V1145) (shen.gc V1145 (do (shen.incinfs) (findall Age (lived (shen.deref Person V1145) (shen.deref Age V1145)) Ages V1145 L1146 K1147 (freeze (total Ages Total V1145 L1146 K1147 (freeze (return Total V1145 L1146 K1147 C1148)))))))))))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 7625\n\nrun time: 0.019211000000041167 secs\npassed\npassed ... 129\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (findall Age (lived Person Age) Ages) \n          (total Ages Total) \n          (return Total))",
+          "expectation": "7625",
+          "expression_sha256": "03e01b2393173f403d540c6d5741fced5edac8aa643bc26a0beb14d746288474",
+          "expectation_sha256": "80e107ee3ba12129c178396a4b3a4c502210b378e8b85d3b14087d7becbcfde7"
+        },
+        {
+          "id": "canonical/34/001",
+          "status": "PASS",
+          "observation": "(load \"fork.shen\") = loaded\n(fn g1)\n(fn h)\n(fn i)\n(fn j)\n(fn f)\n\nrun time: 0.61927299999990737 secs\n\nrun time: 0.6200059999999894 secs\npassed\n",
+          "expression": "(load \"fork.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "c6aeb9b7566de8e0d5390c98b986306ea30d0176bf22ba60f84a85ae0991d677",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/34/002",
+          "status": "PASS",
+          "observation": "((lambda V1149 (lambda L1150 (lambda K1151 (lambda C1152 (do (shen.incinfs) (g1 a V1149 L1150 K1151 C1152)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true\n\nrun time: 0.0077740000000403597 secs\npassed\npassed ... 131\nfailed ... 0\npass rate ... 100%\n\nok\n\n",
+          "expression": "(prolog? (g1 a))",
+          "expectation": "true",
+          "expression_sha256": "46a0dc319327b1586e975f9bfcab2fdd49e2434073271549bad59ae7105509da",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/35/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 8.9999999772771844e-06 secs\npassed\n",
+          "expression": "(tc +)",
+          "expectation": "true",
+          "expression_sha256": "250017279887ad4533699c3e7a4bc999a7d00b1da6d2ee3b4cdff325a94eb0f3",
+          "expectation_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        },
+        {
+          "id": "canonical/35/002",
+          "status": "PASS",
+          "observation": "(load \"prologinterp.shen\") = loaded\nwarning: changing the type of lookup may create errors\natom#type : symbol\nterm#type : symbol\nhorn-clause#type : symbol\n(fn unify-atoms) : (atom --> (atom --> (list (term * term))))\n(fn unify-terms) : ((list term) --> ((list term) --> ((list (term * term)) --> (list (term * term)))))\n(fn unify-term) : (term --> (term --> ((list (term * term)) --> (list (term * term)))))\n(fn occurs-check?) : (term --> (term --> boolean))\n(fn dereference) : (term --> ((list (term * term)) --> term))\n(fn lookup) : (term --> ((list (term * term)) --> term))\n(fn my-occurs?) : (term --> (term --> boolean))\n(fn some) : ((A --> boolean) --> ((list A) --> boolean))\n(fn prolog) : ((list atom) --> ((list horn-clause) --> boolean))\n(fn insert-answer-literal) : ((list atom) --> (list atom))\n(fn answer-literal) : ((list term) --> (list atom))\n(fn answer-terms) : ((list term) --> (list term))\n(fn prolog-help) : ((list atom) --> ((list horn-clause) --> ((list horn-clause) --> boolean)))\n(fn hdcl) : (horn-clause --> atom)\n(fn body) : (horn-clause --> (list atom))\n(fn dereference-atom) : (atom --> ((list (term * term)) --> atom))\n(fn answer) : ((list term) --> boolean)\n(fn standardise-apart) : (horn-clause --> horn-clause)\n(fn variables-in-clause) : (horn-clause --> (list term))\n(fn variables-in-atom) : (atom --> (list term))\n(fn variables-in-term) : (term --> (list term))\n(fn st-all) : ((list term) --> (horn-clause --> horn-clause))\n(fn replace-term-in-clause) : (term --> (term --> (horn-clause --> horn-clause)))\n(fn replace-term-in-atom) : (term --> (term --> (atom --> atom)))\n(fn replace-term) : (term --> (term --> (term --> term)))\n\nrun time: 60.974149000000011 secs\n\ntypechecked in 1634304 inferences\n\nrun time: 60.977880999999911 secs\npassed\n",
+          "expression": "(load \"prologinterp.shen\")",
+          "expectation": "loaded",
+          "expression_sha256": "41e8f43f044d169ce427a2ef93f6ef37ff201fe3443202492756f6a8c85f8a3a",
+          "expectation_sha256": "2cab953f2b3607b36259abeb3703329d6b301b31277402ebf9f2b3b93e31dd53"
+        },
+        {
+          "id": "canonical/35/003",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 2.0999999946980097e-05 secs\npassed\npassed ... 134\nfailed ... 0\npass rate ... 100%\n\nok\n0\n\nrun time: 677.27228400000001 secs\nloaded\n\nrun time: 680.0418380000001 secs\n",
+          "expression": "(tc -)",
+          "expectation": "false",
+          "expression_sha256": "76e5670d9d7e8deea46ee78132bfebe8a3453427442c1d9668e45d6ec2003b9e",
+          "expectation_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+        }
+      ],
+      "counts": {
+        "PASS": 134,
+        "FAIL": 0,
+        "UNKNOWN": 0
+      },
+      "denominator": 134,
+      "status": "PASS"
+    },
+    "bundled_extensions": {
+      "argv": [
+        "/tmp/shen-suite-f_pakep1/shen-koka",
+        "script",
+        "tests/extensions/runme.shen"
+      ],
+      "cwd": "/workspace/scratch/3e502de53f0d/shen-koka/kernel",
+      "exit_code": 0,
+      "blocker": null,
+      "environment": {
+        "SHEN_KOKA_ROOT": "/tmp/shen-suite-f_pakep1",
+        "SHEN_KOKA_PPM_COMPAT": "1"
+      },
+      "truncated": false,
+      "seconds": 8.908558096001798,
+      "logs": {
+        "stdout": {
+          "sha256": "6c259c48b6ca23f19f1971fd99fa69c0e0df739a4b25dfd53de99a9b1fed12aa",
+          "bytes": 1784
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "complete_reports": true,
+      "compat_sha256": {
+        "compat/README.md": "fec349464f02ceed912f5befd22e974bc509d6f1659dfe88b927751ff62a05ec",
+        "compat/programmable-pattern-matching.kl": "b585eedc47e0242f333468e44fb747c8b2fddf0de0d3888cb0dda94991df0d10"
+      },
+      "assertions": [
+        {
+          "id": "extensions/ppm/001",
+          "name": "simple custom pattern",
+          "status": "PASS",
+          "observation": "simple custom pattern",
+          "expression": "(ppm.match-simple (@p 1 2))",
+          "expectation": "[1 2]",
+          "expression_sha256": "6ff61f6dfa53aa880d8947fc22514127dfe0314c7b5f0abd60aedbc31a6c8622",
+          "expectation_sha256": "9f901106b754d3b187811f5628437ca2076a61e68f2ac1696c4df25dd3c9852c"
+        },
+        {
+          "id": "extensions/ppm/002",
+          "name": "repeated variable success",
+          "status": "PASS",
+          "observation": "repeated variable success",
+          "expression": "(ppm.match-repeat (@p 1 1))",
+          "expectation": "same",
+          "expression_sha256": "e47dea2c8f9e36df1ed73710d5db2f75070cbd56411175ad4ddc0c8b6fc16201",
+          "expectation_sha256": "0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5"
+        },
+        {
+          "id": "extensions/ppm/003",
+          "name": "repeated variable failure",
+          "status": "PASS",
+          "observation": "repeated variable failure",
+          "expression": "(ppm.match-repeat (@p 1 2))",
+          "expectation": "different",
+          "expression_sha256": "7ff400b45d1b5896a077ad8289ab6a485ef96ebd36ff042f4a04e139e7bef44e",
+          "expectation_sha256": "9d6f965ac832e40a5df6c06afe983e3b449c07b843ff51ce76204de05c690d11"
+        },
+        {
+          "id": "extensions/ppm/004",
+          "name": "nested custom pattern",
+          "status": "PASS",
+          "observation": "nested custom pattern",
+          "expression": "(ppm.match-nested (@p (@p 1 2) 3))",
+          "expectation": "[1 2 3]",
+          "expression_sha256": "63399830207f2d7ab0618f0197dd23d261b3c4b612daa5e315d5de89c5a87d14",
+          "expectation_sha256": "b6a9678a91958832c349ca55642a9bfe58f95358196ef66c42e3863208e60dff"
+        },
+        {
+          "id": "extensions/ppm/005",
+          "name": "built-in cons pattern still works",
+          "status": "PASS",
+          "observation": "built-in cons pattern still works",
+          "expression": "(ppm.match-cons [1 2 3])",
+          "expectation": "[1 [2 3]]",
+          "expression_sha256": "3754253f6972a18e1c288b7196050fe12a7f383ec7a5f8c96a80a24bb5965100",
+          "expectation_sha256": "20aebf824c770f8b404ba65ad0de8a6cbf43cbaf43996e063121f856429a99fe"
+        },
+        {
+          "id": "extensions/ppm/006",
+          "name": "built-in literal list pattern still works",
+          "status": "PASS",
+          "observation": "built-in literal list pattern still works",
+          "expression": "(ppm.match-literal-list [1 2])",
+          "expectation": "yes",
+          "expression_sha256": "e52e712208bd9e1fa4472faec32ca267acb8a26d8f1b7a0db220ac43034cfe24",
+          "expectation_sha256": "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
+        },
+        {
+          "id": "extensions/ppm/007",
+          "name": "unregister handler",
+          "status": "PASS",
+          "observation": "unregister handler",
+          "expression": "(shen.x.programmable-pattern-matching.unregister-handler ppm.two-handler)",
+          "expectation": "ppm.two-handler",
+          "expression_sha256": "ebf592e254b69655506a9047860f55daf2a88167e1c738ebe9a333b8da8cc728",
+          "expectation_sha256": "4db23077754f06dbfdc46f42bb9d732b173a3f937289804a11d426b16cbcfe91"
+        },
+        {
+          "id": "extensions/ppm/008",
+          "name": "custom pattern definition fails after unregister",
+          "status": "PASS",
+          "observation": "custom pattern definition fails after unregister",
+          "expression": "(freeze\n    (eval [define ppm.disabled-after-unregister\n            [two A B] -> ok\n            _ -> no]))",
+          "expectation": "error",
+          "expression_sha256": "215946e4b03745dce9618d4f73017613cb6d7a419934c24ff68113d63c2293ab",
+          "expectation_sha256": "ca00fccfb408989eddc401062c4d1219a6aceb6b9b55412357f1790862e8f178"
+        }
+      ],
+      "counts": {
+        "PASS": 8,
+        "FAIL": 0,
+        "UNKNOWN": 0
+      },
+      "denominator": 8,
+      "status": "PASS"
+    }
+  },
+  "execution": "immutable native payload and boot-input snapshot",
+  "regressions": [],
+  "status": "PASS"
+}

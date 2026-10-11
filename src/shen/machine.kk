@@ -21,6 +21,10 @@ fun nth(xs:list<value>,i:int): exn value { match xs { [] -> throw("wrong form ar
 fun bind-args(ps:list<string>,vs:list<value>,env:environment): <exn,div> environment {
   match (ps,vs) { ([],[]) -> env; (Cons(p,pt),Cons(v,vt)) -> bind-args(pt,vt,Cons((p,v),env)); _ -> throw("wrong function arity") }
 }
+fun address-index(n:float64): exn int {
+  val i=n.int
+  if i.float64!=n then throw("vector index must be an integer") else i
+}
 fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console> value {
   fun a(i:int) { nth(args,i) }
   match (name,args) {
@@ -31,7 +35,7 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
       if id<0 then throw("cannot open " ++ home ++ name) else Stream(id)
     }
     ("read-byte",[Stream(id)]) -> { val n=stream-read(id.int32).int; if n < -1 then throw("read-byte error") else Num(n.float64) }
-    ("write-byte",[Num(n),Stream(id)]) -> { val result=stream-write(id.int32,n.int.int32).int; if result<0 then throw("write-byte error") else Num(result.float64) }
+    ("write-byte",[Num(n),Stream(id)]) -> { if n<0.0 || n>255.0 || n.int.float64!=n then throw("write-byte: expected byte"); val result=stream-write(id.int32,n.int.int32).int; if result<0 then throw("write-byte error") else Num(result.float64) }
     ("close",[Stream(id)]) -> { if stream-close(id.int32).int!=0 then throw("close error"); Nil }
     ("get-time",[Sym(kind)]) -> Num(clock-time(kind=="run"))
     ("shen-koka.heap-live",[]) -> Num(live-vectors((!w.heap)).float64)
@@ -62,13 +66,13 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
       Text(s) -> Text(s)
       _ -> throw("str: cannot convert non-atomic value")
     }
-    ("pos",[Text(s),Num(n)]) -> { val cs=s.list; match cs.drop(n.int).head { Just(c) -> Text(c.string); Nothing -> throw("pos: out of range") } }
+    ("pos",[Text(s),Num(n)]) -> { if n<0.0 then throw("pos: out of range"); val cs=s.list; match cs.drop(n.int).head { Just(c) -> Text(c.string); Nothing -> throw("pos: out of range") } }
     ("tlstr",[Text(s)]) -> match s.list { Cons(_,rest) -> Text(rest.string); _ -> throw("tlstr: empty string") }
     ("n->string",[Num(n)]) -> Text(n.int.char.string)
     ("string->n",[Text(s)]) -> match s.list { Cons(c,_) -> Num(c.int.float64); _ -> throw("string->n: empty string") }
     ("absvector",[Num(n)]) -> alloc-vector(w,n.int)
-    ("<-address",[v,Num(n)]) -> vector-get(w,v,n.int)
-    ("address->",[v,Num(n),x]) -> vector-set(w,v,n.int,x)
+    ("<-address",[v,Num(n)]) -> vector-get(w,v,address-index(n))
+    ("address->",[v,Num(n),x]) -> vector-set(w,v,address-index(n),x)
     ("simple-error",[Text(s)]) -> throw(s)
     ("error-to-string",[Fault(s)]) -> Text(s)
     ("shen.char-stinput?",[_]) -> Sym("false")

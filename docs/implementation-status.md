@@ -23,7 +23,7 @@ not reset or cleaned.
 
 ## Published
 
-The first runtime snapshot is published at `9f14c546233fb13536b1d1e1bf22f4677b749e59`
+The runtime checkpoint is published at `ec4af528af20a5e7f7292fc5dd5cac2f6f521e4f`
 on `pyrex41/shen-koka:implement/klambda-runtime`. GitHub API publication preserves
 the exact local tree; local commit SHAs differ because the API creates commits.
 Command-line Git push lacked credentials in this environment.
@@ -68,8 +68,8 @@ counting just the first 134 assertions. Raw reports are never overwritten.
 
 This is a bounded bootstrap runtime, not a qualified long-lived deployment.
 The vector collector has focused cycle/retained-root coverage, but long-lived
-RSS and embedding-root qualification remain required. Standard-library loading
-is being tested separately; the direct standalone compiler remains incomplete. An interpreter-backed slice builder now builds a native hello
+RSS and embedding-root qualification remain required. The pinned standard-library installer has completed successfully (035);
+individual library operations are not comprehensively qualified. the direct standalone compiler remains incomplete. An interpreter-backed slice builder now builds a native hello
 artifact from the actual Yggdrasil manifest and runs it without the full kernel.
 It is not the planned direct KL-to-Koka compiler. Eval-capable slices are refused
 with exit code 3. Broader standalone parity remains pending. Numeric/Unicode edge cases and primitive arity/type
@@ -87,8 +87,9 @@ Both references agree that `(fail)` equals the interned sentinel.
 Both pinned references fail the first bundled community PPM assertion and abort
 before the other seven. The S42 compiler lacks the hooks expected by that
 extension. The opt-in adapter in `compat/` passed all eight unchanged extension
-assertions in a focused run. The canonical lane runs with the adapter disabled; its regression gate remains
-required. The extension lane alone opts into the adapter.
+assertions in a focused run. Through attempt 031, the canonical lane ran without the adapter while the
+extension lane enabled it. Attempt 037 uses one adapter-enabled configuration
+for both lanes; future `--ppm-compat` runs follow that policy.
 The pristine default kernel is still available with the adapter disabled.
 
 Builds use Koka `-j1`: parallel compilation twice left an empty object and failed
@@ -113,3 +114,24 @@ Runs started before immutable snapshots may span a rebuild between lanes. Such
 runs retain raw evidence but cannot establish a single-build combined result.
 New runs freeze the native payload and boot inputs, enforce stream-size limits,
 and support cancellation by creating `CANCEL` inside their output directory.
+
+Attempt 031 completed all 134 canonical assertions and all eight extensions,
+with all 35 canonical counter reports consistent and no regressions. It uses
+the two explicitly recorded profiles described above. Attempt 037 checks the
+new boundary fixes with the adapter enabled consistently in both lanes. The
+latest focused set has 25 PASS (038), and the current standalone hello artifact
+also runs without a kernel installation (034).
+
+## Coherent kernel-compatibility result
+
+Attempt 037 completed with **134/134 canonical PASS and 8/8 extension PASS**,
+zero FAIL, zero UNKNOWN, all 35 canonical reports consistent, and no regressions
+against the earlier 102-pass baseline. The same immutable native payload and
+adapter-enabled boot configuration were used for both lanes. Binary SHA-256:
+`13d0a4dd3b9553f418f0c1077a14280211ac9079133c60e32c3da90e490b2d6b`.
+
+This establishes the full pinned suite for that configuration. It does not
+qualify the planned direct compiler, other platforms, long-running memory
+budgets, all standard-library operations, or the broader release matrix. Direct
+KL-to-Koka lowering is the next implementation stage; the optional search
+experiment remains deferred.

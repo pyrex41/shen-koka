@@ -3,6 +3,9 @@
 import json,pathlib,subprocess,hashlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 cases={
+ 'negative-pos':('(trap-error (pos "a" -1) (lambda E caught))','caught'),
+ 'fractional-address':('(trap-error (<-address (absvector 1) 0.5) (lambda E caught))','caught'),
+
  'gc-cycle-reclamation':('(defun garbage (N) (if (= N 0) (< (shen-koka.heap-live) 1024) (let V (absvector 1) (let X (address-> V 0 V) (garbage (- N 1)))))) (garbage 10000)','garbage\ntrue'),
  'gc-closure-root':('(defun churn (N) (if (= N 0) true (let V (absvector 1) (churn (- N 1))))) (let V (absvector 1) (let X (address-> V 0 42) (let F (freeze (<-address V 0)) (let X (churn 3000) (thaw F)))))','churn\n42'),
  'gc-error-handler-root':('(defun churn (N) (if (= N 0) (simple-error "done") (let V (absvector 1) (churn (- N 1))))) (let V (absvector 1) (let X (address-> V 0 42) (trap-error (churn 3000) (lambda E (<-address V 0)))))','churn\n42'),

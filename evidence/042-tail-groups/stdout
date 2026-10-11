@@ -1,0 +1,284 @@
+(fn reset)
+test-harness.exec-macro
+(fn test-harness.rcons)
+(fn passed)
+(fn failed)
+(fn test-harness.err)
+test-harness.report-results-macro
+(fn test-harness.create-tests)
+(fn test-harness.results)
+
+run time: 2.3762270000000001 secs
+loaded
+10000000
+
+proof assistant: (tc +) = true
+
+run time: 9.9999999996214228e-06 secs
+passed
+proof assistant: (load "proof assistant.shen") = loaded
+synonyms : symbol
+globals#type : symbol
+(fn proof-assistant) : (A --> symbol)
+(fn input-assumptions) : (number --> (list wff))
+(fn input-conclusion) : (A --> wff)
+(fn proof-loop) : ((list ((list wff) * wff)) --> ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff)))))))
+(fn show-proof) : (string --> symbol)
+(fn show-proof-help) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (number --> symbol))
+(fn show-sequent) : ((list ((list wff) * wff)) --> (number --> symbol))
+(fn enumerate) : ((list A) --> (number --> symbol))
+(fn user-directive) : (A --> ((list ((list wff) * wff)) --> (list ((list wff) * wff))))
+(fn back) : ((list ((list wff) * wff)) --> (list ((list wff) * wff)))
+(fn go-back) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list wff) * wff)))
+
+run time: 7.4191319999999994 secs
+
+typechecked in 6130 inferences
+
+run time: 7.4213240000000003 secs
+passed
+proof assistant: (tc -) = false
+
+run time: 1.2999999999152578e-05 secs
+passed
+passed ... 3
+failed ... 0
+pass rate ... 100%
+
+ok
+
+quantifier machine: (tc +) = true
+
+run time: 9.0000000021461801e-06 secs
+passed
+quantifier machine: (load "qmachine.shen") = loaded
+progression#type : symbol
+(fn force) : ((progression A) --> A)
+(fn delay) : ((progression A) --> (progression A))
+(fn end?) : ((progression A) --> boolean)
+(fn push) : (A --> ((progression A) --> (progression A)))
+(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn super) : ((progression A) --> ((A --> B) --> ((B --> (C --> C)) --> (C --> C))))
+(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn for*) : ((progression A) --> ((A --> B) --> number))
+(fn progn) : (A --> (B --> B))
+(fn filter*) : ((progression A) --> ((A --> boolean) --> (list A)))
+(fn next-prime) : (number --> number)
+(fn prime*?) : (number --> boolean)
+(fn prime-help) : (number --> (number --> (number --> boolean)))
+
+run time: 5.0995209999999993 secs
+
+typechecked in 9612 inferences
+
+run time: 5.1009650000000022 secs
+passed
+quantifier machine: (exists (cons 1 (cons (+ 1) (cons (= 100) ()))) (> 50)) = true
+
+run time: 0.0079330000000013001 secs
+passed
+quantifier machine: (tc -) = false
+
+run time: 1.1000000000649379e-05 secs
+passed
+passed ... 7
+failed ... 0
+pass rate ... 100%
+
+ok
+
+depth first search: (tc +) = true
+
+run time: 9.9999999996214228e-06 secs
+passed
+depth first search: (load "depth.shen") = loaded
+(fn depth) : (A --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> (list A)))))
+(fn depth-help) : ((list A) --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> ((list A) --> (list A))))))
+
+run time: 0.97726699999999767 secs
+
+typechecked in 11103 inferences
+
+run time: 0.97825200000000123 secs
+passed
+depth first search: (depth 4 (lambda X (cons (+ X 3) (cons (+ X 4) (cons (+ X 5) ())))) (lambda X (= X 27)) (lambda X (> X 27))) = [4 7 10 13 16 19 22 27]
+
+run time: 0.0042029999999968481 secs
+passed
+depth first search: (depth 4 (lambda X (cons (+ X 3) ())) (lambda X (= X 27)) (lambda X (> X 27))) = []
+
+run time: 0.0044550000000000978 secs
+passed
+depth first search: (tc -) = false
+
+run time: 1.1000000000649379e-05 secs
+passed
+passed ... 12
+failed ... 0
+pass rate ... 100%
+
+ok
+
+secd: (tc +) = true
+
+run time: 9.9999999996214228e-06 secs
+passed
+secd: (load "secd1.shen") = loaded
+synonyms : symbol
+ob#type : symbol
+(fn evaluate) : (ob --> ob)
+(fn secd) : ((list ob) --> ((list (symbol * ob)) --> ((list ob) --> ((list ((list ob) * ((list (symbol * ob)) * (list ob)))) --> ob))))
+(fn bnd?) : (ob --> ((list (symbol * ob)) --> boolean))
+(fn lookup) : (ob --> ((list (symbol * ob)) --> ob))
+
+run time: 7.5313249999999989 secs
+
+typechecked in 14701 inferences
+
+run time: 7.5323290000000007 secs
+passed
+secd: (evaluate (cons (cons lambda (cons x (cons x ()))) (cons b ()))) = b
+
+run time: 0.0053139999999984866 secs
+passed
+secd: (evaluate (cons lambda (cons x (cons x ())))) = [closure [] x x]
+
+run time: 0.0055620000000011771 secs
+passed
+secd: (let If (cons lambda (cons z (cons (cons lambda (cons x (cons (cons lambda (cons y (cons (cons (cons z (cons x ())) (cons y ())) ()))) ()))) ()))) (let True (cons lambda (cons x (cons (cons lambda (cons y (cons x ()))) ()))) (evaluate (cons (cons (cons If (cons True ())) (cons a ())) (cons b ()))))) = a
+
+run time: 0.0062329999999981567 secs
+passed
+passed ... 17
+failed ... 0
+pass rate ... 100%
+
+ok
+
+unification: (tc -) = false
+
+run time: 0.00014600000000086766 secs
+passed
+unification: (load "unification.shen") = loaded
+(fn unify)
+(fn unify-loop)
+(fn occurs-check?)
+(fn deref)
+
+run time: 0.54343599999999981 secs
+
+run time: 0.5438919999999996 secs
+passed
+unification: (unify (cons f (cons a ())) X) = [[X f a]]
+
+run time: 0.0054000000000016257 secs
+passed
+unification: (unify (cons f (cons Y ())) (cons f (cons b ()))) = [[Y | b]]
+
+run time: 0.0043830000000006919 secs
+passed
+passed ... 21
+failed ... 0
+pass rate ... 100%
+
+ok
+
+total in Prolog: (load "totalprolog.shen") = loaded
+(fn lived)
+(fn begat)
+7625
+(fn total)
+
+run time: 2.3157679999999985 secs
+
+run time: 2.3168059999999961 secs
+passed
+total in Prolog: ((lambda V1109 (lambda L1110 (lambda K1111 (lambda C1112 (let Person (shen.newpv V1109) (shen.gc V1109 (let Age (shen.newpv V1109) (shen.gc V1109 (let Ages (shen.newpv V1109) (shen.gc V1109 (let Total (shen.newpv V1109) (shen.gc V1109 (do (shen.incinfs) (findall Age (lived (shen.deref Person V1109) (shen.deref Age V1109)) Ages V1109 L1110 K1111 (freeze (total Ages Total V1109 L1110 K1111 (freeze (return Total V1109 L1110 K1111 C1112)))))))))))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 7625
+
+run time: 0.011318000000002826 secs
+passed
+passed ... 23
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog fork: (load "fork.shen") = loaded
+(fn g1)
+(fn h)
+(fn i)
+(fn j)
+(fn f)
+
+run time: 0.55630799999999425 secs
+
+run time: 0.55677399999999722 secs
+passed
+Prolog fork: ((lambda V1113 (lambda L1114 (lambda K1115 (lambda C1116 (do (shen.incinfs) (g1 a V1113 L1114 K1115 C1116)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true
+
+run time: 0.0045229999999989445 secs
+passed
+passed ... 25
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog interpreter: (tc +) = true
+
+run time: 8.9999999985934664e-06 secs
+passed
+Prolog interpreter: (load "prologinterp.shen") = loaded
+warning: changing the type of lookup may create errors
+atom#type : symbol
+term#type : symbol
+horn-clause#type : symbol
+(fn unify-atoms) : (atom --> (atom --> (list (term * term))))
+(fn unify-terms) : ((list term) --> ((list term) --> ((list (term * term)) --> (list (term * term)))))
+(fn unify-term) : (term --> (term --> ((list (term * term)) --> (list (term * term)))))
+(fn occurs-check?) : (term --> (term --> boolean))
+(fn dereference) : (term --> ((list (term * term)) --> term))
+(fn lookup) : (term --> ((list (term * term)) --> term))
+(fn my-occurs?) : (term --> (term --> boolean))
+(fn some) : ((A --> boolean) --> ((list A) --> boolean))
+(fn prolog) : ((list atom) --> ((list horn-clause) --> boolean))
+(fn insert-answer-literal) : ((list atom) --> (list atom))
+(fn answer-literal) : ((list term) --> (list atom))
+(fn answer-terms) : ((list term) --> (list term))
+(fn prolog-help) : ((list atom) --> ((list horn-clause) --> ((list horn-clause) --> boolean)))
+(fn hdcl) : (horn-clause --> atom)
+(fn body) : (horn-clause --> (list atom))
+(fn dereference-atom) : (atom --> ((list (term * term)) --> atom))
+(fn answer) : ((list term) --> boolean)
+(fn standardise-apart) : (horn-clause --> horn-clause)
+(fn variables-in-clause) : (horn-clause --> (list term))
+(fn variables-in-atom) : (atom --> (list term))
+(fn variables-in-term) : (term --> (list term))
+(fn st-all) : ((list term) --> (horn-clause --> horn-clause))
+(fn replace-term-in-clause) : (term --> (term --> (horn-clause --> horn-clause)))
+(fn replace-term-in-atom) : (term --> (term --> (atom --> atom)))
+(fn replace-term) : (term --> (term --> (term --> term)))
+
+run time: 12.991187000000004 secs
+
+typechecked in 32779 inferences
+
+run time: 12.993635000000005 secs
+passed
+Prolog interpreter: (tc -) = false
+
+run time: 2.2000000001298758e-05 secs
+passed
+passed ... 28
+failed ... 0
+pass rate ... 100%
+
+ok
+0
+
+run time: 42.569644000000004 secs
+loaded
+
+run time: 44.972838000000003 secs

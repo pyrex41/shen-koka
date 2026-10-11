@@ -71,7 +71,7 @@ def main():
     ap.add_argument('--output',type=pathlib.Path,required=True)
     ap.add_argument('--timeout',type=float,default=1500)
     ap.add_argument('--previous',type=pathlib.Path)
-    ap.add_argument('--ppm-compat',action='store_true',help='enable separate S42 community pattern adapter for extension lane')
+    ap.add_argument('--ppm-compat',action='store_true',help='enable the S42 community pattern adapter for BOTH lanes')
     args=ap.parse_args(); args.output.mkdir(parents=True,exist_ok=False)
     lockpath=ROOT/'comparison/shen-suite.lock.json'; lock=json.loads(lockpath.read_text())
     errors=[]
@@ -118,7 +118,7 @@ def main():
         if errors:
             result={'blocker':'pinned suite inventory mismatch','exit_code':None}
         else:
-            result=execute([str(execution_launcher)]+([args.script_command] if args.script_command else [])+[spec['entrypoint']],cwd,out,args.timeout, {**execution_env, 'SHEN_KOKA_PPM_COMPAT':'1' if args.ppm_compat and lane=='bundled_extensions' else '0'})
+            result=execute([str(execution_launcher)]+([args.script_command] if args.script_command else [])+[spec['entrypoint']],cwd,out,args.timeout, {**execution_env, 'SHEN_KOKA_PPM_COMPAT':'1' if args.ppm_compat else '0'})
             text=(out/'stdout').read_text(errors='replace')
             if lane=='canonical': result.update(parse_canonical(text,spec,cells))
             else:
@@ -131,7 +131,7 @@ def main():
         for cell in cells: cell.update(identities[cell['id']])
         for cell in cells:
             if cell['status']=='UNKNOWN': cell['blocker']=result.get('blocker') or 'assertion outcome not observed'
-        result['compat_sha256']={str(p.relative_to(ROOT)):sha(p) for p in (ROOT/'compat').rglob('*') if p.is_file()} if args.ppm_compat and lane=='bundled_extensions' else {}
+        result['compat_sha256']={str(p.relative_to(ROOT)):sha(p) for p in (ROOT/'compat').rglob('*') if p.is_file()} if args.ppm_compat else {}
         result['assertions']=cells
         result['counts']={s:sum(c['status']==s for c in cells) for s in ['PASS','FAIL','UNKNOWN']}
         result['denominator']=spec['assertion_count']
