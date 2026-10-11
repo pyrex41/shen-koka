@@ -101,3 +101,5 @@ checks (116), all 134 + 8 assertions (117), and all 17 seed cells (119). 118 is 
 missing native-kernel-005 baseline, all 142 UNKNOWN. 120 improves the light corpus
 to 64 PASS / 1 FAIL / 1 DIVERGE. 121 isolates hush/file behavior; 122 reproduces
 Lua's cold/warm load-echo change while Koka/Go observations stay stable.
+
+123 audits exact-tree publication of the CLI checkpoint. 126 validates the current installed Nix package and ten CLI cases; 127 passes all 134 + 8 assertions with verified source, runner and raw-log hashes and no regressions. 128 retains the heavy stage-1 matrix: Go/Lua artifacts match, Koka produces none within the host budget. The outer driver then fails on a wrong binary path, so its process exit code is unknown; the raw matrix is not promoted to a qualified result.

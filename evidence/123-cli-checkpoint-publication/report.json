@@ -1,0 +1,11 @@
+{
+  "repository": "pyrex41/shen-koka",
+  "branch": "implement/native-compiler",
+  "local_commit": "a3df4a79702a381bbc9c3572f7fe494a86139fed",
+  "published_commit": "246f349734f087ab142d460446d7b95457b9701f",
+  "tree_sha": "cce5417d77af07f2e790cd4df12ec949cf154983",
+  "trees_identical": true,
+  "primary_evidence": "117-cli-policy-full",
+  "runtime_source_mismatches": [],
+  "status": "PASS"
+}

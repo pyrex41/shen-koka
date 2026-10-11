@@ -1,0 +1,5 @@
+{
+  "source_and_log_hash_mismatches": [],
+  "package_evidence": "../126-nix-cli-package/report.json",
+  "regressions": []
+}

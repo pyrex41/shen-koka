@@ -14,14 +14,14 @@ not full-port release qualification.
 | Primitive inventory, positive observations and wrong arities | 098: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
 | Vector aliases, cycles, structural equality and tracing collection | Focused checks and full suite | Long-running memory budgets remain unqualified |
 | Generation-tagged streams | 054 failure; 056/058/057 after repair | Closed handles cannot alias a new stream |
-| Numeric conversions | 061/081 failures; 083/085 after repair | Indices/sizes truncate; character codes reject invalid ranges and fractions |
+| Numeric conversions | 061/081 failures; 083/085 after repair | String positions/vector sizes truncate; vector indices and character codes reject fractions |
 | CLI strings, sentinel, ordered eval flags, script arguments and quiet loading | 116: 10 PASS | Original kernel reader/compiler and script launcher retained |
 | Kernel-backed REPL | 032: four probes PASS | EOF, expression, multiline input and recovery |
 | Standard library | 035: installer completed | Individual library operations are not all qualified |
 | Bifrost launcher | 119: 17 required Koka cells PASS | Strict checker PASS; three-reference discrepancies remain |
 | Direct KL-to-Koka callbacks | 096: 43 compiled checks PASS | Full compiled-kernel suite pending |
 | Yggdrasil standalone hello | 034 interpreter-backed; 101 registered native target PASS | Both run without installed kernel; broader deployment matrix pending |
-| Nix runtime package | 084/085: build, boundary check and 134 + 8 PASS | x86_64 Linux with pinned Nix dependencies |
+| Nix runtime package | 126/127: current CLI package, ten CLI checks and 134 + 8 PASS | x86_64 Linux with pinned Nix dependencies |
 
 The full-suite result uses `SHEN_KOKA_PPM_COMPAT=1` in both lanes. Default boot
 remains pristine; the separate `compat/` adapter supplies the community pattern
@@ -29,7 +29,7 @@ hooks absent from S42. No vendored kernel module was edited. The full runtime
 uses original load-time forms; standalone slices use the synthesized manifest
 initializer. Ordinary `(fail)` remains the `shen.fail!` value, distinct from errors.
 
-Attempt 085 runs the immutable Nix-store launcher. Attempt 117 retests the
+Attempt 127 runs the current immutable Nix-store launcher; 126 verifies its installed source and binary hashes and all ten CLI cases. Attempt 117 retests the
 current CLI and runtime and preserves both raw streams
 and all cumulative counters before reset, and verifies the exact 63-file inventory
 and assertion identities. Its runner source and raw-log hashes were verified. Attempt 084 records the

@@ -1,0 +1,41 @@
+{
+  "case_denominator": 1,
+  "cell_denominator": 3,
+  "bifrost": {
+    "available": [
+      "shen-go",
+      "shen-lua",
+      "shen-koka"
+    ],
+    "cases": {
+      "yggdrasil-shake-parity": {
+        "verdict": "FAIL",
+        "detail": "some hosts produced no/empty stage-1 artefacts",
+        "impls": {
+          "shen-go": {
+            "status": "PASS",
+            "norm": "9f6de2b8/406a6a17"
+          },
+          "shen-koka": {
+            "status": "FAIL",
+            "norm": "no/empty artefacts"
+          },
+          "shen-lua": {
+            "status": "PASS",
+            "norm": "9f6de2b8/406a6a17"
+          }
+        }
+      }
+    },
+    "skipped": {}
+  },
+  "harness_status": "ERROR",
+  "process_exit_code": null,
+  "blocker": "driver failed after writing raw outputs: incorrect build/shen-koka path instead of .build/shen-koka; Bifrost exit code and elapsed time were not retained",
+  "interpretation": "Bifrost reports Koka no/empty artifacts after its 300-second host budget; this does not establish a hush-specific semantic failure. No successful stage-1 claim.",
+  "raw_sha256": {
+    "stdout": "659c752e1840258fb468b59549ad68e0a6755f16e33fe7ae503768b7103b7cc6",
+    "stderr": "771dbdf989d6ede3d32f4e525f0fb238284dde61fcb23fc0d81d7d8c547fd763",
+    "driver.py": "e3c892c0b0588f095292684d885f6ed98cdb2b5306450f7dd4bd9f6ebe1ff39d"
+  }
+}

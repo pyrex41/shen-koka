@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "store_path": "/nix/store/py90nr9n60bgm3a9s7vpgi5m7sfvkchn-shen-koka-0.0.1-experimental",
+  "binary_sha256": "d9c917747330d59c485d5b5ecf3476c18859da19b0c5a12804a7bb04f117e4a5",
+  "source_mismatches": [],
+  "test_source_sha256": "31bdfb0554c7961e4818b089dfa1abe3496b711ba151549976718b8b0cc9bb81",
+  "builder_scripts_sha256": {
+    "build-slice.py": "130d16da291f04ea053a6de298ad535fb6fa76c297022c428584ce559968e540",
+    "native_build.py": "6f14df0ae0cb22e7075a4b0aafb600b16eca4c58e710a4fa02ac4d32017c7640",
+    "native_codegen.py": "96045f4ce30de5e48cd9bf6862679e11a236714906ec0f6f96d1e63e4b94ab0a"
+  },
+  "cases": {
+    "string-output": {
+      "status": "PASS",
+      "stdout": "foobar\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "foobar\n",
+      "expected_exit_code": 0
+    },
+    "fail-sentinel": {
+      "status": "PASS",
+      "stdout": "shen.fail!\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "shen.fail!\n",
+      "expected_exit_code": 0
+    },
+    "ordered-actions": {
+      "status": "PASS",
+      "stdout": "1\n1\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "1\n1\n",
+      "expected_exit_code": 0
+    },
+    "multiple-forms": {
+      "status": "PASS",
+      "stdout": "2\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "2\n",
+      "expected_exit_code": 0
+    },
+    "set-action": {
+      "status": "PASS",
+      "stdout": "9\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "9\n",
+      "expected_exit_code": 0
+    },
+    "quiet-still-evaluates": {
+      "status": "PASS",
+      "stdout": "Q",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "Q",
+      "expected_exit_code": 0
+    },
+    "script-no-echo": {
+      "status": "PASS",
+      "stdout": "only-once\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "only-once\n",
+      "expected_exit_code": 0
+    },
+    "script-argv": {
+      "status": "PASS",
+      "stdout": "argv-ok\n",
+      "stderr": "",
+      "exit_code": 0,
+      "expected_stdout": "argv-ok\n",
+      "expected_exit_code": 0
+    },
+    "script-error": {
+      "status": "PASS",
+      "stdout": "shen-koka: boom\n",
+      "stderr": "",
+      "exit_code": 1,
+      "expected_stdout": "shen-koka: boom\n",
+      "expected_exit_code": 1
+    },
+    "invalid-option": {
+      "status": "PASS",
+      "stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "stderr": "",
+      "exit_code": 1,
+      "expected_stdout": "shen-koka: Invalid eval argument: --bogus\n",
+      "expected_exit_code": 1
+    }
+  }
+}
