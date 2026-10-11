@@ -24,4 +24,27 @@ class Reports(unittest.TestCase):
   self.assertFalse(self.check(text+text)[0]['complete_reports'])
  def test_unreached(self):
   self.assertEqual([x['status'] for x in self.check('boot failed')[1]],['UNKNOWN','UNKNOWN'])
+class Extensions(unittest.TestCase):
+ def check(self,text,names=('first','second')):
+  cells=[{'name':name,'status':'UNKNOWN'} for name in names]
+  result=r.parse_extensions(text,{'assertion_count':len(names)},cells)
+  return result,cells
+ def test_complete(self):
+  self.assertTrue(self.check('ok - first\nok - second\npassed ... 2\nfailed ... 0\n')[0]['complete_reports'])
+ def test_new_denominator(self):
+  names=tuple('case '+str(i) for i in range(123))
+  text=''.join('ok - '+name+'\n' for name in names)+'passed ... 123\nfailed ... 0\n'
+  self.assertTrue(self.check(text,names)[0]['complete_reports'])
+ def test_duplicate(self):
+  self.assertFalse(self.check('ok - first\nok - first\npassed ... 2\nfailed ... 0\n')[0]['complete_reports'])
+ def test_truncated(self):
+  self.assertFalse(self.check('ok - first\npassed ... 2\nfailed ... 0\n')[0]['complete_reports'])
+ def test_spoofed_skip(self):
+  result,cells=self.check('ok - first\nSKIP - second\npassed ... 2\nfailed ... 0\n')
+  self.assertFalse(result['complete_reports']);self.assertEqual(cells[1]['status'],'UNKNOWN')
+ def test_failure_visible(self):
+  result,cells=self.check('ok - first\nnot ok - second\npassed ... 1\nfailed ... 1\n')
+  self.assertTrue(result['complete_reports']);self.assertEqual(cells[1]['status'],'FAIL')
+ def test_wrong_counters(self):
+  self.assertFalse(self.check('ok - first\nok - second\npassed ... 1\nfailed ... 1\n')[0]['complete_reports'])
 if __name__=='__main__':unittest.main()

@@ -8,3 +8,5 @@ result-*
 .build/
 
 .shen-kernel-cache.*
+# Pristine upstream distribution populated by fetch-shen42.py.
+vendor/ShenOSKernel-42.2/

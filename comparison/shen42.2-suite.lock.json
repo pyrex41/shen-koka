@@ -1,0 +1,894 @@
+{
+  "schema_version": 2,
+  "kernel_profile": "ShenOSKernel-42.2",
+  "upstream_commit": "73507e069fe147aefb728d632c4ce40bc6a7b314",
+  "distribution_sha256": "1d02273003654d34ec020ae67cb214ecec410dee3350419ff807d82b652678d8",
+  "execution_status": "UNKNOWN",
+  "sha256_by_file": {
+    "README": "e8a1fec85c60815bef83f93ed55ac4b2fb7da96a4ba702cade9a7a64e2d3031b",
+    "binary.shen": "a5f6ead2f593a286baefdc7a10db6750914e455f047f602b26b73e6cfd1d29e6",
+    "bubble version 1.shen": "78d6c11cf2dd702669cbb4184f6d6d9b8c4ca8443d7855e15e02109213ffc74d",
+    "bubble version 2.shen": "0de26f85854db341fe5198fc19280a29b4d5ef01230fca3142f2c7be7ed97dd2",
+    "c-minus.shen": "eaa432cc7929387c3ba7acc4c757310605d5120c1153468efafca8c1a8baa304",
+    "calculator.shen": "5075310707a69ab358cde1ab44070ee4e1065c2ebcdebf32b8170ac47aa3ff43",
+    "call.shen": "0c161f6e9d2305c40aaff2c967b21444efa7835a0a80450c2464c4b67915e61a",
+    "cartprod.shen": "c310ada9edc01a2526e5b7b3c719905266566664fe60562a17032f0063a91f05",
+    "change.shen": "867c6b4fd8b7959e964462f5757eb09cc6a9aaff92411a30b77e7276c310f251",
+    "classes-defaults.shen": "fe509bfcfb63af41dadf1fcfaa3bfe652f2a2009ac3dfefc5a3812294e95ed81",
+    "classes-inheritance.shen": "9f6aaf4f323d7bf982f3997fdef26b2b7e37fb90356250c75f8b2fada295d799",
+    "classes-typed.shen": "146ec2ee81190edea0b390d4c23bbfc46978426a40108fbf7684745604c71de5",
+    "classes-untyped.shen": "ec390fd2da354d5562f2585ed5b7d63809e0acaf444d036a9f5b695c38d83517",
+    "cut.shen": "8cf0bd81e2943c12367aedbb41ee1f3253b760cf1be6a349c6923e1b2ed22e8d",
+    "depth.shen": "ae9d275fa5d328ea73cac99db36563bb2e38827a864cfb24d9fa062d2531a035",
+    "einsteins-riddle.shen": "75b9e58b9f65d377904b67e67201c24a02d805d0b44d3c78005488fd47940384",
+    "extensions/features/tests.shen": "278965f458c2604a59133ce3cbe563c88b1e8b2f972fcdfeb5ae97cf6b66c546",
+    "extensions/harness.shen": "f9b97123491b961f78955c1f5808e247517a6eb9efe167d40aba4d0a295d5a95",
+    "extensions/namespaces/code.shen": "f4add2bb04ee266f18403148fc14ae023d0de7b1140fd13e8139ec4d7257dc05",
+    "extensions/namespaces/macros.shen": "25fbbe7e78436d2fbbfc7a1d0a7f3fe0a656e1a5e535e7fd3ac752b30bd31674",
+    "extensions/namespaces/tests.shen": "1a2c0ebcaa13ab6fba4d7a60d06c8fcd007305e806cb8aa9d2b516c327ef9218",
+    "extensions/programmable-pattern-matching/code.shen": "a21609b7c98e67e6b6d94febb1836d45ac4b2673d2523353ba56d5f7662d5c55",
+    "extensions/programmable-pattern-matching/setup.shen": "1b477e6b1b580c125b5d0e30a780688983a22a4b3689fc8a7470a8ecdca7868e",
+    "extensions/programmable-pattern-matching/tests.shen": "b548bae2c1df308623d198e81d60eafd7fe93e6f365953b60d40393214a5306f",
+    "extensions/programmable-pattern-matching/typed-code.shen": "da9db507a030ad038807650e97603eab07b3147e34cbcde655cbc236837cb0b0",
+    "extensions/programmable-pattern-matching/typed-invalid.shen": "e5262b547b0a0f40298508201b7d418dd9d0f5f209469ecccdd7f75cad345354",
+    "extensions/runme.shen": "f5a00caa04d2db42efb9df139a967beaca8dcd45f1ff7747577265bf8f30411d",
+    "extensions/source-forms/fixtures/empty.shen": "d5fd571d123ccbad58fccad64bc034f5b04eaf6805eb496d9ae03368e515f0d8",
+    "extensions/source-forms/fixtures/error.shen": "f4386a2f021d8631ac30a3002315a6f72c6f42b84a1ab915e08b6cdc36bd0e85",
+    "extensions/source-forms/fixtures/input.shen": "80bc2e9f19cc89b80408fc8bdc8cd81fc63a353a7b748eea1df3bc1610239002",
+    "extensions/source-forms/tests.shen": "2468486d20ecafc3533fcb7355633025ba53f85233df2043b56b82a2208cd32a",
+    "extensions/type-annotations/code.shen": "fd562f465c463900b5544bce0dbc1a77458fae07e68579c3498e795279135932",
+    "extensions/type-annotations/tests.shen": "64a502bafe87d908d3d6d610710defb7f9343896ed6ca4b45dc702dc0b3cce6e",
+    "findall.shen": "157d59525bee9433b71f31f457e8c9d29f8bc754ca5db4bd779c2b3c7c993fc6",
+    "fork.shen": "f30d2975ca1c91dc8732e33e118688316264f6cfb34af9c7416d214f61799233",
+    "harness.shen": "a5913fcf768ed15cd8c23ed6c1a1ba0fc5604e822ac7a8759670ddb07542fa4c",
+    "interpreter.shen": "3af7790f534066ed1adfdb5b6138432cfc68b42a10639659a72addedbccfec64",
+    "kerneltests.shen": "d64cf521bedc796808138a0b66bd6f5fbac7ef9eaef6bcf883de88bb7616ab2b",
+    "lisp.shen": "cbddb36f96e085a82d0b64c6b59309e1f61469e191e696c3ba58a94146187994",
+    "metaprog.shen": "0e591ee38f1b80ff7ce4c435b164d2e93636296b5ca2a441f4b3af0400a0ac30",
+    "minim.shen": "6d1270d96bd2c389c204833cac769313421f7d74a271f924218a67b198e41b72",
+    "montague.shen": "6c0e5b3339e4f5e5bfa6ec1d00599aacddfbc0b67823c9eaa24cb55309c9dc01",
+    "mutual.shen": "3fed754218fd651e581455cf7fbc0fbc3d9ee15e3d26b5f0e0361067b2aefbec",
+    "n queens-axioms.shen": "80ba5610c9b8f2404a4dea1ac0a693f3e91bfb3fd0f5cec4a981fd59dcd8bb79",
+    "n queens-r.shen": "886e4efe9cfb6bcbc7433084da28a3c000920a349f6fb13f620ca1620fbaab4d",
+    "n queens.axioms": "4254b07e8b3e07530b7cb3aa95493199371adf8818b745efc8e2f718b1b6674b",
+    "n queens.shen": "3b2b5e41dab8e8d259b7c65eb749456ff4bbd79acf3a0c1096482ca37f71462b",
+    "nreverseprolog.shen": "23c42aeee50712377a9b53ffbd3159c9e88bff997d7d6b676cdc6c7c620bc731",
+    "parseprolog.shen": "5f724668a0b94b1e5b9a94f568a05b4a708d43c31034f9ea28bfe894c9d47356",
+    "parser.shen": "b2a5eeaca7603cd8a8557d50884d7447f0800e5b27becc4ca24bf36e1fe56775",
+    "powerset.shen": "689eacf93b06ed8e428906a4b66c558f84c5658dad88003a30971c5410f1dd28",
+    "prime.shen": "f49bcaf942ee2ebfde805a78cf9051c4d0e044ee8a3e1037c7d645de559dfbbc",
+    "prolog.shen": "f6649743d00e5c11970a4c22dca9c26f3b99d4c8b590dcedf9725de6ca9bbc41",
+    "prologinterp.shen": "aafefec60030a1cf13d4f79f559b3f6e5f429559687ea82f51ff272d36d5a67e",
+    "proof assistant.shen": "a214f107470b51a874e9b9bd31b4f71c6b0e3046162fc93e608b36381398dde2",
+    "propcalcprolog.shen": "10f1f55732f7a32d6fd8ed63c0f4f50b124b2c9bd1e8a4dfd8b42edd9706140c",
+    "proplog version 1.shen": "958ac6d8a2799330c71ae80e3ff5ed209c3cffd9bcc0eb0c125b7891e4768a6f",
+    "proplog version 2.shen": "4eba59d480d674f2a9bffc1b14219f1242ecb55fcd158bf162d812c6537fce00",
+    "qmachine.shen": "b88cbe04751dab0783c6f45cd1017a0ea57e5d9dd3e0ebeb27978b35612ffe1f",
+    "runme.shen": "a9620a8853f291b77c8e567d9291cc3aba1ac330aebf95cf0f3fa69915fd850b",
+    "search.shen": "e6b894e547437040758150520586df4d1a7dcf65951d7dec7a96bd9392b8a37e",
+    "secd1.shen": "78fcd9d43497c7db6b7f512c6b1dd27286274bf1f6fffa3b1d927a1297cff1eb",
+    "semantic net.shen": "9211cce8163bb66681dc38eca77222569f4ecfba6add8fccdce26195c2bbee9b",
+    "spreadsheet.shen": "b4d64418230d5735053fbf52561b2b402cbf2da4686631affc16972457a76293",
+    "stack.shen": "0f7ad7deb3216390057cce8b6d4b3661ca0b3f37dcc0f4bcea282dfa4a4e185f",
+    "streams.shen": "95ce76ffd1c1e6af759978ecbc2ce91f912c3c98765ab94228a76206f891bb40",
+    "strings.shen": "a6f7e8c1669737a49dce8d72bdbce39d1d4d21d83e7467e9264f2014d370c0a7",
+    "structures-typed.shen": "e87cf1cff5808e968c7b1cda556b8748b2a5e5362f110783b306ffdedd379e1f",
+    "structures-untyped.shen": "62fe7ec80b396272bd0640342c18456ad524ef4cbc8f8007187bb24c1c2f7bf6",
+    "tableauprolog.shen": "c4a14081d57a04f890447b6e6ac560909f23f85ad3b9d37ba2e65b0c98fec1cb",
+    "totalprolog.shen": "948f72b450e6e552c61f3869f4fc28ed490126c32fa0d9175263149db7be62ea",
+    "unification.shen": "b26e8dec050cbd40e99a202c56a86007276e9b90640b01f84978ddb7d0318064",
+    "yacc.shen": "34dac587cba3712fd41ca2107eeae90b6dd79101fc3efdf935b9f475b1365e29"
+  },
+  "canonical": {
+    "entrypoint": "kerneltests.shen",
+    "assertion_count": 143,
+    "groups": [
+      {
+        "id": "canonical/001",
+        "name": "lambda table updates",
+        "assertion_count": 6
+      },
+      {
+        "id": "canonical/002",
+        "name": "type declaration variancy",
+        "assertion_count": 3
+      },
+      {
+        "id": "canonical/003",
+        "name": "cartesian product",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/004",
+        "name": "powerset",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/005",
+        "name": "bubble sort",
+        "assertion_count": 4
+      },
+      {
+        "id": "canonical/006",
+        "name": "spreadsheet",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/007",
+        "name": "primes",
+        "assertion_count": 7
+      },
+      {
+        "id": "canonical/008",
+        "name": "semantic nets",
+        "assertion_count": 6
+      },
+      {
+        "id": "canonical/009",
+        "name": "einsteins riddle",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/010",
+        "name": "Prolog call",
+        "assertion_count": 4
+      },
+      {
+        "id": "canonical/011",
+        "name": "Prolog cut",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/012",
+        "name": "Prolog naive reverse",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/013",
+        "name": "findall in Prolog",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/014",
+        "name": "Prolog tableau",
+        "assertion_count": 3
+      },
+      {
+        "id": "canonical/015",
+        "name": "proplog",
+        "assertion_count": 6
+      },
+      {
+        "id": "canonical/016",
+        "name": "metaprogramming",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/017",
+        "name": "binary number datatype",
+        "assertion_count": 4
+      },
+      {
+        "id": "canonical/018",
+        "name": "calculator",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/019",
+        "name": "structures 1",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/020",
+        "name": "structures 2",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/021",
+        "name": "classes 1",
+        "assertion_count": 6
+      },
+      {
+        "id": "canonical/022",
+        "name": "classes 2",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/023",
+        "name": "abstract datatypes",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/024",
+        "name": "yacc",
+        "assertion_count": 13
+      },
+      {
+        "id": "canonical/025",
+        "name": "N Queens",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/026",
+        "name": "search",
+        "assertion_count": 3
+      },
+      {
+        "id": "canonical/027",
+        "name": "montague",
+        "assertion_count": 3
+      },
+      {
+        "id": "canonical/028",
+        "name": "c-",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/029",
+        "name": "L interpreter",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/030",
+        "name": "proof assistant",
+        "assertion_count": 3
+      },
+      {
+        "id": "canonical/031",
+        "name": "quantifier machine",
+        "assertion_count": 4
+      },
+      {
+        "id": "canonical/032",
+        "name": "depth first search",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/033",
+        "name": "secd",
+        "assertion_count": 5
+      },
+      {
+        "id": "canonical/034",
+        "name": "unification",
+        "assertion_count": 4
+      },
+      {
+        "id": "canonical/035",
+        "name": "total in Prolog",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/036",
+        "name": "Prolog fork",
+        "assertion_count": 2
+      },
+      {
+        "id": "canonical/037",
+        "name": "Prolog interpreter",
+        "assertion_count": 3
+      }
+    ]
+  },
+  "bundled_extensions": {
+    "entrypoint": "tests/extensions/runme.shen",
+    "assertion_count": 123,
+    "cases": [
+      {
+        "id": "extensions/001",
+        "name": "features initialise has a type",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/002",
+        "name": "features current has a type",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/003",
+        "name": "features add has a type",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/004",
+        "name": "features initialise updates the feature list",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/005",
+        "name": "features add returns the previous feature list",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/006",
+        "name": "features add updates the feature list",
+        "source": "tests/extensions/features/tests.shen"
+      },
+      {
+        "id": "extensions/007",
+        "name": "register-handler has a type",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/008",
+        "name": "unregister-handler has a type",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/009",
+        "name": "registration can be sequenced with do",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/010",
+        "name": "simple custom pattern",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/011",
+        "name": "repeated variable success",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/012",
+        "name": "repeated variable failure",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/013",
+        "name": "nested custom pattern",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/014",
+        "name": "typed custom pattern uses its surface form",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/015",
+        "name": "typed custom pattern binds its component type",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/016",
+        "name": "nested typed custom pattern",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/017",
+        "name": "typed binary custom pattern",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/018",
+        "name": "typed nullary custom pattern",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/019",
+        "name": "typed nullary custom pattern fallback",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/020",
+        "name": "typed custom pattern rejects an incompatible binding type",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/021",
+        "name": "built-in cons pattern still works",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/022",
+        "name": "built-in literal list pattern still works",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/023",
+        "name": "unregister handler",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/024",
+        "name": "unregister nullary handler",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/025",
+        "name": "unregister typed handler",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/026",
+        "name": "custom pattern definition fails after unregister",
+        "source": "tests/extensions/programmable-pattern-matching/tests.shen"
+      },
+      {
+        "id": "extensions/027",
+        "name": "concrete parameter types are added",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/028",
+        "name": "polymorphic parameters remain unannotated",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/029",
+        "name": "known applications annotate literals",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/030",
+        "name": "unknown signatures are left alone",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/031",
+        "name": "existing annotations are preserved",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/032",
+        "name": "compound polymorphic types use Shen variables",
+        "source": "tests/extensions/type-annotations/tests.shen"
+      },
+      {
+        "id": "extensions/033",
+        "name": "hooks do not belong to the system-function external list",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/034",
+        "name": "qualified hooks are preserved by normal package processing",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/035",
+        "name": "registration hook has callable arity metadata",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/036",
+        "name": "registration hook has a type",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/037",
+        "name": "removal hook has a type",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/038",
+        "name": "source sequence preserves order",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/039",
+        "name": "empty expansion is allowed",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/040",
+        "name": "raw reader does not expand source forms",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/041",
+        "name": "file reading uses the hook",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/042",
+        "name": "line reading at EOF uses the hook",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/043",
+        "name": "single-form reading uses the hook",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/044",
+        "name": "arity discovery sees all expanded definitions",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/045",
+        "name": "handler results may contain packages",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/046",
+        "name": "handler error propagates from string reader",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/047",
+        "name": "handler error propagates from file reader",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/048",
+        "name": "handler error is not incomplete interactive input",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/049",
+        "name": "empty expansion consumes exactly its own line",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/050",
+        "name": "following line remains unread",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/051",
+        "name": "empty handler is not retried",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/052",
+        "name": "register replaces the existing exact head",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/053",
+        "name": "qualified head is not confused with an unqualified one",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/054",
+        "name": "improper handler output is rejected",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/055",
+        "name": "package cannot be replaced",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/056",
+        "name": "variable heads are rejected",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/057",
+        "name": "unregister is idempotent and restores the initial registry",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/058",
+        "name": "source initialisation installs the registration callable without externals",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/059",
+        "name": "source initialisation installs the removal callable without externals",
+        "source": "tests/extensions/source-forms/tests.shen"
+      },
+      {
+        "id": "extensions/060",
+        "name": "namespace is not an extension external",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/061",
+        "name": "unqualified namespace has no source handler",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/062",
+        "name": "namespace remains an ordinary package-local name",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/063",
+        "name": "qualified namespace syntax survives package processing",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/064",
+        "name": "record macros see qualified names even in macro-generated containers",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/065",
+        "name": "scoped assembly vocabulary preserves embedded alias resolution",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/066",
+        "name": "use without renaming preserves full owner references",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/067",
+        "name": "generated accessor need not exist in the owner's internal list",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/068",
+        "name": "aliased symbol has the same identity as data",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/069",
+        "name": "namespace externals preserve data symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/070",
+        "name": "namespace externals permit global definitions",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/071",
+        "name": "multiple files or blocks share local ownership",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/072",
+        "name": "division keeps its ordinary meaning",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/073",
+        "name": "ordinary macro can produce a namespace containing a local scope",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/074",
+        "name": "scoped vocabulary does not affect a same-named local function",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/075",
+        "name": "fully qualified locals remain callable within a vocabulary scope",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/076",
+        "name": "scoped externals preserve dotted data symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/077",
+        "name": "scoped externals do not escape into sibling definitions",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/078",
+        "name": "scoped externals take precedence over aliases",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/079",
+        "name": "scopes inherit namespace externals",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/080",
+        "name": "nested scopes extend and then restore the outer vocabulary",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/081",
+        "name": "local names use existing package metadata",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/082",
+        "name": "namespace externals are recorded",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/083",
+        "name": "scoped externals are not published as namespace externals",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/084",
+        "name": "scoped syntax does not create spurious internal names",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/085",
+        "name": "foreign references are not recorded as local names",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/086",
+        "name": "normalization agrees with equivalent package source",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/087",
+        "name": "explicit members do not require existing owner metadata",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/088",
+        "name": "undeclared dotted prefixes remain local",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/089",
+        "name": "prefix matches require a dot and a member",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/090",
+        "name": "the most specific use wins in either declaration order",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/091",
+        "name": "the most specific use selects the nested owner",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/092",
+        "name": "namespace externals take precedence over aliases",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/093",
+        "name": "scope removal preserves the surrounding expression",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/094",
+        "name": "a scope keyword in argument position is ordinary data",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/095",
+        "name": "an empty scope leaves qualification unchanged",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/096",
+        "name": "literal cons notation is accepted for externals",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/097",
+        "name": "external expressions compose shared vocabularies like package",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/098",
+        "name": "scoped expressions compose vocabulary without escaping",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/099",
+        "name": "existing package metadata can supply external symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/100",
+        "name": "external expressions run before use aliases rewrite their names",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/101",
+        "name": "scoped expressions run before use aliases rewrite their names",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/102",
+        "name": "evaluated scopes inherit their enclosing vocabularies",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/103",
+        "name": "vocabulary expressions evaluate once in source order",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/104",
+        "name": "evaluated namespace vocabulary is recorded",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/105",
+        "name": "evaluated scoped vocabulary stays out of namespace metadata",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/106",
+        "name": "external expressions must produce lists",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/107",
+        "name": "external expressions must produce proper lists",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/108",
+        "name": "external expressions must produce symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/109",
+        "name": "computed variables cannot be external symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/110",
+        "name": "scoped expressions must produce symbol lists",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/111",
+        "name": "external expression errors propagate unchanged",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/112",
+        "name": "scoped expression errors propagate unchanged",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/113",
+        "name": "duplicate aliases are rejected",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/114",
+        "name": "unrenamed and renamed uses cannot claim the same prefix",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/115",
+        "name": "owners must be non-variable symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/116",
+        "name": "aliases must be non-variable symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/117",
+        "name": "malformed use headers are rejected",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/118",
+        "name": "directives must precede the body",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/119",
+        "name": "externals must precede the body",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/120",
+        "name": "variables cannot be external symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/121",
+        "name": "variables cannot be scoped external symbols",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/122",
+        "name": "with-externals requires an enclosed form",
+        "source": "tests/extensions/namespaces/tests.shen"
+      },
+      {
+        "id": "extensions/123",
+        "name": "with-externals accepts exactly one enclosed form",
+        "source": "tests/extensions/namespaces/tests.shen"
+      }
+    ]
+  }
+}

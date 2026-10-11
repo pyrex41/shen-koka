@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Run the unchanged pinned distribution; never infer success from final globals."""
-import argparse, collections, hashlib, json, os, pathlib, re, selectors, shutil, signal, subprocess, tempfile, time
+import argparse, importlib.util, collections, hashlib, json, os, pathlib, re, selectors, shutil, signal, subprocess, tempfile, time
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def git(*args):
@@ -70,8 +70,23 @@ def parse_canonical(text, lock, cells):
     valid &= bool(counts) and counts[-1]==(len(cells),0)
     return {'group_reports':counts, 'complete_reports':bool(valid)}
 
+def parse_extensions(text, spec, cells):
+    observations=re.findall(r'^(ok|not ok) - (.+)$',text,re.M)
+    ordered=True
+    for cell,(status,name) in zip(cells,observations):
+        if cell['name']!=name:
+            ordered=False
+            break
+        cell.update(status='PASS' if status=='ok' else 'FAIL',observation=name)
+    totals=re.findall(r'passed \.\.\. (\d+)\s+failed \.\.\. (\d+)',text)
+    expected=(str(sum(c['status']=='PASS' for c in cells)),str(sum(c['status']=='FAIL' for c in cells)))
+    return {'complete_reports':ordered and len(observations)==spec['assertion_count']==len(cells) and totals==[expected]}
+
 def main():
     ap=argparse.ArgumentParser()
+    ap.add_argument('--suite-lock',type=pathlib.Path,default=ROOT/'comparison/shen-suite.lock.json')
+    ap.add_argument('--source-lock',type=pathlib.Path,help='verify every pristine distribution file')
+    ap.add_argument('--assertions',type=pathlib.Path,default=ROOT/'comparison/assertions.json')
     ap.add_argument('--launcher',default=str(ROOT/'bin/shen-koka'))
     ap.add_argument('--native-artifact',type=pathlib.Path,help='snapshot a compiled full-kernel artifact with verified build provenance')
     ap.add_argument('--script-command',default='script',help='empty for a direct filename launcher')
@@ -85,14 +100,34 @@ def main():
     if args.previous:
         try: previous=json.loads(args.previous.read_text())
         except (OSError,ValueError) as e: ap.error('cannot read previous report: '+str(e))
+    if previous and previous.get('suite_lock_sha256')!=sha(args.suite_lock):
+        ap.error('cannot compare reports from different suite profiles')
     args.output.mkdir(parents=True,exist_ok=False)
     shutil.copy2(pathlib.Path(__file__),args.output/'runner.py')
-    lockpath=ROOT/'comparison/shen-suite.lock.json'; lock=json.loads(lockpath.read_text())
+    lockpath=args.suite_lock; lock=json.loads(lockpath.read_text())
     errors=[]
     for name, digest in lock['sha256_by_file'].items():
         p=args.distribution/'tests'/name
         if not p.is_file() or sha(p)!=digest: errors.append(name)
-    identities={x['id']:x for x in json.loads((ROOT/'comparison/assertions.json').read_text())}
+    identities={x['id']:x for x in json.loads(args.assertions.read_text())}
+    if args.source_lock:
+        source_lock=json.loads(args.source_lock.read_text())
+        for field in ('kernel_profile','distribution_sha256','upstream_commit'):
+            if source_lock.get(field)!=lock.get(field): errors.append('mixed source identity: '+field)
+        for name,digest in source_lock['sha256_by_file'].items():
+            p=args.distribution/name
+            if not p.is_file() or sha(p)!=digest: errors.append('distribution drift: '+name)
+    invspec=importlib.util.spec_from_file_location('suite_inventory',ROOT/'scripts/inventory-assertions.py')
+    inv=importlib.util.module_from_spec(invspec);invspec.loader.exec_module(inv)
+    try:
+        actual=inv.inventory(lockpath,args.distribution)
+        if len(identities)!=len(actual): errors.append('assertion identity count mismatch')
+        for cell in actual:
+            if any(identities.get(cell['id'],{}).get(k)!=cell[k] for k in
+                   ('expression','expectation','expression_sha256','expectation_sha256')):
+                errors.append('assertion identity drift: '+cell['id'])
+    except (OSError,ValueError,IndexError,KeyError) as e:
+        errors.append('inventory extraction failed: '+str(e))
     launcher=pathlib.Path(args.launcher).resolve()
     native_build=None;native_root=args.native_artifact.resolve() if args.native_artifact else None
     if native_root:
@@ -128,7 +163,14 @@ def main():
             for name,digest in build['sources'].items():
                 if sha(ROOT/name)!=digest: errors.append('stale build: '+name)
     report={'schema_version':1,'candidate_sha':git('rev-parse','HEAD'),
-            'dirty':bool(git('status','--porcelain')),'suite_lock_sha256':sha(lockpath),'runner_sha256':sha(pathlib.Path(__file__)),
+            'suite_kernel_profile':lock.get('kernel_profile','S42-historical'),
+            'distribution_sha256':lock.get('distribution_sha256'),
+            'runtime_kernel_profile':'UNKNOWN: runtime identity not verified by this runner',
+            'upstream_commit':lock.get('upstream_commit'),
+            'dirty':bool(git('status','--porcelain')),'suite_lock_sha256':sha(lockpath),
+            'assertions_sha256':sha(args.assertions),
+            'source_lock_sha256':sha(args.source_lock) if args.source_lock else None,
+            'runner_sha256':sha(pathlib.Path(__file__)),
             'launcher_sha256':sha(launcher) if launcher.is_file() else None,
             'runtime_binary_sha256':sha(ROOT/'.build/shen-koka') if launcher==ROOT/'bin/shen-koka' and (ROOT/'.build/shen-koka').is_file() else None,
             'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'src').rglob('*')) if p.is_file()},
@@ -173,13 +215,8 @@ def main():
             text=(out/'stdout').read_text(errors='replace')
             if lane=='canonical': result.update(parse_canonical(text,spec,cells))
             else:
-                observations=re.findall(r'^(ok|not ok) - (.+)$',text,re.M)
-                for cell,(status,name) in zip(cells,observations):
-                    if cell['name']!=name: break
-                    cell.update(status='PASS' if status=='ok' else 'FAIL',observation=name)
-                totals=re.findall(r'passed \.\.\. (\d+)\s+failed \.\.\. (\d+)',text)
-                result['complete_reports']=(len(observations)==8 and totals==[(str(sum(c['status']=='PASS' for c in cells)),str(sum(c['status']=='FAIL' for c in cells)))])
-        for cell in cells: cell.update(identities[cell['id']])
+                result.update(parse_extensions(text,spec,cells))
+        for cell in cells: cell.update(identities.get(cell['id'],{}))
         for cell in cells:
             if cell['status']=='UNKNOWN': cell['blocker']=result.get('blocker') or 'assertion outcome not observed'
         compat_root=native_root or ROOT
