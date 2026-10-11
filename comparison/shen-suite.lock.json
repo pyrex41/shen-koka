@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "purpose": "Full test-distribution inventory for implementation backpressure; not an executed test report",
+  "observed_date": "2026-10-11",
+  "required_from": "P0 runner setup; full attempts every P2+ candidate iteration",
+  "execution_status": "UNKNOWN: Shen-Koka launcher and full-suite driver do not exist yet",
+  "sources": [
+    {
+      "repository": "https://github.com/pyrex41/shen-go",
+      "commit": "c22151dc55cafac7e5b904b8c58c6280c38801b2",
+      "directory": "kernel/tests"
+    },
+    {
+      "repository": "https://github.com/pyrex41/shen-lua",
+      "commit": "614cd0754a741c8070c467b2b07f07943d17f4ff",
+      "directory": "tests"
+    }
+  ],
+  "test_trees_byte_identical": true,
+  "file_count": 63,
+  "file_set_sha256": "ec1f4c7a168bbd299f7d3576a1a86262e78524c5eea1fccff101dfd46d42d62f",
+  "sha256_by_file": {
+    "README": "5a85d222b775f3e43f00f1f65754fb6c8baa49acd6614fdd2d39eb892b77f616",
+    "binary.shen": "114ed5d2425f01c3d1ee44de3a2cf06baccecfa00cf083754246393117fb04d1",
+    "bubble version 1.shen": "7d85ffe10e9b3941c3e81f38c34b9378405a17857f1d04c7cad0e18b03006bf4",
+    "bubble version 2.shen": "e4a5b661aab2d8747810d309ce8b2b9a49012d7aacea6eb1edac575ed5895268",
+    "c-minus.shen": "3848baf9d2966ce7cecaaef7d93c3ebad51636134aa8c582674110415bfd7169",
+    "calculator.shen": "fb8759dfad26a3eae7fb0d62ed7f32121a70a0e67c5c36e7a57f938295a99768",
+    "call.shen": "19229b2344385ae52ebba51e88a666f1197ed6679a12ce9091160ac78a09bebc",
+    "cartprod.shen": "660303cd9d0b526db8fbdb551c39c1409e136d33934640738ee58ac40080c9cc",
+    "change.shen": "dea9151266f5eb5c051df4c5eab810eb9ba6f4ba6598575fdd2647e19fff856d",
+    "classes-defaults.shen": "79420c9e16a9c059535b9f0dd4ddddb74e045dc5f555d35ebe7842ca2c818ae9",
+    "classes-inheritance.shen": "5d0cbea0d03bf88e90119caea86e216163e32ec5aff7086d125395121f602c5c",
+    "classes-typed.shen": "ff4489fa6a6912451533b1cb4387cb5e8a619bc9ce1652f8bed7d1735c011c66",
+    "classes-untyped.shen": "75f6b8430e523491eddafafb3dce151fc61fe918c9e99cc1ffa03ae7e91209f1",
+    "cut.shen": "0896d67791dc18a06a3204516c564feb6fac6300938d497eab1acefaff49a8d1",
+    "depth.shen": "fa66c7fa22eaad06998cbf1ce0056bcb8190352b1bca2836b3ea185534542a1c",
+    "einsteins-riddle.shen": "08a744fbbceea58fcdbf65d7d34dde875aedf2b01ce95cce5ad1df646670ddc1",
+    "extensions/harness.shen": "f9b97123491b961f78955c1f5808e247517a6eb9efe167d40aba4d0a295d5a95",
+    "extensions/programmable-pattern-matching/code.shen": "9b03dbdf5dad91f10eb38cfe935f4a1140c592e4fa85cb4f4b60feacdeaef018",
+    "extensions/programmable-pattern-matching/setup.shen": "8dbd3bb9f74b4feb6c9a399faac7e1f61754508a47d42f604ef3e070f45a474d",
+    "extensions/programmable-pattern-matching/tests.shen": "ee55ebfef90649a8db7bc6e4863476ffe058fd9ce7b5147a83f242e82e45097b",
+    "extensions/runme.shen": "f7645557cbcc7c3f89758c255530d9f734937b3b37eec823d110ffdb38d99307",
+    "findall.shen": "56e335bd8cde2e9192248fba9e23f4924fce0faa39f498a0479f6a99b078e82c",
+    "fork.shen": "9699edfab9600f1c211d02ef3b207cfd764d717ea5159e25d1d138e27fc5c232",
+    "harness.shen": "bd50977482acce2b39da2958c951c48d0fb504d483c48f136e9e0fed8be2d215",
+    "interpreter.shen": "795756fa345ba3644c14973e9c30c9d979a0585e7aed3860b56d8bb54444cd0c",
+    "kerneltests.shen": "58f4bdca8f72e06981300a2b3b37f2d00744b92a1fb82974d8f08eeae9ee595d",
+    "lisp.shen": "cf851edbc9b6c0559071912fc9546f5341b0433e989c24d4b751423bbb6c999f",
+    "metaprog.shen": "7bcfa0a70ae5add3b582299cf1862b8bef7da2f0f14917f9eccea05bce441bf5",
+    "minim.shen": "78d1f3947e46dfb135fb20fe8049f1cc5416928d533fe0fe54ce6e10fe496be3",
+    "montague.shen": "69f5b894ad34a10e14f95b070a3a5150a20342331c5f9a7cc024242b48f0e932",
+    "mutual.shen": "577228e3e6310c556dbb5275fa87e8211a5d5b9bab516d743c469de544521a1b",
+    "n queens-axioms.shen": "28d087dd8692843ed31b12629124a383111367ede66e21b7a4b20b6ebc14661e",
+    "n queens-r.shen": "160e1ee7bb31383db881c9cb63de80a87c306237514e8860c842b1d577d07d4e",
+    "n queens.axioms": "0aac311dac215fec69254f2c7ad40f728a5e8001029a3927649b295b6ded36bf",
+    "n queens.kl": "5f1c6f8d0bf0baeeaeead09e7e9b075a46ad6e2b04595dea5c1c9f58de2492eb",
+    "n queens.shen": "ec90464825b5634ae34d2ecc9dc4252e7846a2e8436868515364d01d42e12467",
+    "nreverseprolog.shen": "fff50a34728a49ae8ecf16fb247570bee63e93b23cb0fa06c59706f9ef3be01a",
+    "parseprolog.shen": "6354f0139371b51885c667641362f36bd44e58820b6fac7e48bb358ec441c808",
+    "parser.shen": "ba9f85c413f2ba275c3bb195427d610e7df1cb1b9ebceeb52451e2240fe1a35c",
+    "parsetest.shen": "6c317f33c39880aff8b2441e9a642f444bc29beb288ceb5340edcbdc8fd500ce",
+    "powerset.shen": "5fd0d1fed33120cea1301dec13ddf38c9dfbba7e855dc09bee74fec653dbb2c1",
+    "prime.shen": "19d83566659b20b5f5fd1863953b62cc20e0013c4456c4b8f4febb560b84fd5c",
+    "prolog.shen": "2de1e10d6a379e9d50461f9e5c4d28061614f09b22b0332ba7d56031bc226fdb",
+    "prologinterp.shen": "163b6d7d3f9ac155b907df9bc2b7b4c12917d7b4f918e014fe228f0c6c801c4d",
+    "proof assistant.shen": "7bd0f3033682e9d6b319169da46215535b4c22a0a62e1fcfd87fd5ab734d7f3d",
+    "propcalcprolog.shen": "00a181dfed9f7d74437a1b158723cdf5c907b5c091d6e6a416f803531e349ae6",
+    "proplog version 1.shen": "ed3051ea979912bf28a78d07f99edb71c2a086941d7e00c4cdf210b945bcf815",
+    "proplog version 2.shen": "14f3927e746c9ddca2b5e8c4888ef743ab52a0d15e59c32d362b69d3b9a6b775",
+    "qmachine.shen": "b9ad5d064343ea4bb8e024e99dd0df835f6ba10cfa8330e93848f3de41f093da",
+    "runme.shen": "8bec79fcd7294e0b39bf9478ffa8e921e18d1ffb01945250e65f104ebab35144",
+    "search.shen": "897e9a0423110a6369ce84166d940090720f2b740e2ec6ec54c593522eb52126",
+    "secd1.shen": "a66e4911fea80f05e03f10893d3a36aa73e34bf31e6929803817f7d34bfb70be",
+    "semantic net.shen": "5e461278bacb97e80b37ded4c4534255dd3008b7b112efd4bfbf3a83276de179",
+    "spreadsheet.shen": "5e47262e494a28582f06128e94a63085809a7fde7091d6a4a15e80785c2fd267",
+    "stack.shen": "a2792157d41221eefa0ccdbd7f624b23360517b4b96df108d6348fa73a45e087",
+    "streams.shen": "95f7a750a674b83727d124cbe24b5fd3399deef897b2f1e7c6dfb16a71b48c59",
+    "strings.shen": "8fa36fff77e2565453ee421bead9506a3b65185c48f8d70fa5850c94020f1183",
+    "structures-typed.shen": "3bcfaa3b451db55cc807c8a9ea251c8e45aafec7d845e6148e38f8d6aa4b0380",
+    "structures-untyped.shen": "d927c1c72f544a05b1eb7340da958d83550856c6d1fde6845f54b77aa31d2864",
+    "tableauprolog.shen": "f92b4638bcc1ab0e58d34344ef0ca95b5b11127a9883501c66f0ae672b7501da",
+    "totalprolog.shen": "82f4d3d7fff06607519a7eac0235036f3b0c8c0f540af46d01b77df56e38c7f5",
+    "unification.shen": "ed5c8eee494bb9d57b949d6f6a6f9ee2579a2e425d52697eb698aa24f9e8761a",
+    "yacc.shen": "97c3445a9e932e8fb3f5b0c4d15dff898fc3c1ae45da41df1ade664b020b1247"
+  },
+  "canonical": {
+    "required": true,
+    "entrypoint": "runme.shen",
+    "working_directory": "test tree root",
+    "assertion_count": 134,
+    "report_group_count": 35,
+    "inventory_method": "Static parsing of top-level report forms in kerneltests.shen; expression/prediction pairs counted in source order",
+    "counter_warning": "kerneltests.shen ends with reset; retain every report and per-assertion outcome",
+    "groups": [
+      {
+        "id": "canonical/01",
+        "name": "cartesian product",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/01/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/02",
+        "name": "powerset",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/02/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/03",
+        "name": "bubble sort",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/03/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/04",
+        "name": "spreadsheet",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/04/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/05",
+        "name": "primes",
+        "assertion_count": 7,
+        "assertion_id_format": "canonical/05/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/06",
+        "name": "semantic nets",
+        "assertion_count": 6,
+        "assertion_id_format": "canonical/06/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/07",
+        "name": "einsteins riddle",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/07/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/08",
+        "name": "Prolog call",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/08/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/09",
+        "name": "Prolog cut",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/09/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/10",
+        "name": "Prolog naive reverse",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/10/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/11",
+        "name": "findall in Prolog",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/11/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/12",
+        "name": "Prolog tableau",
+        "assertion_count": 3,
+        "assertion_id_format": "canonical/12/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/13",
+        "name": "proplog",
+        "assertion_count": 6,
+        "assertion_id_format": "canonical/13/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/14",
+        "name": "metaprogramming",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/14/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/15",
+        "name": "binary number datatype",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/15/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/16",
+        "name": "calculator",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/16/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/17",
+        "name": "structures 1",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/17/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/18",
+        "name": "structures 2",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/18/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/19",
+        "name": "classes 1",
+        "assertion_count": 6,
+        "assertion_id_format": "canonical/19/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/20",
+        "name": "classes 2",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/20/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/21",
+        "name": "abstract datatypes",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/21/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/22",
+        "name": "yacc",
+        "assertion_count": 13,
+        "assertion_id_format": "canonical/22/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/23",
+        "name": "N Queens",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/23/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/24",
+        "name": "search",
+        "assertion_count": 3,
+        "assertion_id_format": "canonical/24/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/25",
+        "name": "montague",
+        "assertion_count": 3,
+        "assertion_id_format": "canonical/25/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/26",
+        "name": "c-",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/26/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/27",
+        "name": "L interpreter",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/27/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/28",
+        "name": "proof assistant",
+        "assertion_count": 3,
+        "assertion_id_format": "canonical/28/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/29",
+        "name": "quantifier machine",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/29/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/30",
+        "name": "depth first search",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/30/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/31",
+        "name": "secd",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/31/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/32",
+        "name": "unification",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/32/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/33",
+        "name": "total in Prolog",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/33/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/34",
+        "name": "Prolog fork",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/34/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/35",
+        "name": "Prolog interpreter",
+        "assertion_count": 3,
+        "assertion_id_format": "canonical/35/NNN (1-based ordinal)"
+      }
+    ]
+  },
+  "bundled_extensions": {
+    "required": true,
+    "entrypoint": "tests/extensions/runme.shen",
+    "working_directory": "distribution root containing tests/ and extensions/",
+    "assertion_count": 8,
+    "canonical_certification": false,
+    "cases": [
+      {
+        "id": "extensions/ppm/001",
+        "name": "simple custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/002",
+        "name": "repeated variable success",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/003",
+        "name": "repeated variable failure",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/004",
+        "name": "nested custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/005",
+        "name": "built-in cons pattern still works",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/006",
+        "name": "built-in literal list pattern still works",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/007",
+        "name": "unregister handler",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/008",
+        "name": "custom pattern definition fails after unregister",
+        "assertion": "assert-error"
+      }
+    ]
+  },
+  "completion_requires": {
+    "canonical_passed": 134,
+    "bundled_extensions_passed": 8,
+    "failed": 0,
+    "unknown": 0,
+    "skipped": 0,
+    "normal_completion": true
+  }
+}

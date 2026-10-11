@@ -9,7 +9,8 @@ The Shen runtime, Shen compiler, launcher, and port qualification are pending.
 - [Full port plan](PLAN.md): architecture choices, semantics, phases, and exit gates.
 - [Research](docs/research.md): checked sources, corrections to the effect sketch,
   and current repository integration points.
-- [Comparison backpressure](comparison/README.md): seed suite and strict report checker.
+- [Comparison backpressure](comparison/README.md): required full Shen suite,
+  pinned inventory, additional seed suite, and strict seed report checker.
 - [Source inventory](research/source-inventory.json): observed checkout and remote
   identities, kernel hashes, and toolchain candidate.
 

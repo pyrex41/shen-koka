@@ -21,11 +21,15 @@ including cut and binding recovery, YACC, packages and macros, standard library,
 interactive REPL, script loading, `eval-kl`, and runtime definition/redefinition.
 It preserves specified evaluation order, errors, vector aliasing, and streams.
 
-The release gate requires the pinned canonical test distribution, the selected
-Bifrost corpus with every required cell executed, adversarial cases below, and
-full versus shaken Yggdrasil comparisons. Test counts are discovered from the
-selected source distribution; the historical 134-test figure is a baseline to
-check, not an independently verified result for this port.
+The backpressure loop includes the entire pinned Shen test distribution from
+the beginning of implementation, on every candidate iteration. Completion
+requires that full distribution to pass, the selected Bifrost corpus with every
+required cell executed, adversarial cases below, and full versus shaken
+Yggdrasil comparisons. The inspected distribution contains 134 canonical
+assertions in 35 report groups, plus eight bundled programmable-pattern-matching
+extension assertions. Their source inventory is pinned in
+`comparison/shen-suite.lock.json`. These counts describe the test sources; this
+port has not executed them yet.
 
 The initial delivery targets are native C executables on aarch64 Darwin and
 x86_64 Linux, followed by aarch64 Linux. Windows, JavaScript, and Wasm are
@@ -290,7 +294,7 @@ The comparison ladder is:
 |---|---|---|
 | G0 Source and toolchain | Clean revisions, kernel/module hashes, compiler and binary provenance | Stop promotion; diagnostic runs may continue |
 | G1 Host primitives | Goldens for each primitive and observable edge case | Repair runtime before boot optimizations |
-| G2 Canonical kernel | Distribution test count and assertions all executed | Incomplete language support |
+| G2 Full Shen suite | All 134 canonical assertions and eight bundled extension assertions, with exact inventory and per-assertion outcomes | Keep overall status red until complete; feed failures into feature work |
 | G3 Cross-port | Required Lua/Go/Koka cells, ordered outputs and errors agree | Minimize counterexample; preserve logs |
 | G4 Stateful semantics | Files, IO order, globals, aliasing and failures agree | Repair effect/heap boundary |
 | G5 Deployment | Full versus sliced versus lowered artifact observations agree | Hold builder/lowering publication |
@@ -301,7 +305,56 @@ PASS means all required cells ran and met their oracle. FAIL means an observed
 contract violation. UNKNOWN covers missing prerequisites, timeout without the
 required observation, incomplete logs, and unverified provenance. UNSUPPORTED is
 an explicit capability refusal. DEFERRED is deliberately unexecuted work. Every
-required UNKNOWN/UNSUPPORTED/DEFERRED blocks promotion; no skipped case is proof.
+required UNKNOWN/UNSUPPORTED/DEFERRED blocks full-port qualification and promotion
+of a claimed complete capability; no skipped case is proof. Feature checkpoints
+follow the development policy below while the overall full-suite gate remains red.
+
+### Full Shen suite during feature development
+
+The 17-case seed suite supplements the full suite. It does not replace it.
+P0 pins all 63 files of the byte-identical Lua/Go test tree, the 35 canonical
+report groups and their 134 assertions, and the separate eight-assertion extension
+entrypoint. Keep supporting `.shen`, `.kl`, and `.axioms` fixtures, filenames
+containing spaces, and the extension sources needed by their loaders.
+
+Set up the full-suite command and report schema in P0. Attempt it on every
+candidate iteration from P2 onward, before choosing the next feature to implement;
+run it again after the change. Before a runnable launcher exists the attempt is
+UNKNOWN with its startup blocker. Once boot and loading work, run the canonical
+`runme.shen` in the test directory, preserving the upstream load order and all
+assertions. Run `tests/extensions/runme.shen` separately from the distribution
+root because its load paths differ. Neither lane uses a reduced feature suite.
+
+Expected early failures are useful backpressure. Executed mismatches and language
+errors remain FAIL even when their feature is unfinished. Assertions prevented
+from executing by a boot/harness/load failure are UNKNOWN with the dependency
+blocker; do not invent outcomes for them. Always report against the fixed 134
+canonical and eight extension denominators, with stable group/ordinal IDs,
+expression and expectation identities, actual outcomes, and feature blockers.
+Do not remove cases, mark unfinished features passed, or treat `xfail` as PASS.
+
+The harness asks whether to continue after a failure. A documented noninteractive
+driver may answer yes at that prompt so all reachable assertions execute, while
+retaining their failing outcomes. It must not patch expected values, suppress
+errors, seed missing runtime semantics, or omit the typechecked half of the suite.
+Preserve raw logs and capture every report: `kerneltests.shen` resets counters
+at its end, so final globals or an earlier `100%` banner alone are insufficient.
+Require all group counts, all assertion outcomes, normal completion, and zero
+failures; unknown/unreached assertions cannot produce a green full-suite gate.
+
+Feature checkpoints can advance while the full-suite result is red. Require the
+checkpoint's declared feature assertions to pass and every previously passing
+assertion to remain passing; new regressions block that checkpoint. Show both
+the checkpoint result and the unchanged full-suite status in feedback. A reduced
+set of passing assertions never qualifies the full port. Full-suite green is
+required for P3 completion and retained for compiler, builder, search, and release
+work. Bundled extensions keep a distinct result from canonical certification,
+with both required for this plan's full-distribution completion.
+
+Keep the first implementation slice focused on KLambda values, primitives,
+application, control, exceptions, and closures, then boot the existing kernel.
+The effect-search spike remains optional and time-bounded; it must not delay
+getting the upstream suite running or replace the kernel's existing features.
 
 Store schema version, scenario/source hash, reference identities, candidate SHA,
 dirty flag, kernel/toolchain hashes, binary hashes, argv, cwd profile, selected
@@ -353,9 +406,9 @@ executed 20-case test suite.
 
 | Phase | Deliverables | Exit gate |
 |---|---|---|
-| P0 Reproducible baseline | Source locks, Nix Koka toolchain, clean reference builds, strict reports | G0, reference-versus-reference seed and existing Bifrost corpus |
+| P0 Reproducible baseline | Source locks, full Shen suite inventory/runner contract, Nix Koka toolchain, clean reference builds, strict reports | G0, full-suite reference baselines, reference-versus-reference seed and existing Bifrost corpus |
 | P1 Effect feasibility | Pure choose/abort, state-order probes, finalization, independent search model | Compiler-accepted probes; exact finite solutions and resource cleanup |
-| P2 KLambda runtime | Values, primitives, parser, frames, dispatch, heap lifetime | G1 and tail/alias/error fault cases |
+| P2 KLambda runtime | Values, primitives, parser, frames, dispatch, heap lifetime; full-suite attempts each iteration | G1 and tail/alias/error cases; feature checkpoints pass while full-suite failures remain visible |
 | P3 Complete kernel | Full boot, Shen source loading, types, Prolog, YACC, macros, packages, StLib | G2/G3/G4; runnable REPL and CLI |
 | P4 Bifrost adapter | Registry, launcher recipes, Nix composition, required cells | Three-port corpus, EOF/error/IO controls |
 | P5 Koka compiler | Portable KL lowering, closure conversion, direct/indirect calls, mappings | Interpreter-versus-compiled parity including redefinition contracts |
@@ -368,6 +421,8 @@ P1 is a feasibility spike; it does not delay P2 if effects prove awkward. Keep
 canonical Prolog operational through P3. P4's adapter may begin in P2 for a
 declared KL subset, but complete support remains gated by P3. P6 can ship with
 explicit eval refusal; a full-port release still requires full runtime eval.
+P3 requires all 134 canonical and eight extension assertions passing; later
+phases retain this gate on both canonical and optimized runtime paths.
 
 Budget each probe and gate explicitly: start with 30 seconds per semantic case,
 5 minutes per kernel group, 15 minutes per native build, 64 KiB of feedback log,

@@ -6,6 +6,20 @@ and a first Prolog solution. Goldens are intended semantic assertions; reference
 execution and Koka execution are pending. The larger fault and generation
 campaign is specified in [the plan](../PLAN.md).
 
+The primary language backpressure gate is the **full Shen test distribution**:
+134 canonical assertions in 35 report groups and eight bundled extension
+assertions. [The pinned inventory](shen-suite.lock.json) records every test-tree
+file and its hash. The seed suite is an additional comparison lane.
+
+P0 must supply a full-suite driver; P2 and subsequent candidate iterations attempt
+the entire suite before and after feature changes. Expected early failures stay
+FAIL, unreachable assertions stay UNKNOWN, and the denominators remain fixed.
+Feature checkpoints can advance with the overall suite red when their declared
+assertions pass and previously passing assertions do not regress. P3 and full
+port completion require both entire lanes green. See the plan's full-suite
+development policy for continuation prompts, per-assertion evidence, and the
+end-of-suite counter reset. The seed checker does not validate full-suite reports.
+
 `scripts/check-comparison.py` checks the leading JSON object emitted by the
 inspected Bifrost CLI. It requires the exact suite case set, each required
 implementation, PASS for every required cell, and its exact normalized golden.
