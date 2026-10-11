@@ -3,6 +3,18 @@
 import json,pathlib,subprocess,hashlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 cases={
+ 'gc-cycle-reclamation':('(defun garbage (N) (if (= N 0) (< (shen-koka.heap-live) 1024) (let V (absvector 1) (let X (address-> V 0 V) (garbage (- N 1)))))) (garbage 10000)','garbage\ntrue'),
+ 'gc-closure-root':('(defun churn (N) (if (= N 0) true (let V (absvector 1) (churn (- N 1))))) (let V (absvector 1) (let X (address-> V 0 42) (let F (freeze (<-address V 0)) (let X (churn 3000) (thaw F)))))','churn\n42'),
+ 'gc-error-handler-root':('(defun churn (N) (if (= N 0) (simple-error "done") (let V (absvector 1) (churn (- N 1))))) (let V (absvector 1) (let X (address-> V 0 42) (trap-error (churn 3000) (lambda E (<-address V 0)))))','churn\n42'),
+ 'gc-operand-root':('(defun churn (N) (if (= N 0) true (let V (absvector 1) (churn (- N 1))))) (defun first (X Y) (<-address X 0)) (first (address-> (absvector 1) 0 42) (churn 3000))','churn\nfirst\n42'),
+
+ 'partial-application':('(defun sum (X Y) (+ X Y)) ((sum 20) 22)','sum\n42'),
+ 'over-application':('((lambda X (lambda Y (+ X Y))) 20 22)','42'),
+ 'vector-structural-equality':('(let A (absvector 1) (let B (absvector 1) (= A B)))','true'),
+ 'vector-cycle-equality':('(let A (absvector 1) (let B (absvector 1) (let X (address-> A 0 A) (let Y (address-> B 0 B) (= A B)))))','true'),
+ 'closure-self-equality':('(let F (lambda X X) (= F F))','true'),
+ 'closure-distinct':('(= (lambda X X) (lambda X X))','false'),
+ 'boolean-rhs':('(trap-error (and true 42) (lambda E invalid))','invalid'),
  'fail-value':('(defun fail () shen.fail!) (trap-error (fail) (lambda E wrong))','fail\nshen.fail!'),
  'freeze-repeat':('(set c 0) (let F (freeze (set c (+ (value c) 1))) (cons (thaw F) (cons (thaw F) ())))','0\n[1 2]'),
  'vector-alias':('(let X (absvector 2) (let Y X (let Z (address-> X 1 42) (<-address Y 1))))','42'),

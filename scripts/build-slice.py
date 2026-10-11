@@ -39,7 +39,7 @@ def main():
     for f in files[1:]:load(f)
     lines+=[' ()','}','pub fun main() { try(run-slice,fn(e) { println("shen-koka slice: "++e.message); process-exit(1.int32) }) }']
     (out/'program.kk').write_text('\n'.join(lines)+'\n')
-    command=['koka','-i'+str(runtime),'-O2','--builddir='+str(out/'cache'),'-o',str(out/'run'),str(out/'program.kk')]
+    command=['koka','-j1','-i'+str(runtime),'-O2','--builddir='+str(out/'cache'),'-o',str(out/'run'),str(out/'program.kk')]
     with (out/'compile.log').open('w') as log:
         result=subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,timeout=900)
     record={'schema_version':1,'execution':'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':False,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}

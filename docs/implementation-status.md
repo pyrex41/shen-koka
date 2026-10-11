@@ -11,10 +11,28 @@ not reset or cleaned.
   globals/function bindings, dynamic function dispatch, and explicit machine frames.
 - Non-strict forms, repeatable freeze/thaw, catchable errors, byte streams, and
   mutable vector handles with shared identity.
+- Predecoded executable terms, structural vector equality (including cycles),
+  closure identity, partial application and overapplication.
+- Vector lookup trie and machine-safe-point tracing collection; focused cyclic
+  garbage and retained-root checks pass (see [memory model](memory.md)).
+- Kernel-backed REPL with clean EOF, multiline input and error recovery.
 - Full S42 load-time boot using unchanged pinned modules; Shen source evaluation
   and script loading through the original reader/compiler.
 - Full-distribution runner with fixed 134 + 8 denominators, group reports,
   preserved stdout/stderr, source assertion identities, and previous-PASS checks.
+
+## Published
+
+The first runtime snapshot is published at `9f14c546233fb13536b1d1e1bf22f4677b749e59`
+on `pyrex41/shen-koka:implement/klambda-runtime`. GitHub API publication preserves
+the exact local tree; local commit SHAs differ because the API creates commits.
+Command-line Git push lacked credentials in this environment.
+
+Bifrost integration: `pyrex41/bifrost:integrate/shen-koka`,
+`5aa7a36c835a2132b45966eb6e80ea5763868cf8`.
+Yggdrasil integration: `pyrex41/yggdrasil:integrate/shen-koka`,
+`0c8023875439bea3c3dafcb001c7b6aed7769f95`.
+Both integration repositories passed their Go tests. They remain experimental.
 
 ## Tested so far
 
@@ -49,9 +67,49 @@ counting just the first 134 assertions. Raw reports are never overwritten.
 ## Remaining limitations
 
 This is a bounded bootstrap runtime, not a qualified long-lived deployment.
-The vector arena currently retains allocated vectors until process exit; a
-tracing collector and cycle/retained-root stress checks are still required.
-The CLI REPL, standard-library boot, standalone compiler, and slice builder
-remain work in progress. Numeric/Unicode edge cases and primitive arity/type
+The vector collector has focused cycle/retained-root coverage, but long-lived
+RSS and embedding-root qualification remain required. Standard-library loading
+is being tested separately; the direct standalone compiler remains incomplete. An interpreter-backed slice builder now builds a native hello
+artifact from the actual Yggdrasil manifest and runs it without the full kernel.
+It is not the planned direct KL-to-Koka compiler. Eval-capable slices are refused
+with exit code 3. Broader standalone parity remains pending. Numeric/Unicode edge cases and primitive arity/type
 coverage are not fully qualified. The optional effect-search experiment has
 not been started.
+
+## Comparison findings
+
+The Koka candidate passed all 17 seed goldens. The three-port gate remains FAIL:
+Lua/Go print `(fail)` as `...`; Go renders an empty raw vector slot as `#<raw >`.
+Those failures are retained. Explicit value probes in `evidence/020-sentinel-values`
+show Lua agrees that an empty slot is the fail sentinel, while pinned Go does not.
+Both references agree that `(fail)` equals the interned sentinel.
+
+Both pinned references fail the first bundled community PPM assertion and abort
+before the other seven. The S42 compiler lacks the hooks expected by that
+extension. The opt-in adapter in `compat/` passed all eight unchanged extension
+assertions in a focused run. The canonical lane runs with the adapter disabled; its regression gate remains
+required. The extension lane alone opts into the adapter.
+The pristine default kernel is still available with the adapter disabled.
+
+Builds use Koka `-j1`: parallel compilation twice left an empty object and failed
+to link. This is an observed toolchain/environment failure, not a diagnosis of
+its upstream cause. Builds publish an executable only after successful linking,
+and full-suite runs reject a binary whose recorded source hashes are stale.
+
+## Current checkpoint
+
+The completed predecoded attempt (017) records 100/134 canonical PASS, zero
+observed FAIL, 34 UNKNOWN, and 8/8 extension PASS. It is not a full-port pass.
+Later immutable-snapshot attempts exercise structural equality, collection,
+handler placement and the REPL build. Their final reports, when present, take
+precedence over these interim counts. Cancelled attempt 023 records 16 PASS and
+118 UNKNOWN, with all eight extensions UNKNOWN; its regression list is retained.
+
+All 23 focused checks passed after collection (028) and after handler changes
+(030). The REPL's EOF, expression, multiline and recovery probes passed (032).
+Neither these probes nor the seed suite replaces the 142-assertion gate.
+
+Runs started before immutable snapshots may span a rebuild between lanes. Such
+runs retain raw evidence but cannot establish a single-build combined result.
+New runs freeze the native payload and boot inputs, enforce stream-size limits,
+and support cancellation by creating `CANCEL` inside their output directory.

@@ -1,6 +1,7 @@
 # Plan for a complete Shen port to Koka
 
-Prepared 2026-10-11. Status: proposed architecture, implementation pending.
+Prepared 2026-10-11. Implementation is underway; see docs/implementation-status.md
+for executed evidence and remaining gates. This plan is not a completion claim.
 
 The goal is a complete Shen implementation hosted by Koka, usable through
 Bifrost and compilable into standalone Yggdrasil artifacts. The compatibility
@@ -456,8 +457,9 @@ flake.nix flake.lock     pinned compiler and host tools
 docs/                   semantics architecture and integration contracts
 ```
 
-No port implementation files in this layout exist yet. The written plan and
-comparison scaffold establish the next work boundary.
+The initial Koka interpreter, boot path, launcher, and evidence runner now exist.
+The direct native compiler, collector, and release gates remain incomplete; see
+the implementation status for the current tested and published boundaries.
 
 ## Decisions to settle during P0 and P1
 

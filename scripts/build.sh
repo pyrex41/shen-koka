@@ -2,10 +2,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .build
-# Never publish a stale executable after a failed compile. Use an isolated cache
-# per build: Koka 3.2.3 left an empty cached object during incremental compilation.
+# Never publish a stale executable after a failed compile. Use isolated staging
+# for the output. Serial compilation avoids the observed empty-object failure.
 build_dir=$(mktemp -d .build/compile-XXXXXX)
-koka -isrc -O2 --builddir="$build_dir" -o "$build_dir/shen-koka" src/shen/main.kk
+koka -j1 -isrc -O2 --builddir="${SHEN_KOKA_BUILD_CACHE:-.build/koka-serial}" -o "$build_dir/shen-koka" src/shen/main.kk
 chmod +x "$build_dir/shen-koka"
 mv "$build_dir/shen-koka" .build/shen-koka
 python3 - <<'PY'

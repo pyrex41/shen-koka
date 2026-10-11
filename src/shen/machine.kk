@@ -1,5 +1,6 @@
 module shen/machine
 import shen/values
+import shen/compile-kl
 import shen/world
 import shen/io
 import std/num/int32
@@ -7,20 +8,18 @@ import std/num/float64
 
 // Frames represent only pending work. Function application never adds a return frame.
 type frame {
-  Bind(name:string,body:value,env:environment)
-  Select(yes:value,no:value,env:environment)
-  Operator(args:list<value>,env:environment)
-  Argument(fnval:value,done:list<value>,todo:list<value>,env:environment)
-  Catch(hndl:value,env:environment)
+  Bind(name:string,body:term,env:environment)
+  Select(yes:term,no:term,env:environment)
+  Operator(args:list<term>,env:environment)
+  Argument(fnval:value,done:list<value>,todo:list<term>,env:environment)
+  Catch(hndl:term,env:environment)
   Recover(message:string)
+  ApplyRest(args:list<value>)
 }
-type machine-state { Eval(expr:value,env:environment); Apply(fnval:value,args:list<value>); Return(result:value); Raise(message:string) }
+type machine-state { Eval(expr:term,env:environment); Apply(fnval:value,args:list<value>); Return(result:value); Raise(message:string) }
 fun nth(xs:list<value>,i:int): exn value { match xs { [] -> throw("wrong form arity"); Cons(x,rest) -> if i==0 then x else nth(rest,i - 1) } }
 fun bind-args(ps:list<string>,vs:list<value>,env:environment): <exn,div> environment {
   match (ps,vs) { ([],[]) -> env; (Cons(p,pt),Cons(v,vt)) -> bind-args(pt,vt,Cons((p,v),env)); _ -> throw("wrong function arity") }
-}
-fun cond-expr(xs:list<value>): <exn,div> value {
-  match xs { [] -> Pair(Sym("simple-error"),list-value([Text("cond: no true branch")])); Cons(cl,rest) -> list-value([Sym("if"),head(cl),head(tail(cl)),cond-expr(rest)]) }
 }
 fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console> value {
   fun a(i:int) { nth(args,i) }
@@ -35,6 +34,7 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
     ("write-byte",[Num(n),Stream(id)]) -> { val result=stream-write(id.int32,n.int.int32).int; if result<0 then throw("write-byte error") else Num(result.float64) }
     ("close",[Stream(id)]) -> { if stream-close(id.int32).int!=0 then throw("close error"); Nil }
     ("get-time",[Sym(kind)]) -> Num(clock-time(kind=="run"))
+    ("shen-koka.heap-live",[]) -> Num(live-vectors((!w.heap)).float64)
     ("list",xs) -> list-value(xs)
     ("cons",[x,y]) -> Pair(x,y)
     ("hd",[x]) -> head(x)
@@ -46,7 +46,7 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
     ("intern",[Text(x)]) -> Sym(x)
     ("set",[x,y]) -> global-set(w,symbol(x),y)
     ("value",[x]) -> global-get(w,symbol(x))
-    ("=",[x,y]) -> truth(equal(x,y))
+    ("=",[x,y]) -> truth(equal-value(w,x,y))
     ("+",[x,y]) -> Num(numeric(x)+numeric(y))
     ("-",[x,y]) -> Num(numeric(x)-numeric(y))
     ("*",[x,y]) -> Num(numeric(x)*numeric(y))
@@ -76,47 +76,45 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
     _ -> throw("unknown primitive or wrong arguments: " ++ name)
   }
 }
-fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div,console> (machine-state,list<frame>) {
+fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,div,console> (machine-state,list<frame>) {
   match c {
     Eval(expr,env) -> match expr {
-      Sym(s) -> (Return(lookup(env,s).default(expr)),ks)
-      Pair(op,rest) -> {
-        val xs=items(rest)
-        match op {
-          Sym("type") -> (Eval(nth(xs,0),env),ks)
-          Sym("defun") -> { val name=symbol(nth(xs,0)); val ps=items(nth(xs,1)).map(symbol); define-function(w,name,Closure(ps,nth(xs,2),[])); (Return(Sym(name)),ks) }
-          Sym("lambda") -> (Return(Closure([symbol(nth(xs,0))],nth(xs,1),env)),ks)
-          Sym("freeze") -> (Return(Closure([],nth(xs,0),env)),ks)
-          Sym("let") -> (Eval(nth(xs,1),env),Cons(Bind(symbol(nth(xs,0)),nth(xs,2),env),ks))
-          Sym("if") -> (Eval(nth(xs,0),env),Cons(Select(nth(xs,1),nth(xs,2),env),ks))
-          Sym("cond") -> (Eval(cond-expr(xs),env),ks)
-          Sym("and") -> (Eval(list-value([Sym("if"),nth(xs,0),nth(xs,1),Sym("false")]),env),ks)
-          Sym("or") -> (Eval(list-value([Sym("if"),nth(xs,0),Sym("true"),nth(xs,1)]),env),ks)
-          Sym("trap-error") -> (Eval(nth(xs,0),env),Cons(Catch(nth(xs,1),env),ks))
-          _ -> (Eval(op,env),Cons(Operator(xs,env),ks))
-        }
-      }
-      _ -> (Return(expr),ks)
+      Literal(v) -> (Return(v),ks)
+      Variable(s) -> (Return(lookup(env,s).default(Sym(s))),ks)
+      Define(name,ps,body) -> { define-function(w,name,make-closure(w,ps,body,[])); (Return(Sym(name)),ks) }
+      Lambda(ps,body) -> (Return(make-closure(w,ps,body,env)),ks)
+      Let(name,binding,body) -> (Eval(binding,env),Cons(Bind(name,body,env),ks))
+      Branch(test,yes,no) -> (Eval(test,env),Cons(Select(yes,no,env),ks))
+      Trap(body,hndl) -> (Eval(body,env),Cons(Catch(hndl,env),ks))
+      Call(op,args) -> (Eval(op,env),Cons(Operator(args,env),ks))
     }
     Apply(f,args) -> match f {
-      Closure(ps,body,env) -> (Eval(body,bind-args(ps,args,env)),ks)
-      Sym("eval-kl") -> (Eval(nth(args,0),[]),ks)
-      Sym("thaw") -> (Apply(nth(args,0),[]),ks)
+      Closure(_,ps,body,env) -> try(fn() {
+        val n=ps.length
+        if args.length < n then
+          (Return(make-closure(w,ps.drop(args.length),body,bind-args(ps.take(args.length),args,env))),ks)
+        elif args.length > n then
+          (Eval(body,bind-args(ps,args.take(n),env)),Cons(ApplyRest(args.drop(n)),ks))
+        else (Eval(body,bind-args(ps,args,env)),ks)
+      },fn(e) (Raise(e.message),ks))
+      Sym("eval-kl") -> try(fn() { match args { [x] -> (Eval(compile-term(x),[]),ks); _ -> (Raise("eval-kl: wrong arity"),ks) } },fn(e) (Raise(e.message),ks))
+      Sym("thaw") -> match args { [x] -> (Apply(x,[]),ks); _ -> (Raise("thaw: wrong arity"),ks) }
       Sym(name) -> match find((!w.functions),name) {
         Just(v) -> (Apply(v,args),ks)
-        Nothing -> (Return(primitive(w,name,args)),ks)
+        Nothing -> try(fn() (Return(primitive(w,name,args)),ks),fn(e) (Raise(e.message),ks))
       }
-      _ -> throw("application of non-function")
+      _ -> (Raise("application of non-function"),ks)
     }
     Return(v) -> match ks {
       [] -> (Return(v),[])
       Cons(k,rest) -> match k {
         Bind(name,body,env) -> (Eval(body,Cons((name,v),env)),rest)
-        Select(yes,no,env) -> (Eval(if boolean(v) then yes else no,env),rest)
+        Select(yes,no,env) -> match v { Sym("true") -> (Eval(yes,env),rest); Sym("false") -> (Eval(no,env),rest); _ -> (Raise("expected boolean"),rest) }
         Operator(args,env) -> match args { [] -> (Apply(v,[]),rest); Cons(x,xs) -> (Eval(x,env),Cons(Argument(v,[],xs,env),rest)) }
         Argument(f,done,todo,env) -> match todo { [] -> (Apply(f,Cons(v,done).reverse),rest); Cons(x,xs) -> (Eval(x,env),Cons(Argument(f,Cons(v,done),xs,env),rest)) }
         Catch(_,_) -> (Return(v),rest)
         Recover(msg) -> (Apply(v,[Fault(msg)]),rest)
+        ApplyRest(args) -> (Apply(v,args),rest)
       }
     }
     Raise(msg) -> match ks {
@@ -126,15 +124,40 @@ fun step(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div,console> (
     }
   }
 }
+// Collection occurs only between machine steps, after primitive temporaries
+// have disappeared. Every suspended operand, handler and lexical binding is a root.
+fun collect-machine(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div> () {
+  var vs : list<value> := []
+  var ts : list<term> := []
+  fun env(e:environment) { vs := e.map(fn((_,v)) v) ++ vs }
+  match c {
+    Eval(t,e) -> { ts := Cons(t,ts); env(e) }
+    Apply(f,args) -> { vs := Cons(f,args) ++ vs }
+    Return(v) -> { vs := Cons(v,vs) }
+    Raise(_) -> ()
+  }
+  ks.foreach fn(k) {
+    match k {
+      Bind(_,body,e) -> { ts := Cons(body,ts); env(e) }
+      Select(yes,no,e) -> { ts := Cons(yes,Cons(no,ts)); env(e) }
+      Operator(args,e) -> { ts := args ++ ts; env(e) }
+      Argument(f,done,todo,e) -> { vs := Cons(f,done) ++ vs; ts := todo ++ ts; env(e) }
+      Catch(hndl,e) -> { ts := Cons(hndl,ts); env(e) }
+      Recover(_) -> ()
+      ApplyRest(args) -> { vs := args ++ vs }
+  } }
+  collect-vectors(w,vs,ts)
+}
 fun run(w:world,c:machine-state,ks:list<frame>): <st<global>,exn,div,console> value {
+  if (!w.allocations) >= (!w.gc-at) then collect-machine(w,c,ks)
   match (c,ks) {
     (Return(v),[]) -> v
     (Raise(msg),[]) -> throw(msg)
     _ -> {
-      val (next,frames)=try(fn() step(w,c,ks),fn(e) (Raise(e.message),ks))
+      val (next,frames)=step(w,c,ks)
       run(w,next,frames)
     }
   }
 }
 pub fun invoke(w:world,f:value,args:list<value>): <st<global>,exn,div,console> value { run(w,Apply(f,args),[]) }
-pub fun evaluate(w:world,expr:value): <st<global>,exn,div,console> value { run(w,Eval(expr,[]),[]) }
+pub fun evaluate(w:world,expr:value): <st<global>,exn,div,console> value { run(w,Eval(compile-term(expr),[]),[]) }

@@ -23,3 +23,14 @@ sources are retained with that status. See each JSON file and both raw streams.
 
 The focused KL report is independent supplemental evidence, including three
 million-step tail-call shapes. It does not replace the full distribution.
+
+Later attempts retain their full reports and raw streams under numbered paths.
+017 is the first 100 canonical / 8 extension PASS snapshot, with 34 canonical
+assertions still UNKNOWN. 023 was deliberately cancelled and retains regressions
+to UNKNOWN. 025 and later full runs freeze their executable and boot inputs, so
+concurrent rebuilding cannot replace the extension candidate. 015 and 019 began
+before this protection; treat any combined result as mixed-build evidence.
+
+Focused runtime checks 028/030 include collection; 032 contains REPL transcripts.
+The Bifrost and Yggdrasil integration branches are recorded in the implementation
+status. No partial report or supplementary probe establishes full qualification.

@@ -39,3 +39,5 @@ static double shen_clock_time(bool run,kk_context_t *ctx) {
 static kk_unit_t shen_process_exit(int32_t code,kk_context_t *ctx) {
   (void)ctx; exit(code); return kk_Unit;
 }
+
+static bool shen_stdin_eof(kk_context_t *ctx) { (void)ctx; return feof(stdin)!=0; }

@@ -1,0 +1,16 @@
+flag provided but not defined: -config
+Usage of bifrost:
+  -heavy
+    	include heavy (yggdrasil) cases
+  -impls string
+    	comma-separated subset of impls to drive
+  -json
+    	emit machine-readable JSON
+  -list
+    	list impls + cases and exit
+  -only string
+    	run only these cases (comma-separated)
+  -shake
+    	diff standalone artifacts per target (deploy-path parity)
+  -suite string
+    	run a project's bifrost.suite.json instead of the corpus

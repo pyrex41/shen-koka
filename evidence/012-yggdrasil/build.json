@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "execution": "Koka KLambda interpreter with embedded manifest-only sources",
+  "direct_kl_compiler": false,
+  "manifest_sha256": "a2e03b603ea95a45743b3a9ae997d64194b1856d12a680eda09a80e621e3693f",
+  "inputs": {
+    "kernel.kl": "037c28e830a4c4b6ee6c6d158964bd541d743b0b659a16acf37207785fdfe3fe",
+    "hello.kl": "a09b46467dbffb9a0d2d5e48453a4c60d193a4cb2b953655e10ce6c8ca6452cb"
+  },
+  "initializer": "shen.initialise",
+  "argv": [
+    "koka",
+    "-j1",
+    "-i/workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello-serial/src",
+    "-O2",
+    "--builddir=/workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello-serial/cache",
+    "-o",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello-serial/run",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello-serial/program.kk"
+  ],
+  "exit_code": 0,
+  "runtime_sources": {
+    "shen/values.kk": "1efe9f03ed5393008e422ee6378e78c37c9cab379f9260537e41ebcdfcc4f992",
+    "shen/read-kl.kk": "804bf82490cc21c2bc67a35eb43c29dd938ec4502b7656f8dd65f9a5b287807a",
+    "shen/machine.kk": "d998699452af43d6e37394a750b0dadc4c7a219e8d9f3de42f07586d4e4f32b0",
+    "shen/world.kk": "f8ccd0a826b49e0b8d244628c4b6aa3cb52f1e942af905fb56bbc6f0a142c77f",
+    "shen/boot.kk": "1312d5a39bac698c134820f4a61e54ad4173d250c8ef2eeb7a85ac9edfa19ae2",
+    "shen/main.kk": "d87e52f7b7212776a2c7db57c869a02b197c689d6c439fa94a98520517f7453c",
+    "shen/io-inline.c": "16f747179617bc0ee042b4cd0ca6f4fddb37c394be4ee01f2fa979b5f4f72078",
+    "shen/io.kk": "7c6ecab04f9bbce28fda9926b6b1e2532afdd2db5e275f5ad6a677d2103edb38"
+  },
+  "executable_sha256": "492a956185b94355672207f5cd8134cff8cce6325d4371cadecd8792e1ed9c8d"
+}

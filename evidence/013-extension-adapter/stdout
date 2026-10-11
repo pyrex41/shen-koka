@@ -1,0 +1,35 @@
+(fn extension-tests.reset)
+(fn extension-tests.pass)
+(fn extension-tests.fail)
+(fn extension-tests.assert-equal)
+(fn extension-tests.assert-error)
+(fn extension-tests.finish)
+
+run time: 1.0906539999999998 secs
+loaded
+ok
+(fn shen.x.programmable-pattern-matching.apply-pattern-handlers)
+(fn shen.x.programmable-pattern-matching.make-stack)
+(fn shen.x.programmable-pattern-matching.push)
+(fn shen.x.programmable-pattern-matching.pop-all)
+(fn shen.x.programmable-pattern-matching.surface-pattern)
+(fn shen.x.programmable-pattern-matching.surface-pattern-tail)
+(fn shen.x.programmable-pattern-matching.compile-pattern)
+(fn shen.x.programmable-pattern-matching.compile-pattern-h)
+(fn shen.x.programmable-pattern-matching.reduce)
+(fn shen.x.programmable-pattern-matching.initialise)
+(fn shen.x.programmable-pattern-matching.register-handler)
+(fn shen.x.programmable-pattern-matching.findpos)
+(fn shen.x.programmable-pattern-matching.findpos-h)
+(fn shen.x.programmable-pattern-matching.remove-nth)
+(fn shen.x.programmable-pattern-matching.unregister-handler)
+
+run time: 8.242522000000001 secs
+loaded
+(fn ppm.two-handler)
+shen.x.programmable-pattern-matching.done
+ppm.two-handler
+
+run time: 8.6060870000000005 secs
+loaded
+shen-koka: wrong function arity

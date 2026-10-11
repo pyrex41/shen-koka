@@ -1,0 +1,348 @@
+{
+  "available": [
+    "shen-go",
+    "shen-lua",
+    "shen-koka"
+  ],
+  "cases": {
+    "and-is-nonstrict": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "arithmetic": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "divide-zero-is-catchable": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "divide-by-zero"
+        }
+      }
+    },
+    "fail-is-not-error": {
+      "verdict": "FAIL",
+      "detail": "golden=\"shen.fail!\"; mismatches: shen-go=\"...\", shen-lua=\"...\"",
+      "impls": {
+        "shen-go": {
+          "status": "FAIL",
+          "norm": "..."
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        },
+        "shen-lua": {
+          "status": "FAIL",
+          "norm": "..."
+        }
+      }
+    },
+    "false-is-a-value": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "false"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "false"
+        }
+      }
+    },
+    "freeze-captures-lexical-value": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "9"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "9"
+        }
+      }
+    },
+    "freeze-escapes-in-lambda": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "if-is-nonstrict": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "intern-true": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "true"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "true"
+        }
+      }
+    },
+    "operand-evaluation-order": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "ordinary-fail-sentinel": {
+      "verdict": "FAIL",
+      "detail": "golden=\"shen.fail!\"; mismatches: shen-go=\"...\", shen-lua=\"...\"",
+      "impls": {
+        "shen-go": {
+          "status": "FAIL",
+          "norm": "..."
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        },
+        "shen-lua": {
+          "status": "FAIL",
+          "norm": "..."
+        }
+      }
+    },
+    "prolog-first-solution": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "bart"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "bart"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "bart"
+        }
+      }
+    },
+    "thaw-repeats-effects": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "2"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "2"
+        }
+      }
+    },
+    "trap-operand-error": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "42"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "42"
+        }
+      }
+    },
+    "vector-empty-slot-sentinel": {
+      "verdict": "FAIL",
+      "detail": "golden=\"shen.fail!\"; mismatches: shen-go=\"#\u003craw \u003e\", shen-lua=\"...\"",
+      "impls": {
+        "shen-go": {
+          "status": "FAIL",
+          "norm": "#\u003craw \u003e"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "shen.fail!"
+        },
+        "shen-lua": {
+          "status": "FAIL",
+          "norm": "..."
+        }
+      }
+    },
+    "vector-update-preserves-alias": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "7"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "7"
+        }
+      }
+    },
+    "walk-first-success": {
+      "verdict": "PASS",
+      "detail": "",
+      "impls": {
+        "shen-go": {
+          "status": "PASS",
+          "norm": "3"
+        },
+        "shen-koka": {
+          "status": "PASS",
+          "norm": "3"
+        },
+        "shen-lua": {
+          "status": "PASS",
+          "norm": "3"
+        }
+      }
+    }
+  },
+  "skipped": {}
+}
+
+==============================================================================
+BIFROST MATRIX  (impl x case)
+==============================================================================
+case                           shen-go   shen-lua  shen-koka verdict
+--------------------------------------------------------------------
+arithmetic                     PASS      PASS      PASS      PASS
+ordinary-fail-sentinel         FAIL      FAIL      PASS      FAIL
+fail-is-not-error              FAIL      FAIL      PASS      FAIL
+false-is-a-value               PASS      PASS      PASS      PASS
+if-is-nonstrict                PASS      PASS      PASS      PASS
+and-is-nonstrict               PASS      PASS      PASS      PASS
+trap-operand-error             PASS      PASS      PASS      PASS
+freeze-captures-lexical-value  PASS      PASS      PASS      PASS
+freeze-escapes-in-lambda       PASS      PASS      PASS      PASS
+thaw-repeats-effects           PASS      PASS      PASS      PASS
+vector-update-preserves-alias  PASS      PASS      PASS      PASS
+vector-empty-slot-sentinel     FAIL      FAIL      PASS      FAIL
+operand-evaluation-order       PASS      PASS      PASS      PASS
+intern-true                    PASS      PASS      PASS      PASS
+divide-zero-is-catchable       PASS      PASS      PASS      PASS
+walk-first-success             PASS      PASS      PASS      PASS
+prolog-first-solution          PASS      PASS      PASS      PASS
+--------------------------------------------------------------------
+
+FAILURES:
+  ! ordinary-fail-sentinel: golden="shen.fail!"; mismatches: shen-go="...", shen-lua="..."
+  ! fail-is-not-error: golden="shen.fail!"; mismatches: shen-go="...", shen-lua="..."
+  ! vector-empty-slot-sentinel: golden="shen.fail!"; mismatches: shen-go="#<raw >", shen-lua="..."
+
+SUMMARY: 14 pass, 0 diverge (known), 3 FAIL  across 3 impls
+==============================================================================

@@ -1,0 +1,1 @@
+yggdrasil: build step failed for target koka: /workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka build-slice /workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello/yggdrasil.manifest.txt /workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello/koka-artifact

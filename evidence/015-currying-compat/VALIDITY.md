@@ -1,0 +1,1 @@
+This pre-snapshot run started its canonical lane on the currying build and its extension lane after later rebuilds. The 102 canonical PASS observations and eight extension PASS observations are retained, but are not a combined single-build qualification. See the frozen runs 025 onward.

@@ -2,8 +2,8 @@
 
 The seed suite covers 17 observations, including the failure sentinel, non-strict
 control, exceptions, closures, repeated thaw, aliased vectors, evaluation order,
-and a first Prolog solution. Goldens are intended semantic assertions; reference
-execution and Koka execution are pending. The larger fault and generation
+and a first Prolog solution. Goldens are intended semantic assertions; Koka passed all 17 in the initial integrated run. The pinned reference
+ports have retained golden mismatches; see `evidence/011-bifrost-seed`. The larger fault and generation
 campaign is specified in [the plan](../PLAN.md).
 
 The primary language backpressure gate is the **full Shen test distribution**:

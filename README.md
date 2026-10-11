@@ -1,6 +1,6 @@
 # Shen on Koka
 
-Research and implementation plan for a complete Shen port using Koka, with
+Experimental Shen port using Koka, with
 Bifrost comparison gates and Yggdrasil standalone artifacts.
 
 Status on 2026-10-11: experimental Koka KLambda interpreter and pinned S42
@@ -41,8 +41,29 @@ Koka 3.2.8 remains a researched upgrade candidate; the selected development
 compiler is 3.2.3. `.envrc` supports opt-in direnv activation.
 
 Validation: flake outputs evaluated for all three systems; the native toolchain
-built and compiled/ran a Koka program on aarch64 Darwin. Linux execution remains
-pending. The comparison report checker passed nine constructed controls.
+built and compiled/ran a Koka program on aarch64 Darwin. The pinned Linux development and comparison shells now build and execute
+the runtime; current port qualification is recorded separately in `evidence/`. The comparison report checker passed nine constructed controls.
 
 The flake and lock are tracked in Git so the commands above can see them through
 Nix's Git source filtering.
+
+## Build and run
+
+```sh
+nix develop --command bash scripts/build.sh
+bin/shen-koka eval -e '(+ 1 2)'
+bin/shen-koka script program.shen
+bin/shen-koka repl
+nix develop --command python3 scripts/test-runtime.py
+nix develop --command python3 scripts/run-shen-suite.py \
+  --output artifacts/suite-001 --timeout 1800 --ppm-compat
+```
+
+The optional `--ppm-compat` test lane enables the documented community pattern
+matching adapter for the extension tests. Default boot uses the unchanged pinned
+kernel. A full-suite timeout is UNKNOWN for every unreached assertion, not a pass.
+
+`bin/shen-koka build-slice MANIFEST OUTPUT` builds an interpreter-backed native
+Yggdrasil artifact. It executes the manifest's synthesized initializer exactly
+once and refuses eval-capable manifests. Direct KL-to-Koka compilation remains
+planned.

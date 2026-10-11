@@ -1,0 +1,38 @@
+(defun shen-koka.original-<pattern> (V662) (let W663 (if (shen.ccons? V662) (let W664 (head V662) (let W665 (tail V662) (let W666 (shen.<constructor> W664) (if (shen.parse-failure? W666) (shen.parse-failure) (let W667 (shen.<-out W666) (let W668 (shen.in-> W666) (let W669 (shen.<pattern1> W668) (if (shen.parse-failure? W669) (shen.parse-failure) (let W670 (shen.<-out W669) (let W671 (shen.in-> W669) (let W672 (shen.<pattern2> W671) (if (shen.parse-failure? W672) (shen.parse-failure) (let W673 (shen.<-out W672) (let W674 (shen.in-> W672) (let W675 (<end> W674) (if (shen.parse-failure? W675) (shen.parse-failure) (let W676 (shen.in-> W675) (shen.comb W665 (cons W667 (cons W670 (cons W673 ()))))))))))))))))))))) (shen.parse-failure)) (if (shen.parse-failure? W663) (let W677 (if (shen.ccons? V662) (let W678 (head V662) (let W679 (tail V662) (if (shen.hds=? W678 vector) (let W680 (tail W678) (if (shen.hds=? W680 0) (let W681 (tail W680) (let W682 (<end> W681) (if (shen.parse-failure? W682) (shen.parse-failure) (let W683 (shen.in-> W682) (shen.comb W679 (cons vector (cons 0 ()))))))) (shen.parse-failure))) (shen.parse-failure)))) (shen.parse-failure)) (if (shen.parse-failure? W677) (let W684 (if (cons? V662) (let W685 (head V662) (let W686 (tail V662) (if (cons? W685) (shen.comb W686 (shen.constructor-error W685)) (shen.parse-failure)))) (shen.parse-failure)) (if (shen.parse-failure? W684) (let W687 (let W688 (shen.<simple-pattern> V662) (if (shen.parse-failure? W688) (shen.parse-failure) (let W689 (shen.<-out W688) (let W690 (shen.in-> W688) (shen.comb W690 W689))))) (if (shen.parse-failure? W687) (shen.parse-failure) W687)) W684)) W677)) W663)))
+
+(defun shen-koka.original-triple-stack (V814 V815 V816 V817) (cond ((and (= () V815) (and (= () V816) (and (cons? V817) (and (= where (hd V817)) (and (cons? (tl V817)) (and (cons? (tl (tl V817))) (= () (tl (tl (tl V817)))))))))) (shen.triple-stack (cons (hd (tl V817)) V814) () () (hd (tl (tl V817))))) ((and (= () V815) (= () V816)) (cons (shen.rectify-test (reverse V814)) (cons V817 ()))) ((and (cons? V815) (and (cons? V816) (variable? (hd V815)))) (shen.triple-stack V814 (tl V815) (tl V816) (shen.beta (hd V815) (hd V816) V817))) ((and (cons? V815) (and (cons? (hd V815)) (and (cons? (tl (hd V815))) (and (cons? (tl (tl (hd V815)))) (and (= () (tl (tl (tl (hd V815))))) (cons? V816)))))) (shen.triple-stack (cons (cons (shen.op-test (hd (hd V815))) (cons (hd V816) ())) V814) (cons (hd (tl (hd V815))) (cons (hd (tl (tl (hd V815)))) (tl V815))) (cons (cons (shen.op1 (hd (hd V815))) (cons (hd V816) ())) (cons (cons (shen.op2 (hd (hd V815))) (cons (hd V816) ())) (tl V816))) (shen.beta (hd V815) (hd V816) V817))) ((and (cons? V815) (cons? V816)) (shen.triple-stack (cons (cons = (cons (hd V815) (cons (hd V816) ()))) V814) (tl V815) (tl V816) V817)) (true (simple-error "implementation error in shen.triple-stack"))))
+
+(defun shen.compile-pattern-fragment (P)
+  (shen.<-out (shen.<pattern> (cons P ()))))
+
+(defun shen.<pattern> (Input)
+  (let Hook (trap-error (value shen.*custom-pattern-compiler*) (lambda E shen.fail!))
+    (if (= Hook shen.fail!)
+        (shen-koka.original-<pattern> Input)
+        (if (cons? Input)
+            (let Compiled (Hook (hd Input) (freeze shen.fail!))
+              (if (= Compiled shen.fail!)
+                  (shen-koka.original-<pattern> Input)
+                  (shen.comb (tl Input) Compiled)))
+            (shen-koka.original-<pattern> Input)))))
+
+(defun shen-koka.custom-pattern? (P)
+  (and (cons? P)
+       (and (= (hd P) @p)
+            (and (cons? (tl P)) (= (hd (tl P)) shen.custom-pattern)))))
+
+(defun shen.triple-stack (Tests Patterns Selectors Body)
+  (if (and (cons? Patterns)
+           (and (cons? Selectors) (shen-koka.custom-pattern? (hd Patterns))))
+      (let Pattern (hd Patterns)
+        (let Self (hd Selectors)
+          (let Reduced ((value shen.*custom-pattern-reducer*)
+                        (@p (hd (tl (tl Pattern))) Self))
+            (if (= Reduced shen.fail!)
+                (simple-error "custom pattern reducer rejected a compiled pattern")
+                (shen.triple-stack
+                  (append (reverse (fst Reduced)) Tests)
+                  (append (map (lambda X (fst X)) (snd Reduced)) (tl Patterns))
+                  (append (map (lambda X (snd X)) (snd Reduced)) (tl Selectors))
+                  (shen.beta Pattern Self Body))))))
+      (shen-koka.original-triple-stack Tests Patterns Selectors Body)))

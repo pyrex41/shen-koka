@@ -7,10 +7,21 @@ pub type value {
   Text(text:string)
   Num(number:float64)
   Pair(first:value, rest:value)
-  Closure(params:list<string>, body:value, env:list<(string,value)>)
+  Closure(identity:int,params:list<string>, body:term, env:list<(string,value)>)
   Vec(id:int)
   Stream(id:int)
   Fault(message:string)
+}
+// Predecoded executable forms: compile once at defun/eval-kl, never on a call.
+pub type term {
+  Literal(value:value)
+  Variable(name:string)
+  Define(name:string,params:list<string>,body:term)
+  Lambda(params:list<string>,body:term)
+  Let(name:string,binding:term,body:term)
+  Branch(test:term,yes:term,no:term)
+  Trap(body:term,recover:term)
+  Call(operator:term,args:list<term>)
 }
 pub alias environment = list<(string,value)>
 pub fun truth(b:bool): value { if b then Sym("true") else Sym("false") }
@@ -35,6 +46,7 @@ pub fun equal(a:value,b:value): div bool {
     (Pair(x,xs),Pair(y,ys)) -> equal(x,y) && equal(xs,ys)
     (Vec(x),Vec(y)) -> x==y
     (Stream(x),Stream(y)) -> x==y
+    (Closure(x,_,_,_),Closure(y,_,_,_)) -> x==y
     _ -> False
   }
 }
@@ -45,7 +57,7 @@ pub fun render(v:value): div string {
     Text(s) -> "\"" ++ s ++ "\""
     Num(n) -> n.show
     Pair(a,b) -> "[" ++ render(a) ++ render-tail(b) ++ "]"
-    Closure(_,_,_) -> "#<function>"
+    Closure(_,_,_,_) -> "#<function>"
     Vec(n) -> "#<vector " ++ n.show ++ ">"
     Stream(n) -> "#<stream " ++ n.show ++ ">"
     Fault(s) -> s

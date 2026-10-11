@@ -1,0 +1,22 @@
+{
+  "empty": {
+    "returncode": 0,
+    "input": "",
+    "stderr": ""
+  },
+  "expression": {
+    "returncode": 0,
+    "input": "(+ 1 2)\n",
+    "stderr": ""
+  },
+  "recovery": {
+    "returncode": 0,
+    "input": "(simple-error \"deliberate\")\n(+ 20 22)\n",
+    "stderr": ""
+  },
+  "multiline": {
+    "returncode": 0,
+    "input": "(+ 1\n2)\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "seed-suite-observations",
+  "status": "FAIL",
+  "required": [
+    "shen-lua",
+    "shen-go",
+    "shen-koka"
+  ],
+  "reasons": [
+    "ordinary-fail-sentinel: verdict FAIL",
+    "ordinary-fail-sentinel/shen-lua: FAIL",
+    "ordinary-fail-sentinel/shen-go: FAIL",
+    "fail-is-not-error: verdict FAIL",
+    "fail-is-not-error/shen-lua: FAIL",
+    "fail-is-not-error/shen-go: FAIL",
+    "vector-empty-slot-sentinel: verdict FAIL",
+    "vector-empty-slot-sentinel/shen-lua: FAIL",
+    "vector-empty-slot-sentinel/shen-go: FAIL"
+  ]
+}

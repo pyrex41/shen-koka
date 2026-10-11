@@ -1,0 +1,5 @@
+(fn prime*?)
+(fn prime*)
+
+run time: 0.251112 secs
+loaded

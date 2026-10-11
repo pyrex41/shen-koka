@@ -1,0 +1,12 @@
+{
+  "scope": "seed-suite-observations",
+  "status": "UNKNOWN",
+  "required": [
+    "shen-lua",
+    "shen-go",
+    "shen-koka"
+  ],
+  "reasons": [
+    "invalid evidence: Expecting value: line 1 column 1 (char 0)"
+  ]
+}
