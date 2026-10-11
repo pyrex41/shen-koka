@@ -1,0 +1,101 @@
+{
+  "binary_sha256": "c3739f687138f41af8b56c347b5016f4fa6284069ce07976ef621182f3b9d741",
+  "cases": {
+    "fail-value": {
+      "source": "(defun fail () shen.fail!) (trap-error (fail) (lambda E wrong))",
+      "expected": "fail\nshen.fail!",
+      "stdout": "fail\nshen.fail!\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "freeze-repeat": {
+      "source": "(set c 0) (let F (freeze (set c (+ (value c) 1))) (cons (thaw F) (cons (thaw F) ())))",
+      "expected": "0\n[1 2]",
+      "stdout": "0\n[1 2]\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "vector-alias": {
+      "source": "(let X (absvector 2) (let Y X (let Z (address-> X 1 42) (<-address Y 1))))",
+      "expected": "42",
+      "stdout": "42\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "vector-sentinel": {
+      "source": "(<-address (absvector 1) 0)",
+      "expected": "shen.fail!",
+      "stdout": "shen.fail!\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "error": {
+      "source": "(trap-error (simple-error \"hello\") (lambda E (error-to-string E)))",
+      "expected": "\"hello\"",
+      "stdout": "\"hello\"\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "lexical": {
+      "source": "(let X 7 (let F (lambda Y (+ X Y)) (let X 100 (F 2))))",
+      "expected": "9",
+      "stdout": "9\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "order": {
+      "source": "(set c 0) (cons (set c 1) (cons (value c) ()))",
+      "expected": "0\n[1 1]",
+      "stdout": "0\n[1 1]\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "non-strict": {
+      "source": "(if true 42 (simple-error \"bad\")) (and false (simple-error \"bad\")) (or true (simple-error \"bad\"))",
+      "expected": "42\nfalse\ntrue",
+      "stdout": "42\nfalse\ntrue\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "redefine": {
+      "source": "(defun f () 1) (defun g () (f)) (g) (defun f () 2) (g)",
+      "expected": "f\ng\n1\nf\n2",
+      "stdout": "f\ng\n1\nf\n2\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "self-tail": {
+      "source": "(defun loop (N) (if (= N 0) true (loop (- N 1)))) (loop 1000000)",
+      "expected": "loop\ntrue",
+      "stdout": "loop\ntrue\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "mutual-tail": {
+      "source": "(defun a (N) (if (= N 0) true (b (- N 1)))) (defun b (N) (a N)) (a 1000000)",
+      "expected": "a\nb\ntrue",
+      "stdout": "a\nb\ntrue\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "indirect-tail": {
+      "source": "(defun loop (F N) (if (= N 0) true (F F (- N 1)))) (loop loop 1000000)",
+      "expected": "loop\ntrue",
+      "stdout": "loop\ntrue\n",
+      "stderr": "",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  }
+}

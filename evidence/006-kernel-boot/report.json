@@ -1,0 +1,854 @@
+{
+  "schema_version": 1,
+  "candidate_sha": "c2bcf31f9be2c0b553c60bfc0ddf08fc24b5ede6",
+  "dirty": true,
+  "suite_lock_sha256": "0c133523557396890d85599de851309a6113b089cb58bf5e7a565ed1df99209d",
+  "launcher_sha256": "5da0277bb96595839d3ec08d18919417d53dc9250fe6f59847605084b9722d0f",
+  "inventory_errors": [],
+  "lanes": {
+    "canonical": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+        "script",
+        "runme.shen"
+      ],
+      "cwd": "/workspace/scratch/3e502de53f0d/shen-koka/kernel/tests",
+      "exit_code": -9,
+      "blocker": "timeout",
+      "seconds": 300.0034936970005,
+      "logs": {
+        "stdout": {
+          "sha256": "b5ebeedc880e0b4e47a4a83ddf951ac4ab9b360a80aa3ceb7c8443b1a65b1ade",
+          "bytes": 21977
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "group_reports": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          32,
+          1
+        ],
+        [
+          34,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          45,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          51,
+          1
+        ],
+        [
+          56,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          72,
+          1
+        ],
+        [
+          74,
+          1
+        ],
+        [
+          83,
+          5
+        ],
+        [
+          88,
+          5
+        ],
+        [
+          91,
+          5
+        ],
+        [
+          93,
+          6
+        ]
+      ],
+      "complete_reports": false,
+      "assertions": [
+        {
+          "id": "canonical/01/001",
+          "status": "PASS",
+          "observation": "(load \"cartprod.shen\") = loaded\n(fn cartesian-product)\n(fn all-pairs-using-X)\n\nrun time: 0.28398099999999715 secs\n\nrun time: 0.28476700000000221 secs\npassed\n"
+        },
+        {
+          "id": "canonical/01/002",
+          "status": "PASS",
+          "observation": "(cartesian-product (cons 1 (cons 2 (cons 3 ()))) (cons 1 (cons 2 (cons 3 ())))) = [[1 1] [1 2] [1 3] [2 1] [2 2] [2 3] [3 1] [3 2] [3 3]]\n\nrun time: 0.0071690000000046439 secs\npassed\npassed ... 2\nfailed ... 0\npass rate ... 100%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/02/001",
+          "status": "PASS",
+          "observation": "(load \"powerset.shen\") = loaded\n(fn powerset*)\n(fn cons-X-to-each-set)\n\nrun time: 0.27342900000000014 secs\n\nrun time: 0.27410799999999824 secs\npassed\n"
+        },
+        {
+          "id": "canonical/02/002",
+          "status": "PASS",
+          "observation": "(powerset* (cons 1 (cons 2 (cons 3 ())))) = [[1 2 3] [1 2] [1 3] [1] [2 3] [2] [3] []]\n\nrun time: 0.0083490000000026043 secs\npassed\npassed ... 4\nfailed ... 0\npass rate ... 100%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/03/001",
+          "status": "PASS",
+          "observation": "(load \"bubble version 1.shen\") = loaded\n(fn bubble-sort)\n(fn bubble)\n(fn bubble-again-perhaps)\n\nrun time: 0.41895700000000602 secs\n\nrun time: 0.4196629999999999 secs\npassed\n"
+        },
+        {
+          "id": "canonical/03/002",
+          "status": "PASS",
+          "observation": "(bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]\n\nrun time: 0.0067970000000059372 secs\npassed\n"
+        },
+        {
+          "id": "canonical/03/003",
+          "status": "PASS",
+          "observation": "(load \"bubble version 2.shen\") = loaded\n(fn bubble-sort)\n(fn bubble)\n\nrun time: 0.27829700000000201 secs\n\nrun time: 0.27943100000000243 secs\npassed\n"
+        },
+        {
+          "id": "canonical/03/004",
+          "status": "PASS",
+          "observation": "(bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]\n\nrun time: 0.0068550000000016098 secs\npassed\npassed ... 8\nfailed ... 0\npass rate ... 100%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/04/001",
+          "status": "PASS",
+          "observation": "(load \"spreadsheet.shen\") = loaded\n(fn assess-spreadsheet)\n(fn assign-fixed-values)\n(fn assign-cell-value)\n(fn fixed-value?)\n(fn get')\n(fn get-row)\n(fn get-cell)\n\nrun time: 1.1721950000000021 secs\n\nrun time: 1.172896999999999 secs\npassed\n"
+        },
+        {
+          "id": "canonical/04/002",
+          "status": "FAIL",
+          "observation": "(assess-spreadsheet (cons (cons jim (cons (cons wages (cons (lambda Spreadsheet (get' frank wages Spreadsheet)) ())) (cons (cons tax (cons (lambda Spreadsheet (* (get' frank tax Spreadsheet) 0.80000000000000004)) ())) ()))) (cons (cons frank (cons (cons wages (cons 20000 ())) (cons (cons tax (cons (lambda Spreadsheet (* 0.25 (get' frank wages Spreadsheet))) ())) ()))) ()))) = [[jim [wages 20000] [tax 4000]] [frank [wages 20000] [tax 5000]]]\n\nrun time: 0.011179999999995971 secs\n[[jim [wages #<function>] [tax #<function>]] [frank [wages 20000] [tax #<function>]]] returned\nfailed; continue? (y/n) \npassed ... 9\nfailed ... 1\npass rate ... 90%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/05/001",
+          "status": "PASS",
+          "observation": "(load \"prime.shen\") = loaded\n(fn prime*?)\n(fn prime*)\n\nrun time: 0.27496500000000168 secs\n\nrun time: 0.27592899999999787 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/002",
+          "status": "PASS",
+          "observation": "(prime*? 1000003) = true\n\nrun time: 45.254942000000007 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/003",
+          "status": "PASS",
+          "observation": "(load \"mutual.shen\") = loaded\n(fn even*?)\n(fn odd*?)\n\nrun time: 0.17417499999999109 secs\n\nrun time: 0.17493500000000495 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/004",
+          "status": "PASS",
+          "observation": "(even*? 56) = true\n\nrun time: 0.0065870000000103346 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/005",
+          "status": "PASS",
+          "observation": "(odd*? 77) = true\n\nrun time: 0.0070240000000012515 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/006",
+          "status": "PASS",
+          "observation": "(load \"change.shen\") = loaded\n(fn count-change)\n(fn count-change*)\n(fn next-denom)\n\nrun time: 0.45322099999999921 secs\n\nrun time: 0.45390100000000189 secs\npassed\n"
+        },
+        {
+          "id": "canonical/05/007",
+          "status": "PASS",
+          "observation": "(count-change 100) = 4563\n\nrun time: 3.8931369999999959 secs\npassed\npassed ... 16\nfailed ... 1\npass rate ... 94.117647058823522%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/06/001",
+          "status": "PASS",
+          "observation": "(load \"semantic net.shen\") = loaded\n(fn query)\n(fn belongs?)\n(fn spread-activation)\n(fn accessible-from)\n(fn is_links)\n(fn type_links)\n(fn assert)\n(fn get-prop)\n(fn clear)\n\nrun time: 0.94796900000000051 secs\n\nrun time: 0.94870400000000643 secs\npassed\n"
+        },
+        {
+          "id": "canonical/06/002",
+          "status": "PASS",
+          "observation": "(clear Mark_Tarver) = []\n\nrun time: 0.010249999999999204 secs\npassed\n"
+        },
+        {
+          "id": "canonical/06/003",
+          "status": "PASS",
+          "observation": "(clear man) = []\n\nrun time: 0.0086849999999998317 secs\npassed\n"
+        },
+        {
+          "id": "canonical/06/004",
+          "status": "PASS",
+          "observation": "(assert (cons Mark_Tarver (cons is_a (cons man ())))) = [man]\n\nrun time: 0.010273999999995453 secs\npassed\n"
+        },
+        {
+          "id": "canonical/06/005",
+          "status": "PASS",
+          "observation": "(assert (cons man (cons type_of (cons human ())))) = [human]\n\nrun time: 0.0075509999999923139 secs\npassed\n"
+        },
+        {
+          "id": "canonical/06/006",
+          "status": "PASS",
+          "observation": "(query (cons is (cons Mark_Tarver (cons human ())))) = yes\n\nrun time: 0.023963999999992325 secs\npassed\npassed ... 22\nfailed ... 1\npass rate ... 95.652173913043484%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/07/001",
+          "status": "PASS",
+          "observation": "(load \"einsteins-riddle.shen\") = loaded\n(fn riddle)\n(fn member)\n(fn house)\n(fn next)\n(fn left)\n(fn who-owns-the-fish?)\n\nrun time: 8.2175610000000034 secs\n\nrun time: 8.2182630000000074 secs\npassed\n"
+        },
+        {
+          "id": "canonical/07/002",
+          "status": "PASS",
+          "observation": "((lambda V1109 (lambda L1110 (lambda K1111 (lambda C1112 (do (shen.incinfs) (riddle V1109 L1110 K1111 C1112)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = german\n\nrun time: 16.501474999999999 secs\npassed\npassed ... 24\nfailed ... 1\npass rate ... 96%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/08/001",
+          "status": "PASS",
+          "observation": "(load \"call.shen\") = loaded\n(fn mapit)\n(fn consit)\n(fn different)\n(fn not!)\n\nrun time: 2.3916150000000158 secs\n\nrun time: 2.3922759999999812 secs\npassed\n"
+        },
+        {
+          "id": "canonical/08/002",
+          "status": "PASS",
+          "observation": "((lambda V1113 (lambda L1114 (lambda K1115 (lambda C1116 (let X (shen.newpv V1113) (shen.gc V1113 (do (shen.incinfs) (mapit (fn consit) (cons 1 (cons 2 (cons 3 ()))) X V1113 L1114 K1115 (freeze (return X V1113 L1114 K1115 C1116)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [[1 1] [1 2] [1 3]]\n\nrun time: 0.014178999999984399 secs\npassed\n"
+        },
+        {
+          "id": "canonical/08/003",
+          "status": "PASS",
+          "observation": "((lambda V1117 (lambda L1118 (lambda K1119 (lambda C1120 (do (shen.incinfs) (different 1 2 V1117 L1118 K1119 C1120)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true\n\nrun time: 0.0089700000000050295 secs\npassed\n"
+        },
+        {
+          "id": "canonical/08/004",
+          "status": "PASS",
+          "observation": "((lambda V1121 (lambda L1122 (lambda K1123 (lambda C1124 (do (shen.incinfs) (different 1 1 V1121 L1122 K1123 C1124)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false\n\nrun time: 0.010451999999986583 secs\npassed\npassed ... 28\nfailed ... 1\npass rate ... 96.551724137931032%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/09/001",
+          "status": "PASS",
+          "observation": "(load \"cut.shen\") = loaded\n(fn a)\n(fn b)\n(fn c)\n(fn d)\n(fn e*)\n(fn f)\n(fn g*)\n(fn h)\n\nrun time: 1.9778709999999933 secs\n\nrun time: 1.9804949999999906 secs\npassed\n"
+        },
+        {
+          "id": "canonical/09/002",
+          "status": "PASS",
+          "observation": "((lambda V1125 (lambda L1126 (lambda K1127 (lambda C1128 (let X (shen.newpv V1125) (shen.gc V1125 (do (shen.incinfs) (a X V1125 L1126 K1127 (freeze (return X V1125 L1126 K1127 C1128)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 4\n\nrun time: 0.0099560000000167292 secs\npassed\npassed ... 30\nfailed ... 1\npass rate ... 96.774193548387103%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/10/001",
+          "status": "PASS",
+          "observation": "(load \"nreverseprolog.shen\") = loaded\n(fn nreverse)\n(fn nappend)\n\nrun time: 1.9227390000000071 secs\n\nrun time: 1.9236989999999992 secs\npassed\n"
+        },
+        {
+          "id": "canonical/10/002",
+          "status": "PASS",
+          "observation": "((lambda V1129 (lambda L1130 (lambda K1131 (lambda C1132 (let X (shen.newpv V1129) (shen.gc V1129 (do (shen.incinfs) (nreverse (cons 1 (cons 2 (cons 3 (cons 4 ())))) X V1129 L1130 K1131 (freeze (return X V1129 L1130 K1131 C1132)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [4 3 2 1]\n\nrun time: 0.014325000000013688 secs\npassed\npassed ... 32\nfailed ... 1\npass rate ... 96.969696969696969%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/11/001",
+          "status": "PASS",
+          "observation": "(load \"findall.shen\") = loaded\n(fn enjoys)\n(fn fads)\n\nrun time: 0.9192600000000084 secs\n\nrun time: 0.9207930000000033 secs\npassed\n"
+        },
+        {
+          "id": "canonical/11/002",
+          "status": "PASS",
+          "observation": "((lambda V1133 (lambda L1134 (lambda K1135 (lambda C1136 (do (shen.incinfs) (fads mark V1133 L1134 K1135 C1136)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [tea chocolate]\n\nrun time: 0.015198999999995522 secs\npassed\npassed ... 34\nfailed ... 1\npass rate ... 97.142857142857139%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/12/001",
+          "status": "PASS",
+          "observation": "(load \"tableauprolog.shen\") = loaded\n(fn prop)\n(fn proph)\n(fn inconsistent)\n(fn consistent)\n(fn complement)\n(fn member)\n\nrun time: 10.591346999999985 secs\n\nrun time: 10.592963999999995 secs\npassed\n"
+        },
+        {
+          "id": "canonical/12/002",
+          "status": "PASS",
+          "observation": "((lambda V1137 (lambda L1138 (lambda K1139 (lambda C1140 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons p ()))) ()))) V1137 L1138 K1139 C1140)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true\n\nrun time: 0.28493000000000279 secs\npassed\n"
+        },
+        {
+          "id": "canonical/12/003",
+          "status": "PASS",
+          "observation": "((lambda V1141 (lambda L1142 (lambda K1143 (lambda C1144 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons r ()))) ()))) V1141 L1142 K1143 C1144)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false\n\nrun time: 0.082786999999996169 secs\npassed\npassed ... 37\nfailed ... 1\npass rate ... 97.368421052631575%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/13/001",
+          "status": "PASS",
+          "observation": "(load \"proplog version 1.shen\") = loaded\n(fn backchain)\n(fn backchain*)\n\nrun time: 0.62576400000000376 secs\n\nrun time: 0.62684600000000046 secs\npassed\n"
+        },
+        {
+          "id": "canonical/13/002",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons (cons r (cons <= ())) ())))) = proved\n\nrun time: 0.0090759999999932006 secs\npassed\n"
+        },
+        {
+          "id": "canonical/13/003",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = ...\n\nrun time: 0.010255999999998267 secs\npassed\n"
+        },
+        {
+          "id": "canonical/13/004",
+          "status": "PASS",
+          "observation": "(load \"proplog version 2.shen\") = loaded\n(fn backchain)\n(fn backchain*)\n\nrun time: 0.55153199999998037 secs\n\nrun time: 0.55252200000001039 secs\npassed\n"
+        },
+        {
+          "id": "canonical/13/005",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons r ())))) = true\n\nrun time: 0.0092060000000060427 secs\npassed\n"
+        },
+        {
+          "id": "canonical/13/006",
+          "status": "PASS",
+          "observation": "(backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = false\n\nrun time: 0.00973599999997532 secs\npassed\npassed ... 43\nfailed ... 1\npass rate ... 97.727272727272734%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/14/001",
+          "status": "PASS",
+          "observation": "(load \"metaprog.shen\") = loaded\n(fn parse)\n(fn parsed?)\n(fn output_parse)\n(fn generate_parser)\n(fn parenthesise_rules)\n(fn parenthesise_rules1)\n(fn group_rules)\n(fn group_rules1)\n(fn place_in_group)\n(fn belongs-in?)\n(fn compile_rules)\n(fn lex?)\n(fn generate_code_for_nonlex)\n(fn mapapp)\n(fn get_characteristic_non_terminal)\n(fn gcfn_help)\n(fn apply_expansion)\n(fn ae_help)\n(fn generate_code_for_lex)\n(fn gcfl_help)\n\nrun time: 3.1416030000000035 secs\n\nrun time: 3.1423699999999997 secs\npassed\n"
+        },
+        {
+          "id": "canonical/14/002",
+          "status": "PASS",
+          "observation": "(do (generate_parser (cons sent (cons --> (cons np (cons vp (cons np (cons --> (cons name (cons np (cons --> (cons det (cons n (cons name (cons --> (cons \"John\" (cons name (cons --> (cons \"Bill\" (cons name (cons --> (cons \"Tom\" (cons det (cons --> (cons \"the\" (cons det (cons --> (cons \"a\" (cons det (cons --> (cons \"that\" (cons det (cons --> (cons \"this\" (cons n (cons --> (cons \"girl\" (cons n (cons --> (cons \"ball\" (cons vp (cons --> (cons vtrans (cons np (cons vp (cons --> (cons vintrans (cons vtrans (cons --> (cons \"kicks\" (cons vtrans (cons --> (cons \"likes\" (cons vintrans (cons --> (cons \"jumps\" (cons vintrans (cons --> (cons \"flies\" ())))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ok) = ok\n\nrun time: 1.0363220000000126 secs\npassed\npassed ... 45\nfailed ... 1\npass rate ... 97.826086956521735%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/15/001",
+          "status": "PASS",
+          "observation": "(load \"binary.shen\") = loaded\nchanging the arity of complement may cause errors\nbinary#type\n(fn complement)\n\nrun time: 4.0854980000000012 secs\n\nrun time: 4.0864080000000058 secs\npassed\n"
+        },
+        {
+          "id": "canonical/15/002",
+          "status": "PASS",
+          "observation": "(complement (cons 1 (cons 0 ()))) = [0 1]\n\nrun time: 0.0076660000000003947 secs\npassed\n"
+        },
+        {
+          "id": "canonical/15/003",
+          "status": "PASS",
+          "observation": "(load \"streams.shen\") = loaded\nprogression#type\n(fn delay)\n(fn force)\n(fn end?)\n\nrun time: 2.9894920000000127 secs\n\nrun time: 2.9901409999999942 secs\npassed\n"
+        },
+        {
+          "id": "canonical/15/004",
+          "status": "PASS",
+          "observation": "(fst (delay (@p 0 (@p (+ 1) (lambda X false))))) = 1\n\nrun time: 0.016140000000007149 secs\npassed\npassed ... 49\nfailed ... 1\npass rate ... 98%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/16/001",
+          "status": "PASS",
+          "observation": "(load \"calculator.shen\") = loaded\narith-expr#type\n(fn do-calculation)\n\nrun time: 8.9293350000000089 secs\n\nrun time: 8.9300049999999942 secs\npassed\n"
+        },
+        {
+          "id": "canonical/16/002",
+          "status": "PASS",
+          "observation": "(do-calculation (cons (cons num (cons 12 ())) (cons + (cons (cons (cons num (cons 7 ())) (cons * (cons (cons num (cons 4 ())) ()))) ())))) = 40\n\nrun time: 0.008876000000014983 secs\npassed\npassed ... 51\nfailed ... 1\npass rate ... 98.076923076923066%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/17/001",
+          "status": "PASS",
+          "observation": "(load \"structures-untyped.shen\") = loaded\n(fn defstruct)\n(fn selectors)\n(fn selector)\n(fn constructor)\n(fn params)\n(fn make-association-list)\n(fn recognisor)\n\nrun time: 1.3956620000000157 secs\n\nrun time: 1.3966599999999971 secs\npassed\n"
+        },
+        {
+          "id": "canonical/17/002",
+          "status": "PASS",
+          "observation": "(defstruct ship (cons length (cons name ()))) = ship\n\nrun time: 0.2929499999999905 secs\npassed\n"
+        },
+        {
+          "id": "canonical/17/003",
+          "status": "PASS",
+          "observation": "(make-ship 200 \"Mary Rose\") = [[structure | ship] [length | 200] [name | \"Mary Rose\"]]\n\nrun time: 0.013785999999981868 secs\npassed\n"
+        },
+        {
+          "id": "canonical/17/004",
+          "status": "PASS",
+          "observation": "(ship-length (make-ship 200 \"Mary Rose\")) = 200\n\nrun time: 0.024261000000024069 secs\npassed\n"
+        },
+        {
+          "id": "canonical/17/005",
+          "status": "PASS",
+          "observation": "(ship-name (make-ship 200 \"Mary Rose\")) = \"Mary Rose\"\n\nrun time: 0.02450799999999731 secs\npassed\npassed ... 56\nfailed ... 1\npass rate ... 98.245614035087712%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/18/001",
+          "status": "PASS",
+          "observation": "(load \"structures-typed.shen\") = loaded\n(fn defstruct)\n(fn selector-types)\n(fn recognisor-type)\n(fn constructor-type)\n(fn assemble-type)\ndefstruct\n(fn selectors)\n(fn selector)\n(fn constructor)\n(fn params)\n(fn make-association-list)\n(fn recognisor)\n\nrun time: 3.3583429999999908 secs\n\nrun time: 3.3590159999999969 secs\npassed\n"
+        },
+        {
+          "id": "canonical/18/002",
+          "status": "PASS",
+          "observation": "(defstruct ship (cons (@p length number) (cons (@p name string) ()))) = ship\n\nrun time: 0.38674399999999309 secs\npassed\n"
+        },
+        {
+          "id": "canonical/18/003",
+          "status": "PASS",
+          "observation": "(make-ship 200 \"Mary Rose\") = [[structure | ship] [length | 200] [name | \"Mary Rose\"]]\n\nrun time: 0.0088999999999828106 secs\npassed\n"
+        },
+        {
+          "id": "canonical/18/004",
+          "status": "PASS",
+          "observation": "(ship-length (make-ship 200 \"Mary Rose\")) = 200\n\nrun time: 0.017812000000020589 secs\npassed\n"
+        },
+        {
+          "id": "canonical/18/005",
+          "status": "PASS",
+          "observation": "(ship-name (make-ship 200 \"Mary Rose\")) = \"Mary Rose\"\n\nrun time: 0.021310999999997193 secs\npassed\npassed ... 61\nfailed ... 1\npass rate ... 98.387096774193552%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/19/001",
+          "status": "PASS",
+          "observation": "(load \"classes-untyped.shen\") = loaded\n(fn defclass)\n(fn make-instance)\n(fn get-value)\n(fn get-value-test)\n(fn has-value?)\n(fn has-value-test)\n(fn has-attribute?)\n(fn change-value)\n(fn instance-of)\n\nrun time: 1.4366060000000118 secs\n\nrun time: 1.4372960000000035 secs\npassed\n"
+        },
+        {
+          "id": "canonical/19/002",
+          "status": "PASS",
+          "observation": "(defclass ship (cons length (cons name ()))) = ship\n\nrun time: 0.010199000000000069 secs\npassed\n"
+        },
+        {
+          "id": "canonical/19/003",
+          "status": "PASS",
+          "observation": "(set s (make-instance ship)) = [[class | ship] [length | fail] [name | fail]]\n\nrun time: 0.0098339999999836891 secs\npassed\n"
+        },
+        {
+          "id": "canonical/19/004",
+          "status": "PASS",
+          "observation": "(has-value? length (value s)) = false\n\nrun time: 0.0090089999999918291 secs\npassed\n"
+        },
+        {
+          "id": "canonical/19/005",
+          "status": "PASS",
+          "observation": "(set s (change-value (value s) length 100)) = [[class | ship] [length | 100] [name | fail]]\n\nrun time: 0.009793000000001939 secs\npassed\n"
+        },
+        {
+          "id": "canonical/19/006",
+          "status": "PASS",
+          "observation": "(get-value length (value s)) = 100\n\nrun time: 0.0092199999999991178 secs\npassed\npassed ... 67\nfailed ... 1\npass rate ... 98.529411764705884%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/20/001",
+          "status": "PASS",
+          "observation": "(load \"classes-typed.shen\") = loaded\ndefclass\n(fn defclass)\n(fn axiom)\n(fn record-attribute-types)\nmake-instance\n(fn make-instance)\nget-value\n(fn get-value)\n(fn get-value-test)\nhas-value?\n(fn has-value?)\n(fn has-value-test)\nhas-attribute?\n(fn has-attribute?)\nchange-value\n(fn change-value)\ninstance-of\n(fn instance-of)\n\nrun time: 3.0177600000000098 secs\n\nrun time: 3.019754000000006 secs\npassed\n"
+        },
+        {
+          "id": "canonical/20/002",
+          "status": "PASS",
+          "observation": "(defclass ship (cons (@p length number) (cons (@p name string) ()))) = ship\n\nrun time: 4.3632929999999988 secs\npassed\n"
+        },
+        {
+          "id": "canonical/20/003",
+          "status": "PASS",
+          "observation": "(has-value? length (make-instance ship)) = false\n\nrun time: 0.032967000000013513 secs\npassed\n"
+        },
+        {
+          "id": "canonical/20/004",
+          "status": "PASS",
+          "observation": "(change-value (make-instance ship) length 100) = [[class | ship] [length | 100] [name | fail]]\n\nrun time: 0.032966999999985092 secs\npassed\n"
+        },
+        {
+          "id": "canonical/20/005",
+          "status": "PASS",
+          "observation": "(get-value length (change-value (make-instance ship) length 100)) = 100\n\nrun time: 0.051924000000013848 secs\npassed\npassed ... 72\nfailed ... 1\npass rate ... 98.630136986301366%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/21/001",
+          "status": "PASS",
+          "observation": "(load \"stack.shen\") = loaded\nempty-stack\npush\ntop\npop\n(fn empty-stack)\n(fn push)\n(fn top)\n(fn pop)\n\nrun time: 1.9341520000000116 secs\n\nrun time: 1.9357369999999889 secs\npassed\n"
+        },
+        {
+          "id": "canonical/21/002",
+          "status": "PASS",
+          "observation": "(top (push 0 (empty-stack _))) = 0\n\nrun time: 0.052623999999980242 secs\npassed\npassed ... 74\nfailed ... 1\npass rate ... 98.666666666666671%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/22/001",
+          "status": "PASS",
+          "observation": "(load \"yacc.shen\") = loaded\n(fn <sent>)\n(fn <det>)\n(fn <np>)\n(fn <n>)\n(fn <name1>)\n(fn <vp>)\n(fn <vtrans>)\n(fn <des>)\n(fn <ds>)\n(fn <es>)\n(fn <sent'>)\n(fn question)\n(fn <as->bs>)\n(fn <find-digit>)\n(fn <morestuff>)\n(fn <digit>)\n(fn <find-digit'>)\n(fn <asbscs>)\n(fn <as>)\n(fn <bs>)\n(fn <cs>)\n(fn <asbs'cs>)\n(fn <bs'>)\n(fn <find-digit''>)\n(fn <digit''>)\n(fn <anbncn>)\n(fn <as>)\n(fn <bs>)\n(fn <cs>)\n(fn equal-length?)\n(fn appendall)\n(fn <a*s>)\n(fn <b*>)\n(fn <c*>)\n(fn <d*>)\n\nrun time: 18.482741000000004 secs\n\nrun time: 18.484637000000021 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/002",
+          "status": "FAIL",
+          "observation": "(compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [the cat likes the dog]\n\nfailed with error unknown primitive or wrong arguments: list\nfailed; continue? (y/n) \n"
+        },
+        {
+          "id": "canonical/22/003",
+          "status": "PASS",
+          "observation": "(trap-error (compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons canary ())))))) (lambda E (fail))) = ...\n\nrun time: 0.037832999999977801 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/004",
+          "status": "PASS",
+          "observation": "(compile (fn <asbscs>) (cons a (cons a (cons a (cons b (cons b (cons c ()))))))) = [a a a b b c]\n\nrun time: 0.039370999999988499 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/005",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6]\n\nrun time: 0.044184999999998809 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/006",
+          "status": "FAIL",
+          "observation": "(compile (fn <vp>) (cons chases (cons the (cons cat ())))) = [chases the cat]\n\nfailed with error unknown primitive or wrong arguments: list\nfailed; continue? (y/n) \n"
+        },
+        {
+          "id": "canonical/22/007",
+          "status": "FAIL",
+          "observation": "(compile (fn <des>) (cons (cons d ()) (cons (cons e (cons e ())) ()))) = [d e e]\n\nfailed with error unknown primitive or wrong arguments: list\nfailed; continue? (y/n) \n"
+        },
+        {
+          "id": "canonical/22/008",
+          "status": "FAIL",
+          "observation": "(compile (fn <sent'>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [is it true that your father likes the dog ?]\n\nfailed with error unknown primitive or wrong arguments: list\nfailed; continue? (y/n) \n"
+        },
+        {
+          "id": "canonical/22/009",
+          "status": "PASS",
+          "observation": "(compile (fn <as>) (cons a (cons a (cons a ())))) = [a a a]\n\nrun time: 0.02892900000000509 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/010",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit'>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6 y u]\n\nrun time: 0.045621000000011236 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/011",
+          "status": "PASS",
+          "observation": "(trap-error (compile (fn <asbs'cs>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) (lambda E (fail))) = ...\n\nrun time: 0.028273000000012871 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/012",
+          "status": "PASS",
+          "observation": "(compile (fn <find-digit''>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = 6\n\nrun time: 0.02767400000001885 secs\npassed\n"
+        },
+        {
+          "id": "canonical/22/013",
+          "status": "PASS",
+          "observation": "(compile (fn <anbncn>) (cons a (cons a (cons a (cons b (cons b (cons b (cons c (cons c (cons c ())))))))))) = [a a a b b b c c c]\n\nrun time: 0.023261000000019294 secs\npassed\npassed ... 83\nfailed ... 5\npass rate ... 94.318181818181827%\n\nok\n[]\ntrue\n\n"
+        },
+        {
+          "id": "canonical/23/001",
+          "status": "PASS",
+          "observation": "(preclude-all-but ()) = []\n\nrun time: 9.3000000020992957e-05 secs\npassed\n"
+        },
+        {
+          "id": "canonical/23/002",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.1999999998124622e-05 secs\npassed\n"
+        },
+        {
+          "id": "canonical/23/003",
+          "status": "PASS",
+          "observation": "(load \"n queens.shen\") = loaded\n(fn n-queens) : (number --> (list (list number)))\n(fn n-queens.initialise) : (number --> (list number))\n(fn n-queens.n-queens-loop) : (number --> ((list number) --> (list (list number))))\n(fn n-queens.all_Ns?) : (number --> ((list number) --> boolean))\n(fn n-queens.next_n) : (number --> ((list number) --> (list number)))\n(fn n-queens.ok_row?) : ((list number) --> boolean)\n(fn n-queens.ok_diag?) : ((list number) --> boolean)\n(fn n-queens.ok_diag_N?) : (number --> (number --> ((list number) --> boolean)))\n\nrun time: 9.3562900000000013 secs\n\ntypechecked in 40856 inferences\n\nrun time: 9.363948999999991 secs\npassed\n"
+        },
+        {
+          "id": "canonical/23/004",
+          "status": "PASS",
+          "observation": "(n-queens 5) = [[4 2 5 3 1] [3 5 2 4 1] [5 3 1 4 2] [4 1 3 5 2] [5 2 4 1 3] [1 4 2 5 3] [2 5 3 1 4] [1 3 5 2 4] [3 1 4 2 5] [2 4 1 3 5]]\n\nrun time: 0.90186900000000492 secs\npassed\n"
+        },
+        {
+          "id": "canonical/23/005",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.900000000887303e-05 secs\npassed\npassed ... 88\nfailed ... 5\npass rate ... 94.623655913978496%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/24/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.499999999055035e-05 secs\npassed\n"
+        },
+        {
+          "id": "canonical/24/002",
+          "status": "PASS",
+          "observation": "(load \"search.shen\") = loaded\n(fn breadth-first) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))\n(fn b*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))\n(fn some) : ((A --> boolean) --> ((list A) --> boolean))\n(fn depth) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))\n(fn d*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))\n(fn hill) : ((state --> number) --> (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean))))\n(fn h*) : ((state --> number) --> ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean))))\n(fn order_states) : ((state --> number) --> ((list state) --> (list state)))\n(fn bsort) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))\n(fn bsort*) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))\n\nrun time: 8.5844969999999989 secs\n\ntypechecked in 44211 inferences\n\nrun time: 8.5857960000000162 secs\npassed\n"
+        },
+        {
+          "id": "canonical/24/003",
+          "status": "PASS",
+          "observation": "(tc -) = false\n\nrun time: 1.3999999993075107e-05 secs\npassed\npassed ... 91\nfailed ... 5\npass rate ... 94.791666666666657%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/25/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.3999999993075107e-05 secs\npassed\n"
+        },
+        {
+          "id": "canonical/25/002",
+          "status": "PASS",
+          "observation": "(load \"montague.shen\") = loaded\nt#type : symbol\nf#type : symbol\n(fn <sent>) : ((list t) ==> f)\n(fn <np>) : ((list t) ==> ((t --> f) --> f))\n(fn name?) : (t --> boolean)\n(fn <cn>) : ((list t) ==> (t --> f))\n(fn common-noun?) : (t --> boolean)\n(fn <rcn>) : ((list t) ==> (t --> f))\n(fn <vp>) : ((list t) ==> (t --> f))\n(fn <intrans>) : ((list t) ==> (t --> f))\n(fn intrans?) : (t --> boolean)\n(fn <trans>) : ((list t) ==> (t --> (t --> f)))\n(fn trans?) : (t --> boolean)\n(fn <det>) : ((list t) ==> ((t --> f) --> ((t --> f) --> f)))\n\nrun time: 34.291029000000009 secs\n\ntypechecked in 57003 inferences\n\nrun time: 34.292573000000004 secs\npassed\n"
+        },
+        {
+          "id": "canonical/25/003",
+          "status": "FAIL",
+          "observation": "(compile (fn <sent>) (cons Mary (cons likes (cons John ())))) = [likes Mary John]\n\nfailed with error unknown primitive or wrong arguments: t\nfailed; continue? (y/n) \npassed ... 93\nfailed ... 6\npass rate ... 93.939393939393938%\n\nok\n\n"
+        },
+        {
+          "id": "canonical/26/001",
+          "status": "PASS",
+          "observation": "(tc +) = true\n\nrun time: 1.3999999964653398e-05 secs\npassed\n"
+        },
+        {
+          "id": "canonical/26/002",
+          "status": "UNKNOWN",
+          "observation": "(load \"c-minus.shen\") = loaded\n"
+        },
+        {
+          "id": "canonical/27/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/27/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/27/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/27/004",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/27/005",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/28/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/28/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/28/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/29/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/29/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/29/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/29/004",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/30/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/30/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/30/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/30/004",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/30/005",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/31/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/31/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/31/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/31/004",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/31/005",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/32/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/32/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/32/003",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/32/004",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/33/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/33/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/34/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/34/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/35/001",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/35/002",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "canonical/35/003",
+          "status": "UNKNOWN"
+        }
+      ],
+      "counts": {
+        "PASS": 94,
+        "FAIL": 6,
+        "UNKNOWN": 34
+      },
+      "denominator": 134,
+      "status": "FAIL"
+    },
+    "bundled_extensions": {
+      "argv": [
+        "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+        "script",
+        "tests/extensions/runme.shen"
+      ],
+      "cwd": "/workspace/scratch/3e502de53f0d/shen-koka/kernel",
+      "exit_code": 1,
+      "blocker": null,
+      "seconds": 13.567985909998242,
+      "logs": {
+        "stdout": {
+          "sha256": "2e991ea199fc4c9ba150d39ef76433caedd6ef3207c92d42617dbba9713493c2",
+          "bytes": 1515
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "complete_reports": false,
+      "assertions": [
+        {
+          "id": "extensions/ppm/001",
+          "name": "simple custom pattern",
+          "status": "FAIL",
+          "observation": "simple custom pattern"
+        },
+        {
+          "id": "extensions/ppm/002",
+          "name": "repeated variable success",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/003",
+          "name": "repeated variable failure",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/004",
+          "name": "nested custom pattern",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/005",
+          "name": "built-in cons pattern still works",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/006",
+          "name": "built-in literal list pattern still works",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/007",
+          "name": "unregister handler",
+          "status": "UNKNOWN"
+        },
+        {
+          "id": "extensions/ppm/008",
+          "name": "custom pattern definition fails after unregister",
+          "status": "UNKNOWN"
+        }
+      ],
+      "counts": {
+        "PASS": 0,
+        "FAIL": 1,
+        "UNKNOWN": 7
+      },
+      "denominator": 8,
+      "status": "FAIL"
+    }
+  },
+  "regressions": [],
+  "status": "FAIL"
+}

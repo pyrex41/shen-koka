@@ -3,8 +3,10 @@
 Research and implementation plan for a complete Shen port using Koka, with
 Bifrost comparison gates and Yggdrasil standalone artifacts.
 
-Status on 2026-10-11: planning, dependency toolchains, and comparison scaffolding.
-The Shen runtime, Shen compiler, launcher, and port qualification are pending.
+Status on 2026-10-11: experimental Koka KLambda interpreter and pinned S42
+kernel boot implemented. Full-port qualification is pending.
+See [implementation progress](docs/implementation-status.md) and `evidence/`
+for executed results, limitations, and reproduction commands.
 
 - [Full port plan](PLAN.md): architecture choices, semantics, phases, and exit gates.
 - [Research](docs/research.md): checked sources, corrections to the effect sketch,
@@ -14,7 +16,7 @@ The Shen runtime, Shen compiler, launcher, and port qualification are pending.
 - [Source inventory](research/source-inventory.json): observed checkout and remote
   identities, kernel hashes, and toolchain candidate.
 
-The proposed starting point is a KLambda runtime executing the pinned Shen
+The implemented starting point is a KLambda runtime executing the pinned Shen
 kernel. Native Koka compilation and effect-based search follow behind comparison
 gates. This retains Shen's compiler, typechecker, Prolog, YACC, packages, and
 dynamic evaluation while those gates are established.

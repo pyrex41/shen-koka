@@ -1,0 +1,45 @@
+(fn extension-tests.reset)
+(fn extension-tests.pass)
+(fn extension-tests.fail)
+(fn extension-tests.assert-equal)
+(fn extension-tests.assert-error)
+(fn extension-tests.finish)
+
+run time: 0.003073738999999992 secs
+(fn shen.x.programmable-pattern-matching.apply-pattern-handlers)
+(fn shen.x.programmable-pattern-matching.make-stack)
+(fn shen.x.programmable-pattern-matching.push)
+(fn shen.x.programmable-pattern-matching.pop-all)
+(fn shen.x.programmable-pattern-matching.surface-pattern)
+(fn shen.x.programmable-pattern-matching.surface-pattern-tail)
+(fn shen.x.programmable-pattern-matching.compile-pattern)
+(fn shen.x.programmable-pattern-matching.compile-pattern-h)
+(fn shen.x.programmable-pattern-matching.reduce)
+(fn shen.x.programmable-pattern-matching.initialise)
+(fn shen.x.programmable-pattern-matching.register-handler)
+(fn shen.x.programmable-pattern-matching.findpos)
+(fn shen.x.programmable-pattern-matching.findpos-h)
+(fn shen.x.programmable-pattern-matching.remove-nth)
+(fn shen.x.programmable-pattern-matching.unregister-handler)
+
+run time: 0.009906454000000009 secs
+loaded
+(fn ppm.two-handler)
+shen.x.programmable-pattern-matching.done
+ppm.two-handler
+
+run time: 0.01118566600000001 secs
+loaded
+(fn ppm.match-simple)
+(fn ppm.match-repeat)
+(fn ppm.match-nested)
+(fn ppm.match-cons)
+(fn ppm.match-literal-list)
+
+run time: 0.001361420000000002 secs
+loaded
+not ok - simple custom pattern
+  expected (1 2), got no
+ok
+partial function ppm.match-repeat;
+track ppm.match-repeat?  (y/n) 

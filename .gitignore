@@ -4,3 +4,7 @@ __pycache__/
 .koka/
 result
 result-*
+
+.build/
+
+.shen-kernel-cache.*
