@@ -1,0 +1,25 @@
+{
+  "name": "shen-koka-semantic-seed",
+  "root": ".",
+  "programs_dir": "programs",
+  "default_cwd": ".",
+  "cases": [
+    {"name": "arithmetic", "mode": "eval", "expr": "(+ 20 22)", "expect": "output", "golden": "42"},
+    {"name": "ordinary-fail-sentinel", "mode": "eval", "expr": "(fail)", "expect": "output", "golden": "shen.fail!"},
+    {"name": "fail-is-not-error", "mode": "eval", "expr": "(trap-error (fail) (/. E caught))", "expect": "output", "golden": "shen.fail!"},
+    {"name": "false-is-a-value", "mode": "eval", "expr": "(trap-error false (/. E caught))", "expect": "output", "golden": "false"},
+    {"name": "if-is-nonstrict", "mode": "eval", "expr": "(if true 7 (simple-error \"untaken\"))", "expect": "output", "golden": "7"},
+    {"name": "and-is-nonstrict", "mode": "eval", "expr": "(and false (simple-error \"untaken\"))", "expect": "output", "golden": "false"},
+    {"name": "trap-operand-error", "mode": "eval", "expr": "(trap-error (<-vector (simple-error \"boom\") 1) (/. E 42))", "expect": "output", "golden": "42"},
+    {"name": "freeze-captures-lexical-value", "mode": "eval", "expr": "(let X 9 (thaw (freeze X)))", "expect": "output", "golden": "9"},
+    {"name": "freeze-escapes-in-lambda", "mode": "eval", "expr": "(let G (freeze 7) ((/. Y (thaw G)) 0))", "expect": "output", "golden": "7"},
+    {"name": "thaw-repeats-effects", "mode": "eval", "expr": "(let Ignore (set koka.thaw-count 0) (let F (freeze (set koka.thaw-count (+ (value koka.thaw-count) 1))) (do (thaw F) (thaw F))))", "expect": "output", "golden": "2"},
+    {"name": "vector-update-preserves-alias", "mode": "eval", "expr": "(let V (absvector 2) (let W V (do (address-> W 1 7) (<-address V 1))))", "expect": "output", "golden": "7"},
+    {"name": "vector-empty-slot-sentinel", "mode": "eval", "expr": "(<-address (absvector 3) 0)", "expect": "output", "golden": "shen.fail!"},
+    {"name": "operand-evaluation-order", "mode": "eval", "expr": "(let Ignore (set koka.order 0) (let R (+ (set koka.order 1) (set koka.order 2)) (value koka.order)))", "expect": "output", "golden": "2"},
+    {"name": "intern-true", "mode": "eval", "expr": "(= (intern \"true\") true)", "expect": "output", "golden": "true"},
+    {"name": "divide-zero-is-catchable", "mode": "eval", "expr": "(trap-error (/ 1 0) (/. E divide-by-zero))", "expect": "output", "golden": "divide-by-zero"},
+    {"name": "walk-first-success", "mode": "script", "program": "walk.shen", "expect": "output", "golden": "3"},
+    {"name": "prolog-first-solution", "mode": "script", "program": "prolog.shen", "expect": "output", "golden": "bart"}
+  ]
+}

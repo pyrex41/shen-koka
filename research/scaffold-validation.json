@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "scope": "constructed report controls only; no Shen runtime executed",
+  "status": "PASS",
+  "controls": [
+    {
+      "name": "complete synthetic report with Bifrost trailing matrix",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "missing required implementation",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    },
+    {
+      "name": "PASS verdict hiding SKIP cell",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    },
+    {
+      "name": "missing required case",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    },
+    {
+      "name": "PASS cell with wrong golden",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "name": "known divergence",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "exit_code": 1
+    },
+    {
+      "name": "empty case set",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    },
+    {
+      "name": "truncated object",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    },
+    {
+      "name": "empty report",
+      "expected_status": "UNKNOWN",
+      "observed_status": "UNKNOWN",
+      "exit_code": 2
+    }
+  ]
+}

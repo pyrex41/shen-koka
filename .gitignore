@@ -1,0 +1,6 @@
+artifacts/
+__pycache__/
+.direnv/
+.koka/
+result
+result-*

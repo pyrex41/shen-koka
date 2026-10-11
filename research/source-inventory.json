@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-10-11",
+  "scope": "read-only source inventory, not build or semantic qualification",
+  "repositories": {
+    "bifrost": {
+      "repository": "https://github.com/pyrex41/bifrost",
+      "local_head": "65236412511ace29934163cc21a418de4223b234",
+      "remote_head_observed_via_github_api": "65236412511ace29934163cc21a418de4223b234",
+      "local_status_porcelain": [
+        "?? .direnv/"
+      ],
+      "qualification": "UNKNOWN",
+      "tracked_dirty": false,
+      "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e"
+    },
+    "yggdrasil": {
+      "repository": "https://github.com/pyrex41/yggdrasil",
+      "local_head": "a40d8c5b6ed1eb2b5d7a4511e61d0304ce9a2e3d",
+      "remote_head_observed_via_github_api": "a40d8c5b6ed1eb2b5d7a4511e61d0304ce9a2e3d",
+      "local_status_porcelain": [],
+      "qualification": "UNKNOWN",
+      "tracked_dirty": false,
+      "kernel_directory": "KLambda",
+      "kernel_sha256_by_file": {
+        "backend.kl": "e44927e9ae037180a15f397ccb5856076700290b10aafe0499659a2e2e4e740d",
+        "core.kl": "f2477d4151c3ecd2d76c8f2b58ec577a6dc830392e0afd342e2fdb3d1adb1a75",
+        "declarations.kl": "4d7c169ffba20bbbca00d2785eb498df268c0d57f3dda9ff0042ae9f5d51b9da",
+        "load.kl": "56eba5b674e5085a09dfa38390b1e7f677496e0c601fd3ed6f482577bcf971c9",
+        "macros.kl": "7b5cfd98a676e2733f5de090d19388ed9270c70ff301769b814983cb978ed7c5",
+        "prolog.kl": "dc401f8940f7f97fbfc87157338ff8b84fd845c1101b70e6db893886aaf11c17",
+        "reader.kl": "ec5dafa613ffdff36fe5c0b98beb2381625b635e4b3db621dded01e30ebdb397",
+        "sequent.kl": "b1018c6d58706f78ac81cc72cf7c4712d36d1be173708ff9def26d0169ddd644",
+        "sys.kl": "964156c922e844560b6675898e304317a524c0d617941730af1a32636c3d2418",
+        "t-star.kl": "ee6e5e6e15b2224964151a6a5f6f04b121bfc957597277bc2b70141d4a812776",
+        "toplevel.kl": "eb10d13f31087ade803c0831bb2a9b7facac1040f506803313937b22fbb3f90a",
+        "track.kl": "a7d2ad7952540fc4f022ac7ff1773477bb82977e6ff5fbde1d25c8e418b849aa",
+        "types.kl": "b0c8c5a2a76c9dadef7cfc5cc5db2f60c6cc7a816dd7ff5ee4a7da52db6cb531",
+        "writer.kl": "3894e6c7d3961d2715fcc2aa9ea7d28805790b0bbdd072966b126fc95ecaf51d",
+        "yacc.kl": "192880765a29ae6801ef9088a7511e4477be998e6c16ab82f3cc3a2087727f00"
+      },
+      "kernel_set_sha256": "d4167c9c59a26c754070794114d86ec22637d6899cbb01cb3c18f8ea0d82a522",
+      "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e"
+    },
+    "shen-lua": {
+      "repository": "https://github.com/pyrex41/shen-lua",
+      "local_head": "614cd0754a741c8070c467b2b07f07943d17f4ff",
+      "remote_head_observed_via_github_api": "fc9757731580f77aad6b3b4cea53773261b36d44",
+      "local_status_porcelain": [
+        "M compiler.lua",
+        " M prims.lua",
+        " M scripts/run-tests.lua",
+        "?? .direnv/",
+        "?? bench/pattern_facts_ab.lua",
+        "?? test/pattern_facts_spec.lua"
+      ],
+      "qualification": "UNKNOWN",
+      "tracked_dirty": true,
+      "kernel_directory": "klambda",
+      "kernel_sha256_by_file": {
+        "backend.kl": "e44927e9ae037180a15f397ccb5856076700290b10aafe0499659a2e2e4e740d",
+        "core.kl": "f2477d4151c3ecd2d76c8f2b58ec577a6dc830392e0afd342e2fdb3d1adb1a75",
+        "declarations.kl": "4d7c169ffba20bbbca00d2785eb498df268c0d57f3dda9ff0042ae9f5d51b9da",
+        "extension-expand-dynamic.kl": "8082565272e0af4ce387f54e87fa8c0c068a0a3fe01912dc8827e59255f6a452",
+        "extension-features.kl": "ddfd78ad589d615f813538e282131330c9a9827989a6359a55a9d5f909b390ac",
+        "extension-launcher.kl": "427b58111bb63cd4a9393ccc79140c5e55510140c30948c331a6b477c03168b8",
+        "extension-programmable-pattern-matching.kl": "40ca7e0debf535dfca9054f0ab00efd1c84b57987269406505a63de72164550f",
+        "load.kl": "56eba5b674e5085a09dfa38390b1e7f677496e0c601fd3ed6f482577bcf971c9",
+        "macros.kl": "7b5cfd98a676e2733f5de090d19388ed9270c70ff301769b814983cb978ed7c5",
+        "prolog.kl": "dc401f8940f7f97fbfc87157338ff8b84fd845c1101b70e6db893886aaf11c17",
+        "reader.kl": "ec5dafa613ffdff36fe5c0b98beb2381625b635e4b3db621dded01e30ebdb397",
+        "sequent.kl": "b1018c6d58706f78ac81cc72cf7c4712d36d1be173708ff9def26d0169ddd644",
+        "sys.kl": "964156c922e844560b6675898e304317a524c0d617941730af1a32636c3d2418",
+        "t-star.kl": "ee6e5e6e15b2224964151a6a5f6f04b121bfc957597277bc2b70141d4a812776",
+        "toplevel.kl": "eb10d13f31087ade803c0831bb2a9b7facac1040f506803313937b22fbb3f90a",
+        "track.kl": "a7d2ad7952540fc4f022ac7ff1773477bb82977e6ff5fbde1d25c8e418b849aa",
+        "types.kl": "b0c8c5a2a76c9dadef7cfc5cc5db2f60c6cc7a816dd7ff5ee4a7da52db6cb531",
+        "writer.kl": "3894e6c7d3961d2715fcc2aa9ea7d28805790b0bbdd072966b126fc95ecaf51d",
+        "yacc.kl": "192880765a29ae6801ef9088a7511e4477be998e6c16ab82f3cc3a2087727f00"
+      },
+      "kernel_set_sha256": "8538f03b6d2a9ba804b362849f85e40c08f07bb14f283e9197803d5fb6396b6d",
+      "flake_lock_sha256": "ac1b29b7be5afafd4cb045fa8bb41db1d08b903afcfdbbfc9a042d0bdea0dfd6"
+    },
+    "shen-go": {
+      "repository": "https://github.com/pyrex41/shen-go",
+      "local_head": "c22151dc55cafac7e5b904b8c58c6280c38801b2",
+      "remote_head_observed_via_github_api": "219e2d6b1526b8fc302854f8daf41af2f8812a8f",
+      "local_status_porcelain": [
+        "?? .direnv/",
+        "?? .worktrees/",
+        "?? codegen/_aotexec-1746363581/"
+      ],
+      "qualification": "UNKNOWN",
+      "tracked_dirty": false,
+      "kernel_directory": "kernel/klambda",
+      "kernel_sha256_by_file": {
+        "backend.kl": "e44927e9ae037180a15f397ccb5856076700290b10aafe0499659a2e2e4e740d",
+        "core.kl": "f2477d4151c3ecd2d76c8f2b58ec577a6dc830392e0afd342e2fdb3d1adb1a75",
+        "declarations.kl": "4d7c169ffba20bbbca00d2785eb498df268c0d57f3dda9ff0042ae9f5d51b9da",
+        "extension-expand-dynamic.kl": "8082565272e0af4ce387f54e87fa8c0c068a0a3fe01912dc8827e59255f6a452",
+        "extension-features.kl": "ddfd78ad589d615f813538e282131330c9a9827989a6359a55a9d5f909b390ac",
+        "extension-launcher.kl": "427b58111bb63cd4a9393ccc79140c5e55510140c30948c331a6b477c03168b8",
+        "extension-programmable-pattern-matching.kl": "40ca7e0debf535dfca9054f0ab00efd1c84b57987269406505a63de72164550f",
+        "load.kl": "56eba5b674e5085a09dfa38390b1e7f677496e0c601fd3ed6f482577bcf971c9",
+        "macros.kl": "7b5cfd98a676e2733f5de090d19388ed9270c70ff301769b814983cb978ed7c5",
+        "prolog.kl": "dc401f8940f7f97fbfc87157338ff8b84fd845c1101b70e6db893886aaf11c17",
+        "reader.kl": "ec5dafa613ffdff36fe5c0b98beb2381625b635e4b3db621dded01e30ebdb397",
+        "sequent.kl": "b1018c6d58706f78ac81cc72cf7c4712d36d1be173708ff9def26d0169ddd644",
+        "sys.kl": "964156c922e844560b6675898e304317a524c0d617941730af1a32636c3d2418",
+        "t-star.kl": "ee6e5e6e15b2224964151a6a5f6f04b121bfc957597277bc2b70141d4a812776",
+        "toplevel.kl": "eb10d13f31087ade803c0831bb2a9b7facac1040f506803313937b22fbb3f90a",
+        "track.kl": "a7d2ad7952540fc4f022ac7ff1773477bb82977e6ff5fbde1d25c8e418b849aa",
+        "types.kl": "b0c8c5a2a76c9dadef7cfc5cc5db2f60c6cc7a816dd7ff5ee4a7da52db6cb531",
+        "writer.kl": "3894e6c7d3961d2715fcc2aa9ea7d28805790b0bbdd072966b126fc95ecaf51d",
+        "yacc.kl": "192880765a29ae6801ef9088a7511e4477be998e6c16ab82f3cc3a2087727f00"
+      },
+      "kernel_set_sha256": "8538f03b6d2a9ba804b362849f85e40c08f07bb14f283e9197803d5fb6396b6d",
+      "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e"
+    }
+  },
+  "koka_candidate": {
+    "version": "v3.2.8",
+    "tag_object_sha": "c92ed23faa7d2fbe90f376c4288171a32d06f873",
+    "commit_sha": "68ad565235a9a238010e039e51b43fe592f4fd1e",
+    "installed_on_path": false,
+    "qualification": "UNKNOWN"
+  },
+  "development_toolchain": {
+    "nixpkgs_revision": "ac6b2166e7a9375683b8e98f860f273222337b16",
+    "koka_version_from_nix_evaluation": "3.2.3",
+    "flake_lock_sha256": "d945bdc714c860cdffbf51fadefe327b61cbcd9e0a6cf2fcb9a98cc76712231e",
+    "evaluation": "PASS for declared aarch64-darwin, aarch64-linux, x86_64-linux outputs",
+    "native_build": "PASS on aarch64-darwin; nix build path:.#toolchain --no-link",
+    "native_compile_run": "PASS on aarch64-darwin; nix develop --command python3, temporary smoke.kk through koka --exec",
+    "linux_build_execution": "UNKNOWN; evaluated outputs only",
+    "comparison_shell": "PASS on aarch64-darwin: Go1.27.0, LuaJIT2.1.1774638290, GOTOOLCHAIN=local"
+  }
+}
