@@ -14,6 +14,7 @@ class Inventory(unittest.TestCase):
  def test_new_profile(self):
   lock=ROOT/'comparison/shen42.2-suite.lock.json'
   dist=ROOT/'vendor/ShenOSKernel-42.2'
+  self.assertEqual(json.loads(lock.read_text())['canonical']['entrypoint'],'runme.shen')
   actual=i.inventory(lock,dist)
   self.assertEqual(len(actual),266)
   self.assertEqual(actual,json.loads((ROOT/'comparison/shen42.2-assertions.json').read_text()))

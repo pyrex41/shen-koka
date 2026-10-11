@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "runtime": "Shen-Go",
+  "runtime_revision": "1f587de815e2583e204398f3b2989a88154ca192",
+  "build_modified": false,
+  "compiler": "Go 1.27.0 from repository pinned Nix environment",
+  "platform": "aarch64-darwin",
+  "runtime_version_output": "42.2 (port (\"Go\" \"1.0.0-rc1\") implementation (\"AOT+interpreter\" \"go1.27.0\"))",
+  "binary_sha256": "dda797e298293ab43f73dedeb7d7fb2f4823f8f4b01c45126d3a8b71a3e7b17e",
+  "suite_lock_sha256": "3e5ae2219e0cbf7a93ca858cbe3f60463120006eff1fb51df39ce8b6c0f0ba00",
+  "distribution_sha256": "1d02273003654d34ec020ae67cb214ecec410dee3350419ff807d82b652678d8",
+  "raw_report_sha256": "629691351711224d95c6001a617f42f305de5ff157029feffbebfa56e98512c3",
+  "language_suite_status": "PASS",
+  "release_qualification": "UNKNOWN",
+  "lanes": {
+    "canonical": {
+      "exit_code": 0,
+      "truncated": false,
+      "logs": {
+        "stdout": {
+          "sha256": "467c5909c6b93c53e03428ca20bc8698341c36b073ad1a4e8d4c5ad77d2e407a",
+          "bytes": 38005
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "group_reports": [
+        [
+          6,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          19,
+          0
+        ],
+        [
+          26,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          34,
+          0
+        ],
+        [
+          38,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          44,
+          0
+        ],
+        [
+          47,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          55,
+          0
+        ],
+        [
+          59,
+          0
+        ],
+        [
+          61,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          71,
+          0
+        ],
+        [
+          77,
+          0
+        ],
+        [
+          82,
+          0
+        ],
+        [
+          84,
+          0
+        ],
+        [
+          97,
+          0
+        ],
+        [
+          102,
+          0
+        ],
+        [
+          105,
+          0
+        ],
+        [
+          108,
+          0
+        ],
+        [
+          110,
+          0
+        ],
+        [
+          115,
+          0
+        ],
+        [
+          118,
+          0
+        ],
+        [
+          122,
+          0
+        ],
+        [
+          127,
+          0
+        ],
+        [
+          132,
+          0
+        ],
+        [
+          136,
+          0
+        ],
+        [
+          138,
+          0
+        ],
+        [
+          140,
+          0
+        ],
+        [
+          143,
+          0
+        ]
+      ],
+      "complete_reports": true,
+      "counts": {
+        "PASS": 143,
+        "FAIL": 0,
+        "UNKNOWN": 0
+      },
+      "denominator": 143,
+      "status": "PASS"
+    },
+    "bundled_extensions": {
+      "exit_code": 0,
+      "truncated": false,
+      "logs": {
+        "stdout": {
+          "sha256": "27aa06f76c5b0f327f5a02ce7d00655cd7544f5edf2f1bb6681aeb2beadb3506",
+          "bytes": 11248
+        },
+        "stderr": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "complete_reports": true,
+      "counts": {
+        "PASS": 123,
+        "FAIL": 0,
+        "UNKNOWN": 0
+      },
+      "denominator": 123,
+      "status": "PASS"
+    }
+  }
+}

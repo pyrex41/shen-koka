@@ -80,7 +80,7 @@
     "yacc.shen": "34dac587cba3712fd41ca2107eeae90b6dd79101fc3efdf935b9f475b1365e29"
   },
   "canonical": {
-    "entrypoint": "kerneltests.shen",
+    "entrypoint": "runme.shen",
     "assertion_count": 143,
     "groups": [
       {

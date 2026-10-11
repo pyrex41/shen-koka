@@ -1,0 +1,414 @@
+(fn extension-tests.reset)
+(fn extension-tests.pass)
+(fn extension-tests.fail)
+(fn extension-tests.assert-equal)
+(fn extension-tests.assert-error)
+(fn extension-tests.finish)
+
+run time: 0.0016854159999999986 secs
+(fn shen.x.features.cond-expand-macro)
+(fn shen.x.features.current)
+(fn shen.x.features.initialise)
+(fn shen.x.features.add)
+
+run time: 0.004523500000000003 secs
+loaded
+shen.x.features.initialise
+shen.x.features.current
+shen.x.features.add
+[]
+ok - features initialise has a type
+ok
+ok - features current has a type
+ok
+ok - features add has a type
+ok
+ok - features initialise updates the feature list
+ok
+ok - features add returns the previous feature list
+ok
+ok - features add updates the feature list
+ok
+
+run time: 0.0062077500000000015 secs
+(fn shen.x.programmable-pattern-matching.apply-pattern-handlers)
+(fn shen.x.programmable-pattern-matching.make-stack)
+(fn shen.x.programmable-pattern-matching.push)
+(fn shen.x.programmable-pattern-matching.pop-all)
+(fn shen.x.programmable-pattern-matching.surface-pattern)
+(fn shen.x.programmable-pattern-matching.surface-pattern-tail)
+(fn shen.x.programmable-pattern-matching.surface-application)
+(fn shen.x.programmable-pattern-matching.compile-pattern)
+(fn shen.x.programmable-pattern-matching.compile-pattern-h)
+(fn shen.x.programmable-pattern-matching.reduce)
+(fn shen.x.programmable-pattern-matching.initialise)
+(fn shen.x.programmable-pattern-matching.register-handler)
+(fn shen.x.programmable-pattern-matching.findpos)
+(fn shen.x.programmable-pattern-matching.findpos-h)
+(fn shen.x.programmable-pattern-matching.remove-nth)
+(fn shen.x.programmable-pattern-matching.unregister-handler)
+
+run time: 0.012342124999999995 secs
+loaded
+(fn ppm.two-handler)
+(fn ppm.nothing-handler)
+(fn ppm.first-handler)
+shen.x.programmable-pattern-matching.done
+ppm.two-handler
+ppm.nothing-handler
+ppm.first-handler
+ppm.pattern-types#type
+
+run time: 0.034519916 secs
+loaded
+(fn ppm.match-simple)
+(fn ppm.match-repeat)
+(fn ppm.match-nested)
+(fn ppm.match-cons)
+(fn ppm.match-literal-list)
+
+run time: 0.0011496669999999931 secs
+loaded
+true
+(fn ppm.match-typed-surface) : ((number * string) --> boolean)
+(fn ppm.match-typed-binding) : ((number * string) --> number)
+(fn ppm.match-typed-nested) : (((number * string) * boolean) --> number)
+(fn ppm.match-typed-binary) : (ppm-pair --> boolean)
+(fn ppm.match-typed-nullary) : (symbol --> boolean)
+
+run time: 0.0035403329999999927 secs
+
+typechecked in 984 inferences
+loaded
+false
+ok - register-handler has a type
+ok
+ok - unregister-handler has a type
+ok
+ok - registration can be sequenced with do
+ok
+ok - simple custom pattern
+ok
+ok - repeated variable success
+ok
+ok - repeated variable failure
+ok
+ok - nested custom pattern
+ok
+ok - typed custom pattern uses its surface form
+ok
+ok - typed custom pattern binds its component type
+ok
+ok - nested typed custom pattern
+ok
+ok - typed binary custom pattern
+ok
+ok - typed nullary custom pattern
+ok
+ok - typed nullary custom pattern fallback
+ok
+ok - typed custom pattern rejects an incompatible binding type
+ok
+ok - built-in cons pattern still works
+ok
+ok - built-in literal list pattern still works
+ok
+ok - unregister handler
+ok
+ok - unregister nullary handler
+ok
+ok - unregister typed handler
+ok
+ok - custom pattern definition fails after unregister
+ok
+
+run time: 0.042937499999999997 secs
+(fn shen.x.type-annotations.annotate-kl)
+(fn shen.x.type-annotations.function-type)
+(fn shen.x.type-annotations.reify-type)
+(fn shen.x.type-annotations.type-table)
+(fn shen.x.type-annotations.annotate)
+(fn shen.x.type-annotations.annotate-cases)
+(fn shen.x.type-annotations.atom-type)
+
+run time: 0.006536417000000003 secs
+loaded
+true
+(fn type-annotations-tests.string=) : (string --> (string --> boolean))
+(fn type-annotations-tests.identity) : (A --> A)
+(fn type-annotations-tests.list-head) : ((list A) --> A)
+
+run time: 0.001875957999999997 secs
+
+typechecked in 1341 inferences
+loaded
+false
+(fn type-annotations-tests.compound-annotation?)
+ok - concrete parameter types are added
+ok
+ok - polymorphic parameters remain unannotated
+ok
+ok - known applications annotate literals
+ok
+ok - unknown signatures are left alone
+ok
+ok - existing annotations are preserved
+ok
+ok - compound polymorphic types use Shen variables
+ok
+
+run time: 0.011389125 secs
+[]
+(fn source-tests.sequence)
+(fn source-tests.callable)
+(fn source-tests.message)
+ok - hooks do not belong to the system-function external list
+ok
+ok - qualified hooks are preserved by normal package processing
+ok
+ok - registration hook has callable arity metadata
+ok
+ok - registration hook has a type
+ok
+ok - removal hook has a type
+ok
+source-tests.sequence
+ok - source sequence preserves order
+ok
+ok - empty expansion is allowed
+ok
+ok - raw reader does not expand source forms
+ok
+ok - file reading uses the hook
+ok
+ok - line reading at EOF uses the hook
+ok
+ok - single-form reading uses the hook
+ok
+ok - arity discovery sees all expanded definitions
+ok
+source-tests.package
+ok - handler results may contain packages
+ok
+source-tests.failure
+ok - handler error propagates from string reader
+ok
+ok - handler error propagates from file reader
+ok
+ok - handler error is not incomplete interactive input
+ok
+0
+source-tests.empty
+ok - empty expansion consumes exactly its own line
+ok - following line remains unread
+ok - empty handler is not retried
+ok
+source-tests.sequence
+ok - register replaces the existing exact head
+ok
+ok - qualified head is not confused with an unqualified one
+ok
+source-tests.invalid
+ok - improper handler output is rejected
+ok
+ok - package cannot be replaced
+ok
+ok - variable heads are rejected
+ok
+[source-tests.sequence source-tests.package source-tests.failure source-tests.invalid source-tests.empty]
+source-tests.sequence
+ok - unregister is idempotent and restores the initial registry
+ok
+shen.register-source-form
+shen.unregister-source-form
+true
+ok - source initialisation installs the registration callable without externals
+ok
+ok - source initialisation installs the removal callable without externals
+ok
+
+run time: 0.008893125000000002 secs
+(fn shen.x.namespaces.initialise)
+(fn shen.x.namespaces.expand)
+(fn shen.x.namespaces.header)
+(fn shen.x.namespaces.add-use)
+(fn shen.x.namespaces.body-forms)
+(fn shen.x.namespaces.name?)
+(fn shen.x.namespaces.external-symbols)
+(fn shen.x.namespaces.qualify)
+(fn shen.x.namespaces.qualify-list)
+(fn shen.x.namespaces.import-name)
+(fn shen.x.namespaces.member-after)
+
+run time: 0.008045958000000006 secs
+loaded
+shen.x.namespace
+[]
+(fn namespace-tests.vocabulary)
+namespace-tests.record
+namespace-tests.assembly
+namespace-tests.generated
+
+run time: 0.002268416999999995 secs
+loaded
+(fn namespace-tests.model.box.new)
+(fn namespace-tests.model.box.value)
+(fn namespace-tests.model.make)
+(fn namespace-tests.model.tag)
+(fn namespace-tests.client.compute-value)
+(fn namespace-tests.client.full-reference)
+(fn namespace-tests.client.reference)
+(fn namespace-tests.client.local.field)
+(fn namespace-tests.client.arithmetic)
+(fn namespace-tests-global-twice)
+(fn namespace-tests.client.mov)
+(fn namespace-tests.client.call-local)
+(fn namespace-tests.client.qualified-from-scope)
+(fn namespace-tests.client.scoped-label)
+(fn namespace-tests.client.outside-label)
+(fn namespace-tests.client.preserved-reference)
+(fn namespace-tests.client.inherited-external)
+(fn namespace-tests.client.nested-scopes)
+(fn namespace-tests.client.second)
+(fn namespace-tests.generated-owner.box.new)
+(fn namespace-tests.generated-owner.box.value)
+
+run time: 0.004185582999999993 secs
+loaded
+(fn namespace-tests.record-vocabulary)
+ok - namespace is not an extension external
+ok
+ok - unqualified namespace has no source handler
+ok
+ok - namespace remains an ordinary package-local name
+ok
+ok - qualified namespace syntax survives package processing
+ok
+ok - record macros see qualified names even in macro-generated containers
+ok
+ok - scoped assembly vocabulary preserves embedded alias resolution
+ok
+ok - use without renaming preserves full owner references
+ok
+ok - generated accessor need not exist in the owner's internal list
+ok
+ok - aliased symbol has the same identity as data
+ok
+ok - namespace externals preserve data symbols
+ok
+ok - namespace externals permit global definitions
+ok
+ok - multiple files or blocks share local ownership
+ok
+ok - division keeps its ordinary meaning
+ok
+ok - ordinary macro can produce a namespace containing a local scope
+ok
+ok - scoped vocabulary does not affect a same-named local function
+ok
+ok - fully qualified locals remain callable within a vocabulary scope
+ok
+ok - scoped externals preserve dotted data symbols
+ok
+ok - scoped externals do not escape into sibling definitions
+ok
+ok - scoped externals take precedence over aliases
+ok
+ok - scopes inherit namespace externals
+ok
+ok - nested scopes extend and then restore the outer vocabulary
+ok
+ok - local names use existing package metadata
+ok
+ok - namespace externals are recorded
+ok
+ok - scoped externals are not published as namespace externals
+ok
+ok - scoped syntax does not create spurious internal names
+ok
+ok - foreign references are not recorded as local names
+ok
+ok - normalization agrees with equivalent package source
+ok
+ok - explicit members do not require existing owner metadata
+ok
+ok - undeclared dotted prefixes remain local
+ok
+ok - prefix matches require a dot and a member
+ok
+ok - the most specific use wins in either declaration order
+ok
+ok - the most specific use selects the nested owner
+ok
+ok - namespace externals take precedence over aliases
+ok
+ok - scope removal preserves the surrounding expression
+ok
+ok - a scope keyword in argument position is ordinary data
+ok
+ok - an empty scope leaves qualification unchanged
+ok
+ok - literal cons notation is accepted for externals
+ok
+ok - external expressions compose shared vocabularies like package
+ok
+ok - scoped expressions compose vocabulary without escaping
+ok
+ok - existing package metadata can supply external symbols
+ok
+ok - external expressions run before use aliases rewrite their names
+ok
+ok - scoped expressions run before use aliases rewrite their names
+ok
+[]
+ok - evaluated scopes inherit their enclosing vocabularies
+ok
+ok - vocabulary expressions evaluate once in source order
+ok
+ok - evaluated namespace vocabulary is recorded
+ok
+ok - evaluated scoped vocabulary stays out of namespace metadata
+ok
+ok - external expressions must produce lists
+ok
+ok - external expressions must produce proper lists
+ok
+ok - external expressions must produce symbols
+ok
+ok - computed variables cannot be external symbols
+ok
+ok - scoped expressions must produce symbol lists
+ok
+ok - external expression errors propagate unchanged
+ok
+ok - scoped expression errors propagate unchanged
+ok
+ok - duplicate aliases are rejected
+ok
+ok - unrenamed and renamed uses cannot claim the same prefix
+ok
+ok - owners must be non-variable symbols
+ok
+ok - aliases must be non-variable symbols
+ok
+ok - malformed use headers are rejected
+ok
+ok - directives must precede the body
+ok
+ok - externals must precede the body
+ok
+ok - variables cannot be external symbols
+ok
+ok - variables cannot be scoped external symbols
+ok
+ok - with-externals requires an enclosed form
+ok
+ok - with-externals accepts exactly one enclosed form
+ok
+shen.x.namespace
+
+run time: 0.04413637499999999 secs
+
+passed ... 123
+failed ... 0
+

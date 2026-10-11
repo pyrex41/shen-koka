@@ -93,3 +93,13 @@ idempotent source verification, modified-source rejection, wrong-archive
 rejection with no published directory, and mixed-profile comparison rejection
 before execution. The commit hook rejected upstream Windows example paths; the
 fetch workflow preserves those upstream bytes without changing the guard.
+
+Shen-Go's fresh pinned build completed. Corrected attempt 02 passes canonical
+143/143 (all 37 cumulative reports) and extensions 123/123, exit 0 in each lane.
+Raw lane logs and a portable source/build summary are preserved under
+`evidence/shen42.2-go-baseline/`. The first attempt loaded kerneltests directly,
+failed with undefined report, and was retained separately; the new lock now uses
+upstream runme.shen and a regression check enforces the entrypoint. These results
+establish the language-suite baseline on Darwin arm64 only. Numeric, UTF-8,
+StLib-profile, deployment, installation, resources and other platforms remain
+unqualified. This does not qualify the complete ecosystem.

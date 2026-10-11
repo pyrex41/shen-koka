@@ -1,0 +1,1300 @@
+(fn reset)
+test-harness.exec-macro
+(fn test-harness.rcons)
+(fn passed)
+(fn failed)
+(fn test-harness.err)
+test-harness.report-results-macro
+(fn test-harness.create-tests)
+(fn test-harness.results)
+
+run time: 0.005719083 secs
+10000000
+
+lambda table updates: (update-lambda-table append 2) = append
+
+run time: 9.457999999989974e-06 secs
+passed
+lambda table updates: (let F append (let Lambda (fn F) (Lambda (cons 1 ()) (cons 2 ())))) = [1 2]
+
+run time: 2.1250000000194724e-06 secs
+passed
+lambda table updates: (put version shen.lambda-form stale (value *property-vector*)) = stale
+
+run time: 2.209000000003014e-06 secs
+passed
+lambda table updates: (update-lambda-table version 0) = version
+
+run time: 1.6670000000107432e-06 secs
+passed
+lambda table updates: (trap-error (get version shen.lambda-form (value *property-vector*)) (lambda X undefined)) = undefined
+
+run time: 6.3329999999972575e-06 secs
+passed
+lambda table updates: (do (put lambda-table-missing shen.lambda-form stale (value *property-vector*)) (do (update-lambda-table lambda-table-missing -1) (let Result (trap-error (let F lambda-table-missing (fn F)) (lambda X undefined)) (let Clear (unput lambda-table-missing arity (value *property-vector*)) Result)))) = undefined
+
+run time: 6.3329999999972575e-06 secs
+passed
+passed ... 6
+failed ... 0
+pass rate ... 100%
+
+ok
+
+type declaration variancy: ((lambda V728 (lambda L729 (lambda K730 (lambda C731 (let Signature (shen.newpv V728) (shen.gc V728 (do (shen.incinfs) (shen.variancy-signature (receive version) (receive string) Signature V728 L729 K730 (freeze (return Signature V728 L729 K730 C731)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [--> string]
+
+run time: 3.0500000000016625e-05 secs
+passed
+type declaration variancy: ((lambda V732 (lambda L733 (lambda K734 (lambda C735 (do (shen.incinfs) (shen.variancy-signature (receive version) (receive string) (receive (cons --> (cons number ()))) V732 L733 K734 C735)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false
+
+run time: 1.6249999999995435e-05 secs
+passed
+type declaration variancy: ((lambda V736 (lambda L737 (lambda K738 (lambda C739 (let Signature (shen.newpv V736) (shen.gc V736 (do (shen.incinfs) (shen.variancy-signature (receive append) (receive (cons number (cons --> (cons number ())))) Signature V736 L737 K738 (freeze (return Signature V736 L737 K738 C739)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [number --> number]
+
+run time: 1.537499999998415e-05 secs
+passed
+passed ... 9
+failed ... 0
+pass rate ... 100%
+
+ok
+
+cartesian product: (load "cartprod.shen") = loaded
+(fn cartesian-product)
+(fn all-pairs-using-X)
+
+run time: 0.004295291000000007 secs
+
+run time: 0.004319332999999981 secs
+passed
+cartesian product: (cartesian-product (cons 1 (cons 2 (cons 3 ()))) (cons 1 (cons 2 (cons 3 ())))) = [[1 1] [1 2] [1 3] [2 1] [2 2] [2 3] [3 1] [3 2] [3 3]]
+
+run time: 1.9334000000009732e-05 secs
+passed
+passed ... 11
+failed ... 0
+pass rate ... 100%
+
+ok
+
+powerset: (load "powerset.shen") = loaded
+(fn powerset*)
+(fn cons-X-to-each-set)
+
+run time: 0.009959207999999997 secs
+
+run time: 0.009984583000000019 secs
+passed
+powerset: (powerset* (cons 1 (cons 2 (cons 3 ())))) = [[1 2 3] [1 2] [1 3] [1] [2 3] [2] [3] []]
+
+run time: 7.124999999996717e-06 secs
+passed
+passed ... 13
+failed ... 0
+pass rate ... 100%
+
+ok
+
+bubble sort: (load "bubble version 1.shen") = loaded
+(fn bubble-sort)
+(fn bubble)
+(fn bubble-again-perhaps)
+
+run time: 0.0034439170000000185 secs
+
+run time: 0.0034687080000000425 secs
+passed
+bubble sort: (bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]
+
+run time: 1.0208000000011541e-05 secs
+passed
+bubble sort: (load "bubble version 2.shen") = loaded
+(fn bubble-sort)
+(fn bubble)
+
+run time: 0.009075999999999973 secs
+
+run time: 0.009101250000000005 secs
+passed
+bubble sort: (bubble-sort (cons 1 (cons 2 (cons 3 ())))) = [3 2 1]
+
+run time: 3.9292000000024085e-05 secs
+passed
+passed ... 17
+failed ... 0
+pass rate ... 100%
+
+ok
+
+spreadsheet: (load "spreadsheet.shen") = loaded
+(fn assess-spreadsheet)
+(fn assign-fixed-values)
+(fn assign-cell-value)
+(fn fixed-value?)
+(fn get')
+(fn get-row)
+(fn get-cell)
+
+run time: 0.012021333000000023 secs
+
+run time: 0.012075291000000044 secs
+passed
+spreadsheet: (assess-spreadsheet (cons (cons jim (cons (cons wages (cons (lambda Spreadsheet (get' frank wages Spreadsheet)) ())) (cons (cons tax (cons (lambda Spreadsheet (* (get' frank tax Spreadsheet) 0.8)) ())) ()))) (cons (cons frank (cons (cons wages (cons 20000 ())) (cons (cons tax (cons (lambda Spreadsheet (* 0.25 (get' frank wages Spreadsheet))) ())) ()))) ()))) = [[jim [wages 20000] [tax 4000]] [frank [wages 20000] [tax 5000]]]
+
+run time: 3.258400000000217e-05 secs
+passed
+passed ... 19
+failed ... 0
+pass rate ... 100%
+
+ok
+
+primes: (load "prime.shen") = loaded
+(fn prime*?)
+(fn prime*)
+
+run time: 0.003748833000000007 secs
+
+run time: 0.0037735829999999693 secs
+passed
+primes: (prime*? 1000003) = true
+
+run time: 0.07149654100000002 secs
+passed
+primes: (load "mutual.shen") = loaded
+(fn even*?)
+(fn odd*?)
+
+run time: 0.007216915999999962 secs
+
+run time: 0.007242040999999977 secs
+passed
+primes: (even*? 56) = true
+
+run time: 7.332999999998258e-06 secs
+passed
+primes: (odd*? 77) = true
+
+run time: 8.542000000000272e-06 secs
+passed
+primes: (load "change.shen") = loaded
+(fn count-change)
+(fn count-change*)
+(fn next-denom)
+
+run time: 0.0010705829999999583 secs
+
+run time: 0.001096916999999975 secs
+passed
+primes: (count-change 100) = 4563
+
+run time: 0.06307354099999996 secs
+passed
+passed ... 26
+failed ... 0
+pass rate ... 100%
+
+ok
+
+semantic nets: (load "semantic net.shen") = loaded
+(fn query)
+(fn belongs?)
+(fn spread-activation)
+(fn accessible-from)
+(fn is_links)
+(fn type_links)
+(fn assert)
+(fn get-prop)
+(fn clear)
+
+run time: 0.002813082999999994 secs
+
+run time: 0.0028396250000000123 secs
+passed
+semantic nets: (clear Mark_Tarver) = []
+
+run time: 2.459000000010203e-06 secs
+passed
+semantic nets: (clear man) = []
+
+run time: 1.5829999999716904e-06 secs
+passed
+semantic nets: (assert (cons Mark_Tarver (cons is_a (cons man ())))) = [man]
+
+run time: 4.541000000024553e-06 secs
+passed
+semantic nets: (assert (cons man (cons type_of (cons human ())))) = [human]
+
+run time: 2.4160000000050808e-06 secs
+passed
+semantic nets: (query (cons is (cons Mark_Tarver (cons human ())))) = yes
+
+run time: 2.64170000000008e-05 secs
+passed
+passed ... 32
+failed ... 0
+pass rate ... 100%
+
+ok
+
+einsteins riddle: (load "einsteins-riddle.shen") = loaded
+(fn riddle)
+(fn member)
+(fn house)
+(fn next)
+(fn left)
+(fn who-owns-the-fish?)
+
+run time: 0.02693012499999997 secs
+
+run time: 0.02695845800000002 secs
+passed
+einsteins riddle: ((lambda V740 (lambda L741 (lambda K742 (lambda C743 (do (shen.incinfs) (riddle V740 L741 K742 C743)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = german
+
+run time: 0.06788449999999996 secs
+passed
+passed ... 34
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog call: (load "call.shen") = loaded
+(fn mapit)
+(fn consit)
+(fn different)
+(fn not!)
+
+run time: 0.006905332999999958 secs
+
+run time: 0.006936582999999996 secs
+passed
+Prolog call: ((lambda V744 (lambda L745 (lambda K746 (lambda C747 (let X (shen.newpv V744) (shen.gc V744 (do (shen.incinfs) (mapit (fn consit) (cons 1 (cons 2 (cons 3 ()))) X V744 L745 K746 (freeze (return X V744 L745 K746 C747)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [[1 1] [1 2] [1 3]]
+
+run time: 6.704199999996163e-05 secs
+passed
+Prolog call: ((lambda V748 (lambda L749 (lambda K750 (lambda C751 (do (shen.incinfs) (different 1 2 V748 L749 K750 C751)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true
+
+run time: 8.033399999995972e-05 secs
+passed
+Prolog call: ((lambda V752 (lambda L753 (lambda K754 (lambda C755 (do (shen.incinfs) (different 1 1 V752 L753 K754 C755)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false
+
+run time: 1.8332999999981503e-05 secs
+passed
+passed ... 38
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog cut: (load "cut.shen") = loaded
+(fn a)
+(fn b)
+(fn c)
+(fn d)
+(fn e*)
+(fn f)
+(fn g*)
+(fn h)
+
+run time: 0.0047664579999999734 secs
+
+run time: 0.004792916999999952 secs
+passed
+Prolog cut: ((lambda V756 (lambda L757 (lambda K758 (lambda C759 (let X (shen.newpv V756) (shen.gc V756 (do (shen.incinfs) (a X V756 L757 K758 (freeze (return X V756 L757 K758 C759)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 4
+
+run time: 4.6749999999984304e-05 secs
+passed
+passed ... 40
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog naive reverse: (load "nreverseprolog.shen") = loaded
+(fn nreverse)
+(fn nappend)
+
+run time: 0.003695875000000015 secs
+
+run time: 0.0037307090000000542 secs
+passed
+Prolog naive reverse: ((lambda V760 (lambda L761 (lambda K762 (lambda C763 (let X (shen.newpv V760) (shen.gc V760 (do (shen.incinfs) (nreverse (cons 1 (cons 2 (cons 3 (cons 4 ())))) X V760 L761 K762 (freeze (return X V760 L761 K762 C763)))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [4 3 2 1]
+
+run time: 8.108299999998181e-05 secs
+passed
+passed ... 42
+failed ... 0
+pass rate ... 100%
+
+ok
+
+findall in Prolog: (load "findall.shen") = loaded
+(fn enjoys)
+(fn fads)
+
+run time: 0.0028236249999999963 secs
+
+run time: 0.0028605839999999993 secs
+passed
+findall in Prolog: ((lambda V764 (lambda L765 (lambda K766 (lambda C767 (do (shen.incinfs) (fads mark V764 L765 K766 C767)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = [tea chocolate]
+
+run time: 3.0208000000087054e-05 secs
+passed
+passed ... 44
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog tableau: (load "tableauprolog.shen") = loaded
+(fn prop)
+(fn proph)
+(fn inconsistent)
+(fn consistent)
+(fn complement)
+(fn member)
+
+run time: 0.026125207999999955 secs
+
+run time: 0.02615241700000004 secs
+passed
+Prolog tableau: ((lambda V768 (lambda L769 (lambda K770 (lambda C771 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons p ()))) ()))) V768 L769 K770 C771)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true
+
+run time: 0.0015444579999999153 secs
+passed
+Prolog tableau: ((lambda V772 (lambda L773 (lambda K774 (lambda C775 (do (shen.incinfs) (prop () (cons (cons p (cons <=> (cons q ()))) (cons <=> (cons (cons q (cons <=> (cons r ()))) ()))) V772 L773 K774 C775)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = false
+
+run time: 0.0005556669999999819 secs
+passed
+passed ... 47
+failed ... 0
+pass rate ... 100%
+
+ok
+
+proplog: (load "proplog version 1.shen") = loaded
+(fn backchain)
+(fn backchain*)
+
+run time: 0.0015257499999999924 secs
+
+run time: 0.0015513750000000215 secs
+passed
+proplog: (backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons (cons r (cons <= ())) ())))) = proved
+
+run time: 8.62499999998434e-06 secs
+passed
+proplog: (backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = ...
+
+run time: 4.709000000047148e-06 secs
+passed
+proplog: (load "proplog version 2.shen") = loaded
+(fn backchain)
+(fn backchain*)
+
+run time: 0.0025303749999999736 secs
+
+run time: 0.002554999999999974 secs
+passed
+proplog: (backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) (cons r ())))) = true
+
+run time: 9.874999999937017e-06 secs
+passed
+proplog: (backchain q (cons (cons q (cons <= (cons p ()))) (cons (cons q (cons <= (cons r ()))) ()))) = false
+
+run time: 5.707999999993163e-06 secs
+passed
+passed ... 53
+failed ... 0
+pass rate ... 100%
+
+ok
+
+metaprogramming: (load "metaprog.shen") = loaded
+(fn parse)
+(fn parsed?)
+(fn output_parse)
+(fn generate_parser)
+(fn parenthesise_rules)
+(fn parenthesise_rules1)
+(fn group_rules)
+(fn group_rules1)
+(fn place_in_group)
+(fn belongs-in?)
+(fn compile_rules)
+(fn lex?)
+(fn generate_code_for_nonlex)
+(fn mapapp)
+(fn get_characteristic_non_terminal)
+(fn gcfn_help)
+(fn apply_expansion)
+(fn ae_help)
+(fn generate_code_for_lex)
+(fn gcfl_help)
+
+run time: 0.005185583000000049 secs
+
+run time: 0.005209917000000064 secs
+passed
+metaprogramming: (do (generate_parser (cons sent (cons --> (cons np (cons vp (cons np (cons --> (cons name (cons np (cons --> (cons det (cons n (cons name (cons --> (cons "John" (cons name (cons --> (cons "Bill" (cons name (cons --> (cons "Tom" (cons det (cons --> (cons "the" (cons det (cons --> (cons "a" (cons det (cons --> (cons "that" (cons det (cons --> (cons "this" (cons n (cons --> (cons "girl" (cons n (cons --> (cons "ball" (cons vp (cons --> (cons vtrans (cons np (cons vp (cons --> (cons vintrans (cons vtrans (cons --> (cons "kicks" (cons vtrans (cons --> (cons "likes" (cons vintrans (cons --> (cons "jumps" (cons vintrans (cons --> (cons "flies" ())))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ok) = ok
+
+run time: 0.003008874999999911 secs
+passed
+passed ... 55
+failed ... 0
+pass rate ... 100%
+
+ok
+
+binary number datatype: (load "binary.shen") = loaded
+changing the arity of complement may cause errors
+binary#type
+(fn complement)
+
+run time: 0.012122458999999974 secs
+
+run time: 0.012150999999999912 secs
+passed
+binary number datatype: (complement (cons 1 (cons 0 ()))) = [0 1]
+
+run time: 4.6670000000137435e-06 secs
+passed
+binary number datatype: (load "streams.shen") = loaded
+progression#type
+(fn delay)
+(fn force)
+(fn end?)
+
+run time: 0.009969541999999998 secs
+
+run time: 0.009996999999999923 secs
+passed
+binary number datatype: (fst (delay (@p 0 (@p (+ 1) (lambda X false))))) = 1
+
+run time: 3.3750000000276614e-06 secs
+passed
+passed ... 59
+failed ... 0
+pass rate ... 100%
+
+ok
+
+calculator: (load "calculator.shen") = loaded
+arith-expr#type
+(fn do-calculation)
+
+run time: 0.017936207999999954 secs
+
+run time: 0.017988709000000047 secs
+passed
+calculator: (do-calculation (cons (cons num (cons 12 ())) (cons + (cons (cons (cons num (cons 7 ())) (cons * (cons (cons num (cons 4 ())) ()))) ())))) = 40
+
+run time: 8.165999999976137e-06 secs
+passed
+passed ... 61
+failed ... 0
+pass rate ... 100%
+
+ok
+
+structures 1: (load "structures-untyped.shen") = loaded
+(fn defstruct)
+(fn selectors)
+(fn selector)
+(fn constructor)
+(fn params)
+(fn make-association-list)
+(fn recognisor)
+
+run time: 0.0026014169999999393 secs
+
+run time: 0.002626750000000011 secs
+passed
+structures 1: (defstruct ship (cons length (cons name ()))) = ship
+
+run time: 0.0007937500000000375 secs
+passed
+structures 1: (make-ship 200 "Mary Rose") = [[structure | ship] [length | 200] [name | "Mary Rose"]]
+
+run time: 1.6250000000050946e-06 secs
+passed
+structures 1: (ship-length (make-ship 200 "Mary Rose")) = 200
+
+run time: 2.7500000000513225e-06 secs
+passed
+structures 1: (ship-name (make-ship 200 "Mary Rose")) = "Mary Rose"
+
+run time: 1.7909999999732307e-06 secs
+passed
+passed ... 66
+failed ... 0
+pass rate ... 100%
+
+ok
+
+structures 2: (load "structures-typed.shen") = loaded
+(fn defstruct)
+(fn selector-types)
+(fn recognisor-type)
+(fn constructor-type)
+(fn assemble-type)
+defstruct
+(fn selectors)
+(fn selector)
+(fn constructor)
+(fn params)
+(fn make-association-list)
+(fn recognisor)
+
+run time: 0.006125000000000047 secs
+
+run time: 0.006152333000000065 secs
+passed
+structures 2: (defstruct ship (cons (@p length number) (cons (@p name string) ()))) = ship
+
+run time: 0.0014830419999999345 secs
+passed
+structures 2: (make-ship 200 "Mary Rose") = [[structure | ship] [length | 200] [name | "Mary Rose"]]
+
+run time: 2.2499999999814335e-06 secs
+passed
+structures 2: (ship-length (make-ship 200 "Mary Rose")) = 200
+
+run time: 2.2920000000148377e-06 secs
+passed
+structures 2: (ship-name (make-ship 200 "Mary Rose")) = "Mary Rose"
+
+run time: 1.708000000100185e-06 secs
+passed
+passed ... 71
+failed ... 0
+pass rate ... 100%
+
+ok
+
+classes 1: (load "classes-untyped.shen") = loaded
+(fn defclass)
+(fn make-instance)
+(fn get-value)
+(fn get-value-test)
+(fn has-value?)
+(fn has-value-test)
+(fn has-attribute?)
+(fn change-value)
+(fn instance-of)
+
+run time: 0.0024457499999999133 secs
+
+run time: 0.0024720409999999804 secs
+passed
+classes 1: (defclass ship (cons length (cons name ()))) = ship
+
+run time: 4.499999999962867e-06 secs
+passed
+classes 1: (set s (make-instance ship)) = [[class | ship] [length | fail] [name | fail]]
+
+run time: 1.9170000000734433e-06 secs
+passed
+classes 1: (has-value? length (value s)) = false
+
+run time: 2.041000000008175e-06 secs
+passed
+classes 1: (set s (change-value (value s) length 100)) = [[class | ship] [length | 100] [name | fail]]
+
+run time: 4.290999999989609e-06 secs
+passed
+classes 1: (get-value length (value s)) = 100
+
+run time: 3.079200000000171e-05 secs
+passed
+passed ... 77
+failed ... 0
+pass rate ... 100%
+
+ok
+
+classes 2: (load "classes-typed.shen") = loaded
+defclass
+(fn defclass)
+(fn axiom)
+(fn record-attribute-types)
+make-instance
+(fn make-instance)
+get-value
+(fn get-value)
+(fn get-value-test)
+has-value?
+(fn has-value?)
+(fn has-value-test)
+has-attribute?
+(fn has-attribute?)
+change-value
+(fn change-value)
+instance-of
+(fn instance-of)
+
+run time: 0.005343957999999982 secs
+
+run time: 0.005369999999999986 secs
+passed
+classes 2: (defclass ship (cons (@p length number) (cons (@p name string) ()))) = ship
+
+run time: 0.008702832999999965 secs
+passed
+classes 2: (has-value? length (make-instance ship)) = false
+
+run time: 6.832999999928369e-06 secs
+passed
+classes 2: (change-value (make-instance ship) length 100) = [[class | ship] [length | 100] [name | fail]]
+
+run time: 4.665999999931003e-06 secs
+passed
+classes 2: (get-value length (change-value (make-instance ship) length 100)) = 100
+
+run time: 4.790999999948475e-06 secs
+passed
+passed ... 82
+failed ... 0
+pass rate ... 100%
+
+ok
+
+abstract datatypes: (load "stack.shen") = loaded
+empty-stack
+push
+top
+pop
+(fn empty-stack)
+(fn push)
+(fn top)
+(fn pop)
+
+run time: 0.0023736669999999682 secs
+
+run time: 0.0023999579999999243 secs
+passed
+abstract datatypes: (top (push 0 (empty-stack _))) = 0
+
+run time: 1.1583000000037202e-05 secs
+passed
+passed ... 84
+failed ... 0
+pass rate ... 100%
+
+ok
+
+yacc: (load "yacc.shen") = loaded
+(fn <sent>)
+(fn <det>)
+(fn <np>)
+(fn <n>)
+(fn <name1>)
+(fn <vp>)
+(fn <vtrans>)
+(fn <des>)
+(fn <ds>)
+(fn <es>)
+(fn <sent'>)
+(fn question)
+(fn <as->bs>)
+(fn <find-digit>)
+(fn <morestuff>)
+(fn <digit>)
+(fn <find-digit'>)
+(fn <asbscs>)
+(fn <as>)
+(fn <bs>)
+(fn <cs>)
+(fn <asbs'cs>)
+(fn <bs'>)
+(fn <find-digit''>)
+(fn <digit''>)
+(fn <anbncn>)
+(fn <as>)
+(fn <bs>)
+(fn <cs>)
+(fn equal-length?)
+(fn appendall)
+(fn <a*s>)
+(fn <b*>)
+(fn <c*>)
+(fn <d*>)
+
+run time: 0.025199208000000084 secs
+
+run time: 0.025225875000000064 secs
+passed
+yacc: (compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [the cat likes the dog]
+
+run time: 9.792000000063972e-06 secs
+passed
+yacc: (trap-error (compile (fn <sent>) (cons the (cons cat (cons likes (cons the (cons canary ())))))) (lambda E (fail))) = ...
+
+run time: 1.145800000001973e-05 secs
+passed
+yacc: (compile (fn <asbscs>) (cons a (cons a (cons a (cons b (cons b (cons c ()))))))) = [a a a b b c]
+
+run time: 8.458000000044485e-06 secs
+passed
+yacc: (compile (fn <find-digit>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6]
+
+run time: 2.4791999999940195e-05 secs
+passed
+yacc: (compile (fn <vp>) (cons chases (cons the (cons cat ())))) = [chases the cat]
+
+run time: 4.374999999945395e-06 secs
+passed
+yacc: (compile (fn <des>) (cons (cons d ()) (cons (cons e (cons e ())) ()))) = [d e e]
+
+run time: 6.999999999979245e-06 secs
+passed
+yacc: (compile (fn <sent'>) (cons the (cons cat (cons likes (cons the (cons dog ())))))) = [is it true that your father likes the dog ?]
+
+run time: 1.1082999999967313e-05 secs
+passed
+yacc: (compile (fn <as>) (cons a (cons a (cons a ())))) = [a a a]
+
+run time: 3.708000000046674e-06 secs
+passed
+yacc: (compile (fn <find-digit'>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = [6 y u]
+
+run time: 2.3707999999955653e-05 secs
+passed
+yacc: (trap-error (compile (fn <asbs'cs>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) (lambda E (fail))) = ...
+
+run time: 7.917000000023933e-06 secs
+passed
+yacc: (compile (fn <find-digit''>) (cons a (cons v (cons f (cons g (cons 6 (cons y (cons u ())))))))) = 6
+
+run time: 1.5416999999962044e-05 secs
+passed
+yacc: (compile (fn <anbncn>) (cons a (cons a (cons a (cons b (cons b (cons b (cons c (cons c (cons c ())))))))))) = [a a a b b b c c c]
+
+run time: 1.2249999999935923e-05 secs
+passed
+passed ... 97
+failed ... 0
+pass rate ... 100%
+
+ok
+[]
+true
+
+N Queens: (preclude-all-but ()) = []
+
+run time: 7.07999999960407e-07 secs
+passed
+N Queens: (tc +) = true
+
+run time: 3.7499999994139444e-07 secs
+passed
+N Queens: (load "n queens.shen") = loaded
+(fn n-queens) : (number --> (list (list number)))
+(fn n-queens.initialise) : (number --> (list number))
+(fn n-queens.n-queens-loop) : (number --> ((list number) --> (list (list number))))
+(fn n-queens.all_Ns?) : (number --> ((list number) --> boolean))
+(fn n-queens.next_n) : (number --> ((list number) --> (list number)))
+(fn n-queens.ok_row?) : ((list number) --> boolean)
+(fn n-queens.ok_diag?) : ((list number) --> boolean)
+(fn n-queens.ok_diag_N?) : (number --> (number --> ((list number) --> boolean)))
+
+run time: 0.006696959000000002 secs
+
+typechecked in 38518 inferences
+
+run time: 0.006745083999999957 secs
+passed
+N Queens: (n-queens 5) = [[4 2 5 3 1] [3 5 2 4 1] [5 3 1 4 2] [4 1 3 5 2] [5 2 4 1 3] [1 4 2 5 3] [2 5 3 1 4] [1 3 5 2 4] [3 1 4 2 5] [2 4 1 3 5]]
+
+run time: 0.0022176660000000625 secs
+passed
+N Queens: (tc -) = false
+
+run time: 1.0419999999511376e-06 secs
+passed
+passed ... 102
+failed ... 0
+pass rate ... 100%
+
+ok
+
+search: (tc +) = true
+
+run time: 5.840000000256751e-07 secs
+passed
+search: (load "search.shen") = loaded
+(fn breadth-first) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))
+(fn b*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))
+(fn some) : ((A --> boolean) --> ((list A) --> boolean))
+(fn depth) : (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean)))
+(fn d*) : ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean)))
+(fn hill) : ((state --> number) --> (state --> ((state --> (list state)) --> ((state --> boolean) --> boolean))))
+(fn h*) : ((state --> number) --> ((state --> (list state)) --> ((state --> boolean) --> ((list state) --> boolean))))
+(fn order_states) : ((state --> number) --> ((list state) --> (list state)))
+(fn bsort) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))
+(fn bsort*) : ((A --> (A --> boolean)) --> ((list A) --> (list A)))
+
+run time: 0.010778749999999948 secs
+
+typechecked in 41873 inferences
+
+run time: 0.010872040999999943 secs
+passed
+search: (tc -) = false
+
+run time: 1.291999999986082e-06 secs
+passed
+passed ... 105
+failed ... 0
+pass rate ... 100%
+
+ok
+
+montague: (tc +) = true
+
+run time: 3.7500000005241674e-07 secs
+passed
+montague: (load "montague.shen") = loaded
+t#type : symbol
+f#type : symbol
+(fn <sent>) : ((list t) ==> f)
+(fn <np>) : ((list t) ==> ((t --> f) --> f))
+(fn name?) : (t --> boolean)
+(fn <cn>) : ((list t) ==> (t --> f))
+(fn common-noun?) : (t --> boolean)
+(fn <rcn>) : ((list t) ==> (t --> f))
+(fn <vp>) : ((list t) ==> (t --> f))
+(fn <intrans>) : ((list t) ==> (t --> f))
+(fn intrans?) : (t --> boolean)
+(fn <trans>) : ((list t) ==> (t --> (t --> f)))
+(fn trans?) : (t --> boolean)
+(fn <det>) : ((list t) ==> ((t --> f) --> ((t --> f) --> f)))
+
+run time: 0.09181641699999998 secs
+
+typechecked in 54665 inferences
+
+run time: 0.091862208 secs
+passed
+montague: (compile (fn <sent>) (cons Mary (cons likes (cons John ())))) = [likes Mary John]
+
+run time: 1.3000000000040757e-05 secs
+passed
+passed ... 108
+failed ... 0
+pass rate ... 100%
+
+ok
+
+c-: (tc +) = true
+
+run time: 1.0830000000128237e-06 secs
+passed
+c-: (load "c-minus.shen") = loaded
+synonyms : symbol
+program#type : symbol
+preamble#type : symbol
+main#type : symbol
+statement#type : symbol
+assignment#type : symbol
+expr#type : symbol
+op#type : symbol
+conditional#type : symbol
+constant#type : symbol
+integer#type : symbol
+print#type : symbol
+while#type : symbol
+parameters#type : symbol
+declaration#type : symbol
+type#type : symbol
+procedure#type : symbol
+parameters#type : symbol
+(fn read-file-as-unit-strings) : (string --> (list string))
+(fn <program>) : ((list string) ==> program)
+(fn <preamble>) : ((list string) ==> (list statement))
+(fn <main>) : ((list string) ==> main)
+(fn <statement>) : ((list string) ==> statement)
+(fn <compound-statement>) : ((list string) ==> statement)
+(fn <statements>) : ((list string) ==> (list statement))
+(fn <atomic-statement>) : ((list string) ==> statement)
+(fn <assignment>) : ((list string) ==> statement)
+(fn <return>) : ((list string) ==> statement)
+(fn <conditional>) : ((list string) ==> statement)
+(fn <statement1>) : ((list string) ==> statement)
+(fn <statement2>) : ((list string) ==> statement)
+(fn <exprs>) : ((list string) ==> (list expr))
+(fn <expr>) : ((list string) ==> expr)
+(fn <vector-ref>) : ((list string) ==> expr)
+(fn <index>) : ((list string) ==> expr)
+(fn <complex>) : ((list string) ==> expr)
+(fn <expr1>) : ((list string) ==> expr)
+(fn <expr2>) : ((list string) ==> expr)
+(fn <prefix>) : ((list string) ==> symbol)
+(fn <infix>) : ((list string) ==> infix)
+(fn <constant>) : ((list string) ==> constant)
+(fn <float>) : ((list string) ==> number)
+(fn <pre>) : ((list string) ==> (list integer))
+(fn <post>) : ((list string) ==> (list integer))
+(fn compute-float) : ((list integer) --> ((list integer) --> number))
+(fn compute-int) : ((list integer) --> integer)
+(fn compute-fractional) : ((list integer) --> number)
+(fn compute-fractional-h) : ((list integer) --> (integer --> number))
+(fn exptint) : (integer --> (integer --> integer))
+(fn <char>) : ((list string) ==> string)
+(fn <int>) : ((list string) ==> integer)
+(fn <int-h>) : ((list string) ==> (list integer))
+(fn <numeric>) : ((list string) ==> string)
+(fn digit) : (string --> integer)
+(fn intlength) : ((list A) --> integer)
+(fn <print>) : ((list string) ==> statement)
+(fn <string>) : ((list string) ==> string)
+(fn <stringstuff>) : ((list string) ==> string)
+(fn <ndq>) : ((list string) ==> string)
+(fn <while>) : ((list string) ==> statement)
+(fn <declaration>) : ((list string) ==> statement)
+(fn <dim>) : ((list string) ==> integer)
+(fn <type>) : ((list string) ==> type)
+(fn <variables>) : ((list string) ==> (list symbol))
+(fn <variable>) : ((list string) ==> symbol)
+(fn <alphanumeric>) : ((list string) ==> string)
+(fn <alphanumeric-h>) : ((list string) ==> string)
+(fn <alpha>) : ((list string) ==> string)
+(fn alpha*?) : (string --> boolean)
+(fn <numeric>) : ((list string) ==> string)
+(fn <procedure>) : ((list string) ==> procedure)
+(fn <params>) : ((list string) ==> parameters)
+(fn <procname>) : ((list string) ==> symbol)
+(fn <ws>) : ((list string) ==> symbol)
+(fn <space>) : ((list string) ==> symbol)
+(fn <tab>) : ((list string) ==> symbol)
+(fn <newline>) : ((list string) ==> symbol)
+(fn <comment>) : ((list string) ==> symbol)
+(fn <comment-body>) : ((list string) ==> symbol)
+
+run time: 0.8650277499999999 secs
+
+typechecked in 287317 inferences
+
+run time: 0.8650819169999999 secs
+passed
+passed ... 110
+failed ... 0
+pass rate ... 100%
+
+ok
+
+L interpreter: (tc +) = true
+
+run time: 1.3750000000811724e-06 secs
+passed
+L interpreter: (load "interpreter.shen") = loaded
+num#type : symbol
+primitive-object#type : symbol
+pattern#type : symbol
+l-formula#type : symbol
+(fn normal-form) : (l-formula --> l-formula)
+(fn ==>>) : (l-formula --> l-formula)
+(fn eval-error?) : (l-formula --> boolean)
+(fn successor) : (A --> l-formula)
+(fn predecessor) : (A --> l-formula)
+(fn sub) : ((list (pattern * l-formula)) --> (l-formula --> l-formula))
+(fn match) : (pattern --> (l-formula --> (list (pattern * l-formula))))
+(fn no-match?) : ((list (pattern * l-formula)) --> boolean)
+(fn replace) : (pattern --> (l-formula --> (l-formula --> l-formula)))
+(fn free?) : (pattern --> (pattern --> boolean))
+
+run time: 2.6294173749999996 secs
+
+typechecked in 1175336 inferences
+
+run time: 2.629478708 secs
+passed
+L interpreter: (normal-form (cons (cons (cons y-combinator (cons (cons /. (cons ADD (cons (cons /. (cons X (cons (cons /. (cons Y (cons (cons if (cons (cons = (cons X (cons 0 ()))) (cons Y (cons (cons (cons ADD (cons (cons -- (cons X ())) ())) (cons (cons ++ (cons Y ())) ())) ())))) ()))) ()))) ()))) ())) (cons 3 ())) (cons 4 ()))) = 7
+
+run time: 0.0003039170000000979 secs
+passed
+L interpreter: (normal-form (cons (cons (cons y-combinator (cons (cons /. (cons APPEND (cons (cons /. (cons X (cons (cons /. (cons Y (cons (cons if (cons (cons = (cons X (cons () ()))) (cons Y (cons (cons cons (cons (cons (cons /. (cons (cons cons (cons A (cons B ()))) (cons A ()))) (cons X ())) (cons (cons (cons APPEND (cons (cons (cons /. (cons (cons cons (cons A (cons B ()))) (cons B ()))) (cons X ())) ())) (cons Y ())) ()))) ())))) ()))) ()))) ()))) ())) (cons (cons cons (cons 1 (cons () ()))) ())) (cons (cons cons (cons 2 (cons () ()))) ()))) = [cons 1 [cons 2 []]]
+
+run time: 0.00024733399999998795 secs
+passed
+L interpreter: (tc -) = false
+
+run time: 1.292000000319149e-06 secs
+passed
+passed ... 115
+failed ... 0
+pass rate ... 100%
+
+ok
+
+proof assistant: (tc +) = true
+
+run time: 8.329999996448123e-07 secs
+passed
+proof assistant: (load "proof assistant.shen") = loaded
+synonyms : symbol
+globals#type : symbol
+(fn proof-assistant) : (A --> symbol)
+(fn input-assumptions) : (number --> (list wff))
+(fn input-conclusion) : (A --> wff)
+(fn proof-loop) : ((list ((list wff) * wff)) --> ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff)))))))
+(fn show-proof) : (string --> symbol)
+(fn show-proof-help) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (number --> symbol))
+(fn show-sequent) : ((list ((list wff) * wff)) --> (number --> symbol))
+(fn enumerate) : ((list A) --> (number --> symbol))
+(fn user-directive) : (A --> ((list ((list wff) * wff)) --> (list ((list wff) * wff))))
+(fn back) : ((list ((list wff) * wff)) --> (list ((list wff) * wff)))
+(fn go-back) : ((list ((list ((list wff) * wff)) * ((list ((list wff) * wff)) --> (list ((list wff) * wff))))) --> (list ((list wff) * wff)))
+
+run time: 0.18536320900000014 secs
+
+typechecked in 1251421 inferences
+
+run time: 0.18542012500000027 secs
+passed
+proof assistant: (tc -) = false
+
+run time: 1.250000000396767e-06 secs
+passed
+passed ... 118
+failed ... 0
+pass rate ... 100%
+
+ok
+
+quantifier machine: (tc +) = true
+
+run time: 8.329999996448123e-07 secs
+passed
+quantifier machine: (load "qmachine.shen") = loaded
+warning: changing the type of push may create errors
+progression#type : symbol
+(fn force) : ((progression A) --> A)
+(fn delay) : ((progression A) --> (progression A))
+(fn end?) : ((progression A) --> boolean)
+(fn push) : (A --> ((progression A) --> (progression A)))
+(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn super) : ((progression A) --> ((A --> B) --> ((B --> (C --> C)) --> (C --> C))))
+(fn forall) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn exists) : ((progression A) --> ((A --> boolean) --> boolean))
+(fn for*) : ((progression A) --> ((A --> B) --> number))
+(fn progn) : (A --> (B --> B))
+(fn filter*) : ((progression A) --> ((A --> boolean) --> (list A)))
+(fn next-prime) : (number --> number)
+(fn prime*?) : (number --> boolean)
+(fn prime-help) : (number --> (number --> (number --> boolean)))
+
+run time: 0.2173127499999996 secs
+
+typechecked in 1344099 inferences
+
+run time: 0.21737375000000014 secs
+passed
+quantifier machine: (exists (cons 1 (cons (+ 1) (cons (= 100) ()))) (> 50)) = true
+
+run time: 0.0001087079999999574 secs
+passed
+quantifier machine: (tc -) = false
+
+run time: 1.2080000004743852e-06 secs
+passed
+passed ... 122
+failed ... 0
+pass rate ... 100%
+
+ok
+
+depth first search: (tc +) = true
+
+run time: 5.000000005139782e-07 secs
+passed
+depth first search: (load "depth.shen") = loaded
+changing the arity of depth may cause errors
+warning: changing the type of depth may create errors
+(fn depth) : (A --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> (list A)))))
+(fn depth-help) : ((list A) --> ((A --> (list A)) --> ((A --> boolean) --> ((A --> boolean) --> ((list A) --> (list A))))))
+
+run time: 0.018764833000000536 secs
+
+typechecked in 1352331 inferences
+
+run time: 0.018833540999999343 secs
+passed
+depth first search: (depth 4 (lambda X (cons (+ X 3) (cons (+ X 4) (cons (+ X 5) ())))) (lambda X (= X 27)) (lambda X (> X 27))) = [4 7 10 13 16 19 22 27]
+
+run time: 2.0874999999698218e-05 secs
+passed
+depth first search: (depth 4 (lambda X (cons (+ X 3) ())) (lambda X (= X 27)) (lambda X (> X 27))) = []
+
+run time: 1.1582999999149024e-05 secs
+passed
+depth first search: (tc -) = false
+
+run time: 1.415999999920814e-06 secs
+passed
+passed ... 127
+failed ... 0
+pass rate ... 100%
+
+ok
+
+secd: (tc +) = true
+
+run time: 5.84000000358742e-07 secs
+passed
+secd: (load "secd1.shen") = loaded
+synonyms : symbol
+ob#type : symbol
+(fn evaluate) : (ob --> ob)
+(fn secd) : ((list ob) --> ((list (symbol * ob)) --> ((list ob) --> ((list ((list ob) * ((list (symbol * ob)) * (list ob)))) --> ob))))
+(fn bnd?) : (ob --> ((list (symbol * ob)) --> boolean))
+(fn lookup) : (ob --> ((list (symbol * ob)) --> ob))
+
+run time: 0.1160803330000002 secs
+
+typechecked in 1389632 inferences
+
+run time: 0.11613637499999996 secs
+passed
+secd: (evaluate (cons (cons lambda (cons x (cons x ()))) (cons b ()))) = b
+
+run time: 1.570800000028072e-05 secs
+passed
+secd: (evaluate (cons lambda (cons x (cons x ())))) = [closure [] x x]
+
+run time: 2.8750000007349286e-06 secs
+passed
+secd: (let If (cons lambda (cons z (cons (cons lambda (cons x (cons (cons lambda (cons y (cons (cons (cons z (cons x ())) (cons y ())) ()))) ()))) ()))) (let True (cons lambda (cons x (cons (cons lambda (cons y (cons x ()))) ()))) (evaluate (cons (cons (cons If (cons True ())) (cons a ())) (cons b ()))))) = a
+
+run time: 3.2541999999580185e-05 secs
+passed
+passed ... 132
+failed ... 0
+pass rate ... 100%
+
+ok
+
+unification: (tc -) = false
+
+run time: 1.250000000396767e-06 secs
+passed
+unification: (load "unification.shen") = loaded
+(fn unify)
+(fn unify-loop)
+(fn occurs-check?)
+(fn deref)
+
+run time: 0.0017085000000003348 secs
+
+run time: 0.0017382499999998302 secs
+passed
+unification: (unify (cons f (cons a ())) X) = [[X f a]]
+
+run time: 5.291999999990082e-06 secs
+passed
+unification: (unify (cons f (cons Y ())) (cons f (cons b ()))) = [[Y | b]]
+
+run time: 6.708999999993637e-06 secs
+passed
+passed ... 136
+failed ... 0
+pass rate ... 100%
+
+ok
+
+total in Prolog: (load "totalprolog.shen") = loaded
+(fn lived)
+(fn begat)
+7625
+(fn total)
+
+run time: 0.01489224999999994 secs
+
+run time: 0.014923291999999755 secs
+passed
+total in Prolog: ((lambda V776 (lambda L777 (lambda K778 (lambda C779 (let Person (shen.newpv V776) (shen.gc V776 (let Age (shen.newpv V776) (shen.gc V776 (let Ages (shen.newpv V776) (shen.gc V776 (let Total (shen.newpv V776) (shen.gc V776 (do (shen.incinfs) (findall Age (lived (shen.deref Person V776) (shen.deref Age V776)) Ages V776 L777 K778 (freeze (total Ages Total V776 L777 K778 (freeze (return Total V776 L777 K778 C779)))))))))))))))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = 7625
+
+run time: 8.949999999963154e-05 secs
+passed
+passed ... 138
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog fork: (load "fork.shen") = loaded
+(fn g1)
+(fn h)
+(fn i)
+(fn j)
+(fn f)
+
+run time: 0.004740667000000087 secs
+
+run time: 0.0047713749999998 secs
+passed
+Prolog fork: ((lambda V780 (lambda L781 (lambda K782 (lambda C783 (do (shen.incinfs) (g1 a V780 L781 K782 C783)))))) (shen.prolog-vector) (@v true (@v 0 (vector 0))) 0 (freeze true)) = true
+
+run time: 1.8374999999792863e-05 secs
+passed
+passed ... 140
+failed ... 0
+pass rate ... 100%
+
+ok
+
+Prolog interpreter: (tc +) = true
+
+run time: 9.590000003001364e-07 secs
+passed
+Prolog interpreter: (load "prologinterp.shen") = loaded
+warning: changing the type of lookup may create errors
+atom#type : symbol
+term#type : symbol
+horn-clause#type : symbol
+(fn unify-atoms) : (atom --> (atom --> (list (term * term))))
+(fn unify-terms) : ((list term) --> ((list term) --> ((list (term * term)) --> (list (term * term)))))
+(fn unify-term) : (term --> (term --> ((list (term * term)) --> (list (term * term)))))
+(fn occurs-check?) : (term --> (term --> boolean))
+(fn dereference) : (term --> ((list (term * term)) --> term))
+(fn lookup) : (term --> ((list (term * term)) --> term))
+(fn my-occurs?) : (term --> (term --> boolean))
+(fn some) : ((A --> boolean) --> ((list A) --> boolean))
+(fn prolog) : ((list atom) --> ((list horn-clause) --> boolean))
+(fn insert-answer-literal) : ((list atom) --> (list atom))
+(fn answer-literal) : ((list term) --> (list atom))
+(fn answer-terms) : ((list term) --> (list term))
+(fn prolog-help) : ((list atom) --> ((list horn-clause) --> ((list horn-clause) --> boolean)))
+(fn hdcl) : (horn-clause --> atom)
+(fn body) : (horn-clause --> (list atom))
+(fn dereference-atom) : (atom --> ((list (term * term)) --> atom))
+(fn answer) : ((list term) --> boolean)
+(fn standardise-apart) : (horn-clause --> horn-clause)
+(fn variables-in-clause) : (horn-clause --> (list term))
+(fn variables-in-atom) : (atom --> (list term))
+(fn variables-in-term) : (term --> (list term))
+(fn st-all) : ((list term) --> (horn-clause --> horn-clause))
+(fn replace-term-in-clause) : (term --> (term --> (horn-clause --> horn-clause)))
+(fn replace-term-in-atom) : (term --> (term --> (atom --> atom)))
+(fn replace-term) : (term --> (term --> (term --> term)))
+
+run time: 0.5171678750000002 secs
+
+typechecked in 1631980 inferences
+
+run time: 0.5172125000000003 secs
+passed
+Prolog interpreter: (tc -) = false
+
+run time: 1.0829999999018014e-06 secs
+passed
+passed ... 143
+failed ... 0
+pass rate ... 100%
+
+ok
+0
+
+run time: 5.358296667 secs
