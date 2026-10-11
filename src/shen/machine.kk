@@ -71,7 +71,12 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
     ("tlstr",[Text(s)]) -> match s.list { Cons(_,rest) -> Text(rest.string); _ -> throw("tlstr: empty string") }
     ("n->string",[Num(n)]) -> { if !n.is-finite || n<0.0 || n>1114111.0 || n.int.float64!=n then throw("n->string: expected character code"); Text(n.int.char.string) }
     ("string->n",[Text(s)]) -> match s.list { Cons(c,_) -> Num(c.int.float64); _ -> throw("string->n: empty string") }
-    ("absvector",[Num(n)]) -> { if !n.is-finite then throw("absvector: expected finite size"); alloc-vector(w,n.truncate.int) }
+    ("absvector",[Num(n)]) -> {
+      if !n.is-finite then throw("absvector: expected finite size")
+      val size=n.truncate
+      if size<0.0 || size>268435456.0 then throw("absvector: size out of range")
+      alloc-vector(w,size.int)
+    }
     ("<-address",[v,Num(n)]) -> vector-get(w,v,address-index(n))
     ("address->",[v,Num(n),x]) -> vector-set(w,v,address-index(n),x)
     ("simple-error",[Text(s)]) -> throw(s)
