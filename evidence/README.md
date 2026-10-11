@@ -40,3 +40,11 @@ extension assertions PASS, all counters captured, zero UNKNOWN, no regressions.
 Both lanes use the adapter and an immutable payload. 031 also passes both lanes
 but records distinct adapter settings; it is retained without conflating those
 configurations.
+
+052 passes the complete 134 + 8 gate after native-call root integration.
+053 passes 27 direct native cases. 054 reproduces a stale-stream alias bug.
+055 retains the second native hello compiler timeout. 056 and 058 each pass
+29 focused cases after generation-tagged stream handles; 057 passes the complete
+gate with no regressions. 059 is a failed UTF-8-decoding probe harness; 060
+retains corrected byte-preserving numeric/character observations. 061 records
+conversion rounding mismatches that remain open at this checkpoint.

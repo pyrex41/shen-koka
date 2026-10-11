@@ -29,8 +29,8 @@ required cell executed, adversarial cases below, and full versus shaken
 Yggdrasil comparisons. The inspected distribution contains 134 canonical
 assertions in 35 report groups, plus eight bundled programmable-pattern-matching
 extension assertions. Their source inventory is pinned in
-`comparison/shen-suite.lock.json`. These counts describe the test sources; this
-port has not executed them yet.
+`comparison/shen-suite.lock.json`. These counts describe the fixed test sources. Attempts 037 and 052 pass all
+142 assertions with the documented PPM adapter enabled in both lanes.
 
 The initial delivery targets are native C executables on aarch64 Darwin and
 x86_64 Linux, followed by aarch64 Linux. Windows, JavaScript, and Wasm are
@@ -458,7 +458,8 @@ docs/                   semantics architecture and integration contracts
 ```
 
 The initial Koka interpreter, boot path, launcher, and evidence runner now exist.
-The direct native compiler, collector, and release gates remain incomplete; see
+A tracing vector collector and experimental direct native compiler now exist;
+standalone compiler qualification and release gates remain incomplete. See
 the implementation status for the current tested and published boundaries.
 
 ## Decisions to settle during P0 and P1

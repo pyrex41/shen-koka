@@ -1,0 +1,10 @@
+{
+  "source": "(set *home-directory* \"\") (let A (open \"stream-probe.tmp\" out) (let C (close A) (let B (open \"stream-probe.tmp\" out) (let Old (trap-error (write-byte 65 A) (lambda E stale)) (let C (close B) Old)))))",
+  "expected": "\"\"\nstale",
+  "stdout": "\"\"\n65\n",
+  "stderr": "",
+  "exit_code": 0,
+  "file_hex": "41",
+  "binary_sha256": "5330a457c3aed91a329d921fd7c71ce8f6b74f92df9c6b99438f06f0e53ad09b",
+  "status": "FAIL"
+}

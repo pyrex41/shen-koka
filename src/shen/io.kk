@@ -1,4 +1,5 @@
 module shen/io
+// Dynamic stream handles carry generations; closed handles cannot alias new files.
 import std/num/int32
 extern import { c file "io-inline.c" }
 pub extern stream-open(name:string,writing:bool): console int32 { c inline "shen_stream_open(#1,#2,kk_context())" }

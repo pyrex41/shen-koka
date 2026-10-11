@@ -2,7 +2,7 @@
 """Compile the semantic corpus as native callbacks; compare its fixed goldens.
 The complete Shen distribution remains the primary gate.
 """
-import argparse,ast,hashlib,json,pathlib,shutil,subprocess,sys,time
+import argparse,ast,hashlib,json,pathlib,shutil,subprocess,sys,time,tempfile
 from native_codegen import Compiler,read_kl,quote
 from native_build import run_compiler
 ROOT=pathlib.Path(__file__).resolve().parents[1]
@@ -35,7 +35,8 @@ def main():
   (work/'run').chmod(0o755);record['binary_sha256']=hashlib.sha256((work/'run').read_bytes()).hexdigest()
   for name,(source,expected) in cases.items():
    try:
-    p=subprocess.run([str(work/'run'),name],capture_output=True,text=True,timeout=30)
+    with tempfile.TemporaryDirectory(prefix='shen-native-case-') as cwd:
+     p=subprocess.run([str(work/'run'),name],cwd=cwd,capture_output=True,text=True,timeout=30)
     record['cases'][name]={'source':source,'expected':expected,'stdout':p.stdout,'stderr':p.stderr,'exit_code':p.returncode,'status':'PASS' if p.returncode==0 and p.stdout.strip()==expected else 'FAIL'}
    except subprocess.TimeoutExpired:record['cases'][name]={'status':'UNKNOWN','blocker':'30 second timeout'}
    except OSError as e:record['cases'][name]={'status':'UNKNOWN','blocker':str(e)}

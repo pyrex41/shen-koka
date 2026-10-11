@@ -1,0 +1,20 @@
+/workspace/scratch/3e502de53f0d/reference-shen-go: go1.27.0
+	path	github.com/pyrex41/shen-go/cmd/shen
+	mod	github.com/pyrex41/shen-go	v1.5.1-0.20260927160348-c22151dc55ca	
+	dep	github.com/go-zeromq/zmq4	v0.17.0	h1:r12/XdqPeRbuaF4C3QZJeWCt7a5vpJbslDH1rTXF+Kc=
+	dep	golang.org/x/sync	v0.7.0	h1:YsImfSBoP9QPYL0xyKJPq0gcaJdG3rInoqxTWbfQu9M=
+	dep	golang.org/x/text	v0.15.0	h1:h1V/4gjBv8v9cjcR6+AR5+/cIYK5N/WAgiv4xlsEtAk=
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	CGO_ENABLED=1
+	build	CGO_CFLAGS=
+	build	CGO_CPPFLAGS=
+	build	CGO_CXXFLAGS=
+	build	CGO_LDFLAGS=
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1
+	build	vcs=git
+	build	vcs.revision=c22151dc55cafac7e5b904b8c58c6280c38801b2
+	build	vcs.time=2026-09-27T16:03:48Z
+	build	vcs.modified=false

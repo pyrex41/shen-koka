@@ -1,0 +1,450 @@
+{
+  "cases": {
+    "mixed": "(+ 1 0.5)",
+    "division": "(/ 3 2)",
+    "zero-division": "(trap-error (/ 1 0) (/. E caught))",
+    "negative-zero": "(str -0.0)",
+    "large-integer": "(= 9007199254740992 9007199254740993)",
+    "exponent": "(= 1e3 1000)",
+    "integer-predicate": "[(integer? 1) (integer? 1.5)]",
+    "unicode-pos": "(pos \"\u03bbx\" 1)",
+    "unicode-code": "(string->n \"\u03bb\")",
+    "unicode-tail": "(tlstr \"\u03bbx\")",
+    "unicode-roundtrip": "(n->string 955)",
+    "nul-roundtrip": "(string->n (n->string 0))",
+    "empty-code": "(trap-error (string->n \"\") (/. E caught))",
+    "negative-pos": "(trap-error (pos \"a\" -1) (/. E caught))",
+    "past-end-pos": "(trap-error (pos \"a\" 1) (/. E caught))",
+    "fraction-pos": "(pos \"ab\" 0.5)"
+  },
+  "observations": {
+    "koka": {
+      "mixed": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "division": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "zero-division": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-zero": {
+        "stdout": "\"0\"\n",
+        "stderr": "",
+        "stdout_hex": "2230220a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "large-integer": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "exponent": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "integer-predicate": {
+        "stdout": "[true false]\n",
+        "stderr": "",
+        "stdout_hex": "5b747275652066616c73655d0a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-pos": {
+        "stdout": "\"x\"\n",
+        "stderr": "",
+        "stdout_hex": "2278220a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-code": {
+        "stdout": "955\n",
+        "stderr": "",
+        "stdout_hex": "3935350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-tail": {
+        "stdout": "\"x\"\n",
+        "stderr": "",
+        "stdout_hex": "2278220a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-roundtrip": {
+        "stdout": "\"\u03bb\"\n",
+        "stderr": "",
+        "stdout_hex": "22cebb220a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "nul-roundtrip": {
+        "stdout": "0\n",
+        "stderr": "",
+        "stdout_hex": "300a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "empty-code": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "past-end-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "fraction-pos": {
+        "stdout": "\"a\"\n",
+        "stderr": "",
+        "stdout_hex": "2261220a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      }
+    },
+    "go": {
+      "mixed": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "division": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "zero-division": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-zero": {
+        "stdout": "0\n",
+        "stderr": "",
+        "stdout_hex": "300a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "large-integer": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "exponent": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "integer-predicate": {
+        "stdout": "[true false]\n",
+        "stderr": "",
+        "stdout_hex": "5b747275652066616c73655d0a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-pos": {
+        "stdout": "x\n",
+        "stderr": "",
+        "stdout_hex": "780a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-code": {
+        "stdout": "955\n",
+        "stderr": "",
+        "stdout_hex": "3935350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-tail": {
+        "stdout": "x\n",
+        "stderr": "",
+        "stdout_hex": "780a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-roundtrip": {
+        "stdout": "",
+        "stderr": "ERROR: 955 is not a byte\n",
+        "stdout_hex": "",
+        "stderr_hex": "4552524f523a20393535206973206e6f74206120627974650a",
+        "exit_code": 1,
+        "status": "OBSERVED"
+      },
+      "nul-roundtrip": {
+        "stdout": "0\n",
+        "stderr": "",
+        "stdout_hex": "300a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "empty-code": {
+        "stdout": "#<err trap-error result is not Obj>\n",
+        "stderr": "kl: recovered in trap-error: ((string->n \"\") (lambda E caught))\n  panic: runtime error: index out of range [0] with length 0\ngoroutine 1 [running]:\ngithub.com/pyrex41/shen-go/kl.traceRecover({0xe7089c, 0xa}, 0x26949b954150?, {0x17fc818, 0x2694a13d3c38?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:500 +0x26f\ngithub.com/pyrex41/shen-go/kl.evalTrapError.func1()\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:755 +0x2e5\npanic({0x17fc818?, 0x2694a13d3c38?})\n\t/nix/store/9sz1nv010igaizprggzydbmybx8jm9ym-go-1.27.0/share/go/src/runtime/panic.go:859 +0x125\ngithub.com/pyrex41/shen-go/kl.PrimStringToNumber(0x26949b954150?)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/primitives.go:169 +0xa8\ngithub.com/pyrex41/shen-go/kl.wrapf1.func1(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/primitives.go:744 +0x30\ngithub.com/pyrex41/shen-go/kl.apply(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:612 +0x367\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:373 +0x52\ngithub.com/pyrex41/shen-go/kl.evalExp(0x26949b954150, 0x2694a1575938?, 0x26949b8ba270)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:383 +0x150\ngithub.com/pyrex41/shen-go/kl.evalTrapError(0x26949b954150, 0x0?, 0x2?)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:760 +0x90\ngithub.com/pyrex41/shen-go/kl.eval(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:696 +0x4d1\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:371 +0x65\ngithub.com/pyrex41/shen-go/kl.evalExp(0x26949b954150, 0x26949b8ba270?, 0x26949b8ba270)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:383 +0x150\ngithub.com/pyrex41/shen-go/kl.primEvalKL(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/primitives.go:658 +0x45\ngithub.com/pyrex41/shen-go/kl.apply(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:612 +0x367\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:373 +0x52\ngithub.com/pyrex41/shen-go/kl.Call(0x26949b954150, 0x2694a007cbc0, {0x2694a01bf288, 0x1, 0x5f7d53a00?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:464 +0x247\nmain.init.func2.7.9(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/cmd/shen/launcher.go:517 +0x1f5\ngithub.com/pyrex41/shen-go/kl.apply(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:612 +0x367\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:373 +0x52\ngithub.com/pyrex41/shen-go/kl.Call(0x26949b954150, 0x2694a007d4c0, {0x2694a01bf570, 0x1, 0x66cd58?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:464 +0x247\nmain.init.func2.4(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/cmd/shen/launcher.go:217 +0x35f\ngithub.com/pyrex41/shen-go/kl.apply(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:612 +0x367\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:373 +0x52\ngithub.com/pyrex41/shen-go/kl.Call(0x26949b954150, 0x2694a007cc40, {0x2694a01bfa00, 0x2, 0x2694a156f800?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:464 +0x247\nmain.init.func2.7(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/cmd/shen/launcher.go:1235 +0x3832\ngithub.com/pyrex41/shen-go/kl.apply(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:612 +0x367\ngithub.com/pyrex41/shen-go/kl.trampoline(0x26949b954150)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:373 +0x52\ngithub.com/pyrex41/shen-go/kl.Call(0x26949b954150, 0x2694a1565c40, {0x0, 0x0, 0x2694a01bfd00?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:464 +0x247\ngithub.com/pyrex41/shen-go/kl.Try(0x26949b954150, 0x17f7dc0?)\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/kl/eval.go:548 +0x94\nmain.runLauncher(0x26949b954150, {0x26949b8cc110, 0x3?, 0x6b06a9?})\n\t/workspace/scratch/3e502de53f0d/pinned/shen-go/cmd/shen/ma",
+        "stdout_hex": "233c65727220747261702d6572726f7220726573756c74206973206e6f74204f626a3e0a",
+        "stderr_hex": "6b6c3a207265636f766572656420696e20747261702d6572726f723a202828737472696e672d3e6e2022222920286c616d62646120452063617567687429290a202070616e69633a2072756e74696d65206572726f723a20696e646578206f7574206f662072616e6765205b305d2077697468206c656e67746820300a676f726f7574696e652031205b72756e6e696e675d3a0a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e74726163655265636f766572287b30786537303839632c203078617d2c2030783236393439623935343135303f2c207b3078313766633831382c2030783236393461313364336333383f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a353030202b30783236660a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6576616c547261704572726f722e66756e633128290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a373535202b30783265350a70616e6963287b3078313766633831383f2c2030783236393461313364336333383f7d290a092f6e69782f73746f72652f39737a316e76303130696761697a707267677a7964626d796278386a6d39796d2d676f2d312e32372e302f73686172652f676f2f7372632f72756e74696d652f70616e69632e676f3a383539202b30783132350a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e5072696d537472696e67546f4e756d6265722830783236393439623935343135303f290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f7072696d6974697665732e676f3a313639202b307861380a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7772617066312e66756e6331283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f7072696d6974697665732e676f3a373434202b307833300a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6170706c79283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363132202b30783336370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333733202b307835320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6576616c4578702830783236393439623935343135302c2030783236393461313537353933383f2c203078323639343962386261323730290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333833202b30783135300a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6576616c547261704572726f722830783236393439623935343135302c203078303f2c203078323f290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a373630202b307839300a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6576616c283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363936202b30783464310a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333731202b307836350a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6576616c4578702830783236393439623935343135302c2030783236393439623862613237303f2c203078323639343962386261323730290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333833202b30783135300a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7072696d4576616c4b4c283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f7072696d6974697665732e676f3a363538202b307834350a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6170706c79283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363132202b30783336370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333733202b307835320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e43616c6c2830783236393439623935343135302c2030783236393461303037636263302c207b30783236393461303162663238382c203078312c2030783566376435336130303f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a343634202b30783234370a6d61696e2e696e69742e66756e63322e372e39283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f636d642f7368656e2f6c61756e636865722e676f3a353137202b30783166350a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6170706c79283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363132202b30783336370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333733202b307835320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e43616c6c2830783236393439623935343135302c2030783236393461303037643463302c207b30783236393461303162663537302c203078312c2030783636636435383f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a343634202b30783234370a6d61696e2e696e69742e66756e63322e34283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f636d642f7368656e2f6c61756e636865722e676f3a323137202b30783335660a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6170706c79283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363132202b30783336370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333733202b307835320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e43616c6c2830783236393439623935343135302c2030783236393461303037636334302c207b30783236393461303162666130302c203078322c2030783236393461313536663830303f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a343634202b30783234370a6d61696e2e696e69742e66756e63322e37283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f636d642f7368656e2f6c61756e636865722e676f3a31323335202b3078333833320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e6170706c79283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a363132202b30783336370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e7472616d706f6c696e65283078323639343962393534313530290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a333733202b307835320a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e43616c6c2830783236393439623935343135302c2030783236393461313536356334302c207b3078302c203078302c2030783236393461303162666430303f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a343634202b30783234370a6769746875622e636f6d2f707972657834312f7368656e2d676f2f6b6c2e5472792830783236393439623935343135302c203078313766376463303f290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f6b6c2f6576616c2e676f3a353438202b307839340a6d61696e2e72756e4c61756e636865722830783236393439623935343135302c207b30783236393439623863633131302c203078333f2c2030783662303661393f7d290a092f776f726b73706163652f736372617463682f3365353032646535336630642f70696e6e65642f7368656e2d676f2f636d642f7368656e2f6d61",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "past-end-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "fraction-pos": {
+        "stdout": "a\n",
+        "stderr": "",
+        "stdout_hex": "610a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      }
+    },
+    "lua": {
+      "mixed": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "division": {
+        "stdout": "1.5\n",
+        "stderr": "",
+        "stdout_hex": "312e350a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "zero-division": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-zero": {
+        "stdout": "0\n",
+        "stderr": "",
+        "stdout_hex": "300a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "large-integer": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "exponent": {
+        "stdout": "true\n",
+        "stderr": "",
+        "stdout_hex": "747275650a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "integer-predicate": {
+        "stdout": "[true false]\n",
+        "stderr": "",
+        "stdout_hex": "5b747275652066616c73655d0a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-pos": {
+        "stdout": "\\xbb\n",
+        "stderr": "",
+        "stdout_hex": "bb0a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-code": {
+        "stdout": "206\n",
+        "stderr": "",
+        "stdout_hex": "3230360a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-tail": {
+        "stdout": "\\xbbx\n",
+        "stderr": "",
+        "stdout_hex": "bb780a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "unicode-roundtrip": {
+        "stdout": "",
+        "stderr": "shen: [string \"eval\"]:1: bad argument #1 to 'NSTR' (invalid value)\n",
+        "stdout_hex": "",
+        "stderr_hex": "7368656e3a205b737472696e6720226576616c225d3a313a2062616420617267756d656e7420233120746f20274e535452272028696e76616c69642076616c7565290a",
+        "exit_code": 1,
+        "status": "OBSERVED"
+      },
+      "nul-roundtrip": {
+        "stdout": "0\n",
+        "stderr": "",
+        "stdout_hex": "300a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "empty-code": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "negative-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "past-end-pos": {
+        "stdout": "caught\n",
+        "stderr": "",
+        "stdout_hex": "6361756768740a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      },
+      "fraction-pos": {
+        "stdout": "a\n",
+        "stderr": "",
+        "stdout_hex": "610a",
+        "stderr_hex": "",
+        "exit_code": 0,
+        "status": "OBSERVED"
+      }
+    }
+  },
+  "commands": {
+    "koka": [
+      "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka",
+      "eval",
+      "-e"
+    ],
+    "go": [
+      "/workspace/scratch/3e502de53f0d/reference-shen-go",
+      "eval",
+      "-e"
+    ],
+    "lua": [
+      "luajit",
+      "/workspace/scratch/3e502de53f0d/pinned/shen-lua/bin/shen",
+      "-e"
+    ]
+  },
+  "candidate_sha256": "8051c5aa483a49ff7b497c80350a2ce20263322ebd66f20bc095fc358fb9f30d",
+  "go_sha256": "ee93a4477a36129ff8ed0a5e05e770f2eb76ccd19b2738e1a4cf6da0d0b23729",
+  "lua_sha": "614cd0754a741c8070c467b2b07f07943d17f4ff",
+  "exact_agreement": {
+    "mixed": true,
+    "division": true,
+    "zero-division": true,
+    "negative-zero": false,
+    "large-integer": true,
+    "exponent": true,
+    "integer-predicate": true,
+    "unicode-pos": false,
+    "unicode-code": false,
+    "unicode-tail": false,
+    "unicode-roundtrip": false,
+    "nul-roundtrip": true,
+    "empty-code": false,
+    "negative-pos": true,
+    "past-end-pos": true,
+    "fraction-pos": false
+  }
+}

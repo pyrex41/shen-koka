@@ -1,6 +1,7 @@
 # Implementation progress
 
-Work branch: `implement/klambda-runtime`. Initial base: `c2bcf31`.
+Work branch: `implement/native-compiler`; the complete interpreter checkpoint
+also remains on `implement/klambda-runtime`. Initial base: `c2bcf31`.
 No AGENTS.md exists at that base. Reference worktrees were created detached at
 all four revisions in `research/source-inventory.json`; existing checkouts were
 not reset or cleaned.
@@ -23,7 +24,7 @@ not reset or cleaned.
 
 ## Published
 
-The runtime checkpoint is published at `ec4af528af20a5e7f7292fc5dd5cac2f6f521e4f`
+The runtime checkpoint is published at `5197c2967b6a2d4341a0650e1758109003713975`
 on `pyrex41/shen-koka:implement/klambda-runtime`. GitHub API publication preserves
 the exact local tree; local commit SHAs differ because the API creates commits.
 Command-line Git push lacked credentials in this environment.
@@ -135,3 +136,17 @@ qualify the planned direct compiler, other platforms, long-running memory
 budgets, all standard-library operations, or the broader release matrix. Direct
 KL-to-Koka lowering is the next implementation stage; the optional search
 experiment remains deferred.
+
+## Stream lifetime checkpoint
+
+Attempt 057 passes all 134 canonical and eight extension assertions with the
+adapter enabled in both lanes, all 35 reports captured and no regressions from
+052. Attempt 054 demonstrated that a closed stream handle could alias a newly
+opened file. Generation-tagged stream slots now reject stale reads, writes and
+closes without affecting the new owner. Both interpreter (056) and directly
+compiled (058) focused sets pass 29 cases. The optional native hello build still
+has no qualified result; attempts 051 and 055 timed out and remain recorded.
+
+Attempt 060 records numeric/Unicode discrepancies between pinned references.
+Attempt 061 identifies rounding errors in Koka's index and character conversions;
+those are outstanding at this checkpoint, not covered by the complete suite.

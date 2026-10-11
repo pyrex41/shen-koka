@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Focused semantic checks; these never replace the full distribution gate."""
-import json,pathlib,subprocess,hashlib
+import json,pathlib,subprocess,hashlib,tempfile
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 cases={
+ 'stale-stream-write':('(set *home-directory* "") (let A (open "stream-probe.tmp" out) (let C (close A) (let B (open "stream-probe.tmp" out) (let Old (trap-error (write-byte 65 A) (lambda E stale)) (let C (close B) Old)))))','""\nstale'),
+ 'stale-stream-close':('(set *home-directory* "") (let A (open "stream-probe.tmp" out) (let C (close A) (let B (open "stream-probe.tmp" out) (let Old (trap-error (close A) (lambda E stale)) (let New (write-byte 66 B) (let C (close B) (cons Old (cons New ()))))))))','""\n[stale 66]'),
+
  'untaken-malformed-form':('(if true 42 (lambda X Y Z))','42'),
  'operator-before-arguments':('(set c 0) (((lambda X (lambda Y Y)) (set c 1)) (value c))','0\n1'),
 
@@ -37,7 +40,8 @@ cases={
 results={}
 for name,(source,expected) in cases.items():
  try:
-  p=subprocess.run([str(ROOT/'bin/shen-koka'),'kl','-e',source],capture_output=True,text=True,timeout=30)
+  with tempfile.TemporaryDirectory(prefix='shen-case-') as cwd:
+   p=subprocess.run([str(ROOT/'bin/shen-koka'),'kl','-e',source],cwd=cwd,capture_output=True,text=True,timeout=30)
   results[name]={'source':source,'expected':expected,'stdout':p.stdout,'stderr':p.stderr,'exit_code':p.returncode,'status':'PASS' if p.returncode==0 and p.stdout.strip()==expected else 'FAIL'}
  except subprocess.TimeoutExpired:
   results[name]={'source':source,'status':'UNKNOWN','blocker':'30 second timeout'}

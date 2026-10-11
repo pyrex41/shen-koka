@@ -1,0 +1,1 @@
+Initial numeric/character probe runner aborted during UTF-8 text decoding: UnicodeDecodeError: byte 0xbb at position 0. No completed report was produced; no assertions are claimed from this attempt. The corrected runner preserves raw output bytes as hex and checkpoints each observation.

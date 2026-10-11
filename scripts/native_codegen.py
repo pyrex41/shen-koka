@@ -73,10 +73,11 @@ class Compiler:
         v=self.fresh();lines.append('val '+v+'=keep-native(roots,'+expression+')');return v
     def call_parts(self,x,env):
         lines,op=self.value(x[0],env)
-        # Bind the operator before evaluating any arguments, even if it is pure.
-        f=self.save(op,lines);args=[]
+        # value() emits effects in order and roots computed results. Literals
+        # and lexical values need no duplicate roots or live CPS temporaries.
+        f=op;args=[]
         for arg in x[1:]:
-            statements,v=self.value(arg,env);lines.extend(statements);args.append(self.save(v,lines))
+            statements,v=self.value(arg,env);lines.extend(statements);args.append(v)
         return lines,f,'['+','.join(args)+']'
     def value(self,x,env):
         x=self.normalize(x);literal=self.constant(x,env)

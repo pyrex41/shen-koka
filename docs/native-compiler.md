@@ -18,7 +18,8 @@ These focused programs do not replace a full native-kernel suite run.
 
 An early generator emitted nested temporary expressions. The actual Yggdrasil
 hello build exceeded its 900-second compiler budget (051). The next version emits
-flat temporary bindings and is being checked against the same manifest. Until
+flat temporary bindings also exceeded that budget (055). A further iteration
+removes duplicate roots and redundant live temporary bindings. Until
 that succeeds and broader compiled-path gates pass, the builder defaults to the
 interpreter-backed path; `--native` is explicitly experimental.
 
