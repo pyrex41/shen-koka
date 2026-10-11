@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "stdout": "(fn parse)\n(fn parsed?)\n(fn output_parse)\n(fn generate_parser)\n(fn parenthesise_rules)\n(fn parenthesise_rules1)\n(fn group_rules)\n(fn group_rules1)\n(fn place_in_group)\n(fn belongs-in?)\n(fn compile_rules)\n(fn lex?)\n(fn generate_code_for_nonlex)\n(fn mapapp)\n(fn get_characteristic_non_terminal)\n(fn gcfn_help)\n(fn apply_expansion)\n(fn ae_help)\n(fn generate_code_for_lex)\n(fn gcfl_help)\n\nrun time: 2.1257859999999997 secs\nok\n",
+  "stderr": "",
+  "source": "(do (load \"metaprog.shen\") (do (generate_parser [sent --> np vp np --> name np --> det n name --> \"John\" name --> \"Bill\" name --> \"Tom\" det --> \"the\" det --> \"a\" det --> \"that\" det --> \"this\" n --> \"girl\" n --> \"ball\" vp --> vtrans np vp --> vintrans vtrans --> \"kicks\" vtrans --> \"likes\" vintrans --> \"jumps\" vintrans --> \"flies\"]) ok))",
+  "seconds": 5.835984359000577
+}

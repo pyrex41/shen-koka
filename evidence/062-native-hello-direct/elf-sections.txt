@@ -1,0 +1,4 @@
+   text	   data	    bss	    dec	    hex	filename
+1361849	  33576	  72369	1467794	 166592	.build/shen-koka
+2609665	  53496	  72369	2735530	 29bdaa	artifacts/native-010/run
+5584514	  63208	  72353	5720075	 57480b	artifacts/ygg-hello-native-003/run

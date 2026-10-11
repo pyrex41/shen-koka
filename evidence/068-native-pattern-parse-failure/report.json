@@ -1,0 +1,16 @@
+{
+  "command": [
+    "koka",
+    "-j1",
+    "-i/tmp/shen-koka-native-anf/src",
+    "-i/tmp/shen-koka-native-anf/generated",
+    "-O2",
+    "--builddir=/tmp/shen-koka-native-anf-cache",
+    "-o",
+    "/tmp/shen-koka-native-anf/run",
+    "/tmp/shen-koka-native-anf/program.kk"
+  ],
+  "compile_exit_code": 1,
+  "build_seconds": 13.021919060003711,
+  "cases": {}
+}

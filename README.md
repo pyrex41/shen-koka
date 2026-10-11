@@ -4,7 +4,9 @@ Experimental Shen port using Koka, with
 Bifrost comparison gates and Yggdrasil standalone artifacts.
 
 Status on 2026-10-11: experimental Koka KLambda interpreter and pinned S42
-kernel boot implemented. Full-port qualification is pending.
+kernel boot implemented. Full-port qualification is pending. The adapter-enabled interpreter passes all
+134 canonical and eight extension assertions; the direct compiler passes 37
+focused cases and one actual Yggdrasil standalone hello case.
 See [implementation progress](docs/implementation-status.md) and `evidence/`
 for executed results, limitations, and reproduction commands.
 
@@ -27,7 +29,8 @@ dynamic evaluation while those gates are established.
 nix develop                         # Koka and native build tools
 nix develop .#comparison             # also Go 1.27 and LuaJIT
 nix develop --command koka --version
-nix build .#toolchain                # composable port tools, not a Shen runtime
+nix build .#toolchain                # composable port tools
+nix build .#shen-koka                # experimental runtime package
 ```
 
 The lock uses the same Nixpkgs revision as Bifrost, Yggdrasil, and Shen-Go,

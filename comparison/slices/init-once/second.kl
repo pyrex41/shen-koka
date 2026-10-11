@@ -1,0 +1,5 @@
+(if (= (value observed-in-first) 1)
+    (if (= (value initialisations) 1)
+        (write-byte 49 (value *stoutput*))
+        (simple-error "initializer repeated"))
+    (simple-error "manifest user order changed"))

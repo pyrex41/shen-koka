@@ -150,3 +150,22 @@ has no qualified result; attempts 051 and 055 timed out and remain recorded.
 Attempt 060 records numeric/Unicode discrepancies between pinned references.
 Attempt 061 identifies rounding errors in Koka's index and character conversions;
 those are outstanding at this checkpoint, not covered by the complete suite.
+
+## Conversion and compiler checkpoint
+
+Attempt 064 passes all 142 assertions, with all 35 canonical report groups and
+no regressions from 057. Fractional indices and vector sizes now truncate as in
+the pinned Go interpreter; character codes reject fractional, negative,
+non-finite, and out-of-range inputs. All 37 interpreter checks (063), 37 compiled
+checks (070), and 17 required Koka Bifrost seed cells (071) pass. Attempt 069
+independently reproduces the metaprogramming scenario successfully.
+
+The actual Yggdrasil hello slice now compiles directly and runs from an empty
+directory without an installed kernel (062). General native deployment and the
+full compiled-kernel suite remain unqualified. The new Nix runtime package
+attribute evaluates; its build/run qualification is pending. The optional
+search experiment remains deferred.
+
+Latest published predecessor: `133585752ce84823bfbb44d8842fa1ec5995a258` on
+`implement/native-compiler`; this document's newer evidence belongs to the next
+checkpoint and is not yet described as published.

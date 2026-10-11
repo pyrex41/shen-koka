@@ -39,7 +39,7 @@ def block(lines):
     return '{\n'+ '\n'.join('  '+line.replace('\n','\n  ') for line in flattened)+'\n}'
 
 class Compiler:
-    def __init__(self):self.jobs=[];self.serial=0
+    def __init__(self):self.jobs=[];self.serial=0;self.depth=0
     def fresh(self):
         self.serial+=1;return 'x'+str(self.serial)
     def schedule(self,params,body,captures=()):
@@ -80,6 +80,13 @@ class Compiler:
             statements,v=self.value(arg,env);lines.extend(statements);args.append(v)
         return lines,f,'['+','.join(args)+']'
     def value(self,x,env):
+        if isinstance(x,list) and x and self.depth>=12:
+            lines=[];f=self.save(self.closure([],x,env),lines)
+            v=self.save("invoke(w,"+f+",[])",lines);return lines,v
+        self.depth+=1
+        try:return self.value_inner(x,env)
+        finally:self.depth-=1
+    def value_inner(self,x,env):
         x=self.normalize(x);literal=self.constant(x,env)
         if literal is not None:return [],literal
         if not isinstance(x,list):raise ValueError('unsupported KL value')
@@ -109,6 +116,13 @@ class Compiler:
             v=self.save('invoke-protected(w,'+body+','+hndl+')',lines);return lines,v
         lines,f,args=self.call_parts(x,env);v=self.save('invoke(w,'+f+','+args+')',lines);return lines,v
     def tail(self,x,env):
+        if isinstance(x,list) and x and self.depth>=12:
+            lines=[];f=self.save(self.closure([],x,env),lines)
+            return lines+["TailApply("+f+",[])"]
+        self.depth+=1
+        try:return self.tail_inner(x,env)
+        finally:self.depth-=1
+    def tail_inner(self,x,env):
         x=self.normalize(x)
         if isinstance(x,list) and x:
             tag=x[0] if isinstance(x[0],Symbol) else None;args=x[1:]
@@ -132,13 +146,14 @@ class Compiler:
         entries=[[self.schedule([],form) for form in forms] for forms in groups]
         bodies=[];i=0
         while i<len(self.jobs):
-            params,body,captures=self.jobs[i];env={};lines=[]
-            for j,name in enumerate(captures):
-                v=self.fresh();lines.append('val '+v+'=native-arg(captured,%d)'%j);env[name]=v
-            for j,name in enumerate(params):
-                v=self.fresh();lines.append('val '+v+'=native-arg(args,%d)'%j);env[name]=v
-            lines.extend(self.tail(body,env))
-            bodies.append('fun code%d(w:world,roots:ref<global,list<value>>,captured:list<value>,args:list<value>): <st<global>,exn,div,console> native-result '%i+block(lines));i+=1
+            params,body,captures=self.jobs[i];env={};cp=[];ap=[]
+            for name in captures:
+                v=self.fresh();cp.append(v);env[name]=v
+            for name in params:
+                v=self.fresh();ap.append(v);env[name]=v
+            pattern='(['+','.join(cp)+'],['+','.join(ap)+'])'
+            bodycode='match (captured,args) '+block([pattern+' -> '+block(self.tail(body,env)),'_ -> throw("native closure arity mismatch")'])
+            bodies.append('fun code%d(w:world,roots:ref<global,list<value>>,captured:list<value>,args:list<value>): <st<global>,exn,div,console> native-result '%i+block([bodycode]));i+=1
         modules=[]
         for start in range(0,len(bodies),40):
             name='klpart'+str(start//40);modules.append(name)

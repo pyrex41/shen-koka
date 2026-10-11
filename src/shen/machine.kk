@@ -67,11 +67,11 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
       Text(s) -> Text(s)
       _ -> throw("str: cannot convert non-atomic value")
     }
-    ("pos",[Text(s),Num(n)]) -> { if n<0.0 then throw("pos: out of range"); val cs=s.list; match cs.drop(n.int).head { Just(c) -> Text(c.string); Nothing -> throw("pos: out of range") } }
+    ("pos",[Text(s),Num(n)]) -> { if !n.is-finite || n<0.0 then throw("pos: out of range"); val cs=s.list; match cs.drop(n.truncate.int).head { Just(c) -> Text(c.string); Nothing -> throw("pos: out of range") } }
     ("tlstr",[Text(s)]) -> match s.list { Cons(_,rest) -> Text(rest.string); _ -> throw("tlstr: empty string") }
-    ("n->string",[Num(n)]) -> Text(n.int.char.string)
+    ("n->string",[Num(n)]) -> { if !n.is-finite || n<0.0 || n>1114111.0 || n.int.float64!=n then throw("n->string: expected character code"); Text(n.int.char.string) }
     ("string->n",[Text(s)]) -> match s.list { Cons(c,_) -> Num(c.int.float64); _ -> throw("string->n: empty string") }
-    ("absvector",[Num(n)]) -> alloc-vector(w,n.int)
+    ("absvector",[Num(n)]) -> { if !n.is-finite then throw("absvector: expected finite size"); alloc-vector(w,n.truncate.int) }
     ("<-address",[v,Num(n)]) -> vector-get(w,v,address-index(n))
     ("address->",[v,Num(n),x]) -> vector-set(w,v,address-index(n),x)
     ("simple-error",[Text(s)]) -> throw(s)

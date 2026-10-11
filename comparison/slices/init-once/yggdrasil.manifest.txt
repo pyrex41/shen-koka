@@ -1,0 +1,8 @@
+manifest-version=4
+kernel-version=fixture
+kernel=kernel.kl
+init=shen.initialise
+user=first.kl
+user=second.kl
+needs-eval=false
+init-order=checked

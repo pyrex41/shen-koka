@@ -1,0 +1,4 @@
+{
+  "lock_busy": true,
+  "observation": "second writer excluded while native corpus builds"
+}

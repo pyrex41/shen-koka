@@ -4,10 +4,11 @@ The complete Shen distribution remains the primary gate.
 """
 import argparse,ast,hashlib,json,pathlib,shutil,subprocess,sys,time,tempfile
 from native_codegen import Compiler,read_kl,quote
-from native_build import run_compiler
+from native_build import run_compiler,serial_native_build
 ROOT=pathlib.Path(__file__).resolve().parents[1]
+@serial_native_build
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+ p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--cache',type=pathlib.Path);a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);shutil.copy2(ROOT/'scripts/native_codegen.py',out/'generator.py')
  module=ast.parse((ROOT/'scripts/test-runtime.py').read_text())
  cases=next(ast.literal_eval(n.value) for n in module.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='cases' for t in n.targets))
  work=pathlib.Path('/tmp/shen-koka-native-anf');work.mkdir(exist_ok=True)
@@ -30,7 +31,7 @@ def main():
  print('Compiling '+str(plan['code_count'])+' native callbacks',flush=True)
  r=run_compiler(command,900)
  (out/'compile.log').write_text(r.stdout)
- record={'command':command,'compile_exit_code':r.returncode,'build_seconds':time.monotonic()-start,'cases':{}}
+ record={'command':command,'compile_exit_code':r.returncode,'build_seconds':time.monotonic()-start,'cases':{name:{'source':source,'expected':expected,'status':'UNKNOWN','blocker':'native compiler did not complete successfully'} for name,(source,expected) in cases.items()}}
  if r.returncode==0:
   (work/'run').chmod(0o755);record['binary_sha256']=hashlib.sha256((work/'run').read_bytes()).hexdigest()
   for name,(source,expected) in cases.items():

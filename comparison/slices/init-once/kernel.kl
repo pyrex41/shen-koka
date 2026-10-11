@@ -1,0 +1,2 @@
+(defun shen.initialise ()
+  (set initialisations (+ 1 (trap-error (value initialisations) (lambda E 0)))))

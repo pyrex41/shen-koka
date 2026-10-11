@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/ygg-hello-native-003/run"
+  ],
+  "environment": {
+    "SHEN_KOKA_ROOT": "/nonexistent"
+  },
+  "cwd": "empty temporary directory",
+  "exit_code": 0,
+  "stdout": "hello from shaken shen\n",
+  "stderr": "",
+  "expected_stdout": "hello from shaken shen\n",
+  "binary_sha256": "6c02d4143c63e9010e445acec7a5933eaa2d9b9f4cbed34472394b7eb6e9ee60",
+  "binary_bytes": 99384088,
+  "status": "PASS"
+}

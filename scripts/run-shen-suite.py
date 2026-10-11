@@ -73,6 +73,7 @@ def parse_canonical(text, lock, cells):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--launcher',default=str(ROOT/'bin/shen-koka'))
+    ap.add_argument('--native-artifact',type=pathlib.Path,help='snapshot a compiled full-kernel artifact with verified build provenance')
     ap.add_argument('--script-command',default='script',help='empty for a direct filename launcher')
     ap.add_argument('--distribution',type=pathlib.Path,default=ROOT/'kernel')
     ap.add_argument('--output',type=pathlib.Path,required=True)
@@ -80,6 +81,7 @@ def main():
     ap.add_argument('--previous',type=pathlib.Path)
     ap.add_argument('--ppm-compat',action='store_true',help='enable the S42 community pattern adapter for BOTH lanes')
     args=ap.parse_args(); args.output.mkdir(parents=True,exist_ok=False)
+    shutil.copy2(pathlib.Path(__file__),args.output/'runner.py')
     lockpath=ROOT/'comparison/shen-suite.lock.json'; lock=json.loads(lockpath.read_text())
     errors=[]
     for name, digest in lock['sha256_by_file'].items():
@@ -87,6 +89,26 @@ def main():
         if not p.is_file() or sha(p)!=digest: errors.append(name)
     identities={x['id']:x for x in json.loads((ROOT/'comparison/assertions.json').read_text())}
     launcher=pathlib.Path(args.launcher).absolute()
+    native_build=None;native_root=args.native_artifact.resolve() if args.native_artifact else None
+    if native_root:
+        launcher=native_root/'run'
+        record=native_root/'build.json'
+        if not record.is_file():errors.append('missing native artifact build provenance')
+        else:
+            native_build=json.loads(record.read_text())
+            if native_build.get('exit_code')!=0 or not native_build.get('direct_kl_compiler') or not native_build.get('kernel_forms'):errors.append('not a completed full native kernel build')
+            binary=native_root/'native'
+            if not binary.is_file() or sha(binary)!=native_build.get('binary_sha256'):errors.append('native binary changed after build')
+            generator=native_root/'native_codegen.py'
+            if not generator.is_file() or sha(generator)!=native_build.get('generator_sha256'):errors.append('native generator snapshot drift')
+            for name,digest in native_build.get('compat_sha256',{}).items():
+                f=native_root/'compat'/name
+                if not f.is_file() or sha(f)!=digest:errors.append('native compatibility snapshot drift: '+name)
+            for name,digest in native_build.get('runtime_sources',{}).items():
+                f=native_root/'src'/name
+                if not f.is_file() or sha(f)!=digest:errors.append('native source drift: '+name)
+            for name,digest in native_build.get('kernel_sha256',{}).items():
+                if sha(ROOT/'kernel/klambda'/name)!=digest:errors.append('native kernel drift: '+name)
     build_record=ROOT/'.build/build.json'
     if launcher==ROOT/'bin/shen-koka':
         if not build_record.is_file(): errors.append('missing build provenance')
@@ -102,6 +124,10 @@ def main():
             'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'src').rglob('*')) if p.is_file()},
             'flake_lock_sha256':sha(ROOT/'flake.lock'),
             'inventory_errors':errors,'lanes':{}}
+    if native_build:
+        report['native_build']=native_build
+        report['runtime_binary_sha256']=native_build.get('binary_sha256')
+        report['source_sha256']=native_build.get('runtime_sources',{})
     # Freeze both executable and boot inputs across lanes. Rebuilding during a
     # long canonical run must never silently substitute the extension candidate.
     snapshot=None; execution_launcher=launcher; execution_env={}
@@ -114,6 +140,14 @@ def main():
         execution_launcher=snapshot_root/'shen-koka'
         execution_env={'SHEN_KOKA_ROOT':str(snapshot_root)}
         report['execution']='immutable native payload and boot-input snapshot'
+    if native_root and not errors:
+        snapshot=tempfile.TemporaryDirectory(prefix='shen-native-suite-')
+        snapshot_root=pathlib.Path(snapshot.name)
+        shutil.copy2(native_root/'native',snapshot_root/'shen-koka')
+        shutil.copytree(native_root/'compat',snapshot_root/'compat')
+        execution_launcher=snapshot_root/'shen-koka'
+        execution_env={'SHEN_KOKA_ROOT':str(snapshot_root)}
+        report['execution']='immutable compiled-kernel payload and compatibility snapshot'
     for lane in ['canonical','bundled_extensions']:
         spec=lock[lane]; out=args.output/lane; out.mkdir()
         if lane=='canonical':
@@ -123,7 +157,7 @@ def main():
             cells=[{'id':c['id'],'name':c['name'],'status':'UNKNOWN'} for c in spec['cases']]
             cwd=args.distribution
         if errors:
-            result={'blocker':'pinned suite inventory mismatch','exit_code':None}
+            result={'blocker':'input or build provenance check failed: '+'; '.join(errors),'exit_code':None}
         else:
             result=execute([str(execution_launcher)]+([args.script_command] if args.script_command else [])+[spec['entrypoint']],cwd,out,args.timeout, {**execution_env, 'SHEN_KOKA_PPM_COMPAT':'1' if args.ppm_compat else '0'})
             text=(out/'stdout').read_text(errors='replace')
@@ -138,7 +172,8 @@ def main():
         for cell in cells: cell.update(identities[cell['id']])
         for cell in cells:
             if cell['status']=='UNKNOWN': cell['blocker']=result.get('blocker') or 'assertion outcome not observed'
-        result['compat_sha256']={str(p.relative_to(ROOT)):sha(p) for p in (ROOT/'compat').rglob('*') if p.is_file()} if args.ppm_compat else {}
+        compat_root=native_root or ROOT
+        result['compat_sha256']={str(p.relative_to(compat_root)):sha(p) for p in (compat_root/'compat').rglob('*') if p.is_file()} if args.ppm_compat else {}
         result['assertions']=cells
         result['counts']={s:sum(c['status']==s for c in cells) for s in ['PASS','FAIL','UNKNOWN']}
         result['denominator']=spec['assertion_count']

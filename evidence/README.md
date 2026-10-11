@@ -48,3 +48,12 @@ configurations.
 gate with no regressions. 059 is a failed UTF-8-decoding probe harness; 060
 retains corrected byte-preserving numeric/character observations. 061 records
 conversion rounding mismatches that remain open at this checkpoint.
+
+062 records the first successful direct native Yggdrasil hello artifact,
+including an isolated execution and ELF-section sizes. 063 passes 37 interpreter
+checks after conversion fixes; 064 passes all 142 primary assertions without
+regressions. 065 observes native workspace locking. 066 passes 37 split-generator
+checks. 067 is the missing native-kernel pre-build gate: all 142 UNKNOWN. 068
+retains an indentation/compiler failure, followed by 37 compiled PASS in 070.
+069 reproduces the metaprogramming scenario in isolation. 071 passes all 17
+required Koka Bifrost cells and the strict checker.

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "execution": "direct KL-to-Koka callbacks",
+  "direct_kl_compiler": true,
+  "generator_sha256": "0d5dac03967a15256d0bf3e8e8a85720b3309c1effb0c56bbc176c968fae8cf2",
+  "manifest_sha256": "a2e03b603ea95a45743b3a9ae997d64194b1856d12a680eda09a80e621e3693f",
+  "inputs": {
+    "kernel.kl": "037c28e830a4c4b6ee6c6d158964bd541d743b0b659a16acf37207785fdfe3fe",
+    "hello.kl": "a09b46467dbffb9a0d2d5e48453a4c60d193a4cb2b953655e10ce6c8ca6452cb"
+  },
+  "initializer": "shen.initialise",
+  "argv": [
+    "koka",
+    "-j1",
+    "-i/tmp/shen-koka-native-anf/src",
+    "-i/tmp/shen-koka-native-anf/generated",
+    "-O2",
+    "--builddir=/tmp/shen-koka-native-anf-cache",
+    "-o",
+    "/tmp/shen-koka-native-anf/run",
+    "/tmp/shen-koka-native-anf/program.kk"
+  ],
+  "exit_code": 0,
+  "runtime_sources": {
+    "shen/values.kk": "d1a8c9f0a098864621877c5dcb7c2bdbf7579b3ad357116d00a3edfe021693e2",
+    "shen/read-kl.kk": "804bf82490cc21c2bc67a35eb43c29dd938ec4502b7656f8dd65f9a5b287807a",
+    "shen/machine.kk": "707ea9a402b0b6e14c94bd0bb60167a14e24f2405884e1e26f828dc9a5529d0a",
+    "shen/world.kk": "3b5166fdea27d782b1ee9158cd39d22f1c89549865f279f829e385b084c42470",
+    "shen/boot.kk": "8afc255902d99d0b6a7c2e09b23a2f2418bea6809c328aadd7177302a758af1d",
+    "shen/compile-kl.kk": "0b8e7e565354869acda080c5864c1fd2fee2e28f5e5f08e9c440c54e308e5b02",
+    "shen/main.kk": "8cf28b97abc7543ccd9a6e74075c4d23029d7ba5352a4ef4faff06c1ebfda511",
+    "shen/io-inline.c": "b44f2d40c9c1a21c55d1b49121380fd4e3cca28c1e78d909b53d5d9529e4b2f5",
+    "shen/io.kk": "0f1a82c7840fd2aa19ce40d62fddae894fafda636c5243c5400a07c3c62965a7"
+  },
+  "executable_sha256": "6c02d4143c63e9010e445acec7a5933eaa2d9b9f4cbed34472394b7eb6e9ee60"
+}

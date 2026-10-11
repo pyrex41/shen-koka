@@ -1,0 +1,68 @@
+(fn extension-tests.reset)
+(fn extension-tests.pass)
+(fn extension-tests.fail)
+(fn extension-tests.assert-equal)
+(fn extension-tests.assert-error)
+(fn extension-tests.finish)
+
+run time: 0.66295199999999999 secs
+loaded
+ok
+(fn shen.x.programmable-pattern-matching.apply-pattern-handlers)
+(fn shen.x.programmable-pattern-matching.make-stack)
+(fn shen.x.programmable-pattern-matching.push)
+(fn shen.x.programmable-pattern-matching.pop-all)
+(fn shen.x.programmable-pattern-matching.surface-pattern)
+(fn shen.x.programmable-pattern-matching.surface-pattern-tail)
+(fn shen.x.programmable-pattern-matching.compile-pattern)
+(fn shen.x.programmable-pattern-matching.compile-pattern-h)
+(fn shen.x.programmable-pattern-matching.reduce)
+(fn shen.x.programmable-pattern-matching.initialise)
+(fn shen.x.programmable-pattern-matching.register-handler)
+(fn shen.x.programmable-pattern-matching.findpos)
+(fn shen.x.programmable-pattern-matching.findpos-h)
+(fn shen.x.programmable-pattern-matching.remove-nth)
+(fn shen.x.programmable-pattern-matching.unregister-handler)
+
+run time: 4.8207260000000005 secs
+loaded
+(fn ppm.two-handler)
+shen.x.programmable-pattern-matching.done
+ppm.two-handler
+
+run time: 5.0352490000000003 secs
+loaded
+(fn ppm.match-simple)
+(fn ppm.match-repeat)
+(fn ppm.match-nested)
+(fn ppm.match-cons)
+(fn ppm.match-literal-list)
+
+run time: 0.33447000000000138 secs
+loaded
+ok - simple custom pattern
+ok
+ok - repeated variable success
+ok
+ok - repeated variable failure
+ok
+ok - nested custom pattern
+ok
+ok - built-in cons pattern still works
+ok
+ok - built-in literal list pattern still works
+ok
+ok - unregister handler
+ok
+ok - custom pattern definition fails after unregister
+ok
+
+run time: 5.8238000000000003 secs
+loaded
+
+passed ... 8
+failed ... 0
+
+ok
+
+run time: 6.5592199999999998 secs

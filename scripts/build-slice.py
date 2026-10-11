@@ -3,9 +3,10 @@
 This is an interpreter-backed builder, not the planned direct KL-to-Koka compiler.
 """
 import argparse,collections,hashlib,json,pathlib,subprocess,sys
-from native_build import run_compiler
+from native_build import run_compiler,serial_native_build,artifact_notices
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+@serial_native_build
 def main():
     p=argparse.ArgumentParser();p.add_argument('--native',action='store_true',help='experimental direct KL lowering');p.add_argument('manifest',type=pathlib.Path);p.add_argument('output',type=pathlib.Path);a=p.parse_args()
     manifest=a.manifest.resolve()
@@ -29,7 +30,8 @@ def main():
         if not path.is_relative_to(manifest.parent):raise ValueError('manifest path escapes slice directory')
         return path
     files=[source(kernel)]+[source(u) for u in users]
-    out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);artifact_notices(out)
+    generator_snapshot=(ROOT/'scripts/native_codegen.py').read_bytes();(out/'native_codegen.py').write_bytes(generator_snapshot)
     runtime=out/'src';import shutil;shutil.copytree(ROOT/'src/shen',runtime/'shen')
     # Full kernel boot is deliberately absent: these are manifest-only slices.
     plan=None
@@ -63,7 +65,7 @@ def main():
     (out/'compile.log').write_text(result.stdout)
     if plan and result.returncode==0:
         (stage/'run').chmod(0o755);shutil.copy2(stage/'run',out/'run')
-    record={'schema_version':1,'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(ROOT/'scripts/native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
+    record={'schema_version':1,'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(out/'native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
     if result.returncode==0:
         (out/'run').chmod(0o755);record['executable_sha256']=digest(out/'run')
     (out/'build.json').write_text(json.dumps(record,indent=2)+'\n')
