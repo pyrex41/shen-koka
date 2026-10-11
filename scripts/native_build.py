@@ -1,6 +1,24 @@
 """Bounded serial native build with complete final logs and process-group cleanup."""
 import os,signal,subprocess,types,fcntl,functools,time,pathlib,shutil,resource,sys,json
 
+def validated_resume_prefix(previous,current):
+    """Reuse only a successful library prefix with identical compiler inputs.
+
+    The final compiler invocation always runs and validates imported interfaces;
+    absent or invalid cache entries are rebuilt by Koka, never assumed present.
+    """
+    for key in ['kernel_sha256','generator_sha256','flake_lock_sha256',
+                'compat_sha256','runtime_sources','generated_sources','commands']:
+        if key not in previous or previous[key]!=current[key]:
+            raise ValueError('resume input differs: '+key)
+    prefix=[]
+    for index,step in enumerate(previous.get('steps',[])):
+        if index>=len(current['commands'])-1 or step.get('exit_code')!=0:break
+        if step.get('argv')!=current['commands'][index]:
+            raise ValueError('resume step command differs: '+str(index))
+        prefix.append(step)
+    return prefix
+
 def serial_native_build(main):
     """Protect shared generated modules and cache until the artifact is copied."""
     @functools.wraps(main)

@@ -1,0 +1,37 @@
+{
+  "argv": [
+    "/workspace/scratch/3e502de53f0d/yggdrasil-koka-native",
+    "shake",
+    "/workspace/scratch/3e502de53f0d/pinned/yggdrasil/tests/fib.shen",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/yggdrasil-koka-host",
+    "--host",
+    "/workspace/scratch/3e502de53f0d/shen-koka/bin/shen-koka"
+  ],
+  "timeout_seconds": 900,
+  "seconds": 524.1846884909974,
+  "exit_code": 1,
+  "timed_out": false,
+  "binary_sha256": {
+    "/workspace/scratch/3e502de53f0d/yggdrasil-koka-native": "816f9ae02b233a0229e093460f4b3fd125f4b90d4a935d41f2dff69a4229d402",
+    "/workspace/scratch/3e502de53f0d/shen-koka/.build/shen-koka": "c4ab47efca1064700d5b87b103a557364af29078b447a4975aba55f0c09a18e2"
+  },
+  "artifacts": {
+    "fib.kl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "kernel.kl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "yggdrasil.manifest.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "yggdrasil.manifest": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "status": "FAIL"
+}

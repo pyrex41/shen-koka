@@ -10,7 +10,7 @@ not full-port release qualification.
 | Capability | Evidence | Qualification boundary |
 |---|---|---|
 | KLambda values, lexical closures, currying, redefinition, explicit tail-call machine | 098: 43 focused PASS | Includes million-step self, mutual and indirect calls |
-| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 117: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
+| Full kernel compiler, typechecker, Prolog, YACC, macros, packages and dynamic evaluation | 131: 134 + 8 PASS | All 35 canonical reports captured; no UNKNOWN or regressions |
 | Primitive inventory, positive observations and wrong arities | 098: 68 PASS | Supplemental gate, including NUL/255 byte IO; not the primary denominator |
 | Vector aliases, cycles, structural equality and tracing collection | Focused checks and full suite | Long-running memory budgets remain unqualified |
 | Generation-tagged streams | 054 failure; 056/058/057 after repair | Closed handles cannot alias a new stream |
@@ -29,7 +29,7 @@ hooks absent from S42. No vendored kernel module was edited. The full runtime
 uses original load-time forms; standalone slices use the synthesized manifest
 initializer. Ordinary `(fail)` remains the `shen.fail!` value, distinct from errors.
 
-Attempt 127 runs the current immutable Nix-store launcher; 126 verifies its installed source and binary hashes and all ten CLI cases. Attempt 117 retests the
+Attempt 127 runs the current immutable Nix-store launcher; 126 verifies its installed source and binary hashes and all ten CLI cases. Attempt 131 retests the
 current CLI and runtime and preserves both raw streams
 and all cumulative counters before reset, and verifies the exact 63-file inventory
 and assertion identities. Its runner source and raw-log hashes were verified. Attempt 084 records the
@@ -64,8 +64,9 @@ or cleaning the original checkouts.
   fixtures pass both execution modes (092/100); the registered direct-native
   Yggdrasil target passes its actual hello build and isolated run (101). The default builder remains interpreter-backed;
   direct lowering uses explicit `--native`.
-- Eval-capable slices are explicitly refused. Full interpreter and compiled-kernel
-  design retain runtime `eval-kl`; that is a different capability.
+- Interpreter-backed eval-capable slices pass the isolated metaevaluation fixture (130),
+  including runtime definition and string evaluation. Broader dynamic deployment
+  comparisons remain open; directly compiled eval-capable slices are still refused.
 - Additional platform lanes, full primitive edge
   profiles, long-running memory and performance distributions, and release gates.
 - The optional effect-search experiment is deferred; kernel Prolog stays intact.

@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Package exactly a Yggdrasil slice in a native Koka interpreter executable.
-This is an interpreter-backed builder, not the planned direct KL-to-Koka compiler.
-"""
+"""Package exactly a Yggdrasil manifest, optionally lowering eval-free KL directly."""
 import argparse,collections,hashlib,json,pathlib,subprocess,sys
 from native_build import run_compiler,serial_native_build,artifact_notices,sync_sources
 ROOT=pathlib.Path(__file__).resolve().parents[1]
@@ -21,7 +19,8 @@ def main():
     if one('manifest-version')!='4':raise ValueError('unsupported manifest version')
     needs=one('needs-eval')
     if needs not in ('true','false'):raise ValueError('invalid needs-eval')
-    if needs=='true':print('UNSUPPORTED: eval-capable standalone slice',file=sys.stderr);return 3
+    if needs=='true' and a.native:
+        print('UNSUPPORTED: directly compiled eval-capable standalone slice',file=sys.stderr);return 3
     if one('init-order')!='checked':raise ValueError('initializer order is not checked')
     kernel=one('kernel');initializer=one('init');users=fields['user']
     if not users:raise ValueError('empty user file list')
@@ -65,7 +64,7 @@ def main():
     (out/'compile.log').write_text(result.stdout)
     if plan and result.returncode==0:
         (stage/'run').chmod(0o755);shutil.copy2(stage/'run',out/'run')
-    record={'schema_version':1,'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(out/'native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'resources':result.resources,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
+    record={'schema_version':1,'needs_eval':needs=='true','builder_sha256':digest(pathlib.Path(__file__)),'execution':'direct KL-to-Koka callbacks' if a.native else 'Koka KLambda interpreter with embedded manifest-only sources','direct_kl_compiler':a.native,'generator_sha256':digest(out/'native_codegen.py') if a.native else None,'manifest_sha256':digest(manifest),'inputs':{str(f.relative_to(manifest.parent)):digest(f) for f in files},'initializer':initializer,'argv':command,'exit_code':result.returncode,'resources':result.resources,'runtime_sources':{str(f.relative_to(runtime)):digest(f) for f in runtime.rglob('*') if f.is_file()}}
     if result.returncode==0:
         (out/'run').chmod(0o755);record['executable_sha256']=digest(out/'run')
     (out/'build.json').write_text(json.dumps(record,indent=2)+'\n')

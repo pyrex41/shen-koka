@@ -103,3 +103,12 @@ to 64 PASS / 1 FAIL / 1 DIVERGE. 121 isolates hush/file behavior; 122 reproduces
 Lua's cold/warm load-echo change while Koka/Go observations stay stable.
 
 123 audits exact-tree publication of the CLI checkpoint. 126 validates the current installed Nix package and ten CLI cases; 127 passes all 134 + 8 assertions with verified source, runner and raw-log hashes and no regressions. 128 retains the heavy stage-1 matrix: Go/Lua artifacts match, Koka produces none within the host budget. The outer driver then fails on a wrong binary path, so its process exit code is unknown; the raw matrix is not promoted to a qualified result.
+
+124 retains the one-hour native build timeout after 268 successful libraries;
+125 keeps all 134 + 8 native assertions UNKNOWN. 129 extends the stage-1 Koka
+host probe to 900 seconds and observes four empty artifacts after 524 seconds:
+Yggdrasil's quiet host invocation suppresses S42 file output. 130 passes the
+isolated, interpreter-backed eval-capable metaevaluation slice and confirms that
+the directly compiled variant still refuses it. 131 passes all 134 + 8 primary
+assertions after the builder change, with source/log audits and no regressions.
+133 passes ten native checkpoint validation controls, including mandatory relink.

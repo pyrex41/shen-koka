@@ -1,0 +1,34 @@
+{
+  "baseline_full_suite": "../127-nix-cli-full/report.json",
+  "postchange_full_suite": "../131-eval-slice-full/report.json",
+  "argv": [
+    "python3",
+    "/workspace/scratch/3e502de53f0d/shen-koka/scripts/build-slice.py",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/metaeval-slice",
+    "/workspace/scratch/3e502de53f0d/shen-koka/artifacts/metaeval-interpreted"
+  ],
+  "build_exit_code": 0,
+  "build_seconds": 130.10325836099946,
+  "builder_sha256": "2a657fc4435976694f8906a1674fa2921f7d7d61b42749db76d8264c9b7834ce",
+  "input_sha256": {
+    "kernel.kl": "d62ecca0ea776c3958252b45d7b974644eb8cb327c6ec973e6d978c595c3e39a",
+    "yggdrasil.manifest.txt": "9936f1a2f0996f8e1ffa9f3c6bf13f4668ec52a5c637b2b3b76721ae143afb4e",
+    "metaeval.kl": "6094cc727f2c823a7345ed683e9977383cbde2069ba3a2d7b661f16a42dfbc5d",
+    "yggdrasil.manifest": "be8601733d9ac7df6404528858533368f35ae0a59c526920ea5cc5eddbd8780c"
+  },
+  "status": "PASS",
+  "run": {
+    "exit_code": 0,
+    "cwd_profile": "empty temporary directory",
+    "SHEN_KOKA_ROOT": "/nonexistent-kernel",
+    "matches_golden": true,
+    "stderr_empty": true,
+    "binary_sha256": "8c1dffab4839fea979142bae2623e812d433f9456526a518951ac45ff767f1a5"
+  },
+  "native_refusal": {
+    "exit_code": 3,
+    "stdout": "",
+    "stderr": "UNSUPPORTED: directly compiled eval-capable standalone slice\n",
+    "output_exists": false
+  }
+}

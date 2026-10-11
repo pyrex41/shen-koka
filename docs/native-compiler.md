@@ -36,7 +36,8 @@ nix develop --command python3 scripts/build-native-kernel.py --output artifacts/
 
 Native kernel generation preserves every pinned module's load-time form order.
 Slice generation instead invokes the manifest's synthesized initializer once.
-Eval-capable slices remain explicitly refused. Native kernel full-suite results,
+Interpreter-backed eval-capable slices pass the isolated metaevaluation fixture (130).
+Directly compiled eval-capable slices remain explicitly refused. Native kernel full-suite results,
 standalone parity, build-time budgets, platform lanes and long-running memory
 qualification remain open gates.
 
@@ -111,3 +112,22 @@ process group and returns through normal metadata capture. Control 113 verifies
 that output, progress, and descendant-pipe cleanup survive cancellation. Use
 this file-based control instead of killing the builder process. The next build
 uses importing batches and preserves all generated-source hashes.
+
+
+Attempt 124 reaches the 3,600-second whole-build limit after 268 successful
+library batches. Its primary suite is all 134 + 8 UNKNOWN (125). A bounded
+retry can now validate and reuse that successful prefix:
+
+```sh
+nix develop --command python3 scripts/build-native-kernel.py \
+  --output artifacts/native-kernel-next --resume artifacts/native-kernel-previous \
+  --timeout 3600
+```
+
+Resume requires identical kernel, runtime, compatibility, generator, lockfile,
+generated-source hashes and compiler commands. It always runs the final compiler
+and link, which checks imported interfaces and rebuilds absent or invalid cache
+entries. Ten controls (133) reject changed inputs and require that final step.
+`progress.json` describes the new steps; final `build.json` also records the
+reused prefix and the previous build-record hash. A resumed build is not qualified
+until it produces an executable and passes the full suite.
