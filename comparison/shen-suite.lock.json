@@ -344,13 +344,114 @@
     "required": true,
     "entrypoint": "tests/extensions/runme.shen",
     "working_directory": "distribution root containing tests/ and extensions/",
-    "assertion_count": 0,
+    "assertion_count": 20,
     "canonical_certification": false,
-    "cases": []
+    "cases": [
+      {
+        "id": "extensions/ppm/001",
+        "name": "register-handler has a type",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/002",
+        "name": "unregister-handler has a type",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/003",
+        "name": "registration can be sequenced with do",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/004",
+        "name": "simple custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/005",
+        "name": "repeated variable success",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/006",
+        "name": "repeated variable failure",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/007",
+        "name": "nested custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/008",
+        "name": "typed custom pattern uses its surface form",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/009",
+        "name": "typed custom pattern binds its component type",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/010",
+        "name": "nested typed custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/011",
+        "name": "typed binary custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/012",
+        "name": "typed nullary custom pattern",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/013",
+        "name": "typed nullary custom pattern fallback",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/014",
+        "name": "typed custom pattern rejects an incompatible binding type",
+        "assertion": "assert-error"
+      },
+      {
+        "id": "extensions/ppm/015",
+        "name": "built-in cons pattern still works",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/016",
+        "name": "built-in literal list pattern still works",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/017",
+        "name": "unregister handler",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/018",
+        "name": "unregister nullary handler",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/019",
+        "name": "unregister typed handler",
+        "assertion": "assert-equal"
+      },
+      {
+        "id": "extensions/ppm/020",
+        "name": "custom pattern definition fails after unregister",
+        "assertion": "assert-equal"
+      }
+    ]
   },
   "completion_requires": {
     "canonical_passed": 154,
-    "bundled_extensions_passed": 0,
+    "bundled_extensions_passed": 20,
     "failed": 0,
     "unknown": 0,
     "skipped": 0,
