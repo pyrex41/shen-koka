@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "native canonical suite",
+  "artifact_sha256": "a9a37b06b8102c78c5a057c3a2fba446506ed4b7f0619acaa3e982a82102ce56",
+  "canonical": {
+    "reports": 40,
+    "cases": 154,
+    "passed": 154,
+    "failed": 0,
+    "unknown": 0,
+    "exit_code": 0,
+    "parser": "scripts/run-shen-suite.py:parse_canonical",
+    "complete_reports": true,
+    "log": "evidence/43.1/native-canonical-final.log.gz"
+  },
+  "build_receipt": "evidence/43.1/native-aot-build-final.json.gz",
+  "build_log": "evidence/43.1/native-aot-build-final.log.gz",
+  "runner_note": "run-shen-suite.py completed native execution but crashed afterward while mapping assertion identities (KeyError canonical/01/003); direct canonical parser validation above is authoritative for the 40-report/154-case lane",
+  "interpreter_canonical": "separate receipt: 154/154"
+}
