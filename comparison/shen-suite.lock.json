@@ -8,12 +8,12 @@
     {
       "repository": "https://github.com/Shen-Language/shen-sources",
       "commit": "715824a52b55e9c81a9501df8548ff3edd8411f5",
-      "directory": "kernel/tests"
+      "directory": "releases/ShenOSKernel-43.1/tests"
     }
   ],
-  "test_trees_byte_identical": true,
-  "file_count": 75,
-  "file_set_sha256": "53e010e005140653f812ec05b57401e26c845e0f976c45ddfb268e099c4939a8",
+  "test_trees_byte_identical": false,
+  "file_count": 73,
+  "file_set_sha256": "86577a96dcbb182b06978e29f4003334ed726938d7f7d1ce058ec74ee16e7fe1",
   "sha256_by_file": {
     "README": "e8a1fec85c60815bef83f93ed55ac4b2fb7da96a4ba702cade9a7a64e2d3031b",
     "binary.shen": "a5f6ead2f593a286baefdc7a10db6750914e455f047f602b26b73e6cfd1d29e6",
@@ -61,12 +61,10 @@
     "n queens-axioms.shen": "80ba5610c9b8f2404a4dea1ac0a693f3e91bfb3fd0f5cec4a981fd59dcd8bb79",
     "n queens-r.shen": "886e4efe9cfb6bcbc7433084da28a3c000920a349f6fb13f620ca1620fbaab4d",
     "n queens.axioms": "4254b07e8b3e07530b7cb3aa95493199371adf8818b745efc8e2f718b1b6674b",
-    "n queens.kl": "5f1c6f8d0bf0baeeaeead09e7e9b075a46ad6e2b04595dea5c1c9f58de2492eb",
     "n queens.shen": "3b2b5e41dab8e8d259b7c65eb749456ff4bbd79acf3a0c1096482ca37f71462b",
     "nreverseprolog.shen": "23c42aeee50712377a9b53ffbd3159c9e88bff997d7d6b676cdc6c7c620bc731",
     "parseprolog.shen": "5f724668a0b94b1e5b9a94f568a05b4a708d43c31034f9ea28bfe894c9d47356",
     "parser.shen": "b2a5eeaca7603cd8a8557d50884d7447f0800e5b27becc4ca24bf36e1fe56775",
-    "parsetest.shen": "6c317f33c39880aff8b2441e9a642f444bc29beb288ceb5340edcbdc8fd500ce",
     "powerset.shen": "689eacf93b06ed8e428906a4b66c558f84c5658dad88003a30971c5410f1dd28",
     "prime.shen": "f49bcaf942ee2ebfde805a78cf9051c4d0e044ee8a3e1037c7d645de559dfbbc",
     "prolog.shen": "f6649743d00e5c11970a4c22dca9c26f3b99d4c8b590dcedf9725de6ca9bbc41",
@@ -398,5 +396,10 @@
     "unknown": 0,
     "skipped": 0,
     "normal_completion": true
-  }
+  },
+  "release_test_tree_file_count": 73,
+  "local_test_fixtures": [
+    "n queens.kl",
+    "parsetest.shen"
+  ]
 }
