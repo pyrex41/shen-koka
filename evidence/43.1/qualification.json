@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-18",
+  "source_commit": "715824a52b55e9c81a9501df8548ff3edd8411f5",
+  "archive_sha256": "900eedef44f440af78f9395ed06e689ce1604546fc309f5bc7c8bc84cc651920",
+  "canonical": {
+    "passed": 154,
+    "failed": 0,
+    "command": "SHEN_KOKA_ROOT=<repo> .build/shen-koka eval -e (cd kernel/tests/) -l runme.shen",
+    "wall_seconds": 281.27114
+  },
+  "character_streams": "byte-only; false capability and unsupported hooks trap before consumption",
+  "artifacts": {
+    "canonical-direct-final.log.gz": "29186db3212d6777c79ebc7c7dfd9c21736c6acbab14077cdf580dfc31c5b601",
+    "focused-native-final.log.gz": "caaaab731854bb50519c8c71a109c02448e9dbccbffe6930c6fb828ce764e96d"
+  }
+}
