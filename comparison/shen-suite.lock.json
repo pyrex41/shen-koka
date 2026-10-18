@@ -6,19 +6,14 @@
   "execution_status": "current ShenOSKernel 43.1 tree; canonical direct run verified 154/154",
   "sources": [
     {
-      "repository": "https://github.com/pyrex41/shen-go",
-      "commit": "c22151dc55cafac7e5b904b8c58c6280c38801b2",
+      "repository": "https://github.com/Shen-Language/shen-sources",
+      "commit": "715824a52b55e9c81a9501df8548ff3edd8411f5",
       "directory": "kernel/tests"
-    },
-    {
-      "repository": "https://github.com/pyrex41/shen-lua",
-      "commit": "614cd0754a741c8070c467b2b07f07943d17f4ff",
-      "directory": "tests"
     }
   ],
   "test_trees_byte_identical": true,
   "file_count": 75,
-  "file_set_sha256": "ec1f4c7a168bbd299f7d3576a1a86262e78524c5eea1fccff101dfd46d42d62f",
+  "file_set_sha256": "53e010e005140653f812ec05b57401e26c845e0f976c45ddfb268e099c4939a8",
   "sha256_by_file": {
     "README": "e8a1fec85c60815bef83f93ed55ac4b2fb7da96a4ba702cade9a7a64e2d3031b",
     "binary.shen": "a5f6ead2f593a286baefdc7a10db6750914e455f047f602b26b73e6cfd1d29e6",
@@ -36,11 +31,23 @@
     "cut.shen": "8cf0bd81e2943c12367aedbb41ee1f3253b760cf1be6a349c6923e1b2ed22e8d",
     "depth.shen": "ae9d275fa5d328ea73cac99db36563bb2e38827a864cfb24d9fa062d2531a035",
     "einsteins-riddle.shen": "75b9e58b9f65d377904b67e67201c24a02d805d0b44d3c78005488fd47940384",
+    "extensions/features/tests.shen": "278965f458c2604a59133ce3cbe563c88b1e8b2f972fcdfeb5ae97cf6b66c546",
     "extensions/harness.shen": "f9b97123491b961f78955c1f5808e247517a6eb9efe167d40aba4d0a295d5a95",
+    "extensions/namespaces/code.shen": "f4add2bb04ee266f18403148fc14ae023d0de7b1140fd13e8139ec4d7257dc05",
+    "extensions/namespaces/macros.shen": "25fbbe7e78436d2fbbfc7a1d0a7f3fe0a656e1a5e535e7fd3ac752b30bd31674",
+    "extensions/namespaces/tests.shen": "1a2c0ebcaa13ab6fba4d7a60d06c8fcd007305e806cb8aa9d2b516c327ef9218",
     "extensions/programmable-pattern-matching/code.shen": "a21609b7c98e67e6b6d94febb1836d45ac4b2673d2523353ba56d5f7662d5c55",
     "extensions/programmable-pattern-matching/setup.shen": "1b477e6b1b580c125b5d0e30a780688983a22a4b3689fc8a7470a8ecdca7868e",
     "extensions/programmable-pattern-matching/tests.shen": "b548bae2c1df308623d198e81d60eafd7fe93e6f365953b60d40393214a5306f",
+    "extensions/programmable-pattern-matching/typed-code.shen": "da9db507a030ad038807650e97603eab07b3147e34cbcde655cbc236837cb0b0",
+    "extensions/programmable-pattern-matching/typed-invalid.shen": "e5262b547b0a0f40298508201b7d418dd9d0f5f209469ecccdd7f75cad345354",
     "extensions/runme.shen": "f5a00caa04d2db42efb9df139a967beaca8dcd45f1ff7747577265bf8f30411d",
+    "extensions/source-forms/fixtures/empty.shen": "d5fd571d123ccbad58fccad64bc034f5b04eaf6805eb496d9ae03368e515f0d8",
+    "extensions/source-forms/fixtures/error.shen": "f4386a2f021d8631ac30a3002315a6f72c6f42b84a1ab915e08b6cdc36bd0e85",
+    "extensions/source-forms/fixtures/input.shen": "80bc2e9f19cc89b80408fc8bdc8cd81fc63a353a7b748eea1df3bc1610239002",
+    "extensions/source-forms/tests.shen": "2468486d20ecafc3533fcb7355633025ba53f85233df2043b56b82a2208cd32a",
+    "extensions/type-annotations/code.shen": "fd562f465c463900b5544bce0dbc1a77458fae07e68579c3498e795279135932",
+    "extensions/type-annotations/tests.shen": "64a502bafe87d908d3d6d610710defb7f9343896ed6ca4b45dc702dc0b3cce6e",
     "findall.shen": "157d59525bee9433b71f31f457e8c9d29f8bc754ca5db4bd779c2b3c7c993fc6",
     "fork.shen": "f30d2975ca1c91dc8732e33e118688316264f6cfb34af9c7416d214f61799233",
     "harness.shen": "a5913fcf768ed15cd8c23ed6c1a1ba0fc5604e822ac7a8759670ddb07542fa4c",
