@@ -5,7 +5,14 @@
   "canonical": {
     "passed": 154,
     "failed": 0,
-    "command": "SHEN_KOKA_ROOT=<repo> .build/shen-koka eval -e (cd kernel/tests/) -l runme.shen",
+    "command": {
+      "argv": ["<repo>/.build/shen-koka", "script", "runme.shen"],
+      "cwd": "<repo>/kernel/tests",
+      "environment": {"SHEN_KOKA_ROOT": "<repo>"},
+      "stdin": "y\\n repeated 512 times",
+      "log": "<repo>/evidence/43.1/canonical-direct-final.log.gz"
+    },
+    "parser_validation": {"script": "scripts/run-shen-suite.py:parse_canonical", "complete_reports": true, "reports": 40},
     "wall_seconds": 281.27114
   },
   "character_streams": "byte-only; false capability and unsupported hooks trap before consumption",
