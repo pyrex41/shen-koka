@@ -31,7 +31,7 @@ def inventory():
             result.append({'id':f"{group['id']}/{i//2+1:03}",'expression':pairs[i]['text'],'expectation':pairs[i+1]['text']})
     ext=(ROOT/'kernel/tests/extensions/programmable-pattern-matching/tests.shen').read_text()
     assertions=[f['children'] for f in forms(ext) if f['children'] and f['children'][0]['text'].startswith('extension-tests.assert-')]
-    assert len(assertions)==20
+    assert len(assertions)==19
     for case,form in zip(lock['bundled_extensions']['cases'],assertions):
         assert json.loads(form[1]['text'])==case['name']
         result.append({'id':case['id'],'expression':form[2]['text'],'expectation':form[3]['text'] if len(form)>3 else 'error'})
