@@ -25,7 +25,7 @@ pub fun initialize-platform(w:world): <st<global>> () {
    ("shen.*residue*",list-value([])),("*absolute*",list-value([])),("shen.*prolog-memory*",Num(1000.0)),("shen.*loading?*",Sym("false")),("shen.*userdefs*",list-value([])),
    ("shen.*demodulation-function*",list-value([])),("shen.*custom-pattern-compiler*",Sym("false")),("shen.*custom-pattern-reducer*",Sym("false")),
    ("*stinput*",Stream(0)),("*stoutput*",Stream(1)),("*sterror*",Stream(2)),
-   ("*home-directory*",Text("")),("shen.*source-form-handlers*",list-value([])),("*macros*",list-value([])),("*property-vector*",Vec(0)),("*language*",Text("Koka")),
+   ("*home-directory*",Text("")),("*property-vector*",Vec(0)),("*language*",Text("Koka")),
    ("*implementation*",Text("Koka 3.2.3")),("*port*",Text("shen-koka")),
    ("*porters*",Text("Shen-Koka contributors")),("*os*",Text("Unix")),("*release*",Text("0.0.1"))].foreach fn((k,v)) { global-set(w,k,v); () }
 }
