@@ -390,7 +390,7 @@
     ]
   },
   "completion_requires": {
-    "canonical_passed": 134,
+    "canonical_passed": 154,
     "bundled_extensions_passed": 8,
     "failed": 0,
     "unknown": 0,

@@ -4,7 +4,7 @@ import argparse,hashlib,json,pathlib,shutil,subprocess,sys,time
 from native_codegen import Compiler,read_kl
 from native_build import run_compilation_steps,serial_native_build,artifact_notices,sync_sources,validated_resume_prefix
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-MODULES=['yacc','core','load','prolog','reader','sequent','sys','toplevel','track','writer','backend','macros','declarations','t-star','types','extension-features','extension-expand-dynamic','extension-launcher']
+MODULES=['yacc','core','load','prolog','reader','sequent','sys','dict','t-star','toplevel','track','types','writer','backend','macros','declarations','init','extension-features','extension-expand-dynamic','extension-launcher','extension-programmable-pattern-matching','extension-namespaces','extension-type-annotations']
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 @serial_native_build
 def main():

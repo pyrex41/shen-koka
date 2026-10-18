@@ -79,7 +79,7 @@ def main():
     ap.add_argument('--output',type=pathlib.Path,required=True)
     ap.add_argument('--timeout',type=float,default=1500)
     ap.add_argument('--previous',type=pathlib.Path)
-    ap.add_argument('--ppm-compat',action='store_true',help='enable the S42 community pattern adapter for BOTH lanes')
+    ap.add_argument('--ppm-compat',action='store_true',help='enable the optional pattern adapter for BOTH lanes')
     args=ap.parse_args()
     previous=None
     if args.previous:

@@ -23,7 +23,7 @@ def inventory():
     lock=json.loads((ROOT/'comparison/shen-suite.lock.json').read_text());result=[]
     src=(ROOT/'kernel/tests/kerneltests.shen').read_text()
     reports=[f['children'] for f in forms(src) if f['children'] and f['children'][0]['text']=='report']
-    assert len(reports)==35
+    assert len(reports)==40
     for group,report in zip(lock['canonical']['groups'],reports):
         assert json.loads(report[1]['text'])==group['name']
         pairs=report[2:];assert len(pairs)==2*group['assertion_count']
