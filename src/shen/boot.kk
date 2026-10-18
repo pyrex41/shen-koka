@@ -16,16 +16,16 @@ pub fun eval-source(w:world,source:string): <st<global>,exn,div,console> value {
 }
 pub fun initialize-platform(w:world): <st<global>> () {
   [
-   ("shen.*history*",Nil),("shen.*tc*",Sym("false")),("shen.*source-form-handlers*",Nil),("*macros*",Nil),("shen.*gensym*",Num(0.0)),
-   ("shen.*tracking*",Nil),("shen.*profiled*",Nil),("shen.*special*",Nil),("shen.*extraspecial*",Nil),("shen.*spy*",Sym("false")),
-   ("shen.*datatypes*",Nil),("shen.*alldatatypes*",Nil),("shen.*shen-type-theory-enabled?*",Sym("true")),("shen.*package*",Sym("null")),
-   ("shen.*synonyms*",Nil),("shen.*occurs*",Sym("true")),("shen.*factorise?*",Sym("false")),("shen.*maxinferences*",Num(1000000.0)),
+   ("shen.*history*",list-value([])),("shen.*tc*",Sym("false")),("shen.*source-form-handlers*",list-value([])),("*macros*",list-value([])),("shen.*gensym*",Num(0.0)),
+   ("shen.*tracking*",list-value([])),("shen.*profiled*",list-value([])),("shen.*special*",list-value([])),("shen.*extraspecial*",list-value([])),("shen.*spy*",Sym("false")),
+   ("shen.*datatypes*",list-value([])),("shen.*alldatatypes*",list-value([])),("shen.*shen-type-theory-enabled?*",Sym("true")),("shen.*package*",Sym("null")),
+   ("shen.*synonyms*",list-value([])),("shen.*occurs*",Sym("true")),("shen.*factorise?*",Sym("false")),("shen.*maxinferences*",Num(1000000.0)),
    ("*maximum-print-sequence-size*",Num(20.0)),("shen.*call*",Num(0.0)),("shen.*infs*",Num(0.0)),("*hush*",Sym("false")),
-   ("shen.*optimise*",Sym("false")),("*version*",Text("43.1")),("shen.*names*",Nil),("shen.*step*",Sym("false")),("shen.*it*",Text("")),
-   ("shen.*residue*",Nil),("*absolute*",Nil),("shen.*prolog-memory*",Num(1000.0)),("shen.*loading?*",Sym("false")),("shen.*userdefs*",Nil),
-   ("shen.*demodulation-function*",Nil),("shen.*custom-pattern-compiler*",Sym("false")),("shen.*custom-pattern-reducer*",Sym("false")),
+   ("shen.*optimise*",Sym("false")),("*version*",Text("43.1")),("shen.*names*",list-value([])),("shen.*step*",Sym("false")),("shen.*it*",Text("")),
+   ("shen.*residue*",list-value([])),("*absolute*",list-value([])),("shen.*prolog-memory*",Num(1000.0)),("shen.*loading?*",Sym("false")),("shen.*userdefs*",list-value([])),
+   ("shen.*demodulation-function*",list-value([])),("shen.*custom-pattern-compiler*",Sym("false")),("shen.*custom-pattern-reducer*",Sym("false")),
    ("*stinput*",Stream(0)),("*stoutput*",Stream(1)),("*sterror*",Stream(2)),
-   ("*home-directory*",Text("")),("shen.*source-form-handlers*",Nil),("*macros*",Nil),("*property-vector*",Vec(0)),("*language*",Text("Koka")),
+   ("*home-directory*",Text("")),("shen.*source-form-handlers*",list-value([])),("*macros*",list-value([])),("*property-vector*",Vec(0)),("*language*",Text("Koka")),
    ("*implementation*",Text("Koka 3.2.3")),("*port*",Text("shen-koka")),
    ("*porters*",Text("Shen-Koka contributors")),("*os*",Text("Unix")),("*release*",Text("0.0.1"))].foreach fn((k,v)) { global-set(w,k,v); () }
 }
