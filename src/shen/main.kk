@@ -67,8 +67,8 @@ fun cli() {
    ["--version"] -> println("shen-koka 0.0.1 experimental; pinned Shen 43.1")
    ["kl","-e",code] -> parse-kl(code).foreach(fn(v) println(render(evaluate(w,v))))
    ["kl",file] -> parse-kl(read-text-file(path(file))).foreach(fn(v) println(render(evaluate(w,v))))
-   Cons("eval",args) -> { boot(w,get-env-value("SHEN_KOKA_ROOT").default(".")); eval-arguments(w,args) }
-   Cons("script",Cons(file,args)) -> { boot(w,get-env-value("SHEN_KOKA_ROOT").default(".")); finish-command(w,invoke(w,Sym("shen.x.launcher.script-command"),[Text(file),list-value(args.map(fn(s) Text(s)))])) }
+   Cons("eval",args) -> { boot(w,get-env-value("SHEN_KOKA_ROOT").default(".")); invoke(w,Sym("shen.initialise"),[]); eval-arguments(w,args) }
+   Cons("script",Cons(file,args)) -> { boot(w,get-env-value("SHEN_KOKA_ROOT").default(".")); invoke(w,Sym("shen.initialise"),[]); finish-command(w,invoke(w,Sym("shen.x.launcher.script-command"),[Text(file),list-value(args.map(fn(s) Text(s)))])) }
    _ -> throw("usage: shen-koka {kl -e EXPR|kl FILE|eval -e EXPR|script FILE|repl}")
  }
 }

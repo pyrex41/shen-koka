@@ -31,7 +31,7 @@ pub div type world {
 }
 pub fun new-world(): <st<global>> world { World(ref(Empty),ref(Empty),ref(NoVectors),ref(0),ref(0),ref(1024),ref(vector(0,missing-native)),ref([])) }
 pub fun global-get(w:world,k:string): <st<global>,exn,div> value {
-  match find((!w.globals),k) { Just(v) -> v; Nothing -> Nil }
+  match find((!w.globals),k) { Just(v) -> v; Nothing -> throw("unbound global: " ++ k) }
 }
 pub fun global-set(w:world,k:string,v:value): st<global> value { w.globals.set(put((!w.globals),k,v)); v }
 pub fun define-function(w:world,k:string,v:value): st<global> () { w.functions.set(put((!w.functions),k,v)) }
