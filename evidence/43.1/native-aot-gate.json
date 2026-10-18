@@ -1,0 +1,18 @@
+{
+  "status": "UNKNOWN",
+  "reason": "bounded native AOT build timed out before producing an executable",
+  "command": "/nix/var/nix/profiles/default/bin/nix develop --command python3 scripts/build-native-kernel.py --output evidence/43.1/native-aot-43.1 --cache /tmp/shen-koka-native-43.1-cache --timeout 600 --module-size 16",
+  "timeout_seconds": 600,
+  "total_steps": 387,
+  "completed_steps": 68,
+  "timed_out_step": 69,
+  "last_module": "/tmp/shen-koka-native-anf/generated/klbatch68.kk",
+  "progress_exit_code": 124,
+  "artifact_directory": "evidence/43.1/native-aot-43.1",
+  "executable_present": false,
+  "build_json_present": false,
+  "compile_log": "evidence/43.1/native-aot-43.1/compile.log",
+  "build_log": "evidence/43.1/native-aot-build.log",
+  "build_log_sha256": "6a9538c17c54d0fcbe5b84e7ea10037dcddb1761e8568c67f7c972c77a30d801",
+  "native_smoke": "not run: no executable was produced"
+}
