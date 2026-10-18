@@ -17,7 +17,7 @@
     }
   ],
   "test_trees_byte_identical": true,
-  "file_count": 63,
+  "file_count": 75,
   "file_set_sha256": "ec1f4c7a168bbd299f7d3576a1a86262e78524c5eea1fccff101dfd46d42d62f",
   "sha256_by_file": {
     "README": "e8a1fec85c60815bef83f93ed55ac4b2fb7da96a4ba702cade9a7a64e2d3031b",
@@ -88,220 +88,250 @@
     "required": true,
     "entrypoint": "runme.shen",
     "working_directory": "test tree root",
-    "assertion_count": 134,
-    "report_group_count": 35,
+    "assertion_count": 154,
+    "report_group_count": 40,
     "inventory_method": "Static parsing of top-level report forms in kerneltests.shen; expression/prediction pairs counted in source order",
     "counter_warning": "kerneltests.shen ends with reset; retain every report and per-assertion outcome",
     "groups": [
       {
         "id": "canonical/01",
-        "name": "cartesian product",
-        "assertion_count": 2,
+        "name": "S43.1 public functions",
+        "assertion_count": 5,
         "assertion_id_format": "canonical/01/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/02",
-        "name": "powerset",
+        "name": "datatype side-condition keywords",
         "assertion_count": 2,
         "assertion_id_format": "canonical/02/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/03",
-        "name": "bubble sort",
+        "name": "context macro list tails",
         "assertion_count": 4,
         "assertion_id_format": "canonical/03/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/04",
-        "name": "spreadsheet",
-        "assertion_count": 2,
+        "name": "lambda table updates",
+        "assertion_count": 6,
         "assertion_id_format": "canonical/04/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/05",
-        "name": "primes",
-        "assertion_count": 7,
+        "name": "type declaration variancy",
+        "assertion_count": 3,
         "assertion_id_format": "canonical/05/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/06",
-        "name": "semantic nets",
-        "assertion_count": 6,
+        "name": "cartesian product",
+        "assertion_count": 2,
         "assertion_id_format": "canonical/06/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/07",
-        "name": "einsteins riddle",
+        "name": "powerset",
         "assertion_count": 2,
         "assertion_id_format": "canonical/07/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/08",
-        "name": "Prolog call",
+        "name": "bubble sort",
         "assertion_count": 4,
         "assertion_id_format": "canonical/08/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/09",
-        "name": "Prolog cut",
+        "name": "spreadsheet",
         "assertion_count": 2,
         "assertion_id_format": "canonical/09/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/10",
-        "name": "Prolog naive reverse",
-        "assertion_count": 2,
+        "name": "primes",
+        "assertion_count": 7,
         "assertion_id_format": "canonical/10/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/11",
-        "name": "findall in Prolog",
-        "assertion_count": 2,
+        "name": "semantic nets",
+        "assertion_count": 6,
         "assertion_id_format": "canonical/11/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/12",
-        "name": "Prolog tableau",
-        "assertion_count": 3,
+        "name": "einsteins riddle",
+        "assertion_count": 2,
         "assertion_id_format": "canonical/12/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/13",
-        "name": "proplog",
-        "assertion_count": 6,
+        "name": "Prolog call",
+        "assertion_count": 4,
         "assertion_id_format": "canonical/13/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/14",
-        "name": "metaprogramming",
+        "name": "Prolog cut",
         "assertion_count": 2,
         "assertion_id_format": "canonical/14/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/15",
-        "name": "binary number datatype",
-        "assertion_count": 4,
+        "name": "Prolog naive reverse",
+        "assertion_count": 2,
         "assertion_id_format": "canonical/15/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/16",
-        "name": "calculator",
+        "name": "findall in Prolog",
         "assertion_count": 2,
         "assertion_id_format": "canonical/16/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/17",
-        "name": "structures 1",
-        "assertion_count": 5,
+        "name": "Prolog tableau",
+        "assertion_count": 3,
         "assertion_id_format": "canonical/17/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/18",
-        "name": "structures 2",
-        "assertion_count": 5,
+        "name": "proplog",
+        "assertion_count": 6,
         "assertion_id_format": "canonical/18/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/19",
-        "name": "classes 1",
-        "assertion_count": 6,
+        "name": "metaprogramming",
+        "assertion_count": 2,
         "assertion_id_format": "canonical/19/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/20",
-        "name": "classes 2",
-        "assertion_count": 5,
+        "name": "binary number datatype",
+        "assertion_count": 4,
         "assertion_id_format": "canonical/20/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/21",
-        "name": "abstract datatypes",
+        "name": "calculator",
         "assertion_count": 2,
         "assertion_id_format": "canonical/21/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/22",
-        "name": "yacc",
-        "assertion_count": 13,
+        "name": "structures 1",
+        "assertion_count": 5,
         "assertion_id_format": "canonical/22/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/23",
-        "name": "N Queens",
+        "name": "structures 2",
         "assertion_count": 5,
         "assertion_id_format": "canonical/23/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/24",
-        "name": "search",
-        "assertion_count": 3,
+        "name": "classes 1",
+        "assertion_count": 6,
         "assertion_id_format": "canonical/24/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/25",
-        "name": "montague",
-        "assertion_count": 3,
+        "name": "classes 2",
+        "assertion_count": 5,
         "assertion_id_format": "canonical/25/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/26",
-        "name": "c-",
+        "name": "abstract datatypes",
         "assertion_count": 2,
         "assertion_id_format": "canonical/26/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/27",
-        "name": "L interpreter",
-        "assertion_count": 5,
+        "name": "yacc",
+        "assertion_count": 13,
         "assertion_id_format": "canonical/27/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/28",
-        "name": "proof assistant",
-        "assertion_count": 3,
+        "name": "N Queens",
+        "assertion_count": 5,
         "assertion_id_format": "canonical/28/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/29",
-        "name": "quantifier machine",
-        "assertion_count": 4,
+        "name": "search",
+        "assertion_count": 3,
         "assertion_id_format": "canonical/29/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/30",
-        "name": "depth first search",
-        "assertion_count": 5,
+        "name": "montague",
+        "assertion_count": 3,
         "assertion_id_format": "canonical/30/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/31",
-        "name": "secd",
-        "assertion_count": 5,
+        "name": "c-",
+        "assertion_count": 2,
         "assertion_id_format": "canonical/31/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/32",
-        "name": "unification",
-        "assertion_count": 4,
+        "name": "L interpreter",
+        "assertion_count": 5,
         "assertion_id_format": "canonical/32/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/33",
-        "name": "total in Prolog",
-        "assertion_count": 2,
+        "name": "proof assistant",
+        "assertion_count": 3,
         "assertion_id_format": "canonical/33/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/34",
-        "name": "Prolog fork",
-        "assertion_count": 2,
+        "name": "quantifier machine",
+        "assertion_count": 4,
         "assertion_id_format": "canonical/34/NNN (1-based ordinal)"
       },
       {
         "id": "canonical/35",
+        "name": "depth first search",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/35/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/36",
+        "name": "secd",
+        "assertion_count": 5,
+        "assertion_id_format": "canonical/36/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/37",
+        "name": "unification",
+        "assertion_count": 4,
+        "assertion_id_format": "canonical/37/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/38",
+        "name": "total in Prolog",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/38/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/39",
+        "name": "Prolog fork",
+        "assertion_count": 2,
+        "assertion_id_format": "canonical/39/NNN (1-based ordinal)"
+      },
+      {
+        "id": "canonical/40",
         "name": "Prolog interpreter",
         "assertion_count": 3,
-        "assertion_id_format": "canonical/35/NNN (1-based ordinal)"
+        "assertion_id_format": "canonical/40/NNN (1-based ordinal)"
       }
     ]
   },
