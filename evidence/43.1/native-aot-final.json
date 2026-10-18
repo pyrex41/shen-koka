@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "current boot module AOT artifact",
+  "artifact": "evidence/43.1/native-aot-43.1-resume2/native",
+  "artifact_sha256": "a9a37b06b8102c78c5a057c3a2fba446506ed4b7f0619acaa3e982a82102ce56",
+  "artifact_bytes": 108022208,
+  "build_json": "evidence/43.1/native-aot-43.1-resume2/build.json",
+  "build_log": "evidence/43.1/native-aot-resume2.log",
+  "build_exit_code": 0,
+  "build_steps": 387,
+  "build_steps_passed": 387,
+  "version": "43.1",
+  "arities": [
+    1,
+    1,
+    2
+  ],
+  "package_shen": true,
+  "dict_put_get": "native-value",
+  "missing_global_trap": "caught",
+  "load_smoke": {
+    "file": "kernel/tests/strings.shen",
+    "result": "loaded",
+    "post_load": 42
+  },
+  "native_canonical_suite": "not run; interpreter canonical suite remains 154/154"
+}
