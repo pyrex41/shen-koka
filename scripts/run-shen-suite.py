@@ -70,21 +70,26 @@ def parse_canonical(text, lock, cells):
     valid &= bool(counts) and counts[-1]==(len(cells),0)
     return {'group_reports':counts, 'complete_reports':bool(valid)}
 
-def enrich_assertion_identities(cells, identities, canonical=False):
+def enrich_assertion_identities(cells, identities, canonical=False, canonical_groups=None, source_commit=None):
     """Attach optional expression metadata without shrinking the locked suite.
 
     The 43.1 lock contains the authoritative 154-case denominator.  The
     older expression inventory has only 142 entries, so newer source-derived
     cases must remain reportable with their lock identity and status.
     """
+    groups = {g['id']: g for g in (canonical_groups or [])}
     for cell in cells:
-        identity = identities.get(cell['id'])
-        if identity is not None:
-            cell.update(identity)
-        elif canonical:
+        if canonical:
+            # The legacy expression inventory predates the 43.1 lock and can
+            # reuse IDs for changed cases.  Lock identity is authoritative.
+            group = groups.get(cell['id'].rsplit('/', 1)[0], {})
             cell['identity_source'] = 'comparison/shen-suite.lock.json'
+            cell['source_commit'] = source_commit
+            cell['group_name'] = group.get('name')
         else:
-            cell['identity_source'] = 'comparison/shen-suite.lock.json'
+            identity = identities.get(cell['id'])
+            if identity is not None:
+                cell.update(identity)
     return cells
 
 def main():
@@ -196,7 +201,9 @@ def main():
                     cell.update(status='PASS' if status=='ok' else 'FAIL',observation=name)
                 totals=re.findall(r'passed \.\.\. (\d+)\s+failed \.\.\. (\d+)',text)
                 result['complete_reports']=(len(observations)==8 and totals==[(str(sum(c['status']=='PASS' for c in cells)),str(sum(c['status']=='FAIL' for c in cells)))])
-        enrich_assertion_identities(cells, identities, canonical=lane=='canonical')
+        enrich_assertion_identities(cells, identities, canonical=lane=='canonical',
+                                   canonical_groups=spec.get('groups'),
+                                   source_commit=(lock.get('sources') or [{}])[0].get('commit'))
         for cell in cells:
             if cell['status']=='UNKNOWN': cell['blocker']=result.get('blocker') or 'assertion outcome not observed'
         compat_root=native_root or ROOT

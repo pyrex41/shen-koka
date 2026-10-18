@@ -29,9 +29,11 @@ class Reports(unittest.TestCase):
   lock=json.loads((Path(__file__).parents[1]/'comparison/shen-suite.lock.json').read_text())['canonical']
   identities={x['id']:x for x in json.loads((Path(__file__).parents[1]/'comparison/assertions.json').read_text())}
   cells=[{'id':f"{g['id']}/{i:03}",'status':'UNKNOWN'} for g in lock['groups'] for i in range(1,g['assertion_count']+1)]
-  r.enrich_assertion_identities(cells,identities,canonical=True)
+  r.enrich_assertion_identities(cells,identities,canonical=True,canonical_groups=lock['groups'],source_commit=lock.get('source_commit'))
   self.assertEqual(len(cells),154)
   self.assertEqual(cells[2]['id'],'canonical/01/003')
   self.assertEqual(cells[2]['identity_source'],'comparison/shen-suite.lock.json')
+  self.assertNotIn('expression',cells[0])
+  self.assertEqual(cells[0]['group_name'],'S43.1 public functions')
   self.assertEqual(cells[-1]['id'],'canonical/40/003')
 if __name__=='__main__':unittest.main()
