@@ -70,6 +70,23 @@ def parse_canonical(text, lock, cells):
     valid &= bool(counts) and counts[-1]==(len(cells),0)
     return {'group_reports':counts, 'complete_reports':bool(valid)}
 
+def enrich_assertion_identities(cells, identities, canonical=False):
+    """Attach optional expression metadata without shrinking the locked suite.
+
+    The 43.1 lock contains the authoritative 154-case denominator.  The
+    older expression inventory has only 142 entries, so newer source-derived
+    cases must remain reportable with their lock identity and status.
+    """
+    for cell in cells:
+        identity = identities.get(cell['id'])
+        if identity is not None:
+            cell.update(identity)
+        elif canonical:
+            cell['identity_source'] = 'comparison/shen-suite.lock.json'
+        else:
+            cell['identity_source'] = 'comparison/shen-suite.lock.json'
+    return cells
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--launcher',default=str(ROOT/'bin/shen-koka'))
@@ -179,7 +196,7 @@ def main():
                     cell.update(status='PASS' if status=='ok' else 'FAIL',observation=name)
                 totals=re.findall(r'passed \.\.\. (\d+)\s+failed \.\.\. (\d+)',text)
                 result['complete_reports']=(len(observations)==8 and totals==[(str(sum(c['status']=='PASS' for c in cells)),str(sum(c['status']=='FAIL' for c in cells)))])
-        for cell in cells: cell.update(identities[cell['id']])
+        enrich_assertion_identities(cells, identities, canonical=lane=='canonical')
         for cell in cells:
             if cell['status']=='UNKNOWN': cell['blocker']=result.get('blocker') or 'assertion outcome not observed'
         compat_root=native_root or ROOT

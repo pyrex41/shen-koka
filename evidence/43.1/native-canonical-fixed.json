@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "validation_mode": "captured native canonical log postparse",
+  "complete_reports": true,
+  "reports": 40,
+  "denominator": 154,
+  "counts": {
+    "PASS": 154,
+    "FAIL": 0,
+    "UNKNOWN": 0
+  },
+  "source_derived_cells": 54,
+  "log_sha256": "5a8c9095f3d7593d778ab2feacf6b4a415e34f2a7a4cd73434f2f7240840f1f7",
+  "runner_regression": "scripts/test-suite-runner.py test_official_431_denominator_keeps_source_derived_cells"
+}
