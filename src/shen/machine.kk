@@ -37,6 +37,10 @@ fun primitive(w:world,name:string,args:list<value>): <st<global>,exn,div,console
     }
     ("read-byte",[Stream(id)]) -> { val n=stream-read(id.int32).int; if stream-read-failed(n) then throw("read-byte error") else Num(n.float64) }
     ("write-byte",[Num(n),Stream(id)]) -> { if n<0.0 || n>255.0 || n.int.float64!=n then throw("write-byte: expected byte"); val result=stream-write(id.int32,n.int.int32).int; if result<0 then throw("write-byte error") else Num(result.float64) }
+    ("char-stream?",[Stream(_)]) -> Sym("true")
+    ("char-stream?",[_]) -> Sym("false")
+    ("read-unit-string",[Stream(id)]) -> { val n=stream-read(id.int32).int; if n == -1 then Text("") elif n < -1 then throw("read-unit-string error") else Text(n.char.string) }
+    ("write-string",[Text(s),Stream(id)]) -> { if stream-write-string(id.int32,s).int < 0 then throw("write-string error") else Text(s) }
     ("close",[Stream(id)]) -> { if stream-close(id.int32).int!=0 then throw("close error"); Nil }
     ("get-time",[Sym(kind)]) -> Num(clock-time(kind=="run"))
     ("shen-koka.heap-live",[]) -> Num(live-vectors((!w.heap)).float64)

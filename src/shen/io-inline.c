@@ -33,6 +33,15 @@ static int32_t shen_stream_write(int32_t id,int32_t byte,kk_context_t *ctx) {
   if(id==1 || id==2) fflush(f);
   return byte;
 }
+static int32_t shen_stream_write_string(int32_t id,kk_string_t value,kk_context_t *ctx) {
+  (void)ctx; FILE *f=shen_stream(id);
+  if(!f) { kk_string_drop(value,ctx); return -1; }
+  size_t n=kk_string_len_borrow(value,ctx);
+  const char *p=kk_string_cbuf_borrow(value,NULL,ctx);
+  int32_t result=(fwrite(p,1,n,f)==n) ? 0 : -1;
+  if(id==1 || id==2) fflush(f);
+  kk_string_drop(value,ctx); return result;
+}
 static int32_t shen_stream_close(int32_t id,kk_context_t *ctx) {
   (void)ctx; FILE *f=shen_stream(id); if(!f) return -1;
   if(id<3) return 0;

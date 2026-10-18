@@ -4,7 +4,7 @@ Experimental Shen port using Koka, with
 Bifrost comparison gates and Yggdrasil standalone artifacts.
 
 Status on 2026-10-11: the Koka-owned KLambda interpreter and direct KL-to-Koka
-compiler both boot the pinned S42 kernel and pass **134 canonical plus eight
+compiler both boot the pinned S43.1 kernel and pass **154 canonical plus eight
 extension assertions** in the documented adapter-enabled profile. Both pass the
 17-case seed suite. Bifrost and Yggdrasil integrations are published; full-port
 release qualification remains pending.

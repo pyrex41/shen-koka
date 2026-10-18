@@ -11,7 +11,7 @@ import std/os/path
 // Keep the pinned reader, history, package handling and typechecking toplevel.
 // The host owns only EOF termination; the upstream recursive loop ignores EOF.
 fun repl(w:world) {
-  invoke(w,Sym("shen.initialise_environment"),[])
+  invoke(w,Sym("shen.initialise"),[])
   invoke(w,Sym("shen.prompt"),[])
   try(fn() { invoke(w,Sym("shen.read-evaluate-print"),[]); () },fn(e) {
     if !(stdin-eof() && e.message=="error: empty stream") then println(e.message)
@@ -64,7 +64,7 @@ fun cli() {
  match get-args() {
    [] -> start-repl(w)
    ["repl"] -> start-repl(w)
-   ["--version"] -> println("shen-koka 0.0.1 experimental; pinned Shen 42")
+   ["--version"] -> println("shen-koka 0.0.1 experimental; pinned Shen 43.1")
    ["kl","-e",code] -> parse-kl(code).foreach(fn(v) println(render(evaluate(w,v))))
    ["kl",file] -> parse-kl(read-text-file(path(file))).foreach(fn(v) println(render(evaluate(w,v))))
    Cons("eval",args) -> { boot(w,get-env-value("SHEN_KOKA_ROOT").default(".")); eval-arguments(w,args) }
